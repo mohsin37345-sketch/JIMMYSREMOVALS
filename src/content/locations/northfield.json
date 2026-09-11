@@ -1,0 +1,66 @@
+{
+  "town": "Northfield",
+  "slug": "northfield",
+  "county": "West Midlands",
+  "metaTitle": "Northfield Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Northfield. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "For dependable house removals, flat moves, and storage in Northfield, Jimmys Removals delivers top-rated service. From suburban semi-detached homes near Victoria Common to modern housing along the Bristol Road South corridor and Longbridge regeneration area, our insured team ensures your home move is carried out smoothly, safely, and punctually. We provide full packing options, furniture disassembly, and tail-lift Luton vans.  Whether you are moving across town or relocating across the UK, our dependable removals crew provides transparent prices, punctual timings, and complete insurance cover for every Northfield move. We supply tail-lift Luton vans, protective quilted blankets, and full furniture dismantling services.",
+  "localKnowledge": "Northfield offers easy connectivity down the A38 toward the Lickey Hills and the M5 at Junction 4. In established residential avenues around West Heath and Turves Green, driveway access is generally good, allowing fast loading and unloading by our 2 or 3-man crews.",
+  "postcodes": [
+    "B31"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Selly Oak",
+      "slug": "selly-oak"
+    },
+    {
+      "name": "Bromsgrove",
+      "slug": "bromsgrove"
+    },
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    }
+  ],
+  "travelInfo": "Quick access via the A38 Bristol Road South towards M5 Junction 4.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Northfield is outside the Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover West Heath and Longbridge from Northfield?",
+      "answer": "Yes, we cover all B31 postcodes including Longbridge and West Heath.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with long-distance moves from Northfield?",
+      "answer": "Yes, we specialize in direct point-to-point UK removals with dedicated vans.",
+      "display": true
+    },
+    {
+      "question": "Do you supply packing materials in Northfield?",
+      "answer": "Yes, boxes, tape, and bubble wrap can be delivered directly to your home.",
+      "display": true
+    },
+    {
+      "question": "How do you calculate your prices?",
+      "answer": "We base prices on the volume of goods, access conditions, and transit distance.",
+      "display": true
+    }
+  ],
+  "lat": 52.414,
+  "lng": -1.97,
+  "tier": 2,
+  "heroImage": "/images/locations/northfield.webp"
+}

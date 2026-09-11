@@ -1,0 +1,66 @@
+{
+  "town": "Cradley Heath",
+  "slug": "cradley-heath",
+  "county": "West Midlands",
+  "metaTitle": "Cradley Heath Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Cradley Heath. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals delivers trusted domestic and commercial removals across Cradley Heath, Old Hill, and surrounding areas. Known for its rich industrial heritage and friendly community, Cradley Heath features traditional terraced properties, semi-detached homes, and modern estates where our professional porters provide polite, punctual, and reliable moving care. We supply quilted furniture blankets, floor runners, and tail-lift vans for every relocation.  Whether you are downsizing, purchasing your first property, or relocating office premises in Cradley Heath, our polite team ensures that your transition is executed with maximum care and minimum fuss. We supply heavy-duty double-walled boxes and protective transit blankets for every item.",
+  "localKnowledge": "Cradley Heath's layout combines historic industrial terraces with railway bridges and narrow entry alleys. Our team is adept at navigating restricted rear accessways to load garden furniture and outbuildings without causing obstruction to neighbouring properties.",
+  "postcodes": [
+    "B64"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Halesowen",
+      "slug": "halesowen"
+    },
+    {
+      "name": "Dudley",
+      "slug": "dudley"
+    },
+    {
+      "name": "Rowley Regis",
+      "slug": "rowley-regis"
+    }
+  ],
+  "travelInfo": "Connected via the A4100 High Street and Forge Lane towards the A456.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Cradley Heath is outside any Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Old Hill and Cradley?",
+      "answer": "Yes, we cover all B64 postcodes including Old Hill and surrounding border streets.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with small flat moves in Cradley Heath?",
+      "answer": "Yes, our man and van service is ideal for 1-bed flats and studio moves.",
+      "display": true
+    },
+    {
+      "question": "How are mattresses and sofas protected?",
+      "answer": "We use heavy-duty quilted transit covers and heavy-gauge polythene bags.",
+      "display": true
+    },
+    {
+      "question": "Do you work on bank holiday weekends?",
+      "answer": "Yes, we operate 7 days a week including most bank holiday periods.",
+      "display": true
+    }
+  ],
+  "lat": 52.472,
+  "lng": -2.083,
+  "tier": 2,
+  "heroImage": "/images/locations/cradley-heath.webp"
+}

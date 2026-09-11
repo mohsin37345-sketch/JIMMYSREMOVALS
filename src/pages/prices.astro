@@ -1,0 +1,141 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import PricingTable from 'theme/components/PricingTable.astro';
+import CostCalculator from 'theme/components/CostCalculator.astro';
+import ComparisonTable from 'theme/components/ComparisonTable.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Prices', item: '/prices/' }
+];
+
+const pricingFaqs = [
+  {
+    question: "Do you charge extra for weekend removals?",
+    answer: "No. Jimmys Removals operates 7 days a week with transparent, consistent pricing across Saturdays and Sundays.",
+    display: true
+  },
+  {
+    question: "Are Clean Air Zone fees added to our final bill?",
+    answer: "No. Our entire vehicle fleet meets Euro 6 low-emission standards, meaning we are fully exempt from the Birmingham Clean Air Zone charge. We never add CAZ surcharges.",
+    display: true
+  },
+  {
+    question: "Do I have to pay a deposit when booking?",
+    answer: "We do not charge deposits simply to provide a written quotation. Once a completion date is confirmed and booked, standard terms apply.",
+    display: true
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "We accept all major debit and credit cards, direct bank transfer (BACS), and company payments with VAT invoices provided.",
+    display: true
+  }
+];
+---
+
+<BaseLayout
+  title="House Removals Prices Birmingham | Transparent Pricing Guide | Jimmys Removals"
+  description="Transparent removals prices in Birmingham and the West Midlands. Achievable rates from £65/hr for man and van and £350 for 2-bed house moves. Zero hidden fees."
+  breadcrumbs={breadcrumbs}
+  faqs={pricingFaqs}
+>
+  <Hero
+    variant="legal"
+    title="House Removals Pricing Guide"
+    subtitle="Honest, upfront rates with qualifying conditions clearly displayed. No hidden fuel surcharges or surprise fees."
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- How We Quote: Fixed Price vs Hourly Rates -->
+    <section class="space-y-6 max-w-4xl">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+        How Removals Pricing Works: Fixed Quotes vs Hourly Rates
+      </h2>
+      <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+        We believe removals pricing should be transparent, fair, and free from surprises on completion day. At Jimmys Removals, we offer two clear pricing structures depending on the scale and complexity of your move:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300">
+            Recommended for House Moves
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Guaranteed Fixed-Price Quotation</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Ideal for 2, 3, 4, and 5-bedroom home moves where timing is dictated by legal completion and solicitors' key releases. Your quote includes all vehicles, porter labour, mileage, furniture protection, and 60 minutes of complimentary waiting time while keys are released.
+          </p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
+            Recommended for Small Relocations
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Transparent Hourly Rates</h3>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Ideal for studio flats, student room relocations, single bulky items, or self-storage transfers. Starting at £65 per hour with a straightforward 2-hour minimum booking within 10 miles, billed in fair 15-minute increments thereafter.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rate Bands Table -->
+    <PricingTable />
+
+    <!-- Interactive Cost Estimator -->
+    <CostCalculator />
+
+    <!-- What's Included in Every Move -->
+    <section class="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white space-y-6">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Included as Standard</span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+          Everything Included in Your Jimmys Removals Quote
+        </h3>
+        <p class="text-sm text-slate-300 mt-2">
+          Unlike operators who tack on add-ons at the final invoice, every Jimmys Removals booking comes with comprehensive protection built in.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4 text-xs sm:text-sm">
+        <div class="space-y-1">
+          <strong class="text-amber-400 block font-semibold">£50,000 Goods in Transit Cover</strong>
+          <span class="text-slate-300">Full insurance protection for your possessions from doorstep to doorstep.</span>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-amber-400 block font-semibold">£2,000,000 Public Liability</strong>
+          <span class="text-slate-300">Protection against accidental damage to properties, hallways, and communal areas.</span>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-amber-400 block font-semibold">£0 Clean Air Zone Fee</strong>
+          <span class="text-slate-300">100% Euro 6 compliant fleet operating inside the Birmingham A4540 Middleway at no extra cost.</span>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-amber-400 block font-semibold">Heavy Quilted Furniture Blankets</strong>
+          <span class="text-slate-300">Every piece of wooden, mirrored, and upholstered furniture is wrapped and strapped.</span>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-amber-400 block font-semibold">Neoprene Floor Runners</strong>
+          <span class="text-slate-300">Protective non-slip runners placed across carpets, tiles, and hardwood hallways upon arrival.</span>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-amber-400 block font-semibold">60-Minute Key Delay Buffer</strong>
+          <span class="text-slate-300">One full hour of complimentary waiting time while solicitors authorise completion keys.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Paying for a Professional Pays Off -->
+    <ComparisonTable />
+
+    <!-- Pricing FAQs -->
+    <FAQ faqs={pricingFaqs} title="Removals Pricing & Payment FAQs" />
+  </div>
+
+  <CTABand />
+</BaseLayout>

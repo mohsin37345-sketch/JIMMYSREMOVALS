@@ -1,0 +1,163 @@
+---
+import LegalLayout from 'theme/layouts/LegalLayout.astro';
+import { siteConfig } from 'src/data/site';
+
+const title = 'Terms of Business (Removals Contract)';
+const description = `Standard Terms of Business and Removals Contract for ${siteConfig.legalName}, covering quotation validity, insurance cover, waiting times, and cancellation rights.`;
+const lastUpdated = '2026-06-10';
+
+const headings = [
+  { depth: 2, slug: 'introduction', text: '1. Introduction & Definitions' },
+  { depth: 2, slug: 'quotations', text: '2. Quotation Validity & Contract Formation' },
+  { depth: 2, slug: 'work-included', text: '3. Work Included & Excluded from the Quote' },
+  { depth: 2, slug: 'customer-duties', text: '4. Customer Responsibilities, Access & Parking' },
+  { depth: 2, slug: 'clean-air-zone', text: '5. Clean Air Zone & Emission Surcharges' },
+  { depth: 2, slug: 'excluded-goods', text: '6. Goods Not Accepted for Transport' },
+  { depth: 2, slug: 'insurance-liability', text: '7. Goods in Transit Cover, Liability & Claims' },
+  { depth: 2, slug: 'delays-waiting', text: '8. Completion Delays & Waiting Time Allowances' },
+  { depth: 2, slug: 'cancellations-postponement', text: '9. Postponement, Cancellation & Cooling-Off Rights' },
+  { depth: 2, slug: 'payment-terms', text: '10. Payment Terms & Title of Goods' },
+  { depth: 2, slug: 'storage-terms', text: '11. Containerised Storage Terms' },
+  { depth: 2, slug: 'consumer-rights-governing-law', text: '12. Statutory Consumer Rights & Governing Law' }
+];
+---
+
+<LegalLayout
+  title={title}
+  description={description}
+  lastUpdated={lastUpdated}
+  headings={headings}
+>
+  <p class="lead text-lg font-medium text-slate-800 dark:text-slate-200">
+    These Terms of Business set out the legally binding contract between {siteConfig.legalName} ("the Company", "we", "us", "our") and the customer ("the Client", "you", "your") for the provision of domestic removals, commercial relocations, packing services, and containerised storage.
+  </p>
+
+  <p>
+    These conditions are written in plain, accessible UK English and drafted to comply fully with the <strong>Consumer Rights Act 2015</strong>, the <strong>Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013</strong>, and the <strong>Road Traffic Acts</strong>. No clause in these terms excludes or restricts our statutory liability for negligence or breach of core statutory implied terms.
+  </p>
+
+  <h2 id="introduction">1. Introduction & Definitions</h2>
+  <p>
+    In these terms:
+  </p>
+  <ul>
+    <li><strong>"Quotation"</strong> means our formal written specification of services and pricing schedule.</li>
+    <li><strong>"Services"</strong> means house removal, apartment move, office relocation, packing, dismantling, or storage as agreed in the Quotation.</li>
+    <li><strong>"Goods"</strong> means any furniture, cartons, personal effects, or equipment to be transported or stored.</li>
+    <li><strong>"Moving Day"</strong> means the agreed calendar date upon which the removal work is scheduled to commence.</li>
+  </ul>
+
+  <h2 id="quotations">2. Quotation Validity & Contract Formation</h2>
+  <p>
+    All written quotations issued by the Company remain valid for <strong>28 calendar days</strong> from the date of issue.
+  </p>
+  <p>
+    A binding contract is formed when the Client accepts the Quotation in writing (via email or digital signature) and pays the required booking confirmation deposit. The price agreed is a fixed sum based on the inventory and access conditions surveyed. We will not increase the price unless:
+  </p>
+  <ul>
+    <li>Additional goods not declared during the initial survey are added to the move.</li>
+    <li>Access is substantially impeded beyond what was declared (e.g. broken lifts or road closures).</li>
+    <li>Significant delays occur beyond the complimentary waiting time on completion day (see Section 8).</li>
+  </ul>
+
+  <h2 id="work-included">3. Work Included & Excluded from the Quote</h2>
+  <p>
+    Unless specifically itemised in writing in your Quotation, our standard removal services <strong>do not include</strong>:
+  </p>
+  <ul>
+    <li>Dismantling or assembling fitted or custom flat-pack furniture (unless the optional dismantling service is booked).</li>
+    <li>Disconnecting, unplumbing, reconnecting, or testing domestic appliances (washing machines, dishwashers, gas cookers).</li>
+    <li>Taking down or re-hanging window blinds, curtains, pelmets, light fixtures, or wall-mounted flat-screen televisions.</li>
+    <li>Moving items situated in non-boarded lofts or attics without safe fixed ladder access and lighting.</li>
+    <li>Laying fitted floor coverings or driving vehicles across unpaved ground that risks property or vehicle damage.</li>
+  </ul>
+
+  <h2 id="customer-duties">4. Customer Responsibilities, Access & Parking</h2>
+  <p>
+    The Client warrants and undertakes to:
+  </p>
+  <ul>
+    <li><strong>Ensure Legal Parking:</strong> Reserve or secure adequate kerbside parking for our removal vehicles (typically 3.5-tonne Luton vans requiring 20-25 feet of clearance per vehicle) outside both collection and delivery properties. This includes applying for temporary parking suspensions or parking dispensations from local authorities (such as Birmingham City Council, Coventry City Council, or Solihull Metropolitan Borough Council) at least 10 working days in advance. Any council parking penalty charge notices (PCNs) incurred as a direct consequence of inadequate parking arrangements provided by the Client will be chargeable to the Client.</li>
+    <li><strong>Be Present:</strong> Be present personally, or appoint an authorised adult representative, throughout the entire duration of loading and unloading.</li>
+    <li><strong>Appliance Preparation:</strong> Disconnect, drain, and defrost domestic washing machines, dishwashers, and freezers at least 24 hours prior to moving day.</li>
+  </ul>
+
+  <h2 id="clean-air-zone">5. Clean Air Zone & Emission Surcharges</h2>
+  <p>
+    {siteConfig.legalName} operates a modern, 100% Euro 6 compliant vehicle fleet. Our removal vans meet all emissions standards required for unrestricted travel within the <strong>Birmingham Clean Air Zone (CAZ)</strong> within the A4540 Middleway.
+  </p>
+  <p>
+    <strong>We guarantee £0 added Clean Air Zone surcharges</strong> on your removals invoice. For clients requiring long-distance transport into London or other low-emission zones, all vehicle emission charges are included in your fixed quotation schedule with zero hidden add-ons.
+  </p>
+
+  <h2 id="excluded-goods">6. Goods Not Accepted for Transport</h2>
+  <p>
+    For safety, regulatory, and insurance compliance, the Company <strong>will not transport or store</strong> under any circumstances:
+  </p>
+  <ul>
+    <li>Hazardous materials: flammable gases, compressed gas cylinders, petrol, paints, solvents, poisons, car batteries, or explosives.</li>
+    <li>Firearms, shotguns, ammunition, or regulated weapons.</li>
+    <li>Perishable goods, deep-frozen foods, fresh produce, or goods requiring temperature-controlled refrigeration.</li>
+    <li>Live animals, reptiles, birds, or fish.</li>
+    <li>High-value negotiable assets: cash currency, bearer bonds, bullion, precious gemstones, deeds, or unmounted precious jewellery. (Clients must transport personal jewellery and essential passports personally).</li>
+  </ul>
+
+  <h2 id="insurance-liability">7. Goods in Transit Cover, Liability & Claims</h2>
+  <p>
+    Every domestic removal executed by our company is insured under our comprehensive commercial policy:
+  </p>
+  <ul>
+    <li><strong>Goods in Transit Cover:</strong> Up to <strong>£50,000</strong> per vehicle load against accidental damage, collision, overturn, fire, or theft while in transit.</li>
+    <li><strong>Public Liability Cover:</strong> Up to <strong>£2,000,000</strong> covering accidental damage to third-party properties, hallways, stairwells, and doorways.</li>
+  </ul>
+  <p>
+    <strong>Customer Duty of Declaration:</strong> The Client must notify the Company in writing prior to moving day of any single item or pair/set whose replacement value exceeds <strong>£1,000</strong> so that special handling safeguards, protective crating, and specific insurer declarations can be arranged.
+  </p>
+  <p>
+    <strong>Claims Notification Window:</strong> Any visible loss or damage must be pointed out to the team leader upon completion of unloading and recorded on the job completion sheet. Formal written claim details, accompanied by photographic evidence and original purchase documentation, must be submitted to our office within <strong>7 calendar days</strong> of delivery. Nothing in this clause limits your statutory rights under the Consumer Rights Act 2015 where damage arises from our negligence.
+  </p>
+
+  <h2 id="delays-waiting">8. Completion Delays & Waiting Time Allowances</h2>
+  <p>
+    Property sale completions and key exchanges are subject to solicitors transferring funds through the banking network. While delays are common in UK property chains:
+  </p>
+  <ul>
+    <li>The Company provides <strong>60 minutes of complimentary waiting time</strong> on completion day following arrival at the destination address.</li>
+    <li>Where keys are delayed beyond this complimentary hour through no fault of our crew, reasonable waiting time fees apply at the rate of <strong>£45 per hour per van/crew</strong>, billed in 15-minute intervals, to compensate for crew overtime and scheduling impact.</li>
+  </ul>
+
+  <h2 id="cancellations-postponement">9. Postponement, Cancellation & Cooling-Off Rights</h2>
+  <p>
+    <strong>Consumer Contracts Regulations 2013 (14-Day Cooling-Off Period):</strong> Under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, Clients booking services remotely (online or telephone) have the right to cancel their contract within 14 calendar days without giving any reason.
+  </p>
+  <p>
+    <strong>Early Performance Agreement:</strong> If you request that the removal services commence within this 14-day cancellation period, you acknowledge that you will be liable to pay for the proportion of services performed up to the cancellation time, and you lose the right to cancel once the service has been fully completed.
+  </p>
+  <p>
+    <strong>Standard Postponement & Cancellation Schedule:</strong> Outside the statutory cooling-off period, because vehicle and porter resources are reserved exclusively for your move date, the following fair sliding scale applies:
+  </p>
+  <ul>
+    <li>More than 7 working days prior to moving day: Full refund of deposit, zero cancellation penalty.</li>
+    <li>Between 3 and 7 working days prior to moving day: 25% of the total quotation fee is payable.</li>
+    <li>Between 24 and 48 hours prior to moving day: 50% of the total quotation fee is payable.</li>
+    <li>Less than 24 hours prior to moving day: 75% of the total quotation fee is payable.</li>
+  </ul>
+
+  <h2 id="payment-terms">10. Payment Terms & Title of Goods</h2>
+  <p>
+    Unless credit account terms have been agreed in writing for commercial business clients, payment for domestic house removals is due in full prior to or upon completion of loading on moving day. We accept direct bank transfer (BACS), major UK debit and credit cards, and company payments. Full VAT invoices are provided with every booking.
+  </p>
+
+  <h2 id="storage-terms">11. Containerised Storage Terms</h2>
+  <p>
+    Where goods are placed into containerised storage under our care, storage charges are billed calendar-monthly in advance. Goods are held in secure, dry, CCTV-monitored facilities. The Company retains a general legal lien upon all goods held in storage for any unpaid storage or transit charges until accounts are settled in full.
+  </p>
+
+  <h2 id="consumer-rights-governing-law">12. Statutory Consumer Rights & Governing Law</h2>
+  <p>
+    Nothing in these Terms of Business diminishes your statutory legal rights under the <strong>Consumer Rights Act 2015</strong>, which requires services to be carried out with reasonable care and skill, within a reasonable time, and for a reasonable price.
+  </p>
+  <p>
+    This contract is governed by and construed in accordance with the <strong>laws of England and Wales</strong>. The courts of England and Wales have exclusive jurisdiction to settle any dispute or legal proceedings arising out of or in connection with this agreement.
+  </p>
+</LegalLayout>

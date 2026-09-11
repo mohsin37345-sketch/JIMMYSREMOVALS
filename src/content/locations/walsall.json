@@ -1,0 +1,70 @@
+{
+  "town": "Walsall",
+  "slug": "walsall",
+  "county": "West Midlands",
+  "metaTitle": "Walsall Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Walsall. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "For residential removals, office relocations, and clearance services in Walsall, Jimmys Removals provides a trusted, first-class service. Spanning leather-trade heritage terraces near the town centre to generous 1930s family homes along the Broadway, Gillity Village, and Park Hall, Walsall features diverse residential settings. Our removals staff are DBS-checked, fully insured, and equipped with modern Luton vehicles, heavy-duty quilted covers, and furniture dismantling equipment to ensure your moving day proceeds without complication. Whether you are transitioning to a newly built home or downsizing from a substantial family property, our hardworking team takes total care of your furnishings from collection to delivery.  Our experienced removal teams take pride in delivering a prompt, respectful, and fully insured service, whether you are relocating locally within the borough or moving across the country to a new destination. We provide clean Luton vans, heavy furniture blankets, and full packing services.",
+  "localKnowledge": "Walsall's transport arteries are heavily influenced by the M6 motorway, particularly Junction 10, which connects the town to the wider West Midlands network. Our drivers monitor live traffic feeds along the A454 and Pleck Road to bypass junction bottlenecks when executing time-critical moves. In residential areas such as Palfrey and Caldmore, densely clustered terraced avenues often present restricted curbside access, making our agile 3.5-tonne Luton vehicles far more effective than oversized 7.5-tonne lorries.\n\nTowards the south along Walsall's boundary with Great Barr (WS5), substantial detached properties with sweeping frontages require floor protection and careful handling of heavy oak and mahogany furniture. We also regularly service new commercial developments around the Waterfront and Wharfingers, assisting local businesses with out-of-hours office relocations.",
+  "postcodes": [
+    "WS1",
+    "WS2",
+    "WS3",
+    "WS4",
+    "WS5"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Wolverhampton",
+      "slug": "wolverhampton"
+    },
+    {
+      "name": "Bloxwich",
+      "slug": "bloxwich"
+    },
+    {
+      "name": "Aldridge",
+      "slug": "aldridge"
+    }
+  ],
+  "travelInfo": "Excellent motorway corridors via the M6 (Junctions 7, 9, and 10) and the A454 Black Country Route.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Walsall does not operate a Clean Air Zone. No emission charges apply."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you navigate narrow streets in Caldmore and Palfrey?",
+      "answer": "Our Luton box vans fit comfortably down narrow terraced avenues without blocking residential access, allowing efficient curbside loading.",
+      "display": true
+    },
+    {
+      "question": "Can you help with moves near M6 Junction 10?",
+      "answer": "Yes, our local base gives us rapid access across Walsall, Bloxwich, and Darlaston, timing moves to avoid peak motorway interchange delays.",
+      "display": true
+    },
+    {
+      "question": "Do you provide packing materials for Walsall customers?",
+      "answer": "Yes, we can deliver strong double-walled moving boxes, bubble wrap, tape, and wardrobe cartons directly to your Walsall home before moving day.",
+      "display": true
+    },
+    {
+      "question": "Are your Walsall removal services available on weekends?",
+      "answer": "Yes, we operate 7 days a week, offering Saturday and Sunday moving slots at competitive, transparent rates.",
+      "display": true
+    }
+  ],
+  "lat": 52.5843,
+  "lng": -1.9823,
+  "tier": 1,
+  "heroImage": "/images/locations/walsall.webp"
+}

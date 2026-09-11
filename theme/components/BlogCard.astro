@@ -1,0 +1,66 @@
+---
+import { formatDate } from 'theme/utils/formatDate';
+
+export interface Props {
+  title: string;
+  slug: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  date: string | Date;
+  author: string;
+  category: string;
+  readingTimeText?: string;
+}
+
+const {
+  title,
+  slug,
+  description,
+  image,
+  imageAlt,
+  date,
+  author,
+  category,
+  readingTimeText = '3 min read'
+} = Astro.props;
+---
+
+<article class="group relative flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-200 interactive-card">
+  <div class="aspect-[16/9] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+    <img
+      src={image}
+      alt={imageAlt}
+      loading="lazy"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+    />
+  </div>
+
+  <div class="p-6 flex-1 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+        <span class="font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 px-2 py-0.5 rounded">
+          {category}
+        </span>
+        <span>{readingTimeText}</span>
+      </div>
+
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">
+        <a href={`/blog/${slug}/`} class="after:absolute after:inset-0">
+          {title}
+        </a>
+      </h3>
+
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+        {description}
+      </p>
+    </div>
+
+    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-400">
+      <span>By {author}</span>
+      <time datetime={typeof date === 'string' ? date : date.toISOString()}>
+        {formatDate(date)}
+      </time>
+    </div>
+  </div>
+</article>

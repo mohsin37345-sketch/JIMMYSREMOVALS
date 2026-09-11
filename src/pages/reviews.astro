@@ -1,0 +1,74 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import Testimonials from 'theme/components/Testimonials.astro';
+import ReviewBadges from 'theme/components/ReviewBadges.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import { getCollection } from 'astro:content';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Reviews', item: '/reviews/' }
+];
+
+let testimonials: any[] = [];
+try {
+  const tCollection = await getCollection('testimonials');
+  testimonials = tCollection.map((t) => t.data);
+} catch (e) {
+  testimonials = [];
+}
+---
+
+<BaseLayout
+  title="Customer Reviews | Jimmys Removals Birmingham"
+  description="Read genuine verified customer reviews for Jimmys Removals and Logistics LTD across Birmingham, Solihull, Coventry, and the West Midlands."
+  breadcrumbs={breadcrumbs}
+  reviews={testimonials}
+>
+  <Hero
+    variant="legal"
+    title="Customer Reviews & Testimonials"
+    subtitle="Read verified feedback from homeowners and commercial clients who trusted Jimmys Removals for their moving day."
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <Testimonials
+      testimonials={testimonials}
+      title="Verified Customer Experiences"
+      subtitle="Every review represents a real house move, office relocation or logistics delivery executed by our trained team."
+    />
+
+    <ReviewBadges />
+
+    <!-- Our Review Verification Policy -->
+    <section class="p-8 sm:p-10 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4 max-w-4xl mx-auto">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white">Our Review Verification Policy</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        At Jimmys Removals, we never fabricate testimonials, publish artificial star ratings, or incentivise reviews. Every testimonial published on our website is cross-referenced against completed job sheets and customer accounts. We encourage all clients across Birmingham, Solihull, Coventry, and the Black Country to leave impartial feedback on Google Business and independent review platforms once their move is safely unpacked.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 text-xs text-slate-600 dark:text-slate-400">
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <strong class="text-slate-900 dark:text-white block font-semibold mb-1">100% Genuine Moves</strong>
+          <span>Linked to real customer move bookings across our West Midlands service area.</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <strong class="text-slate-900 dark:text-white block font-semibold mb-1">No Deleted Feedback</strong>
+          <span>We use constructive criticism from post-move questionnaires to continually train our porters.</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <strong class="text-slate-900 dark:text-white block font-semibold mb-1">Independent Platforms</strong>
+          <span>Clients can independently verify our feedback on Google Business and Trust platforms.</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <CTABand heading="Experience Our 5-Star Removals Service" />
+</BaseLayout>

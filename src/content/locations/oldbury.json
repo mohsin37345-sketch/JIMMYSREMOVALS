@@ -1,0 +1,67 @@
+{
+  "town": "Oldbury",
+  "slug": "oldbury",
+  "county": "West Midlands",
+  "metaTitle": "Oldbury Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Oldbury. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "For house removals, commercial deliveries, and secure containerised storage in Oldbury, Jimmys Removals provides an experienced, dependable service. Situated at the crossroads of the M5 motorway and the Sandwell metropolitan borough, Oldbury combines bustling retail centres, Langley Green terraces, and established suburban homes across Bristnall and Brandhall. Our DBS-checked removals team handles your furniture with transit blankets, heavy webbing straps, and floor protection, ensuring a smooth transition to your new home. With transparent pricing and complete insurance coverage, we take the hassle out of moving in Oldbury.  Our experienced team assists with every step of the moving journey, from supplying heavy-duty double-walled boxes to dismantling beds and placing furniture directly into your chosen rooms at your new property. We arrive punctually with all necessary tools, mattress protectors, and floor coverings.",
+  "localKnowledge": "Oldbury is anchored by the major M5 Junction 2 elevated roundabout and the busy A4123 Wolverhampton Road. Our drivers use local knowledge to bypass commuter congestion near Oldbury Green Retail Park, navigating residential avenues around Causeway Green and Brandhall with ease.",
+  "postcodes": [
+    "B68",
+    "B69"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "West Bromwich",
+      "slug": "west-bromwich"
+    },
+    {
+      "name": "Smethwick",
+      "slug": "smethwick"
+    },
+    {
+      "name": "Dudley",
+      "slug": "dudley"
+    }
+  ],
+  "travelInfo": "Directly located at M5 Junction 2 with links via the A4123 Wolverhampton Road.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Oldbury is outside the Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How quickly can you quote a house move in Oldbury?",
+      "answer": "We can provide an accurate quotation within hours via our online form or WhatsApp inventory.",
+      "display": true
+    },
+    {
+      "question": "Do you move flats in Oldbury with stair access?",
+      "answer": "Yes, our porters are experienced in multi-storey carry for apartments and converted flats.",
+      "display": true
+    },
+    {
+      "question": "Are your vans insured for commercial office moves in Oldbury?",
+      "answer": "Yes, we carry £50,000 Goods in Transit and £2,000,000 Public Liability insurance.",
+      "display": true
+    },
+    {
+      "question": "Can you supply moving boxes to Oldbury residents?",
+      "answer": "Yes, we deliver sturdy double-walled cartons, tape, and bubble wrap before moving day.",
+      "display": true
+    }
+  ],
+  "lat": 52.504,
+  "lng": -2.016,
+  "tier": 2,
+  "heroImage": "/images/locations/oldbury.webp"
+}

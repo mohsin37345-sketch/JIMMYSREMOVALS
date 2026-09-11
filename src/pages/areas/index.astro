@@ -1,0 +1,144 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import AreaCoverageMap from 'theme/components/AreaCoverageMap.astro';
+import LocationCard from 'theme/components/LocationCard.astro';
+import CleanAirZoneNotice from 'theme/components/CleanAirZoneNotice.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import Icon from 'theme/components/Icon.astro';
+import { getCollection } from 'astro:content';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Areas Covered', item: '/areas/' }
+];
+
+const locations = await getCollection('locations');
+
+const tier1Locations = locations
+  .filter((loc) => loc.data.tier === 1)
+  .sort((a, b) => a.data.town.localeCompare(b.data.town));
+
+const tier2Locations = locations
+  .filter((loc) => loc.data.tier === 2)
+  .sort((a, b) => a.data.town.localeCompare(b.data.town));
+
+const mapLocations = locations.map((loc) => ({
+  town: loc.data.town,
+  slug: loc.id,
+  lat: loc.data.lat,
+  lng: loc.data.lng,
+  tier: loc.data.tier,
+  postcodes: loc.data.postcodes
+}));
+---
+
+<BaseLayout
+  title="Areas Covered | Removals Across Birmingham & West Midlands | Jimmys"
+  description="Comprehensive house and office removals across Birmingham, Solihull, Wolverhampton, Coventry, Sutton Coldfield, the Black Country and 35+ West Midlands towns."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="page"
+    title="Areas Covered Across the West Midlands"
+    subtitle="From inner-city Birmingham apartments to country homes in Warwickshire and Staffordshire, explore our local coverage network of 37 towns and boroughs."
+    badge="37 West Midlands Locations"
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Coverage Interactive Map Component -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Interactive West Midlands Coverage Map
+        </h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300">
+          Click any location pin or select from the list below to view local road access guidance, parking regulations, and postcode coverage.
+        </p>
+      </div>
+
+      <AreaCoverageMap locations={mapLocations} />
+    </section>
+
+    <!-- Tier 1 Primary Hubs -->
+    <section>
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
+          <Icon name="map-pin" class="w-4 h-4" />
+          <span>Primary Service Hubs</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+          Major West Midlands Towns & Cities
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+          Our daily operating hubs with dedicated removal teams stationed throughout the week.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tier1Locations.map((loc) => (
+          <LocationCard
+            town={loc.data.town}
+            slug={loc.id}
+            county={loc.data.county}
+            postcodes={loc.data.postcodes}
+            intro={loc.data.intro}
+            tier={loc.data.tier}
+            cleanAirZone={loc.data.cleanAirZone.enabled}
+          />
+        ))}
+      </div>
+    </section>
+
+    <CleanAirZoneNotice variant="compact" />
+
+    <!-- Tier 2 Extended Coverage Towns -->
+    <section class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+          Extended Town & Suburban Coverage ({tier2Locations.length} Districts)
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+          We regularly complete residential and commercial relocations across every district listed below:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {tier2Locations.map((loc) => (
+          <a
+            href={`/areas/${loc.id}/`}
+            class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 hover:border-amber-500 dark:hover:border-amber-500 transition-all hover:shadow-sm group flex flex-col justify-between"
+          >
+            <div>
+              <div class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-amber-500 transition-colors flex items-center justify-between">
+                <span>{loc.data.town}</span>
+                <Icon name="arrow-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-500 group-hover:translate-x-0.5 transition-all" />
+              </div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">
+                {loc.data.postcodes.slice(0, 3).join(', ')}
+              </div>
+            </div>
+            <div class="mt-3 text-[11px] text-slate-400 dark:text-slate-500 flex items-center gap-1">
+              <span>{loc.data.county}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTABand -->
+    <CTABand
+      variant="quote"
+      heading="Don't See Your Town Listed?"
+      subheading="We cover the entire West Midlands, Warwickshire, Staffordshire, and Worcestershire. Contact us for a bespoke quote anywhere in the UK."
+      primaryCtaText="Get a Custom Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </div>
+</BaseLayout>

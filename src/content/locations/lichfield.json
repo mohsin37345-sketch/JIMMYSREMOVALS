@@ -1,0 +1,67 @@
+{
+  "town": "Lichfield",
+  "slug": "lichfield",
+  "county": "Staffordshire",
+  "metaTitle": "Lichfield Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Lichfield. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals is proud to offer bespoke house removals, piano transport, and packing services across the cathedral city of Lichfield. Famous for its three-spired cathedral, historic cobbled streets, and sought-after residential avenues in Boley Park and Darwin Park, Lichfield demands an experienced removals team with an eye for detail. We treat every antique and personal treasure with the greatest care.  With specialized equipment for upright pianos, fine antiques, and high-value furnishings, our experienced porters ensure your move in the historic city of Lichfield is conducted with complete distinction. We navigate narrow historic lanes with ease and protect all period features throughout.",
+  "localKnowledge": "Lichfield's historic centre has pedestrianised zones, narrow archways, and strict weight-restricted streets around the Cathedral Close. Our drivers use agile 3.5-tonne Luton vans to navigate conservation streets safely, without disrupting historic stone curbs or residential parking.",
+  "postcodes": [
+    "WS13",
+    "WS14"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Sutton Coldfield",
+      "slug": "sutton-coldfield"
+    },
+    {
+      "name": "Tamworth",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Cannock",
+      "slug": "cannock"
+    }
+  ],
+  "travelInfo": "Quick access via the A38, A51, and the M6 Toll corridor.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Lichfield operates without Clean Air Zone fees."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you have experience in Lichfield's historic city centre?",
+      "answer": "Yes, we know how to navigate tight historic lanes and arrange vehicle loading permits.",
+      "display": true
+    },
+    {
+      "question": "Can you move upright and grand pianos in Lichfield?",
+      "answer": "Yes, our specialist team uses piano shoes, transit covers, and tail lifts.",
+      "display": true
+    },
+    {
+      "question": "Do you cover Boley Park and Darwin Park?",
+      "answer": "Yes, we frequently conduct moves in all modern and established Lichfield estates.",
+      "display": true
+    },
+    {
+      "question": "What insurance is included with Lichfield moves?",
+      "answer": "All moves include £50,000 Goods in Transit and £2,000,000 Public Liability insurance.",
+      "display": true
+    }
+  ],
+  "lat": 52.684,
+  "lng": -1.826,
+  "tier": 2,
+  "heroImage": "/images/locations/lichfield.webp"
+}

@@ -1,0 +1,77 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import BlogGrid from 'theme/components/BlogGrid.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import { slugify } from 'theme/utils/slugify';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  let posts: any[] = [];
+  try {
+    posts = await getCollection('blog');
+  } catch (e) {
+    posts = [];
+  }
+
+  const categories = Array.from(new Set(posts.map((p) => p.data.category).filter(Boolean)));
+
+  return categories.map((category) => {
+    const categoryPosts = posts.filter((p) => p.data.category === category);
+    return {
+      params: { category: slugify(category) },
+      props: { category, posts: categoryPosts }
+    };
+  });
+}
+
+const { category, posts } = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Blog', item: '/blog/' },
+  { name: category, item: Astro.url.pathname }
+];
+
+const formattedPosts = (posts || []).map((post: any) => ({
+  title: post.data.title,
+  slug: post.id.replace(/\.(md|mdx)$/, ''),
+  description: post.data.description,
+  image: post.data.image,
+  imageAlt: post.data.imageAlt,
+  date: post.data.date,
+  author: post.data.author,
+  category: post.data.category,
+  readingTimeText: post.data.readingTimeText || '4 min read'
+}));
+---
+
+<BaseLayout
+  title={`${category} Moving Guides | Jimmys Removals`}
+  description={`Expert moving advice, packing guides, and logistics tips filed under ${category}.`}
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="page"
+    title={`${category} Guides`}
+    subtitle={`Explore our collection of articles, moving tips, and practical guides on ${category.toLowerCase()}.`}
+    badge="Article Category"
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <section>
+      <BlogGrid posts={formattedPosts} />
+    </section>
+
+    <CTABand
+      variant="quote"
+      heading="Looking for Expert Removal Services?"
+      subheading="Get an itemised, fixed-price quote from our West Midlands removals team."
+      primaryCtaText="Get a Free Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </div>
+</BaseLayout>

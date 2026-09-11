@@ -1,0 +1,67 @@
+{
+  "town": "Redditch",
+  "slug": "redditch",
+  "county": "Worcestershire",
+  "metaTitle": "Redditch Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Redditch. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides trusted house removals, commercial moves, and containerised storage in Redditch. From character homes in Webheath and Astwood Bank to modern planned developments in Church Hill, Matchborough, and Walkwood, our team delivers seamless, insured moving solutions across north Worcestershire. We provide full furniture protection, floor runners, and tail-lift vans for a comfortable moving experience.  Our modern Luton vans and trained movers ensure that all furniture and personal belongings are protected from collection to delivery, providing a reliable removals service across Redditch and north Worcestershire. We supply wardrobe boxes, furniture covers, and secure containerised storage facilities. Whether you are moving locally near Arrow Valley or across the Midlands, our team delivers complete peace of mind.",
+  "localKnowledge": "Redditch is famous for its comprehensive highway network with fast dual carriageways like the Alvechurch Highway and Coventry Highway. Navigating cul-de-sacs in new-town estates requires experienced drivers who position Luton vehicles without blocking community parking bays.",
+  "postcodes": [
+    "B97",
+    "B98"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Bromsgrove",
+      "slug": "bromsgrove"
+    },
+    {
+      "name": "Shirley",
+      "slug": "shirley"
+    },
+    {
+      "name": "Solihull",
+      "slug": "solihull"
+    }
+  ],
+  "travelInfo": "Excellent dual-carriageway access via the A441, A435, and M42 Junction 2.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Redditch is outside any Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Astwood Bank and Webheath?",
+      "answer": "Yes, we cover all B97 and B98 addresses in Redditch and surrounding villages.",
+      "display": true
+    },
+    {
+      "question": "Can you provide storage for Redditch residents?",
+      "answer": "Yes, our secure containerised facility provides clean, alarmed storage.",
+      "display": true
+    },
+    {
+      "question": "Do you handle office relocations in Redditch industrial parks?",
+      "answer": "Yes, we handle office and warehouse relocations with minimal downtime.",
+      "display": true
+    },
+    {
+      "question": "Are your staff DBS checked?",
+      "answer": "Yes, all our removals personnel are DBS-checked and professionally trained.",
+      "display": true
+    }
+  ],
+  "lat": 52.306,
+  "lng": -1.942,
+  "tier": 2,
+  "heroImage": "/images/locations/redditch.webp"
+}

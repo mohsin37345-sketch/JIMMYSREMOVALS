@@ -1,0 +1,70 @@
+{
+  "town": "Solihull",
+  "slug": "solihull",
+  "county": "West Midlands",
+  "metaTitle": "Solihull Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Solihull. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals delivers white-glove domestic removals, furniture assembly, and professional packing services throughout the Borough of Solihull. Renowned for its affluent residential avenues, outstanding schools, and expansive properties, Solihull demands a removals company with exceptional standards of care and presentation. From premier detached residences along Alderbrook Road and Hampton Lane to elegant apartments in Touchwood, Olton, and Shirley, our polite, DBS-checked porters ensure your high-value furnishings, electronics, and delicate artwork are moved with supreme professionalism, heavy-duty floor protection, and comprehensive £50,000 Goods in Transit insurance. We cater for full estate moves, delicate antique transport, and modern executive apartment transfers across the borough.  From initial site survey to the final placement of furniture in your chosen rooms, our professional team ensures every aspect of your Solihull move is managed with precision, courtesy, and exceptional reliability. We take extra precautions with manicured driveways, delicate hardwood flooring, and high-value antique furniture.",
+  "localKnowledge": "Solihull features some of the West Midlands' most substantial family homes, particularly in Knowle, Dorridge, and central Solihull. These properties frequently involve extensive square footage, long gravel drives, and multi-car parking areas. Our teams use heavy-duty neoprene walkway protectors to shield hardwood, parquet, and light-coloured carpets from footwear and trolley wheels during multi-hour loading sequences.\n\nWhen handling moves involving large gardens and outbuildings in rural Solihull hamlets like Barston and Catherine-de-Barnes, we allocate extra crew members to ensure heavy garden furniture, barbecues, and gym equipment are moved efficiently. Traffic along the A34 Stratford Road retail corridor can be dense, so our drivers utilise quieter arterial links such as the B4102 to maintain dependable schedules between collections and drop-offs.",
+  "postcodes": [
+    "B90",
+    "B91",
+    "B92",
+    "B93",
+    "B94"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    },
+    {
+      "name": "Shirley",
+      "slug": "shirley"
+    },
+    {
+      "name": "Coventry",
+      "slug": "coventry"
+    }
+  ],
+  "travelInfo": "Excellent motorway connectivity via the M42 (Junctions 4, 5, and 6), A34 Stratford Road, and A41 Warwick Road.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Solihull does not have a Clean Air Zone. No emission charges apply."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you provide white-glove removals for large properties in Solihull?",
+      "answer": "Yes, our white-glove service includes full packing, wardrobe box packing, specialist antique protection, furniture dismantling, and room-by-room reassembly.",
+      "display": true
+    },
+    {
+      "question": "How do you protect gravel driveways and luxury flooring in Solihull homes?",
+      "answer": "We use rubber-wheeled dollies to prevent gravel rutting and lay protective floor runners across hallways, staircases, and entrances.",
+      "display": true
+    },
+    {
+      "question": "Are your removal teams insured for high-value artwork and antiques?",
+      "answer": "Yes, our Goods in Transit policy provides £50,000 protection as standard, with bespoke high-value declaration options available upon request.",
+      "display": true
+    },
+    {
+      "question": "Can you help with dismantling bespoke modular wardrobes in Solihull?",
+      "answer": "Yes, our technicians carry comprehensive toolkits to dismantle and reassemble large sliding wardrobes, ottoman bed frames, and luxury dining tables.",
+      "display": true
+    }
+  ],
+  "lat": 52.413,
+  "lng": -1.778,
+  "tier": 1,
+  "heroImage": "/images/locations/solihull.webp"
+}

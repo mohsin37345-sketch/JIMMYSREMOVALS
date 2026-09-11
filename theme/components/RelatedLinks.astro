@@ -1,0 +1,55 @@
+---
+import Icon from './Icon.astro';
+
+export interface LinkItem {
+  title: string;
+  href: string;
+  badge?: string;
+}
+
+export interface Props {
+  title?: string;
+  currentHref?: string;
+  links?: LinkItem[];
+}
+
+const {
+  title = 'Related Services & Areas',
+  currentHref = '',
+  links = []
+} = Astro.props;
+
+// Filter out self-references
+let filteredLinks = links.filter((link) => link.href !== currentHref && link.href !== `${currentHref}/`);
+
+// Fallback to core services if empty
+if (filteredLinks.length === 0) {
+  filteredLinks = [
+    { title: 'House Removals', href: '/removals/house-removals/' },
+    { title: 'Flat & Apartment Removals', href: '/removals/flat-removals/' },
+    { title: 'Man and Van', href: '/removals/man-and-van/' },
+    { title: 'Packing Services', href: '/removals/packing-services/' },
+    { title: 'Office Removals', href: '/removals/office-removals/' },
+    { title: 'Storage Solutions', href: '/removals/storage/' }
+  ].filter((link) => link.href !== currentHref);
+}
+---
+
+<div class="p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl">
+  <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4">
+    {title}
+  </h3>
+  <ul class="space-y-2.5 text-xs sm:text-sm">
+    {filteredLinks.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          class="group flex items-center justify-between p-2 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium"
+        >
+          <span>{link.title}</span>
+          <Icon name="chevron-right" class="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-600 group-hover:translate-x-0.5 transition" />
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

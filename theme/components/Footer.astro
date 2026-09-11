@@ -1,0 +1,205 @@
+---
+import { siteConfig } from 'src/data/site';
+import navigation from 'src/data/navigation.json';
+import socialLinks from 'src/data/social.json';
+import Icon from './Icon.astro';
+
+const currentYear = new Date().getFullYear();
+
+// Check if any active social URLs exist
+const hasSocials = Object.values(socialLinks).some((url) => typeof url === 'string' && url.trim().length > 0);
+---
+
+<footer class="bg-slate-950 text-slate-300 border-t border-slate-800/80 pt-16 pb-12 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Top Grid: Brand & 4 Nav Columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 pb-12 border-b border-slate-800">
+      
+      <!-- Brand & Mission Statement (Span 2) -->
+      <div class="lg:col-span-2 space-y-4">
+        <a
+          href="/"
+          class="inline-block focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1 group transition-transform hover:scale-[1.02]"
+          aria-label="Jimmys Removals & Logistics Home"
+        >
+          <img
+            src="/images/logo-dark.png"
+            alt="Jimmys Removals & Logistics"
+            width="210"
+            height="56"
+            class="h-12 sm:h-14 w-auto object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+
+        <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+          Professional, fully insured house removals, commercial moves, and same-day courier solutions across Birmingham, the Black Country, and the entire West Midlands. Operating 7 days a week with Clean Air Zone compliant vehicles.
+        </p>
+
+        <!-- Insurance Statement Highlight -->
+        <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800 text-xs space-y-1">
+          <div class="flex items-center gap-2 font-bold text-slate-200">
+            <Icon name="shield" class="w-4 h-4 text-amber-400" />
+            <span>Fully Insured Removals:</span>
+          </div>
+          <p class="text-slate-400">
+            Goods in Transit: <strong class="text-slate-200">{siteConfig.insurance.goodsInTransit}</strong> · Public Liability: <strong class="text-slate-200">{siteConfig.insurance.publicLiability}</strong>
+          </p>
+        </div>
+
+        <!-- Social Media Icons (Conditional upon valid non-empty URLs) -->
+        {hasSocials && (
+          <div class="pt-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-2">Connect with us</span>
+            <div class="flex items-center gap-3">
+              {socialLinks.facebook && (
+                <a
+                  href={socialLinks.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Jimmys Removals on Facebook"
+                  class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-600 text-slate-300 hover:text-white flex items-center justify-center transition"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                </a>
+              )}
+              {socialLinks.linkedin && (
+                <a
+                  href={socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Jimmys Removals on LinkedIn"
+                  class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-600 text-slate-300 hover:text-white flex items-center justify-center transition"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+                </a>
+              )}
+              {socialLinks.instagram && (
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit Jimmys Removals on Instagram"
+                  class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-amber-600 text-slate-300 hover:text-white flex items-center justify-center transition"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Column 1: Services -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-100 mb-4">
+          Removals
+        </h3>
+        <ul class="space-y-2 text-sm">
+          {navigation.footer.services.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-amber-400 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 2: Areas -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-100 mb-4">
+          Areas Covered
+        </h3>
+        <ul class="space-y-2 text-sm">
+          {navigation.footer.areas.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-amber-400 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 3: Company -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-100 mb-4">
+          Company
+        </h3>
+        <ul class="space-y-2 text-sm">
+          {navigation.footer.company.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-amber-400 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Column 4: Legal -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-100 mb-4">
+          Legal & Compliance
+        </h3>
+        <ul class="space-y-2 text-sm">
+          {navigation.footer.legal.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-amber-400 transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <!-- Cookie Preferences Link (Reopens CMP / Preferences) -->
+            <button
+              type="button"
+              onclick="if(typeof window.openCookiePreferences === 'function'){ window.openCookiePreferences(); }"
+              class="text-left hover:text-amber-400 transition-colors underline cursor-pointer text-slate-400"
+            >
+              Cookie Preferences
+            </button>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- NAP (Name, Address, Phone) & Legal Notice Block -->
+    <div class="pt-8 pb-4 text-xs text-slate-500 space-y-4">
+      <address class="not-italic grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-slate-400">
+        <div>
+          <strong class="text-slate-200 block mb-1">Trading Entity:</strong>
+          {siteConfig.legalName}
+        </div>
+        <div>
+          <strong class="text-slate-200 block mb-1">Registered Address:</strong>
+          {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.postalCode}
+        </div>
+        <div>
+          <strong class="text-slate-200 block mb-1">Direct Contact:</strong>
+          Phone: <a href={`tel:${siteConfig.phoneE164}`} class="hover:underline text-slate-300">{siteConfig.phone}</a><br />
+          Email: <a href={`mailto:${siteConfig.email}`} class="hover:underline text-slate-300">{siteConfig.email}</a>
+        </div>
+        <div>
+          <strong class="text-slate-200 block mb-1">Company Details:</strong>
+          Registered in England & Wales<br />
+          Company No: {siteConfig.companyNumber} · VAT: {siteConfig.vatNumber}
+        </div>
+      </address>
+
+      <div class="pt-4 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>
+          &copy; {currentYear} {siteConfig.legalName}. All rights reserved. Registered in the United Kingdom.
+        </p>
+        <p class="text-slate-500 text-center sm:text-right">
+          {siteConfig.coverageLine}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</footer>

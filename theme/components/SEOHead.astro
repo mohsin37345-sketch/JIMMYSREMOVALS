@@ -1,0 +1,97 @@
+---
+import { siteConfig } from 'src/data/site';
+import verificationCodes from 'src/data/verification.json';
+import { absoluteUrl } from 'theme/utils/absoluteUrl';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title = `${siteConfig.businessName} | House Removals & Logistics Birmingham`,
+  description = 'Insured, DBS-checked house removals, office moves, and same-day delivery across Birmingham and the West Midlands. Clean Air Zone compliant vans.',
+  canonical,
+  image = '/images/og-default.webp',
+  imageAlt = `${siteConfig.businessName} - Professional Removals in Birmingham`,
+  type = 'website',
+  noindex = false
+} = Astro.props;
+
+// Canonical URL generation: absolute WWW with trailing slash
+const resolvedCanonical = canonical || absoluteUrl(Astro.url.pathname);
+const ogImageUrl = image.startsWith('http') ? image : absoluteUrl(image);
+
+// Verification tokens from env or JSON
+const googleVerification = import.meta.env.PUBLIC_GOOGLE_VERIFICATION || verificationCodes.google;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION || verificationCodes.bing;
+const yandexVerification = import.meta.env.PUBLIC_YANDEX_VERIFICATION || verificationCodes.yandex;
+---
+
+<!-- Character set & Viewport -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Page Meta -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={resolvedCanonical} />
+
+<!-- Robots -->
+{noindex ? (
+  <meta name="robots" content="noindex, follow" />
+  <meta name="googlebot" content="noindex, follow" />
+) : (
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+)}
+
+<!-- Favicons & Manifest -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#0f243e" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1120" />
+
+<!-- Webmaster Verification -->
+{googleVerification && <meta name="google-site-verification" content={googleVerification} />}
+{bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
+{yandexVerification && <meta name="yandex-verification" content={yandexVerification} />}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={siteConfig.legalName} />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content={resolvedCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={imageAlt} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={resolvedCanonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+
+<!-- Inline Dark Mode Blocking Script (Zero Flash) -->
+<script is:inline>
+  (function() {
+    try {
+      const storedTheme = localStorage.getItem('jimmys_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch (e) {}
+  })();
+</script>

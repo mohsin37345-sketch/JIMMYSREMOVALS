@@ -1,0 +1,120 @@
+{
+  "mainNav": [
+    {
+      "label": "Services",
+      "href": "/removals/",
+      "isMegaMenu": true,
+      "groups": [
+        {
+          "title": "Home & Residential",
+          "items": [
+            { "label": "House Removals", "href": "/removals/house-removals/", "description": "Full-service family home moves with Luton vans", "icon": "truck" },
+            { "label": "Flat & Apartment Removals", "href": "/removals/flat-removals/", "description": "Lift slots, parking permits and stair carry", "icon": "building" },
+            { "label": "Man and Van", "href": "/removals/man-and-van/", "description": "Flexible, hourly rate small removals & single items", "icon": "van" },
+            { "label": "Student Moves", "href": "/removals/student-moves/", "description": "Cost-effective term-time moves to halls and HMOs", "icon": "academic" }
+          ]
+        },
+        {
+          "title": "Commercial & Specialist",
+          "items": [
+            { "label": "Office Removals", "href": "/removals/office-removals/", "description": "Business relocation, IT equipment and desks", "icon": "briefcase" },
+            { "label": "Piano & Specialist Moves", "href": "/removals/piano-and-specialist-moves/", "description": "Uprights, baby grands, antiques and heavy safes", "icon": "shield" },
+            { "label": "Long-Distance Removals", "href": "/removals/long-distance-removals/", "description": "Direct point-to-point UK-wide relocations", "icon": "map" },
+            { "label": "House Clearance", "href": "/removals/house-clearance/", "description": "Licensed, respectful clearance and ethical disposal", "icon": "trash" }
+          ]
+        },
+        {
+          "title": "Support & Logistics",
+          "items": [
+            { "label": "Packing Services", "href": "/removals/packing-services/", "description": "Professional packing and double-walled materials", "icon": "box" },
+            { "label": "Furniture Dismantling", "href": "/removals/furniture-dismantling/", "description": "Wardrobes, beds and flat-pack reassembly", "icon": "wrench" },
+            { "label": "Storage Solutions", "href": "/removals/storage/", "description": "Secure, dry containerised storage in Birmingham", "icon": "archive" },
+            { "label": "Same-Day Delivery", "href": "/removals/same-day-delivery/", "description": "Urgent pallet and courier dispatch across UK", "icon": "clock" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Areas Covered",
+      "href": "/areas/",
+      "isMegaMenu": true,
+      "tier1Towns": [
+        { "name": "Birmingham", "href": "/areas/birmingham/" },
+        { "name": "Wolverhampton", "href": "/areas/wolverhampton/" },
+        { "name": "Coventry", "href": "/areas/coventry/" },
+        { "name": "Solihull", "href": "/areas/solihull/" },
+        { "name": "Dudley", "href": "/areas/dudley/" },
+        { "name": "Walsall", "href": "/areas/walsall/" },
+        { "name": "West Bromwich", "href": "/areas/west-bromwich/" },
+        { "name": "Sutton Coldfield", "href": "/areas/sutton-coldfield/" },
+        { "name": "Stourbridge", "href": "/areas/stourbridge/" }
+      ]
+    },
+    {
+      "label": "Prices",
+      "href": "/prices/"
+    },
+    {
+      "label": "Calculator",
+      "href": "/moving-cost-calculator/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about-us/",
+      "isDropdown": true,
+      "items": [
+        { "label": "About Us", "href": "/about-us/", "description": "Our family-run story, DBS crew & modern fleet", "icon": "shield" },
+        { "label": "How It Works", "href": "/how-it-works/", "description": "4 simple steps from quote to moving day", "icon": "clock" },
+        { "label": "Clean Air Zone", "href": "/clean-air-zone/", "description": "Euro 6 vans & zero Birmingham CAZ charges", "icon": "truck" },
+        { "label": "Customer Reviews", "href": "/reviews/", "description": "Verified feedback from West Midlands moves", "icon": "star" },
+        { "label": "FAQs", "href": "/faqs/", "description": "Everything you need to know before moving", "icon": "box" },
+        { "label": "Blog & Guides", "href": "/blog/", "description": "Packing advice, checklists & cost guides", "icon": "map" }
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "/contact-us/"
+    }
+  ],
+  "footer": {
+    "services": [
+      { "label": "House Removals", "href": "/removals/house-removals/" },
+      { "label": "Flat Removals", "href": "/removals/flat-removals/" },
+      { "label": "Man and Van", "href": "/removals/man-and-van/" },
+      { "label": "Office Removals", "href": "/removals/office-removals/" },
+      { "label": "Packing Services", "href": "/removals/packing-services/" },
+      { "label": "Storage Solutions", "href": "/removals/storage/" },
+      { "label": "Piano & Specialist", "href": "/removals/piano-and-specialist-moves/" },
+      { "label": "Long-Distance Removals", "href": "/removals/long-distance-removals/" }
+    ],
+    "areas": [
+      { "label": "Birmingham Removals", "href": "/areas/birmingham/" },
+      { "label": "Wolverhampton Removals", "href": "/areas/wolverhampton/" },
+      { "label": "Coventry Removals", "href": "/areas/coventry/" },
+      { "label": "Solihull Removals", "href": "/areas/solihull/" },
+      { "label": "Dudley Removals", "href": "/areas/dudley/" },
+      { "label": "Walsall Removals", "href": "/areas/walsall/" },
+      { "label": "West Bromwich Removals", "href": "/areas/west-bromwich/" },
+      { "label": "Sutton Coldfield Removals", "href": "/areas/sutton-coldfield/" },
+      { "label": "View All Coverage Areas", "href": "/areas/" }
+    ],
+    "company": [
+      { "label": "About Jimmys Removals", "href": "/about-us/" },
+      { "label": "How It Works", "href": "/how-it-works/" },
+      { "label": "Pricing Guide", "href": "/prices/" },
+      { "label": "Moving Cost Calculator", "href": "/moving-cost-calculator/" },
+      { "label": "Customer Reviews", "href": "/reviews/" },
+      { "label": "Frequently Asked Questions", "href": "/faqs/" },
+      { "label": "Clean Air Zone Guide", "href": "/clean-air-zone/" },
+      { "label": "HTML Sitemap", "href": "/sitemap/" },
+      { "label": "Contact Us", "href": "/contact-us/" }
+    ],
+    "legal": [
+      { "label": "Terms of Business", "href": "/terms-of-business/" },
+      { "label": "Terms & Conditions", "href": "/terms-and-conditions/" },
+      { "label": "Privacy Policy", "href": "/privacy-policy/" },
+      { "label": "Cookie Policy", "href": "/cookie-policy/" },
+      { "label": "Complaints Procedure", "href": "/complaints-procedure/" }
+    ]
+  }
+}

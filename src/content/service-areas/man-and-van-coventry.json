@@ -1,0 +1,28 @@
+{
+  "service": "man-and-van",
+  "location": "coventry",
+  "uniqueIntro": "Looking for a punctual, dependable man and van in Coventry? Jimmys Removals offers flexible hourly moving solutions for students, small flat moves, office deliveries, and single bulky items. We provide modern Luton vans and strong, courteous movers who take the hassle out of your local move.",
+  "localAngle": "With huge student populations at Coventry University and the University of Warwick in Canley and Earlsdon, our man and van service offers the ideal balance of affordability and professional care for term-time moves.",
+  "faqs": [
+    {
+      "question": "Do you offer student discounts for man and van in Coventry?",
+      "answer": "Yes, we offer student-friendly rates and van-sharing options for campus relocations.",
+      "display": true
+    },
+    {
+      "question": "Can you collect items from IKEA or retail parks in Coventry?",
+      "answer": "Yes, we offer store collection and home delivery with furniture assembly assistance if requested.",
+      "display": true
+    },
+    {
+      "question": "What vehicle is supplied with the man and van service?",
+      "answer": "We supply a 3.5-tonne Luton low-loader box van equipped with a tail lift and protective blankets.",
+      "display": true
+    },
+    {
+      "question": "How do I book man and van in Coventry?",
+      "answer": "You can book instantly online or call our operations desk on 0121 285 4122.",
+      "display": true
+    }
+  ]
+}

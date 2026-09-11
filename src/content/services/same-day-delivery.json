@@ -1,0 +1,86 @@
+{
+  "title": "Same-Day Delivery & Urgent Courier West Midlands",
+  "slug": "same-day-delivery",
+  "shortTitle": "Same-Day Delivery",
+  "metaTitle": "Same-Day Delivery Birmingham & West Midlands | Jimmys Removals",
+  "metaDescription": "Fast, dedicated same-day delivery and pallet courier services across Birmingham and the UK. Direct point-to-point transit with Clean Air Zone compliant vans.",
+  "heroHeading": "Dedicated Same-Day Delivery & Express Courier Across the UK",
+  "heroSubheading": "Urgent pallet deliveries, commercial contracts, retail collections, and time-critical items dispatched immediately with direct point-to-point transit.",
+  "icon": "clock",
+  "summary": "When delivery deadlines cannot wait, Jimmys Removals provides dedicated same-day van delivery services. We pick up from your commercial premises, manufacturing plant, or residence and drive straight to the recipient with zero shared cargo or intermediate depot stops.",
+  "benefits": [
+    "Direct collection within 60 minutes across Birmingham and the Black Country",
+    "Point-to-point dedicated courier transit — your goods are never co-loaded",
+    "Clean Air Zone compliant Luton and panel vans with tail-lift capabilities",
+    "Live transit updates and real-time electronic proof of delivery (POD)",
+    "Comprehensive Goods in Transit cover up to £50,000 per consignment"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Immediate Quotation & Booking",
+      "description": "Provide collection and delivery postcodes along with consignment weight and dimensions for an instant, competitive fixed price."
+    },
+    {
+      "step": 2,
+      "title": "Rapid Vehicle Dispatch",
+      "description": "A dedicated van is assigned and dispatched immediately to collect your freight within Birmingham and neighbouring industrial parks."
+    },
+    {
+      "step": 3,
+      "title": "Direct Non-Stop Transit",
+      "description": "Your items travel securely straight to the delivery destination anywhere in England, Wales, or Scotland with no detours."
+    },
+    {
+      "step": 4,
+      "title": "Signature & Electronic POD",
+      "description": "Upon arrival, the recipient signs for the consignment and electronic proof of delivery is instantly emailed to you."
+    }
+  ],
+  "whatsIncluded": [
+    "Dedicated 3.5-tonne Luton van or high-top panel van",
+    "Direct collection and non-stop point-to-point delivery",
+    "Tail lift handling for palletized or heavy freight",
+    "Real-time driver updates and electronic delivery signature",
+    "Full goods in transit insurance cover"
+  ],
+  "whatsNotIncluded": [
+    "Co-loading with unrelated consignments",
+    "Dangerous goods (ADR regulated hazardous chemicals)",
+    "Unattended drop-offs without authorised recipient signature",
+    "Packaging supplies unless requested upon dispatch"
+  ],
+  "priceFrom": 95,
+  "priceUnit": "fixed dispatch",
+  "priceNotes": "Achievable starting price for a local same-day van delivery within Birmingham and the Black Country up to 15 miles.",
+  "faqs": [
+    {
+      "question": "How quickly can you collect in Birmingham?",
+      "answer": "We routinely achieve collection within 45 to 60 minutes for urgent same-day bookings across the Birmingham metropolitan area.",
+      "display": true
+    },
+    {
+      "question": "Can you handle standard UK pallets on same-day delivery?",
+      "answer": "Yes. Our Luton vans feature electric tail lifts and pallet trucks, comfortably accommodating up to 4 standard UK pallets (1200mm x 1000mm) up to vehicle payload limits.",
+      "display": true
+    },
+    {
+      "question": "Do you deliver same-day to London, Manchester, or nationwide?",
+      "answer": "Yes. While based in Birmingham, our dedicated same-day vehicles travel directly to London, the North West, Scotland, the South West, and throughout mainland Great Britain.",
+      "display": true
+    },
+    {
+      "question": "Is electronic proof of delivery provided?",
+      "answer": "Yes, we capture a printed name, timestamp, and signature at the point of delivery and send confirmation to you immediately.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["man-and-van", "long-distance-removals", "office-removals", "storage"],
+  "heroImage": "/images/services/same-day-delivery.webp",
+  "gallery": [
+    "/images/gallery/courier-van.webp",
+    "/images/gallery/pallet-loading.webp"
+  ],
+  "order": 5,
+  "featured": false
+}

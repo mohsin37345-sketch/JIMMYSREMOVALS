@@ -1,0 +1,125 @@
+---
+import LegalLayout from 'theme/layouts/LegalLayout.astro';
+import { siteConfig } from 'src/data/site';
+
+const title = 'Privacy Policy';
+const description = `Privacy Policy for ${siteConfig.legalName}. Learn how we collect, protect, and process your personal data under the UK GDPR and Data Protection Act 2018.`;
+const lastUpdated = '2026-06-10';
+
+const headings = [
+  { depth: 2, slug: 'data-controller', text: '1. Data Controller Identification' },
+  { depth: 2, slug: 'information-collected', text: '2. Information We Collect' },
+  { depth: 2, slug: 'lawful-basis', text: '3. Lawful Basis for Processing' },
+  { depth: 2, slug: 'data-retention', text: '4. Data Retention Periods' },
+  { depth: 2, slug: 'data-sharing', text: '5. Third-Party Processors & Disclosures' },
+  { depth: 2, slug: 'international-transfers', text: '6. International Data Transfers' },
+  { depth: 2, slug: 'your-rights', text: '7. Your Statutory Rights Under UK GDPR' },
+  { depth: 2, slug: 'complaints-ico', text: '8. How to Complain to the ICO' }
+];
+---
+
+<LegalLayout
+  title={title}
+  description={description}
+  lastUpdated={lastUpdated}
+  headings={headings}
+>
+  <p class="lead text-lg font-medium text-slate-800 dark:text-slate-200">
+    This Privacy Policy explains how {siteConfig.legalName} ("we", "us", "our") collects, protects, uses, and retains personal data when you visit our website (<a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a>), request a house removal or logistics quote, or book transport and storage services across Birmingham, the Black Country, and the wider West Midlands.
+  </p>
+
+  <p>
+    We operate in full compliance with the United Kingdom General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We are committed to transparency, data minimisation, and respecting your individual privacy rights.
+  </p>
+
+  <h2 id="data-controller">1. Data Controller Identification</h2>
+  <p>
+    For the purposes of the UK GDPR and the Data Protection Act 2018, the Data Controller is:
+  </p>
+  <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm space-y-1">
+    <p><strong>Entity Name:</strong> {siteConfig.legalName}</p>
+    <p><strong>Trading Name:</strong> {siteConfig.businessName}</p>
+    <p><strong>Company Registration Number:</strong> {siteConfig.companyNumber}</p>
+    <p><strong>Registered Address:</strong> {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.addressRegion}, {siteConfig.address.postalCode}</p>
+    <p><strong>Email Address:</strong> <a href={`mailto:${siteConfig.email}`} class="underline text-amber-600 dark:text-amber-400">{siteConfig.email}</a></p>
+    <p><strong>Telephone:</strong> <a href={`tel:${siteConfig.phoneE164}`} class="underline text-amber-600 dark:text-amber-400">{siteConfig.phone}</a></p>
+  </div>
+
+  <h2 id="information-collected">2. Information We Collect</h2>
+  <p>
+    We only collect personal information that is strictly necessary to estimate, coordinate, execute, and invoice house removals, furniture deliveries, and storage contracts. This includes:
+  </p>
+  <ul>
+    <li><strong>Contact Particulars:</strong> Full name, contact telephone numbers (mobile and landline), and personal or business email address.</li>
+    <li><strong>Address & Transit Logistics:</strong> Current residential or commercial collection address (including postcode), destination delivery address (including postcode), access characteristics (flight of stairs, lift availability, parking clearances, and Clean Air Zone boundary location).</li>
+    <li><strong>Inventory & Property Specifications:</strong> Number of bedrooms, approximate cubic volume of furniture and boxed belongings, special handling declarations (such as upright pianos, antiques, or high-value works of art), and dismantling/reassembly requests.</li>
+    <li><strong>Booking & Scheduling Preferences:</strong> Target completion or exchange dates, scheduling flexibility, and key release arrangements.</li>
+    <li><strong>Technical & Interaction Data:</strong> IP address, browser type, referral URLs, and interactions with online tools (such as our moving cost calculator), gathered under explicit consent through Google Consent Mode v2.</li>
+  </ul>
+
+  <h2 id="lawful-basis">3. Lawful Basis for Processing</h2>
+  <p>
+    Under Article 6 of the UK GDPR, we rely on the following lawful bases to process your personal data:
+  </p>
+  <ul>
+    <li><strong>Contractual Necessity (Article 6(1)(b)):</strong> Processing is essential to prepare an itemised quotation at your request, schedule vehicle and porter resources, navigate routes to your addresses, transport your personal effects, and execute the removals contract.</li>
+    <li><strong>Legal Obligation (Article 6(1)(c)):</strong> We are legally required to maintain customer transaction records, invoices, and VAT declarations for statutory accounting, tax compliance with HM Revenue & Customs (HMRC), and commercial insurance obligations.</li>
+    <li><strong>Legitimate Interests (Article 6(1)(f)):</strong> We process data to maintain vehicle tracking (telematics) for driver safety and route efficiency, prevent fraudulent quote submissions, protect network security, and defend against potential legal claims.</li>
+    <li><strong>Consent (Article 6(1)(a)):</strong> We only send optional marketing emails, newsletters, or seasonal moving tips where you have provided an explicit, unticked opt-in checkbox. You may withdraw consent at any time.</li>
+  </ul>
+
+  <h2 id="data-retention">4. Data Retention Periods</h2>
+  <p>
+    We do not retain personal data longer than necessary for the purposes for which it was originally collected:
+  </p>
+  <ul>
+    <li><strong>Unprogressed Quotation Enquiries:</strong> Quotation requests and calculator submissions that do not proceed to a confirmed booking are retained for <strong>24 months</strong> from the date of submission to accommodate delayed property transaction chains and allow re-quoting.</li>
+    <li><strong>Completed Job & Financial Records:</strong> Move contracts, customer invoices, signed job completion sheets, and payment receipts are retained for <strong>6 years</strong> following the end of the financial year in which the move occurred, in compliance with HMRC statutory record-keeping rules and commercial insurance limitation periods.</li>
+    <li><strong>Marketing Communications:</strong> Kept until you unsubscribe or withdraw your consent, at which point your email is moved to a suppression list to ensure no further contact.</li>
+  </ul>
+
+  <h2 id="data-sharing">5. Third-Party Processors & Disclosures</h2>
+  <p>
+    We never sell, rent, or trade your personal information to third parties. We share data only with vetted third-party service providers acting strictly as data processors under binding data processing agreements:
+  </p>
+  <ul>
+    <li><strong>Form Processing & Dispatch:</strong> Secure webhook and email transmission providers (such as Web3Forms) for delivering customer enquiries to our Birmingham office.</li>
+    <li><strong>IT Infrastructure & Hosting:</strong> Vercel Inc. for cloud hosting and content delivery network (CDN) services.</li>
+    <li><strong>Analytics (Consent-Gated):</strong> Google Analytics 4, operating strictly under Google Consent Mode v2 where analytics storage remains denied until explicit opt-in.</li>
+    <li><strong>Insurers & Professional Advisers:</strong> Commercial Goods in Transit and Public Liability underwriters in the event of an insurance claim or formal incident investigation.</li>
+  </ul>
+
+  <h2 id="international-transfers">6. International Data Transfers</h2>
+  <p>
+    Where cloud service providers process data outside the United Kingdom or the European Economic Area (EEA), transfers are governed by the UK International Data Transfer Agreement (IDTA) or the European Commission's Standard Contractual Clauses (SCCs) supplemented by the UK Addendum, guaranteeing an equivalent level of data protection.
+  </p>
+
+  <h2 id="your-rights">7. Your Statutory Rights Under UK GDPR</h2>
+  <p>
+    Under the UK GDPR and Data Protection Act 2018, you possess substantial statutory rights regarding your personal information:
+  </p>
+  <ul>
+    <li><strong>Right of Access (Subject Access Request):</strong> You have the right to request a copy of the personal information we hold about you.</li>
+    <li><strong>Right to Rectification:</strong> You may request correction of inaccurate, out-of-date, or incomplete records.</li>
+    <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> You may request deletion of your personal data where retention is no longer required for legal or contractual compliance.</li>
+    <li><strong>Right to Restrict Processing:</strong> You have the right to request restriction of processing while an accuracy or objection claim is verified.</li>
+    <li><strong>Right to Data Portability:</strong> You may request your personal data in a structured, commonly used, and machine-readable format.</li>
+    <li><strong>Right to Object:</strong> You have the right to object to data processing based on legitimate interests or direct marketing.</li>
+  </ul>
+  <p>
+    To exercise any of these rights, please contact our Data Protection Coordinator in writing at <a href={`mailto:${siteConfig.email}`} class="underline text-amber-600 dark:text-amber-400">{siteConfig.email}</a>. We respond to all verified requests within one calendar month at zero charge.
+  </p>
+
+  <h2 id="complaints-ico">8. How to Complain to the ICO</h2>
+  <p>
+    If you believe that we have handled your personal information unlawfully or failed to uphold your statutory rights, we encourage you to contact us first so we can resolve your concerns promptly.
+  </p>
+  <p>
+    You retain the statutory right to lodge a formal complaint at any time with the UK supervisory authority for data protection:
+  </p>
+  <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm space-y-2">
+    <p><strong>Information Commissioner's Office (ICO)</strong></p>
+    <p>Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF</p>
+    <p>Helpline: 0303 123 1113 | Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" class="underline text-amber-600 dark:text-amber-400">https://ico.org.uk</a></p>
+  </div>
+</LegalLayout>

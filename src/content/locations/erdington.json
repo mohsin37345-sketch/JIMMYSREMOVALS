@@ -1,0 +1,67 @@
+{
+  "town": "Erdington",
+  "slug": "erdington",
+  "county": "West Midlands",
+  "metaTitle": "Erdington Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Erdington. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides reliable house and flat removals across Erdington. Centred on its bustling high street, grand Victorian villas along Gravelly Hill, and suburban avenues in Short Heath and Stockland Green, Erdington is a vibrant north Birmingham community. We offer transparent pricing, punctual arrival, and careful loading for every move, protecting your mattresses, sofas, and delicate possessions with heavy-duty quilted covers.  Our moving specialists ensure that your furniture, electronics, and boxes are packed and secured with care, providing a dependable, cost-effective service for every resident across Erdington. We operate 7 days a week with flexible booking windows and clear, fixed-price quotations.",
+  "localKnowledge": "Erdington borders Spaghetti Junction (M6 Junction 6) and the A38. Our drivers know how to steer clear of bottlenecks near Salford Circus, choosing quiet residential routes around Brookvale Park and Highcroft to keep moving schedules completely on track.",
+  "postcodes": [
+    "B23",
+    "B24"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    },
+    {
+      "name": "Sutton Coldfield",
+      "slug": "sutton-coldfield"
+    },
+    {
+      "name": "West Bromwich",
+      "slug": "west-bromwich"
+    }
+  ],
+  "travelInfo": "Quick access via the A38 Tyburn Road, A5127 Gravelly Hill, and Spaghetti Junction.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Erdington is outside the Birmingham CAZ boundary."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Gravelly Hill and Stockland Green?",
+      "answer": "Yes, we cover all B23 and B24 postcodes throughout Erdington.",
+      "display": true
+    },
+    {
+      "question": "Are your vans compliant with the Birmingham Clean Air Zone?",
+      "answer": "Yes, our entire fleet is Euro 6 compliant with zero CAZ fees.",
+      "display": true
+    },
+    {
+      "question": "Can you help move heavy appliances from Victorian cellars?",
+      "answer": "Yes, our porters have the lifting equipment to navigate steep cellar staircases.",
+      "display": true
+    },
+    {
+      "question": "Do you offer flexible hourly rates in Erdington?",
+      "answer": "Yes, our man and van hourly options offer great flexibility for smaller moves.",
+      "display": true
+    }
+  ],
+  "lat": 52.525,
+  "lng": -1.84,
+  "tier": 2,
+  "heroImage": "/images/locations/erdington.webp"
+}

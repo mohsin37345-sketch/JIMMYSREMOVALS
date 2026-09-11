@@ -1,0 +1,108 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  url?: string;
+  title?: string;
+}
+
+const {
+  url = Astro.url.href,
+  title = 'Jimmys Removals and Logistics LTD'
+} = Astro.props;
+
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+---
+
+<div class="flex flex-wrap items-center gap-2 py-4" id="social-share-widget">
+  <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mr-1">Share Guide:</span>
+
+  <!-- X (formerly Twitter) -->
+  <a
+    href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share this guide on X"
+    class="w-8 h-8 rounded-lg bg-black hover:bg-slate-800 text-white flex items-center justify-center transition"
+  >
+    <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a
+    href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share this guide on Facebook"
+    class="w-8 h-8 rounded-lg bg-[#1877F2] hover:opacity-90 text-white flex items-center justify-center transition"
+  >
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+    </svg>
+  </a>
+
+  <!-- WhatsApp -->
+  <a
+    href={`https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share this guide on WhatsApp"
+    class="w-8 h-8 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center transition"
+  >
+    <Icon name="whatsapp" class="w-4 h-4" />
+  </a>
+
+  <!-- Email -->
+  <a
+    href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
+    aria-label="Share this guide via Email"
+    class="w-8 h-8 rounded-lg bg-slate-700 hover:bg-slate-800 text-white flex items-center justify-center transition"
+  >
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+    </svg>
+  </a>
+
+  <!-- Copy Link -->
+  <button
+    type="button"
+    id="copy-guide-link-btn"
+    aria-label="Copy guide link to clipboard"
+    class="h-8 px-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold text-xs flex items-center gap-1.5 transition active:scale-95"
+  >
+    <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+    </svg>
+    <span id="copy-btn-text">Copy Link</span>
+  </button>
+</div>
+
+<script is:inline>
+  (function() {
+    const copyBtn = document.getElementById('copy-guide-link-btn');
+    const copyText = document.getElementById('copy-btn-text');
+    if (!copyBtn || !copyText) return;
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyText.textContent = 'Copied!';
+        copyBtn.classList.add('text-emerald-600', 'dark:text-emerald-400');
+        setTimeout(() => {
+          copyText.textContent = 'Copy Link';
+          copyBtn.classList.remove('text-emerald-600', 'dark:text-emerald-400');
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(window.location.href);
+        }
+        copyText.textContent = 'Copied!';
+        setTimeout(() => { copyText.textContent = 'Copy Link'; }, 2000);
+      }
+    });
+  })();
+</script>

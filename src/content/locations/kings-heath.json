@@ -1,0 +1,66 @@
+{
+  "town": "Kings Heath",
+  "slug": "kings-heath",
+  "county": "West Midlands",
+  "metaTitle": "Kings Heath Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Kings Heath. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Moving to or from Kings Heath? Jimmys Removals provides bespoke house removals, flat transfers, and packing across B14. Known for its independent shops, vibrant arts scene, and Victorian and Edwardian terraced avenues, Kings Heath demands an agile removals team capable of managing on-street parking and tight period hallways. Our courteous team handles every item with care, using protective covers and stair dollies.  We take the worry out of moving home in Kings Heath, offering complete packing solutions, experienced porters, and modern low-emission vehicles that keep your moving day running on schedule. We are fully familiar with local road layouts, parking considerations, and period home staircases.",
+  "localKnowledge": "Kings Heath features Low Traffic Neighbourhood (LTN) modal filters and bus priority lanes along Alcester Road. Our drivers are thoroughly briefed on active travel planters and bollards, selecting approved access routes to avoid dead-ends when approaching residential streets.",
+  "postcodes": [
+    "B14"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Moseley",
+      "slug": "moseley"
+    },
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    },
+    {
+      "name": "Selly Oak",
+      "slug": "selly-oak"
+    }
+  ],
+  "travelInfo": "Main artery via the A435 Alcester Road connecting south towards the M42.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Kings Heath is outside the Clean Air Zone, though our vans are fully compliant."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you handle LTN road closures in Kings Heath?",
+      "answer": "Our drivers are fully updated on local council traffic schemes to navigate permitted access routes.",
+      "display": true
+    },
+    {
+      "question": "Do you move upright pianos in Kings Heath period homes?",
+      "answer": "Yes, we specialize in upright piano moves using protective covers and dollies.",
+      "display": true
+    },
+    {
+      "question": "Can you help with parking arrangements outside terraced houses?",
+      "answer": "We advise customers on reserving cones or applying for bay dispensations where needed.",
+      "display": true
+    },
+    {
+      "question": "Are your movers polite and respectful?",
+      "answer": "Yes, our team is praised for courteous, friendly, and patient customer care.",
+      "display": true
+    }
+  ],
+  "lat": 52.434,
+  "lng": -1.894,
+  "tier": 2,
+  "heroImage": "/images/locations/kings-heath.webp"
+}

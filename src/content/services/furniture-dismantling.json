@@ -1,0 +1,86 @@
+{
+  "title": "Furniture Dismantling & Reassembly Birmingham",
+  "slug": "furniture-dismantling",
+  "shortTitle": "Furniture Dismantling",
+  "metaTitle": "Furniture Dismantling & Reassembly Birmingham | Jimmys Removals",
+  "metaDescription": "Professional furniture dismantling and assembly in Birmingham. Sliding wardrobes, ottoman beds, dining tables and flat-pack reassembly by insured movers.",
+  "heroHeading": "Expert Furniture Dismantling & Flat-Pack Assembly",
+  "heroSubheading": "Never struggle with Allen keys or stubborn fittings again. Our experienced team dismantles wardrobes, bunk beds, and dining suites before rebuilding them perfectly in your new home.",
+  "icon": "wrench",
+  "summary": "Oversized, awkward furniture often cannot navigate doorways, narrow stairwells, or hallway turns without being carefully dismantled. Jimmys Removals provides skilled dismantling and reassembly, bagging all hardware securely so nothing is lost in transit.",
+  "benefits": [
+    "Expert handling of multi-door sliding wardrobes and complex ottoman frames",
+    "All bolts, screws, and brackets catalogued and bagged safely per item",
+    "Professional power drivers, hex sets, and specialist assembly hand tools",
+    "Safe navigation of tight doorways and spiral stairwells without damage",
+    "Full reassembly and levelling in your chosen room before sign-off"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Furniture Inspection",
+      "description": "We identify which items require dismantling to pass through doors and assess original manufacture fixings."
+    },
+    {
+      "step": 2,
+      "title": "Careful Deconstruction",
+      "description": "Panels, doors, and internal shelving are gently disassembled. Fixings are sealed in labelled hardware pouches attached to frames."
+    },
+    {
+      "step": 3,
+      "title": "Protective Transit Wrapping",
+      "description": "Glass doors, mirrored panels, and timber pieces are wrapped in heavy transit blankets to prevent scratches."
+    },
+    {
+      "step": 4,
+      "title": "Precision Reconstruction",
+      "description": "At your new home, our team rebuilds each item, ensuring hinges are aligned, drawers slide smoothly, and frames are level."
+    }
+  ],
+  "whatsIncluded": [
+    "Full dismantling and reconstruction of agreed furniture items",
+    "All necessary professional tools, screwdrivers, and hex keys",
+    "Labelling, bagging, and securing of all hardware and screws",
+    "Protective wrapping of individual panels and mirrored components",
+    "Insurance protection throughout dismantling and rebuild"
+  ],
+  "whatsNotIncluded": [
+    "Repair of pre-existing water damage or stripped particle-board screw threads",
+    "Wall-mounting of heavy mirrors or headboards into structural masonry",
+    "Plumbing connections for integrated washing machines",
+    "Custom carpentry modifications to fit smaller room dimensions"
+  ],
+  "priceFrom": 60,
+  "priceUnit": "per item add-on",
+  "priceNotes": "Achievable starting price for standard bed frame dismantling and reassembly as an add-on to a house move.",
+  "faqs": [
+    {
+      "question": "Can you dismantle IKEA PAX wardrobes?",
+      "answer": "Yes. IKEA PAX wardrobes and large multi-door flat-pack units are some of the most common items we disassemble and reconstruct during house removals.",
+      "display": true
+    },
+    {
+      "question": "What happens to the screws and brackets during transit?",
+      "answer": "All fixing hardware, dowels, and screws are placed into dedicated heavy-duty resealable bags and taped directly to the corresponding furniture framework so nothing is misplaced.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle children's bunk beds or cabin beds?",
+      "answer": "Yes. Bunk beds and high-sleeper cabin desks are dismantled with care, ensuring every structural support bracket is tagged for correct reassembly.",
+      "display": true
+    },
+    {
+      "question": "Do you assemble brand new boxed furniture delivered to our new home?",
+      "answer": "Yes, we can assemble newly purchased boxed flat-pack furniture as part of your move service. Simply advise us in advance so we schedule extra technician time.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "flat-removals", "packing-services", "office-removals"],
+  "heroImage": "/images/services/furniture-dismantling.webp",
+  "gallery": [
+    "/images/gallery/furniture-assembly.webp",
+    "/images/gallery/wardrobe-panels.webp"
+  ],
+  "order": 11,
+  "featured": false
+}

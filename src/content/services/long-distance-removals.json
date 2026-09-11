@@ -1,0 +1,86 @@
+{
+  "title": "Long-Distance Removals & UK-Wide Relocations",
+  "slug": "long-distance-removals",
+  "shortTitle": "Long-Distance Removals",
+  "metaTitle": "Long-Distance Removals Birmingham | UK-Wide Movers | Jimmys Removals",
+  "metaDescription": "Direct point-to-point UK-wide removals from Birmingham and the West Midlands. London, Manchester, Scotland, and South Coast relocations. Dedicated vehicle, no co-loading.",
+  "heroHeading": "Direct, Dedicated Long-Distance Removals Nationwide",
+  "heroSubheading": "Moving from the West Midlands to London, Cornwall, Manchester, or Scotland? Enjoy guaranteed direct delivery dates with a dedicated vehicle and no intermediate depot handling.",
+  "icon": "map",
+  "summary": "Relocating to another corner of the country requires meticulous route planning, dependable vehicles, and dedicated timing. Jimmys Removals provides direct, point-to-point long-distance removals from Birmingham and the West Midlands to any UK destination.",
+  "benefits": [
+    "Dedicated vehicle exclusively carrying your belongings — zero co-loading with strangers",
+    "Guaranteed delivery dates agreed in writing prior to moving day",
+    "Comprehensive Goods in Transit insurance up to £50,000 across all UK motorways",
+    "Live driver GPS communication and tracking updates throughout the journey",
+    "Experienced long-haul crews familiar with London, coastal, and rural Scottish routes"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Detailed Video or Home Survey",
+      "description": "We establish precise cubic volume, road access at both ends, and optimal delivery windows for long-distance transit."
+    },
+    {
+      "step": 2,
+      "title": "Dedicated Loading",
+      "description": "Our team systematically loads and blankets your entire home into dedicated Luton vehicles, locking the cargo doors for non-stop travel."
+    },
+    {
+      "step": 3,
+      "title": "Direct Highway Transit",
+      "description": "The van travels directly along major UK arterial routes (M1, M6, M5, M40, A1M) straight to your new destination."
+    },
+    {
+      "step": 4,
+      "title": "Destination Placement & Assembly",
+      "description": "Upon arrival, our crew unloads into designated rooms and rebuilds essential furniture so you can sleep in comfort on night one."
+    }
+  ],
+  "whatsIncluded": [
+    "Dedicated Luton van and experienced 2-person long-haul crew",
+    "All motorway fuel, tolls (e.g. Dartford Crossing, M6 Toll where planned)",
+    "Clean Air Zone, London ULEZ, and LEZ compliance fees included",
+    "Full packing blankets, sofa ties, and floor runners",
+    "Goods in Transit insurance up to £50,000"
+  ],
+  "whatsNotIncluded": [
+    "Overnight ferry fares to Isle of Wight, Isle of Man, or Channel Islands unless itemised",
+    "Long-term destination storage if completion is delayed beyond agreed window",
+    "Customer flight or rail travel tickets",
+    "Customs import paperwork (Great Britain domestic only)"
+  ],
+  "priceFrom": 550,
+  "priceUnit": "fixed UK quote",
+  "priceNotes": "Achievable starting price for a 1-bedroom flat move from Birmingham to London (125 miles) with dedicated vehicle.",
+  "faqs": [
+    {
+      "question": "Do you co-load my belongings with other customers' goods on long journeys?",
+      "answer": "No. We believe in dedicated point-to-point moves. Your removal van is 100% dedicated to your household, eliminating any risk of mix-ups or delayed deliveries.",
+      "display": true
+    },
+    {
+      "question": "Can you handle long-distance moves to Scotland, Wales, or Cornwall?",
+      "answer": "Yes. We regularly undertake relocations from the West Midlands to Edinburgh, Glasgow, the Scottish Highlands, South Wales, Pembrokeshire, Devon, and Cornwall.",
+      "display": true
+    },
+    {
+      "question": "Are your vans compliant with London's Ultra Low Emission Zone (ULEZ)?",
+      "answer": "Yes. Our fleet complies with Euro 6 standards, allowing unrestricted entry into Greater London's ULEZ and Congestion Charge zones.",
+      "display": true
+    },
+    {
+      "question": "How do you handle overnight moves?",
+      "answer": "For journeys exceeding 200 miles or involving multi-bedroom homes, we often load on day one, travel and stay overnight near the destination, and unload first thing on morning two.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "flat-removals", "packing-services", "storage"],
+  "heroImage": "/images/services/long-distance-removals.webp",
+  "gallery": [
+    "/images/gallery/motorway-van.webp",
+    "/images/gallery/long-distance-pack.webp"
+  ],
+  "order": 12,
+  "featured": true
+}

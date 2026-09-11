@@ -1,0 +1,67 @@
+{
+  "town": "Nuneaton",
+  "slug": "nuneaton",
+  "county": "Warwickshire",
+  "metaTitle": "Nuneaton Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Nuneaton. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides professional house removals, flat moves, and student relocations throughout Nuneaton. As northern Warwickshire's largest town, Nuneaton offers diverse housing from Victorian terraces in Abbey Green to modern family developments in Weddington, St Nicolas Park, and Whitestone. Our experienced porters ensure your possessions arrive safely, backed by full insurance and transparent fixed pricing.  Our transparent pricing, modern fleet, and experienced removal porters ensure that your house or flat move in Nuneaton is completed safely, on budget, and with zero unnecessary stress. We supply double-walled boxes, wardrobe cartons, and quilted covers for complete peace of mind. We work seven days a week to accommodate your completion schedule.",
+  "localKnowledge": "Nuneaton is linked to Coventry by the A444 corridor. In established residential avenues around Weddington and Horeston Grange, private driveways provide straightforward van access, while our crew is adept at managing tighter road widths near the town centre.",
+  "postcodes": [
+    "CV10",
+    "CV11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Coventry",
+      "slug": "coventry"
+    },
+    {
+      "name": "Bedworth",
+      "slug": "bedworth"
+    },
+    {
+      "name": "Tamworth",
+      "slug": "tamworth"
+    }
+  ],
+  "travelInfo": "Connected via the A444, A47, and close to the M6 Junction 3.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Nuneaton operates without a Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Weddington and Whitestone in Nuneaton?",
+      "answer": "Yes, we cover all CV10 and CV11 addresses across Nuneaton.",
+      "display": true
+    },
+    {
+      "question": "Can you help move from Nuneaton to London or Manchester?",
+      "answer": "Yes, our dedicated long-distance removal service delivers direct across the UK.",
+      "display": true
+    },
+    {
+      "question": "Do you dismantle flat-pack beds and wardrobes?",
+      "answer": "Yes, our team carries full toolsets to dismantle and assemble furniture.",
+      "display": true
+    },
+    {
+      "question": "Are your packing boxes heavy duty?",
+      "answer": "Yes, we supply strong double-walled corrugated cardboard boxes for moves.",
+      "display": true
+    }
+  ],
+  "lat": 52.523,
+  "lng": -1.468,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp"
+}

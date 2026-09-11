@@ -1,0 +1,66 @@
+{
+  "town": "Selly Oak",
+  "slug": "selly-oak",
+  "county": "West Midlands",
+  "metaTitle": "Selly Oak Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Selly Oak. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals is the leading removals specialist in Selly Oak, serving students, university lecturers, medical professionals, and local families. Spanning bustling student roads near the University of Birmingham to quiet family avenues in Bournville and Ten Acres, we provide efficient removals, term-time student storage, and professional packing services. Our teams make moving into halls or suburban homes fast, affordable, and dependable.  From university student term moves to family relocations across Bournville and Ten Acres, our team delivers clean vehicles, hardworking porters, and affordable rates tailored to your specific moving requirements. We provide flexible collection dates, summer storage, and full furniture protection.",
+  "localKnowledge": "Selly Oak experiences major seasonal move peaks in June, July, and September as university tenancies turn over. Narrow terraced streets like Dawlish Road and Heeley Road get congested with cars, so we schedule early morning arrivals to secure parking and complete loading swiftly.",
+  "postcodes": [
+    "B29"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Harborne",
+      "slug": "harborne"
+    },
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    },
+    {
+      "name": "Northfield",
+      "slug": "northfield"
+    }
+  ],
+  "travelInfo": "Direct links via the A38 Bristol Road and the new Selly Oak bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Selly Oak is outside the Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you offer student discounts for moves in Selly Oak?",
+      "answer": "Yes, we provide student-friendly rates and van-sharing options for campus relocations.",
+      "display": true
+    },
+    {
+      "question": "Can you store our boxes over the summer holiday?",
+      "answer": "Yes, we collect your belongings, store them securely, and redeliver for the autumn term.",
+      "display": true
+    },
+    {
+      "question": "Do you service Queen Elizabeth Hospital staff relocations?",
+      "answer": "Yes, we regularly assist NHS doctors and nursing staff moving near the QE hospital.",
+      "display": true
+    },
+    {
+      "question": "Are your removal vans clean and well-maintained?",
+      "answer": "Our vans are cleaned after every job and fully equipped with blankets and ties.",
+      "display": true
+    }
+  ],
+  "lat": 52.44,
+  "lng": -1.936,
+  "tier": 2,
+  "heroImage": "/images/locations/selly-oak.webp"
+}

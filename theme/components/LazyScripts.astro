@@ -1,0 +1,41 @@
+---
+const gaId = import.meta.env.PUBLIC_GA4_ID || '';
+---
+
+{gaId && (
+  <script is:inline define:vars={{ gaId }}>
+    (function() {
+      let loaded = false;
+      function loadThirdPartyScripts() {
+        if (loaded) return;
+        loaded = true;
+
+        // Clean up interaction triggers
+        window.removeEventListener('scroll', loadThirdPartyScripts);
+        window.removeEventListener('mousemove', loadThirdPartyScripts);
+        window.removeEventListener('touchstart', loadThirdPartyScripts);
+        window.removeEventListener('keydown', loadThirdPartyScripts);
+
+        // Load GA4
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        document.head.appendChild(script);
+
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        };
+      }
+
+      // Trigger on interaction or fallback timer
+      window.addEventListener('scroll', loadThirdPartyScripts, { passive: true, once: true });
+      window.addEventListener('mousemove', loadThirdPartyScripts, { passive: true, once: true });
+      window.addEventListener('touchstart', loadThirdPartyScripts, { passive: true, once: true });
+      window.addEventListener('keydown', loadThirdPartyScripts, { passive: true, once: true });
+      setTimeout(loadThirdPartyScripts, 4000);
+    })();
+  </script>
+)}

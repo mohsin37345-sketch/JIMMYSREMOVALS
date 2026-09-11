@@ -1,0 +1,28 @@
+{
+  "service": "house-removals",
+  "location": "solihull",
+  "uniqueIntro": "Jimmys Removals provides premium, white-glove house removals across the Borough of Solihull. From expansive executive homes in Knowle, Dorridge, and Alderbrook to elegant apartments in Touchwood and Olton, our courteous team treats your furniture and personal treasures with meticulous attention to detail.",
+  "localAngle": "Solihull moves often feature substantial square footage, manicured gravel drives, and luxury hardwood or marble floors. We use rubber-wheeled moving dollies and heavy-duty walkway runners to protect every surface.",
+  "faqs": [
+    {
+      "question": "How do you protect gravel driveways in Solihull?",
+      "answer": "We use pneumatic rubber-wheeled moving equipment to ensure gravel driveways remain undisturbed during loading.",
+      "display": true
+    },
+    {
+      "question": "Do you supply wardrobe boxes for luxury clothing?",
+      "answer": "Yes, we supply upright wardrobe cartons with hanging rails to keep designer garments pristine.",
+      "display": true
+    },
+    {
+      "question": "Can you move high-value antiques in Solihull?",
+      "answer": "Yes, our £50,000 Goods in Transit insurance and bespoke packing protect fragile antiques and art.",
+      "display": true
+    },
+    {
+      "question": "Are weekend removals available in Solihull?",
+      "answer": "Yes, we operate 7 days a week, including Saturdays and Sundays, with zero hidden weekend surcharges.",
+      "display": true
+    }
+  ]
+}

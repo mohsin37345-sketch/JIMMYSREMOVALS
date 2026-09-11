@@ -1,0 +1,275 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import SocialShare from 'theme/components/SocialShare.astro';
+import FAQ, { type FaqItem } from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import Icon from 'theme/components/Icon.astro';
+import { formatDate } from 'theme/utils/formatDate';
+
+export interface HeadingItem {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+export interface Props {
+  post: {
+    title: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    date: string | Date;
+    updatedDate?: string | Date;
+    author: string;
+    category: string;
+    tags?: string[];
+    readingTimeText?: string;
+    wordCount?: number;
+    relatedServices?: string[];
+    relatedLocations?: string[];
+    faqs?: FaqItem[];
+  };
+  headings?: HeadingItem[];
+}
+
+const { post, headings = [] } = Astro.props;
+
+const dateString = typeof post.date === 'string' ? post.date : post.date.toISOString().split('T')[0];
+const updatedDateString = post.updatedDate 
+  ? (typeof post.updatedDate === 'string' ? post.updatedDate : post.updatedDate.toISOString().split('T')[0])
+  : undefined;
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Blog', item: '/blog/' },
+  { name: post.category, item: `/blog/category/${post.category.toLowerCase().replace(/\s+/g, '-')}/` },
+  { name: post.title, item: Astro.url.pathname }
+];
+
+const blogPostSchema = {
+  headline: post.title,
+  description: post.description,
+  image: post.image,
+  datePublished: dateString,
+  dateModified: updatedDateString,
+  author: post.author,
+  wordCount: post.wordCount || 950,
+  category: post.category,
+  url: Astro.url.pathname
+};
+
+// Filter headings for TOC (h2 and h3)
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+// Fallback services & locations for internal linking requirement
+const relatedServices = (post.relatedServices && post.relatedServices.length > 0)
+  ? post.relatedServices
+  : ['house-removals', 'packing-services'];
+
+const relatedLocations = (post.relatedLocations && post.relatedLocations.length > 0)
+  ? post.relatedLocations
+  : ['birmingham'];
+---
+
+<BaseLayout
+  title={`${post.title} | Jimmys Removals Guide`}
+  description={post.description}
+  image={post.image}
+  imageAlt={post.imageAlt}
+  type="article"
+  schemaType="BlogPost"
+  breadcrumbs={breadcrumbs}
+  faqs={post.faqs || []}
+  blogPost={blogPostSchema}
+>
+  <Hero
+    variant="blog"
+    title={post.title}
+    subtitle={post.description}
+    badge={post.category}
+    author={post.author}
+    date={formatDate(post.date)}
+    readingTimeText={post.readingTimeText || '4 min read'}
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Article Grid with Sticky Desktop TOC -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Main Content Column -->
+      <article class="lg:col-span-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-sm space-y-8">
+        
+        <!-- Mobile Collapsible Table of Contents -->
+        {tocHeadings.length > 0 && (
+          <details class="lg:hidden p-4 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800">
+            <summary class="font-bold text-sm text-slate-900 dark:text-white cursor-pointer list-none flex items-center justify-between">
+              <span class="flex items-center gap-2">
+                <Icon name="navigation" class="w-4 h-4 text-amber-500" />
+                <span>Table of Contents</span>
+              </span>
+              <Icon name="chevron-down" class="w-4 h-4 text-slate-400" />
+            </summary>
+            <nav class="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700 text-xs space-y-1.5" aria-label="Mobile Table of Contents">
+              {tocHeadings.map((h) => (
+                <a
+                  href={`#${h.slug}`}
+                  class={`block hover:text-amber-600 dark:hover:text-amber-400 transition-colors ${
+                    h.depth === 3 ? 'pl-4 text-slate-500 dark:text-slate-400' : 'font-semibold text-slate-700 dark:text-slate-200'
+                  }`}
+                >
+                  {h.text}
+                </a>
+              ))}
+            </nav>
+          </details>
+        )}
+
+        <!-- Featured Article Image -->
+        {post.image && (
+          <div class="aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+            <img
+              src={post.image}
+              alt={post.imageAlt || post.title}
+              class="w-full h-full object-cover"
+              loading="eager"
+            />
+          </div>
+        )}
+
+        <!-- Prose Article Body -->
+        <div class="prose prose-slate dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
+          <slot />
+        </div>
+
+        <!-- Social Share Block -->
+        <div class="pt-6 border-t border-slate-200 dark:border-slate-800">
+          <SocialShare title={post.title} />
+        </div>
+
+        <!-- FAQs Accordion (if provided in frontmatter) -->
+        {post.faqs && post.faqs.length > 0 && (
+          <div class="pt-6 border-t border-slate-200 dark:border-slate-800">
+            <FAQ faqs={post.faqs} title="Article FAQs & Common Questions" />
+          </div>
+        )}
+
+        <!-- Related Services and Locations (Internal Linking Requirement) -->
+        <div class="pt-8 border-t border-slate-200 dark:border-slate-800 space-y-4">
+          <h4 class="text-sm font-bold uppercase tracking-wider text-slate-400">
+            Recommended Removals Services & Coverage
+          </h4>
+          <div class="flex flex-wrap gap-2.5 text-xs">
+            {relatedServices.map((svcSlug) => (
+              <a
+                href={`/removals/${svcSlug}/`}
+                class="px-3.5 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800 font-semibold hover:bg-amber-100 transition"
+              >
+                {svcSlug.split('-').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')} &rarr;
+              </a>
+            ))}
+            {relatedLocations.map((locSlug) => (
+              <a
+                href={`/areas/${locSlug}/`}
+                class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center gap-1.5"
+              >
+                <Icon name="map-pin" class="w-3.5 h-3.5 text-amber-500" />
+                <span>Removals in {locSlug.charAt(0).toUpperCase() + locSlug.slice(1)}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Desktop Sidebar with Sticky TOC -->
+      <aside class="hidden lg:block lg:col-span-4 sticky top-28 space-y-6">
+        
+        {tocHeadings.length > 0 && (
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
+              <Icon name="navigation" class="w-4 h-4 text-amber-500" />
+              <span>In This Article</span>
+            </h3>
+            <nav id="desktop-toc-nav" class="space-y-2 text-xs" aria-label="Article Table of Contents">
+              {tocHeadings.map((h) => (
+                <a
+                  href={`#${h.slug}`}
+                  data-heading-id={h.slug}
+                  class={`block transition-colors py-0.5 ${
+                    h.depth === 3 
+                      ? 'pl-3 text-slate-500 hover:text-amber-600 dark:text-slate-400 dark:hover:text-amber-400' 
+                      : 'font-semibold text-slate-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-amber-400'
+                  }`}
+                >
+                  {h.text}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+
+        <!-- Quick Quote Widget -->
+        <div class="p-6 rounded-2xl bg-amber-500 text-slate-950 shadow-md space-y-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider block">Moving Soon?</span>
+          <h4 class="text-lg font-extrabold leading-snug">Get Your Fixed Removals Quote</h4>
+          <p class="text-xs text-slate-900/80 leading-relaxed">
+            Fully insured, Euro 6 Clean Air Zone compliant Luton vans serving the entire West Midlands.
+          </p>
+          <a
+            href="/get-a-quote/"
+            class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-slate-950 text-white font-bold text-xs hover:bg-slate-900 transition shadow"
+          >
+            Instant Free Quote &rarr;
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <CTABand />
+</BaseLayout>
+
+<!-- Scroll-Spy Script for Desktop TOC -->
+<script is:inline>
+  (function() {
+    const tocLinks = Array.from(document.querySelectorAll('#desktop-toc-nav a'));
+    if (tocLinks.length === 0) return;
+
+    const headingEls = tocLinks
+      .map((link) => {
+        const id = link.getAttribute('data-heading-id');
+        return id ? document.getElementById(id) : null;
+      })
+      .filter(Boolean);
+
+    function onScroll() {
+      const scrollPos = window.scrollY + 140;
+      let activeId = null;
+
+      for (let i = headingEls.length - 1; i >= 0; i--) {
+        const el = headingEls[i];
+        if (el && el.offsetTop <= scrollPos) {
+          activeId = el.id;
+          break;
+        }
+      }
+
+      tocLinks.forEach((link) => {
+        if (link.getAttribute('data-heading-id') === activeId) {
+          link.classList.add('text-amber-600', 'dark:text-amber-400', 'font-bold');
+        } else {
+          link.classList.remove('text-amber-600', 'dark:text-amber-400', 'font-bold');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>

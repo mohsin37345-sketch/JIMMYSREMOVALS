@@ -1,0 +1,86 @@
+{
+  "title": "Office & Commercial Removals Birmingham & West Midlands",
+  "slug": "office-removals",
+  "shortTitle": "Office Removals",
+  "metaTitle": "Office Removals Birmingham & West Midlands | Jimmys Removals",
+  "metaDescription": "Commercial office removals and business relocations in Birmingham, Solihull, and Coventry. Minimal downtime, evening and weekend moves, IT crate hire and desk dismantling.",
+  "heroHeading": "Commercial Relocations & Office Moves with Zero Downtime",
+  "heroSubheading": "Scheduled weekend and out-of-hours office removals across Birmingham, Solihull, and Coventry. Professional handling of workstations, IT equipment, and archive files.",
+  "icon": "briefcase",
+  "summary": "Minimising operational disruption is the top priority for any commercial relocation. Jimmys Removals plans and executes commercial moves over weekends and evenings, ensuring your staff leave on Friday and walk into a fully functional workspace on Monday morning.",
+  "benefits": [
+    "Out-of-hours, evening, and weekend moves to prevent business interruption",
+    "Computer crate hire, anti-static foam wraps, and server transit",
+    "Commercial desk dismantling and modular screen reassembly",
+    "Confidential document handling and secure archiving transfer",
+    "£2,000,000 Public Liability and comprehensive commercial transit insurance"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Site Survey & Project Plan",
+      "description": "We visit your current and destination offices, reviewing floor plans, building management protocols, lift access, and phasing requirements."
+    },
+    {
+      "step": 2,
+      "title": "Crate Delivery & IT Labeling",
+      "description": "We deliver heavy-duty sealable commercial crates and color-coded labels for each employee workstation and IT peripheral set."
+    },
+    {
+      "step": 3,
+      "title": "Out-of-Hours Relocation",
+      "description": "Our team dismantles furniture, protects IT gear in dedicated computer crates, and transports everything according to strict timelines."
+    },
+    {
+      "step": 4,
+      "title": "Floor Plan Placement & Sign-Off",
+      "description": "Workstations, chairs, and filing units are reconstructed in exact accordance with your new commercial floor plan ready for trading."
+    }
+  ],
+  "whatsIncluded": [
+    "Dedicated commercial removal project manager",
+    "DBS-checked commercial removal porters and technicians",
+    "Commercial plastic lidded crate hire options",
+    "Floor runners and lift cladding for commercial landlord protection",
+    "Full transit and public liability insurance cover"
+  ],
+  "whatsNotIncluded": [
+    "Network IT server cabling configuration or software patching",
+    "Commercial building dilapidations or ceiling tile repairs",
+    "Disposal of hazardous IT materials (WEEE recycling arranged separately)",
+    "Security access card reprogramming"
+  ],
+  "priceFrom": 490,
+  "priceUnit": "fixed project quote",
+  "priceNotes": "Achievable starting price for a 5-10 desk small office relocation within the Birmingham metropolitan zone during standard business hours.",
+  "faqs": [
+    {
+      "question": "Can you carry out our office move over the weekend?",
+      "answer": "Yes. The vast majority of our commercial clients book weekend moves starting Friday evening, allowing business operations to resume uninterrupted on Monday morning.",
+      "display": true
+    },
+    {
+      "question": "Do you provide plastic crates for employees to pack their desks?",
+      "answer": "Yes, we supply heavy-duty, stackable plastic crates with tamper-evident security seal options, delivered 1 to 2 weeks ahead of moving day.",
+      "display": true
+    },
+    {
+      "question": "Are your removal teams DBS-checked?",
+      "answer": "Yes, all our staff are DBS-checked and carry company photo ID, ensuring complete peace of mind when working in commercial premises with sensitive records.",
+      "display": true
+    },
+    {
+      "question": "Do you provide disposal or recycling of surplus office furniture?",
+      "answer": "Yes, we can provide ethical clearance and donation or recycling for unwanted desks, chairs, and metal filing cabinets through licensed facilities.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["furniture-dismantling", "storage", "packing-services", "house-clearance"],
+  "heroImage": "/images/services/office-removals.webp",
+  "gallery": [
+    "/images/gallery/office-move-1.webp",
+    "/images/gallery/crate-stack.webp"
+  ],
+  "order": 6,
+  "featured": true
+}

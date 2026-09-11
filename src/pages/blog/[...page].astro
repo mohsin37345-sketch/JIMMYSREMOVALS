@@ -1,0 +1,165 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import BlogGrid from 'theme/components/BlogGrid.astro';
+import Pagination from 'theme/components/Pagination.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import Icon from 'theme/components/Icon.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths({ paginate }: any) {
+  let posts: any[] = [];
+  try {
+    posts = await getCollection('blog');
+    posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  } catch (e) {
+    posts = [];
+  }
+
+  // Graceful empty state: return a single route for /blog/ if collection has 0 articles
+  if (posts.length === 0) {
+    return [
+      {
+        params: { page: undefined },
+        props: {
+          page: {
+            data: [],
+            start: 0,
+            end: 0,
+            total: 0,
+            currentPage: 1,
+            size: 12,
+            lastPage: 1,
+            url: { current: '/blog/', prev: undefined, next: undefined }
+          },
+          isEmpty: true
+        }
+      }
+    ];
+  }
+
+  // Paginate at 12 articles per page
+  return paginate(posts, { pageSize: 12 });
+}
+
+export interface Props {
+  page: {
+    data: any[];
+    currentPage: number;
+    lastPage: number;
+    total: number;
+    size: number;
+    start: number;
+    end: number;
+    url: {
+      current: string;
+      prev?: string;
+      next?: string;
+    };
+  };
+  isEmpty?: boolean;
+}
+
+const { page, isEmpty = false } = Astro.props as Props;
+const isZeroState = isEmpty || !page || page.total === 0 || page.data.length === 0;
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Blog & Moving Guides', item: '/blog/' },
+  ...(page.currentPage > 1 ? [{ name: `Page ${page.currentPage}`, item: `/blog/${page.currentPage}/` }] : [])
+];
+
+const formattedPosts = (page?.data || []).map((post: any) => ({
+  title: post.data.title,
+  slug: post.id.replace(/\.(md|mdx)$/, ''),
+  description: post.data.description,
+  image: post.data.image,
+  imageAlt: post.data.imageAlt,
+  date: post.data.date,
+  author: post.data.author,
+  category: post.data.category,
+  readingTimeText: post.data.readingTimeText || '4 min read'
+}));
+
+// Schema blog items with position
+const blogSchemaItems = formattedPosts.map((p, idx) => ({
+  title: p.title,
+  url: `/blog/${p.slug}/`,
+  position: (page.currentPage - 1) * page.size + idx + 1
+}));
+---
+
+<BaseLayout
+  title={
+    isZeroState
+      ? "Moving Guides & Advice | Jimmys Removals"
+      : page.currentPage > 1
+        ? `West Midlands Moving Guides - Page ${page.currentPage} | Jimmys Removals`
+        : "West Midlands Moving Advice & Removals Blog | Jimmys Removals"
+  }
+  description="Practical house moving advice, packing checklists, Clean Air Zone guidance, and West Midlands relocation insights from Jimmys Removals and Logistics LTD."
+  noindex={isZeroState}
+  breadcrumbs={breadcrumbs}
+  schemaType="Blog"
+  blogItems={blogSchemaItems}
+>
+  <Hero
+    variant="page"
+    title={page.currentPage > 1 ? `Moving Guides & Advice (Page ${page.currentPage})` : "Moving Guides & Removals Advice"}
+    subtitle="Expert relocation tips, step-by-step packing guides, and local West Midlands insights to make your moving day completely effortless."
+    badge="Removals Knowledge Hub"
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    {isZeroState ? (
+      <!-- Graceful Empty State Card -->
+      <div class="max-w-2xl mx-auto p-8 sm:p-12 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center shadow-sm space-y-6">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center">
+          <Icon name="clock" class="w-8 h-8" />
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+            Moving Guides & Articles Coming Soon
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-md mx-auto">
+            Our Birmingham removals specialists are currently writing in-depth neighbourhood guides, packing tutorials, and Clean Air Zone moving advice. Check back soon!
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="/get-a-quote/"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow transition interactive-btn"
+          >
+            <span>Get a Free Moving Quote</span>
+            <Icon name="arrow-right" class="w-4 h-4" />
+          </a>
+          <a
+            href="/moving-cost-calculator/"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+          >
+            <span>Cost Calculator</span>
+          </a>
+        </div>
+      </div>
+    ) : (
+      <!-- Active Articles Listing with 12 per Page & Pagination -->
+      <section class="space-y-8">
+        <BlogGrid posts={formattedPosts} />
+        <Pagination page={page} baseUrl="/blog/" />
+      </section>
+    )}
+
+    <!-- Conversion Band -->
+    <CTABand
+      variant="quote"
+      heading="Need Personalised Moving Advice?"
+      subheading="Our Birmingham operations team is on hand 7 days a week to answer route, packing, or access questions."
+      primaryCtaText="Speak to Our Removals Team"
+      primaryCtaHref="/contact-us/"
+    />
+  </div>
+</BaseLayout>

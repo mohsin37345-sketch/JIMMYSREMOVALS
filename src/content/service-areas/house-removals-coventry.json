@@ -1,0 +1,28 @@
+{
+  "service": "house-removals",
+  "location": "coventry",
+  "uniqueIntro": "For smooth, stress-free house removals across Coventry, trust Jimmys Removals. Whether relocating between 1930s semi-detached homes in Cheylesmore and Styvechale or moving into modern family estates in Bannerbrook and Walsgrave, our dedicated teams take care of all packing, loading, and transit with utmost care.",
+  "localAngle": "Coventry's iconic ring road (A4053) requires defensive, expert driving when operating loaded 3.5-tonne Luton vans. Our drivers know every entry and exit slip road to avoid unnecessary loop delays.",
+  "faqs": [
+    {
+      "question": "Do you offer full packing services for Coventry house removals?",
+      "answer": "Yes, we offer full-house or fragile-only packing, providing all boxes, paper, and bubble wrap.",
+      "display": true
+    },
+    {
+      "question": "Are your removal vans exempt from Coventry clean air charges?",
+      "answer": "Yes, Coventry does not levy clean air charges on private removals vans.",
+      "display": true
+    },
+    {
+      "question": "Can you move upright pianos in Coventry?",
+      "answer": "Yes, our specialist moves team uses piano shoes, heavy transit covers, and tail lifts for upright pianos.",
+      "display": true
+    },
+    {
+      "question": "Do you cover long-distance moves from Coventry to London?",
+      "answer": "Yes, we provide direct point-to-point UK relocations with dedicated vehicles.",
+      "display": true
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CleanAirZoneNotice from 'theme/components/CleanAirZoneNotice.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import Icon from 'theme/components/Icon.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Clean Air Zone Compliance', item: '/clean-air-zone/' }
+];
+
+const cazFaqs = [
+  {
+    question: "Do you charge extra for moves inside the Birmingham Clean Air Zone?",
+    answer: "No. While some operators pass non-compliance charges directly onto customers, all Jimmys Removals Luton vans and transit vehicles are 100% Euro 6 compliant. You will never see a Clean Air Zone surcharge on your quotation. For current local authority charge rates for non-compliant private or commercial vehicles, please refer directly to Birmingham City Council's official Clean Air Zone guidance.",
+    display: true
+  },
+  {
+    question: "Which areas of Birmingham are inside the Clean Air Zone (CAZ)?",
+    answer: "The Birmingham Clean Air Zone covers all roads within the A4540 Middleway ring road (though the ring road itself is not in the zone). Key areas inside include Birmingham City Centre, the Jewellery Quarter, Digbeth, Southside, the Chinese Quarter, Eastside, Westside (Broad Street), and the Gun Quarter.",
+    display: true
+  },
+  {
+    question: "Do I need a parking suspension or permit for loading in the city centre?",
+    answer: "Yes, many roads inside the A4540 ring road have restricted loading bays, red routes, or pedestrianised zones. We recommend applying to Birmingham City Council for a temporary parking suspension at least 10 working days before moving day. Our team can advise on the exact bay numbers and vehicle registrations needed.",
+    display: true
+  },
+  {
+    question: "What vehicle emissions standard is required for compliance?",
+    answer: "To enter the Birmingham Class D CAZ without charge, diesel commercial vehicles must meet Euro 6 emissions standards (Euro VI for HGVs) and petrol vehicles must meet Euro 4 standards. Jimmys Removals operates an up-to-date Euro 6 fleet fitted with AdBlue emissions control systems.",
+    display: true
+  },
+  {
+    question: "How does the CAZ operate — what are the operating hours?",
+    answer: "The Birmingham Clean Air Zone operates 24 hours a day, 7 days a week, 365 days a year. Automatic Number Plate Recognition (ANPR) cameras positioned at all entry points to the A4540 ring road log vehicle registrations continuously.",
+    display: true
+  }
+];
+
+const cazDistricts = [
+  { name: "Birmingham City Centre", desc: "Colmore Business District, New Street, Bullring, Snow Hill, and Grand Central." },
+  { name: "Jewellery Quarter", desc: "St Paul's Square, Frederick Street, Warstone Lane, and surrounding residential conversions." },
+  { name: "Digbeth & Eastside", desc: "Custard Factory, High Street Deritend, Millennium Point, and Eastside city apartments." },
+  { name: "Southside & Gay Village", desc: "Hurst Street, Chinatown, Hippodrome Theatre district, and Bristol Street corridors." },
+  { name: "Westside & Broad Street", desc: "Brindleyplace, Gas Street Basin, Symphony Court, and Five Ways borders." },
+  { name: "Gun Quarter & Aston Gateway", desc: "Shadwell Street, Loveday Street, and residential schemes near Dartmouth Circus." }
+];
+---
+
+<BaseLayout
+  title="Birmingham Clean Air Zone (CAZ) Removals | 100% Compliant | Jimmys"
+  description="Fully Euro 6 compliant house and office removals across the Birmingham Clean Air Zone (A4540 Middleway). Zero CAZ surcharges guaranteed. Get your free quote today."
+  breadcrumbs={breadcrumbs}
+  faqs={cazFaqs}
+>
+  <Hero
+    variant="page"
+    title="Birmingham Clean Air Zone (CAZ) Removals"
+    subtitle="100% compliant Euro 6 fleet operating inside the A4540 Middleway with zero CAZ surcharges passed to you."
+    badge="100% CAZ Compliant Fleet"
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Top Callout Component -->
+    <CleanAirZoneNotice variant="full" />
+
+    <!-- Zone Explanation & Map Context -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+          <Icon name="shield-check" class="w-4 h-4" />
+          <span>Class D Clean Air Zone</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Moving Home or Office Inside the A4540 Middleway
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+          Birmingham City Council's Category D Clean Air Zone encompasses all public roads within the A4540 Middleway ring road. High-emission vehicles entering the zone that fail to meet strict emissions thresholds are subject to daily council charges enforced continuously by 24/7 ANPR camera networks. For current daily charge tariffs, vehicle compliance checkers, and boundary maps, visit Birmingham City Council's official Clean Air Zone portal.
+        </p>
+        <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+          At Jimmys Removals and Logistics LTD, <strong>we guarantee zero CAZ surcharges</strong>. Our entire modern removal fleet consists of Euro 6 diesel commercial vehicles equipped with advanced Selective Catalytic Reduction (SCR) exhaust filtration. Whether you are moving into a high-rise apartment in Digbeth, an office near Snow Hill, or a townhouse overlooking St Paul's Square, you will never pay a Clean Air Zone surcharge.
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+          <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <div class="text-emerald-600 dark:text-emerald-400 font-bold text-lg mb-1">£0 Customer Surcharge</div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+              Unlike non-compliant operators who pass on daily council penalty charges to your invoice, our fleet is fully compliant with zero surcharge passed to you.
+            </p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <div class="text-emerald-600 dark:text-emerald-400 font-bold text-lg mb-1">24/7 Zone Access</div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+              Unrestricted access at any time of day or night, ideal for morning moves or out-of-hours commercial relocations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Covered Districts List -->
+      <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+          Central Birmingham CAZ Districts We Serve Daily
+        </h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">
+          Full removal, packing, and dismantling services across all inner-ring postal codes (B1, B2, B3, B4, B5, B15, B16, B18, B19).
+        </p>
+        <ul class="space-y-4">
+          {cazDistricts.map((district) => (
+            <li class="border-b border-slate-200/60 dark:border-slate-800 pb-3 last:border-b-0 last:pb-0">
+              <div class="font-semibold text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                <Icon name="map-pin" class="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                <span>{district.name}</span>
+              </div>
+              <div class="text-xs text-slate-600 dark:text-slate-400 mt-0.5 pl-6">{district.desc}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Parking & Council Suspension Advice -->
+    <section class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div class="max-w-3xl">
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+          City Centre Parking & Loading Suspensions
+        </h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+          While our vehicles are completely CAZ compliant, central Birmingham streets require careful logistics planning. If your property is situated on a pay-and-display street, red route, or narrow one-way lane, you may need a parking suspension from Birmingham City Council.
+        </p>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
+            <div class="text-amber-500 font-bold text-sm mb-1">1. Advance Notice</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Apply to Birmingham City Council at least 10 working days prior to your removal date.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
+            <div class="text-amber-500 font-bold text-sm mb-1">2. Vehicle Details</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">We provide our exact vehicle registration numbers and dimensions for your council application.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
+            <div class="text-amber-500 font-bold text-sm mb-1">3. Loading Clearance</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Our drivers arrive with ramp boards, sack barrows, and tail lifts ready for fast, legal unloading.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <FAQ
+      title="Clean Air Zone Removals: Frequently Asked Questions"
+      subtitle="Clear answers on vehicle compliance, parking, and council regulations."
+      items={cazFaqs}
+    />
+
+    <!-- Conversion CTA -->
+    <CTABand
+      variant="quote"
+      heading="Moving Into or Out of Central Birmingham?"
+      subheading="Get a guaranteed fixed-price quote with zero Clean Air Zone fees and complete peace of mind."
+      primaryCtaText="Get Your Free CAZ Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </div>
+</BaseLayout>

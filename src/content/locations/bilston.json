@@ -1,0 +1,66 @@
+{
+  "town": "Bilston",
+  "slug": "bilston",
+  "county": "West Midlands",
+  "metaTitle": "Bilston Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Bilston. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides experienced house removals, student transfers, and packing services across Bilston, Bradley, and Ettingshall. Famous for its historic open market and vibrant community spirit, Bilston offers great housing value. Our team delivers stress-free moves with clean Luton vans, protective furniture blankets, heavy-duty straps, and friendly, capable porters who treat your property as if it were their own throughout the moving process.  Whether you need a full house removal, assistance moving heavy kitchen white goods, or student transport, our professional team delivers a punctual and insured service designed to make your Bilston move simple. We wrap all furniture in thick transit blankets and secure items with heavy webbing straps.",
+  "localKnowledge": "Bilston's road network connects directly onto the Black Country Route (A463), allowing quick transfers between Wolverhampton and the M6. In older streets near Mount Pleasant and Loxdale, on-street parking requires strategic morning van staging to keep the highway clear.",
+  "postcodes": [
+    "WV14"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Wolverhampton",
+      "slug": "wolverhampton"
+    },
+    {
+      "name": "Dudley",
+      "slug": "dudley"
+    },
+    {
+      "name": "Wednesbury",
+      "slug": "wednesbury"
+    }
+  ],
+  "travelInfo": "Direct links via the Black Country Route (A463) and the A41 Oxford Street.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Bilston does not operate a Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you provide removals in Bradley and Ettingshall?",
+      "answer": "Yes, we cover the whole of Bilston including Bradley, Ettingshall, and Stowlawn.",
+      "display": true
+    },
+    {
+      "question": "Can you help move large American fridge freezers?",
+      "answer": "Yes, our team is equipped with specialized appliance dollies and door-removal tools.",
+      "display": true
+    },
+    {
+      "question": "Are quotes free and without obligation?",
+      "answer": "Yes, all our written quotations are 100% free with no obligation to book.",
+      "display": true
+    },
+    {
+      "question": "Do you offer packing services in Bilston?",
+      "answer": "Yes, we provide full-house, kitchen-only, and fragile-only packing services.",
+      "display": true
+    }
+  ],
+  "lat": 52.566,
+  "lng": -2.074,
+  "tier": 2,
+  "heroImage": "/images/locations/bilston.webp"
+}

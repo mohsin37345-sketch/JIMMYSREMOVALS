@@ -1,0 +1,133 @@
+---
+import 'src/styles/global.css';
+import ConsentInit from 'theme/components/ConsentInit.astro';
+import SEOHead from 'theme/components/SEOHead.astro';
+import SchemaOrg, { type BreadcrumbItem, type FaqItem, type ReviewItem } from 'theme/components/SchemaOrg.astro';
+import Header from 'theme/components/Header.astro';
+import Footer from 'theme/components/Footer.astro';
+import StickyMobileBar from 'theme/components/StickyMobileBar.astro';
+import PersistentCapture from 'theme/components/PersistentCapture.astro';
+import LazyScripts from 'theme/components/LazyScripts.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  schemaType?: 'Home' | 'Service' | 'Location' | 'ServiceArea' | 'About' | 'Contact' | 'Blog' | 'BlogPost' | 'Legal' | 'Generic';
+  noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  faqs?: FaqItem[];
+  serviceData?: {
+    name: string;
+    description: string;
+    priceFrom?: number;
+    url: string;
+  };
+  locationData?: {
+    town: string;
+    county: string;
+    postcodes: string[];
+    lat: number;
+    lng: number;
+    url: string;
+  };
+  reviews?: ReviewItem[];
+  blogPost?: {
+    headline: string;
+    description: string;
+    image: string;
+    datePublished: string;
+    dateModified?: string;
+    author: string;
+    wordCount?: number;
+    category?: string;
+    url: string;
+  };
+  blogItems?: Array<{
+    title: string;
+    url: string;
+    position?: number;
+  }>;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image,
+  imageAlt,
+  type = 'website',
+  schemaType = 'Generic',
+  noindex = false,
+  breadcrumbs = [],
+  faqs = [],
+  serviceData,
+  locationData,
+  reviews = [],
+  blogPost,
+  blogItems = []
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-GB" dir="ltr" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 1. Google Consent Mode v2 (Must be first script in head) -->
+    <ConsentInit />
+
+    <!-- 2. SEO Meta, OpenGraph, Canonical, Favicons, Dark Mode Init -->
+    <SEOHead
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+      imageAlt={imageAlt}
+      type={type}
+      noindex={noindex}
+    />
+
+    <!-- 3. Centralized JSON-LD Schema.org Graph -->
+    <SchemaOrg
+      type={schemaType}
+      breadcrumbs={breadcrumbs}
+      faqs={faqs}
+      serviceData={serviceData}
+      locationData={locationData}
+      reviews={reviews}
+      blogPost={blogPost}
+      blogItems={blogItems}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-amber-500 selection:text-white pb-14 sm:pb-0">
+    <!-- Accessible Skip to Main Landmark Link -->
+    <a href="#main-content" class="skip-link">
+      Skip to main content
+    </a>
+
+    <!-- Global Header -->
+    <Header />
+
+    <!-- Main Landmark Content -->
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer />
+
+    <!-- Mobile Sticky Call / WhatsApp / Quote Bar -->
+    <StickyMobileBar />
+
+    <!-- Persistent Capture Suite (Callback Widget, Checklist & Exit Intent) -->
+    <PersistentCapture />
+
+    <!-- Deferred Interaction-gated Scripts -->
+    <LazyScripts />
+  </body>
+</html>

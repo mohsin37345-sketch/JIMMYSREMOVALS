@@ -1,0 +1,66 @@
+{
+  "town": "Bloxwich",
+  "slug": "bloxwich",
+  "county": "West Midlands",
+  "metaTitle": "Bloxwich Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Bloxwich. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Planning a home move in Bloxwich? Jimmys Removals delivers professional, fully insured removals throughout WS3. From character properties near the historic Bloxwich Green and High Street to newer developments around Turnberry Road and Leamore, our moving specialists ensure your household items are moved safely, cleanly, and on budget. With our experienced team handling dismantling, loading, and placement, your move is simple and stress-free.  Our removals team provides complete support on moving day, loading items securely and delivering them directly to your new address with zero hidden fees and full goods in transit protection. We take the stress out of moving with friendly porters, clean vans, and punctual timing.",
+  "localKnowledge": "Bloxwich sits along the northern reach of the A34 connecting Walsall to Cannock. Residential roads around King George V Playing Fields and Blakenall Heath have varied road widths, making our 3.5-tonne Luton vans ideal for accessing driveways without blocking bus routes.",
+  "postcodes": [
+    "WS3"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Walsall",
+      "slug": "walsall"
+    },
+    {
+      "name": "Cannock",
+      "slug": "cannock"
+    },
+    {
+      "name": "Willenhall",
+      "slug": "willenhall"
+    }
+  ],
+  "travelInfo": "Direct links via the A34 Stafford Road and close to M6 Junction 11.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Bloxwich operates without Clean Air Zone surcharges."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Leamore and Blakenall?",
+      "answer": "Yes, we service all WS3 locations including Leamore, Blakenall Heath, and Turnberry.",
+      "display": true
+    },
+    {
+      "question": "Can you supply boxes and bubble wrap in Bloxwich?",
+      "answer": "Yes, we deliver comprehensive packing kits directly to your doorstep.",
+      "display": true
+    },
+    {
+      "question": "What size vans do you operate in Bloxwich?",
+      "answer": "We use spacious 3.5-tonne Luton low-loaders equipped with tail lifts.",
+      "display": true
+    },
+    {
+      "question": "Are your moving staff experienced?",
+      "answer": "All our porters are fully trained, uniformed, and DBS-checked professionals.",
+      "display": true
+    }
+  ],
+  "lat": 52.614,
+  "lng": -2.008,
+  "tier": 2,
+  "heroImage": "/images/locations/bloxwich.webp"
+}

@@ -1,0 +1,77 @@
+{
+  "town": "Birmingham",
+  "slug": "birmingham",
+  "county": "West Midlands",
+  "metaTitle": "Birmingham Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Birmingham. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals delivers dependable, fully insured house and commercial removals across the city of Birmingham. Moving across the UK's second city involves navigating diverse architectural environments, from modern high-rise apartments with strict lift bookings in the Jewellery Quarter and Digbeth to historic Victorian terraced homes in Sparkhill, Balsall Heath, and Harborne. Our dedicated moving teams operate Clean Air Zone compliant Luton vans equipped with tail lifts, high-grade furniture blankets, and heavy-duty transit straps. Whether you are moving a single room studio along Broad Street or relocating a six-bedroom family home in Edgbaston, our experienced porters handle the heavy lifting with precision, care, and total transparency throughout the moving day.  Our experienced removals team provides prompt, polite, and fully insured moving support, ensuring that all furniture, fragile possessions, and household items are transported securely to your new address.",
+  "localKnowledge": "Central Birmingham presents specific logistical demands that our removal drivers handle daily. The Birmingham Clean Air Zone encompasses all roads inside the A4540 Middleway ring road; because our modern fleet complies with Euro 6 standards, our clients avoid the daily non-compliant vehicle charges levied on older vans. For city-centre apartment developments along the canals, Holloway Head, and the Convention Quarter, we coordinate closely with on-site concierges to reserve designated service lift slots and secure loading bay approvals.\n\nIn older suburban quarters such as Small Heath, Sparkhill, and Lozells, narrow Victorian residential streets frequently have cars parked along both kerbs, leaving restricted clearance. Our drivers are skilled at positioning 3.5-tonne Luton vans safely without obstructing through traffic. Furthermore, our scheduling takes into account the morning and evening tidal-flow lanes on the A38(M) Aston Expressway and bottlenecks near Spaghetti Junction (M6 Junction 6), ensuring your move runs to time.",
+  "postcodes": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B15",
+    "B16",
+    "B18",
+    "B19",
+    "B20",
+    "B29",
+    "B30"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Sutton Coldfield",
+      "slug": "sutton-coldfield"
+    },
+    {
+      "name": "Solihull",
+      "slug": "solihull"
+    },
+    {
+      "name": "West Bromwich",
+      "slug": "west-bromwich"
+    }
+  ],
+  "travelInfo": "Direct access via the A38(M) Aston Expressway, M6 Junction 6 (Spaghetti Junction), and the inner A4540 Middleway ring road.",
+  "cleanAirZone": {
+    "enabled": true,
+    "note": "Our entire fleet is 100% compliant with Birmingham's Clean Air Zone inside the A4540 Middleway ring road. You will never pay CAZ penalty surcharges."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you charge extra for entering the Birmingham Clean Air Zone?",
+      "answer": "No. All Jimmys Removals vehicles meet Euro 6 low-emission standards, meaning we operate inside the A4540 Middleway ring road with complete exemption from CAZ fees.",
+      "display": true
+    },
+    {
+      "question": "How do you handle removals in city-centre apartment blocks with restricted lift slots?",
+      "answer": "We arrange timed staging where our porters pre-wrap furnishings and stage items near service elevators, ensuring rapid loading within your booked building concierge time window.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with parking permits in Birmingham residential zones?",
+      "answer": "We advise customers on applying for temporary parking dispensations through Birmingham City Council for controlled parking zones in Edgbaston, Jewellery Quarter, and city-centre streets.",
+      "display": true
+    },
+    {
+      "question": "What size vehicles do you use for house moves in Birmingham?",
+      "answer": "We primarily utilize 3.5-tonne Luton low-loader box vans with tail lifts, offering massive 800+ cubic foot capacities while retaining the maneuverability needed for tight urban roads.",
+      "display": true
+    }
+  ],
+  "lat": 52.4862,
+  "lng": -1.8904,
+  "tier": 1,
+  "heroImage": "/images/locations/birmingham.webp"
+}

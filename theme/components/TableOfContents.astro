@@ -1,0 +1,58 @@
+---
+export interface Props {
+  headings: Array<{ depth: number; slug: string; text: string }>;
+}
+
+const { headings } = Astro.props;
+const filtered = headings.filter((h) => h.depth <= 3);
+---
+
+{filtered.length > 0 && (
+  <nav
+    id="table-of-contents"
+    class="sticky top-24 p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-sm"
+    aria-label="Table of contents"
+  >
+    <div class="font-bold text-slate-900 dark:text-white mb-3 flex items-center justify-between">
+      <span>On this page</span>
+    </div>
+    <ul class="space-y-1.5 border-l border-slate-200 dark:border-slate-800 pl-3">
+      {filtered.map((h) => (
+        <li class={h.depth === 3 ? 'ml-3' : ''}>
+          <a
+            href={`#${h.slug}`}
+            class="toc-link block text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors py-0.5 leading-snug"
+          >
+            {h.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<script is:inline>
+  (function() {
+    const observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            document.querySelectorAll('.toc-link').forEach(function(link) {
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('text-amber-600', 'font-semibold', 'dark:text-amber-400');
+              } else {
+                link.classList.remove('text-amber-600', 'font-semibold', 'dark:text-amber-400');
+              }
+            });
+          }
+        });
+      },
+      { rootMargin: '0px 0px -70% 0px' }
+    );
+
+    document.querySelectorAll('h2[id], h3[id]').forEach(function(h) {
+      observer.observe(h);
+    });
+  })();
+</script>

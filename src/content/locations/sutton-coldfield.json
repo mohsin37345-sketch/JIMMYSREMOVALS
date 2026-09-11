@@ -1,0 +1,70 @@
+{
+  "town": "Sutton Coldfield",
+  "slug": "sutton-coldfield",
+  "county": "West Midlands",
+  "metaTitle": "Sutton Coldfield Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Sutton Coldfield. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides premium house removals and professional packing throughout the Royal Town of Sutton Coldfield. Renowned for historic Sutton Park, prestigious private estates in Four Oaks, and desirable residential quarters in Boldmere, Walmley, and Wylde Green, Sutton Coldfield demands an experienced removals team with meticulous attention to detail. We treat every antique sideboard, framed artwork, and contemporary suite with the utmost care, utilising quilted furniture covers, specialized floor runners, and fully insured 3.5-tonne Luton vans. Whether moving within the town or relocating across the UK, our DBS-checked team provides a polished, stress-free moving experience.  With our experienced moving porters, clean modern vehicles, and comprehensive transit insurance, you can rest assured that your family home move in the Royal Town of Sutton Coldfield will be executed to the highest standards. We treat every antique and decorative heirloom with utmost care.",
+  "localKnowledge": "Sutton Coldfield encompasses diverse architectural properties, from private gated estates along the Four Oaks Park conservation area to Victorian and Edwardian villas near the town centre and 1930s suburban avenues in Boldmere. In conservation areas like Four Oaks, gravel roadways, low-hanging mature beech trees, and preservation guidelines require sensitive driving and the use of pneumatic-tyred moving dollies that leave private driveways unmarked.\n\nHilly topography around Wylde Green and Maney requires secure load strapping inside the vehicle before setting off. When moving clients in the busy shopping corridors of Boldmere Road or Parade, our crews arrive early to secure optimal curbside loading positions without impeding local shoppers or bus routes. With rapid access to the A38 and M6 Toll, we also specialise in long-distance moves from Sutton Coldfield to London and the Home Counties.",
+  "postcodes": [
+    "B72",
+    "B73",
+    "B74",
+    "B75",
+    "B76"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    },
+    {
+      "name": "Erdington",
+      "slug": "erdington"
+    },
+    {
+      "name": "Lichfield",
+      "slug": "lichfield"
+    }
+  ],
+  "travelInfo": "Conveniently reached via the A38 Lichfield Road, A5127, and M6 Toll Junction T3 / M42.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Sutton Coldfield is outside the Birmingham CAZ. No clean air fees apply."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you have experience moving luxury homes in Four Oaks and Little Aston?",
+      "answer": "Yes, our team frequently conducts high-end moves in Four Oaks, providing full packing, antique wrapping, and protective floor runners for luxury residences.",
+      "display": true
+    },
+    {
+      "question": "Can your vans navigate private gravel drives in Sutton Coldfield without damage?",
+      "answer": "Yes, our Luton low-loaders have gentle weight distribution and our porters use rubber pneumatic wheels to protect manicured gravel drives.",
+      "display": true
+    },
+    {
+      "question": "Do you supply specialist wardrobe cartons for designer clothing?",
+      "answer": "Yes, we provide sturdy hanging wardrobe boxes so your garments transfer directly from fitted wardrobes into the van without creasing.",
+      "display": true
+    },
+    {
+      "question": "Is Sutton Coldfield affected by the Birmingham Clean Air Zone?",
+      "answer": "No, Sutton Coldfield is located outside the A4540 Middleway. No CAZ charges apply to domestic moves within the Royal Town.",
+      "display": true
+    }
+  ],
+  "lat": 52.563,
+  "lng": -1.825,
+  "tier": 1,
+  "heroImage": "/images/locations/sutton-coldfield.webp"
+}

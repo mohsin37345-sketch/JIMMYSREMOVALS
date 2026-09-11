@@ -1,0 +1,86 @@
+{
+  "title": "House Removals Birmingham & West Midlands",
+  "slug": "house-removals",
+  "shortTitle": "House Removals",
+  "metaTitle": "House Removals Birmingham & West Midlands | Jimmys Removals",
+  "metaDescription": "Professional house removals across Birmingham and the West Midlands. Fully insured Luton vans, DBS-checked teams, transparent fixed pricing and Clean Air Zone compliant.",
+  "heroHeading": "Stress-Free House Removals Across Birmingham & the West Midlands",
+  "heroSubheading": "Full-service domestic relocations delivered by experienced, DBS-checked removal specialists. Fully insured with up to £50,000 Goods in Transit cover.",
+  "icon": "truck",
+  "summary": "Moving house is one of life's significant milestones. At Jimmys Removals, we combine modern, Clean Air Zone compliant Luton vans with punctual, courteous removal crews who treat your furniture and personal possessions with meticulous care from doorstep to doorstep.",
+  "benefits": [
+    "Clean Air Zone compliant fleet with zero surcharge pass-through",
+    "£50,000 Goods in Transit and £2,000,000 Public Liability insurance",
+    "DBS-vetted, uniformed and experienced removals crews",
+    "Floor protection, mattress bags, and quilted transit blankets included",
+    "Operating 7 days a week with flexible booking windows"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Transparent Survey & Quotation",
+      "description": "We evaluate your property size, access considerations, and volume of items via video survey or online inventory to provide an itemised, guaranteed fixed price."
+    },
+    {
+      "step": 2,
+      "title": "Preparation & Packing Support",
+      "description": "If selected, our team arrives prior to moving day or early on the morning to pack glassware, wrap furnishings, and dismantle designated beds and wardrobes."
+    },
+    {
+      "step": 3,
+      "title": "Protective Loading & Transit",
+      "description": "Possessions are secured in our carpeted Luton vans using heavy-duty webbing straps and protective furniture blankets before direct transit to your new address."
+    },
+    {
+      "step": 4,
+      "title": "Room-by-Room Placement & Sign-Off",
+      "description": "We unload every item directly into the designated rooms at your new home and ensure you are completely satisfied before completing sign-off."
+    }
+  ],
+  "whatsIncluded": [
+    "Full Luton removal van equipped with tail lift",
+    "2 to 4 uniformed removal specialists depending on property size",
+    "Transit blankets, sofa covers, mattress bags, and webbing ties",
+    "Floor runners for carpets and hardwood entrances",
+    "Direct delivery with no consolidation or intermediate depot transfers"
+  ],
+  "whatsNotIncluded": [
+    "Council parking suspension fees where bay permits are necessary",
+    "Disconnection and reconnection of gas appliances or hardwired electrics",
+    "Attic clearances where safe fixed flooring and lighting are not present",
+    "Hazardous substances, car batteries, fuels, and flammable paint liquids"
+  ],
+  "priceFrom": 350,
+  "priceUnit": "fixed quote",
+  "priceNotes": "Achievable price based on a typical 1-2 bedroom home move within a 10-mile radius in the West Midlands with standard vehicular access.",
+  "faqs": [
+    {
+      "question": "How do you calculate house removal costs?",
+      "answer": "Our house removal quotations are calculated based on the cubic volume of your belongings, travel distance between properties, property access (flights of stairs, parking distance), and any optional services like packing or furniture dismantling.",
+      "display": true
+    },
+    {
+      "question": "What happens if there is a delay in receiving keys on completion day?",
+      "answer": "We know property transactions can encounter delays at the bank or solicitor level. Our operations team remains in touch with you throughout the day and our quotation clearly details any waiting time parameters so you have zero surprise fees.",
+      "display": true
+    },
+    {
+      "question": "Do I need to empty chest of drawers and wardrobes before moving?",
+      "answer": "For safety and structural integrity of furniture, wardrobes must be empty. Lightweight clothing may remain in sturdy chests of drawers provided they are not overloaded, but heavy items, books, and breakables must be packed into separate boxes.",
+      "display": true
+    },
+    {
+      "question": "Can your vans access narrow residential streets and terraced avenues?",
+      "answer": "Yes. Our fleet predominantly uses 3.5-tonne Luton low-loader vans which provide the volume required for house moves while retaining the agility to navigate tight Victorian terraces across Birmingham and the Black Country.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["flat-removals", "packing-services", "furniture-dismantling", "storage"],
+  "heroImage": "/images/services/house-removals.webp",
+  "gallery": [
+    "/images/gallery/removal-van-1.webp",
+    "/images/gallery/furniture-loading.webp"
+  ],
+  "order": 1,
+  "featured": true
+}

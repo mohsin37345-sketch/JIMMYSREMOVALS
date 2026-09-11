@@ -1,0 +1,66 @@
+{
+  "town": "Harborne",
+  "slug": "harborne",
+  "county": "West Midlands",
+  "metaTitle": "Harborne Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Harborne. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals delivers premier house removals, flat moves, and fine art relocation throughout Harborne. Revered for its lively High Street, excellent restaurants, and charming Victorian artisan cottages alongside substantial Moor Pool and Court Oak residences, Harborne requires an experienced team that treats your home with meticulous care. We supply floor runners, quilted sofa covers, and dismantling tools for a flawless moving day.  Our commitment to visual excellence and careful handling means your period furnishings, paintings, and glassware are transported safely, giving you complete confidence during your Harborne relocation. We provide bespoke white-glove packing, wardrobe boxes, and floor runners as standard.",
+  "localKnowledge": "Harborne includes the historic Moor Pool garden suburb with narrow winding lanes, tight corners, and strict conservation guidelines. Our drivers use compact 3.5-tonne Luton vehicles to protect manicured verges and hedgerows, utilizing protective floor runners inside homes.",
+  "postcodes": [
+    "B17"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Selly Oak",
+      "slug": "selly-oak"
+    },
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    },
+    {
+      "name": "Moseley",
+      "slug": "moseley"
+    }
+  ],
+  "travelInfo": "Connected via the A4040 Harborne Park Road and B4124 High Street.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Harborne is outside the Birmingham CAZ."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you have experience moving homes in Moor Pool?",
+      "answer": "Yes, we know the conservation area well and use appropriately sized vehicles for narrow lanes.",
+      "display": true
+    },
+    {
+      "question": "Can you move high-value artwork and antiques in Harborne?",
+      "answer": "Yes, we provide custom crate packing and quilted blankets for fine furnishings.",
+      "display": true
+    },
+    {
+      "question": "Do you dismantle luxury beds and wardrobes?",
+      "answer": "Yes, our porters carry full toolsets to dismantle and rebuild complex furniture.",
+      "display": true
+    },
+    {
+      "question": "Are quotes fixed price in Harborne?",
+      "answer": "Yes, we provide fully guaranteed fixed quotes with zero hidden extras.",
+      "display": true
+    }
+  ],
+  "lat": 52.46,
+  "lng": -1.961,
+  "tier": 2,
+  "heroImage": "/images/locations/harborne.webp"
+}

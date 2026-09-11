@@ -1,0 +1,86 @@
+{
+  "title": "Student Removals & Term-Time Storage Birmingham",
+  "slug": "student-moves",
+  "shortTitle": "Student Moves",
+  "metaTitle": "Student Removals Birmingham | University Moves & Storage",
+  "metaDescription": "Affordable student moves and summer holiday storage across University of Birmingham, Aston, BCU, and Warwick. Selly Oak, City Centre and Leamington coverage.",
+  "heroHeading": "Affordable Student Moves & Summer Term Storage",
+  "heroSubheading": "Budget-friendly, reliable relocations for students moving to halls, shared HMO houses, or returning home across the UK. Low rates and small-load flexibility.",
+  "icon": "academic",
+  "summary": "Heading to university or changing student houses in Selly Oak, Edgbaston, or Coventry? Jimmys Removals provides cost-effective, straightforward student removal services. We take care of heavy luggage, desks, computers, and bikes, with flexible summer storage available between academic terms.",
+  "benefits": [
+    "Discounted student-friendly rates with no hidden booking fees",
+    "Serving University of Birmingham, Aston, BCU, Newman, Coventry, and Warwick",
+    "Door-to-door transfers between student halls, shared houses, and family homes",
+    "Flexible collection dates matching university term schedules",
+    "Affordable summer box storage with return delivery in September"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Quick Online or WhatsApp Quote",
+      "description": "Tell us how many suitcases, boxes, and furniture items you have and your current student address."
+    },
+    {
+      "step": 2,
+      "title": "Collection at Halls or House",
+      "description": "Our friendly driver arrives at your campus halls or student house to help load your boxes, bedding, and PC gear."
+    },
+    {
+      "step": 3,
+      "title": "Direct Transit or Summer Storage",
+      "description": "We either drive directly to your new accommodation or store your boxes safely in our alarmed facility over the summer."
+    },
+    {
+      "step": 4,
+      "title": "Fresh Term Delivery",
+      "description": "We deliver your belongings straight to your new university room at the start of the autumn semester."
+    }
+  ],
+  "whatsIncluded": [
+    "Clean removal van with driver and loading assistance",
+    "Door-to-room delivery where parking access permits",
+    "Transit blankets for laptops, TVs, and monitors",
+    "Full Goods in Transit insurance protection",
+    "Flexible booking cancellations with 48 hours notice"
+  ],
+  "whatsNotIncluded": [
+    "End of tenancy deep cleaning services",
+    "Supply of packing boxes unless ordered in advance",
+    "Disposal of accumulated household rubbish left by housemates",
+    "Split collections across more than two distinct addresses without prior agreement"
+  ],
+  "priceFrom": 75,
+  "priceUnit": "fixed student move",
+  "priceNotes": "Achievable starting price for a local room move (up to 8 boxes, suitcase, and bicycle) within 5 miles of Birmingham university campuses.",
+  "faqs": [
+    {
+      "question": "Can two students share a van to reduce moving costs?",
+      "answer": "Yes! If you and a friend or housemate are moving from the same student property or to adjacent accommodations, sharing a van is a great way to split the cost.",
+      "display": true
+    },
+    {
+      "question": "Do you deliver to London, Manchester, Leeds, or other UK university cities?",
+      "answer": "Yes. We offer nationwide student relocation, moving students directly back home or to postgraduate universities across the UK.",
+      "display": true
+    },
+    {
+      "question": "Can you collect from multi-storey student hall accommodation?",
+      "answer": "Yes, we are familiar with campus halls across Birmingham (including Selly Oak, Vale Village, and city-centre campus accommodation). We assist with lift and corridor transfers.",
+      "display": true
+    },
+    {
+      "question": "Can I store my things with you over the summer vacation?",
+      "answer": "Yes, we collect your belongings in June, store them in our secure warehouse, and deliver them back to your new flat or house in September.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["man-and-van", "storage", "packing-services", "flat-removals"],
+  "heroImage": "/images/services/student-moves.webp",
+  "gallery": [
+    "/images/gallery/student-loading.webp",
+    "/images/gallery/boxes-storage.webp"
+  ],
+  "order": 10,
+  "featured": false
+}

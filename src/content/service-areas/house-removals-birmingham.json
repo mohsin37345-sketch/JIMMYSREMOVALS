@@ -1,0 +1,33 @@
+{
+  "service": "house-removals",
+  "location": "birmingham",
+  "uniqueIntro": "Looking for dedicated house removals in Birmingham? Jimmys Removals provides comprehensive domestic moving solutions across the Birmingham metropolitan area. Operating a 100% Clean Air Zone compliant fleet, our DBS-checked removal teams move everything from historic Victorian properties in Edgbaston, Harborne, and Moseley to new developments in Digbeth and Perry Barr with complete peace of mind.",
+  "localAngle": "Moves within Birmingham frequently encounter the Clean Air Zone boundary along the A4540 Middleway. With our Euro 6 compliant fleet, you never incur unexpected clean air daily van surcharges. We also liaise with local building concierges across city-centre apartment complexes to reserve loading bays and lift slots.",
+  "faqs": [
+    {
+      "question": "Do you charge extra for Birmingham Clean Air Zone entry on house moves?",
+      "answer": "No. Our entire vehicle fleet meets Euro 6 low-emission regulations, meaning zero CAZ fees for our clients inside the A4540 Middleway.",
+      "display": true
+    },
+    {
+      "question": "How do you manage parking for house moves in Birmingham terraced roads?",
+      "answer": "We advise on temporary parking dispensations through Birmingham City Council and position our 3.5-tonne Luton vans early in the morning to prevent road obstruction.",
+      "display": true
+    },
+    {
+      "question": "Can you provide packing boxes across Birmingham?",
+      "answer": "Yes, we deliver robust double-walled boxes, bubble wrap, tape, and wardrobe cartons across all Birmingham postcodes prior to moving day.",
+      "display": true
+    },
+    {
+      "question": "What insurance is included with a Birmingham house removal?",
+      "answer": "Every domestic move includes up to £50,000 Goods in Transit cover and £2,000,000 Public Liability insurance as standard.",
+      "display": true
+    }
+  ],
+  "caseStudy": {
+    "title": "4-Bedroom Victorian Terrace Relocation in Harborne",
+    "scenario": "Moving a family from a narrow-access Victorian property on Vivian Road to a contemporary detached home in Edgbaston, requiring furniture dismantling and parking management.",
+    "outcome": "Completed on schedule with full mattress protection, floor runners, and zero damage to original period cornicing."
+  }
+}

@@ -1,0 +1,115 @@
+---
+const cmpId = import.meta.env.PUBLIC_CMP_ID || '';
+---
+
+<!-- Google Consent Mode v2 - Must execute first in <head> -->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+</script>
+
+{cmpId && (
+  <script is:inline id="cookieyes" type="text/javascript" src={`https://cdn-cookieyes.com/client_data/${cmpId}/script.js`}></script>
+)}
+
+<!-- Client-side Cookie Preferences Modal Trigger & Local Fallback Banner -->
+<div
+  id="cookie-consent-banner"
+  class="fixed bottom-0 inset-x-0 z-50 p-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-2xl transition-transform duration-300 translate-y-full"
+  role="region"
+  aria-label="Cookie consent banner"
+>
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="text-sm text-slate-700 dark:text-slate-300">
+      <p class="font-semibold text-slate-900 dark:text-white mb-1">We respect your privacy</p>
+      <p>
+        We use essential cookies to operate this website securely. With your consent, we also use analytical cookies to improve user experience. You can change your preferences at any time. Read our <a href="/cookie-policy/" class="underline text-amber-600 dark:text-amber-400">Cookie Policy</a>.
+      </p>
+    </div>
+    <div class="flex items-center gap-3 shrink-0">
+      <button
+        id="cookie-reject-btn"
+        type="button"
+        class="px-4 py-2 text-sm font-medium border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+      >
+        Reject Non-Essential
+      </button>
+      <button
+        id="cookie-accept-btn"
+        type="button"
+        class="px-4 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white rounded-md transition shadow"
+      >
+        Accept All
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const banner = document.getElementById('cookie-consent-banner');
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    const rejectBtn = document.getElementById('cookie-reject-btn');
+
+    function checkConsent() {
+      const consent = localStorage.getItem('jimmys_cookie_consent');
+      if (!consent) {
+        setTimeout(function() {
+          if (banner) banner.classList.remove('translate-y-full');
+        }, 800);
+      } else if (consent === 'granted') {
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+          });
+        }
+      }
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('jimmys_cookie_consent', 'granted');
+        if (banner) banner.classList.add('translate-y-full');
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+          });
+        }
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('jimmys_cookie_consent', 'denied');
+        if (banner) banner.classList.add('translate-y-full');
+        if (typeof gtag === 'function') {
+          gtag('consent', 'update', {
+            'analytics_storage': 'denied'
+          });
+        }
+      });
+    }
+
+    // Global listener to reopen preferences when clicking footer link
+    window.openCookiePreferences = function() {
+      if (banner) banner.classList.remove('translate-y-full');
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkConsent);
+    } else {
+      checkConsent();
+    }
+  })();
+</script>

@@ -1,0 +1,67 @@
+{
+  "town": "Cannock",
+  "slug": "cannock",
+  "county": "Staffordshire",
+  "metaTitle": "Cannock Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Cannock. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "For trusted house removals, commercial deliveries, and clearance services in Cannock and Hednesford, Jimmys Removals delivers an efficient, reliable service. Situated on the edge of Cannock Chase Area of Outstanding Natural Beauty, Cannock combines mining heritage communities, modern family estates in Hawkesyard, and bustling shopping quarters. We ensure every move is handled safely, cleanly, and on schedule.  From small apartment transfers to complete family house moves near the Chase, our DBS-checked team provides a reliable, courteous, and fully insured service throughout Cannock. We take care of heavy lifting, furniture assembly, and packing so you can relax on moving day. Every relocation is backed by our full goods in transit protection.",
+  "localKnowledge": "Cannock's road network connects directly to the M6 Toll and M6 Junction 11. Roads climbing into Hednesford and towards the Chase feature varied gradients, where our drivers ensure safe vehicle positioning and careful loading of heavy household furniture.",
+  "postcodes": [
+    "WS11",
+    "WS12"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Bloxwich",
+      "slug": "bloxwich"
+    },
+    {
+      "name": "Walsall",
+      "slug": "walsall"
+    },
+    {
+      "name": "Lichfield",
+      "slug": "lichfield"
+    }
+  ],
+  "travelInfo": "Direct links via the A5, A34, and M6 Toll Junctions T7/T8, and M6 Junctions 11/12.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Cannock is outside any Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Hednesford and Heath Hayes?",
+      "answer": "Yes, we cover all WS11 and WS12 postcodes across the Cannock district.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with moves near Cannock Chase?",
+      "answer": "Yes, we regularly move properties bordering the rural Chase with great care.",
+      "display": true
+    },
+    {
+      "question": "Do you provide clearance services in Cannock?",
+      "answer": "Yes, we offer licensed house and garden clearance with ethical recycling.",
+      "display": true
+    },
+    {
+      "question": "Are your moving quotes guaranteed?",
+      "answer": "Yes, all our quotations are fixed and transparent with zero hidden fees.",
+      "display": true
+    }
+  ],
+  "lat": 52.689,
+  "lng": -2.032,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp"
+}

@@ -1,0 +1,210 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import Icon from 'theme/components/Icon.astro';
+import { getCollection } from 'astro:content';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'HTML Sitemap', item: '/sitemap/' }
+];
+
+const services = await getCollection('services');
+const locations = await getCollection('locations');
+const serviceAreas = await getCollection('serviceAreas');
+
+let blogPosts: any[] = [];
+try {
+  blogPosts = await getCollection('blog');
+} catch (e) {
+  blogPosts = [];
+}
+
+const tier1Locations = locations.filter((loc) => loc.data.tier === 1);
+const tier2Locations = locations.filter((loc) => loc.data.tier === 2);
+
+const corePages = [
+  { title: 'Home', href: '/' },
+  { title: 'About Jimmys Removals', href: '/about-us/' },
+  { title: 'Removals & Logistics Services Hub', href: '/removals/' },
+  { title: 'Areas Covered Across West Midlands', href: '/areas/' },
+  { title: 'Transparent Removal Pricing', href: '/prices/' },
+  { title: 'How It Works (Moving Process)', href: '/how-it-works/' },
+  { title: 'Customer Reviews & Feedback', href: '/reviews/' },
+  { title: 'Frequently Asked Questions', href: '/faqs/' },
+  { title: 'Instant Moving Cost Calculator', href: '/moving-cost-calculator/' },
+  { title: 'Birmingham Clean Air Zone (CAZ) Compliance', href: '/clean-air-zone/' },
+  { title: 'Contact Our Birmingham Office', href: '/contact-us/' },
+  { title: 'Get a Free Fixed-Price Quote', href: '/get-a-quote/' }
+];
+
+const legalPages = [
+  { title: 'Privacy Policy', href: '/privacy-policy/' },
+  { title: 'Terms and Conditions', href: '/terms-and-conditions/' },
+  { title: 'Terms of Business', href: '/terms-of-business/' },
+  { title: 'Cookie Policy', href: '/cookie-policy/' },
+  { title: 'Complaints Procedure', href: '/complaints-procedure/' }
+];
+---
+
+<BaseLayout
+  title="HTML Sitemap | Jimmys Removals and Logistics LTD"
+  description="Explore the full directory of Jimmys Removals services, coverage areas across the West Midlands, moving pricing guides, and company resources."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="page"
+    title="HTML Sitemap Directory"
+    subtitle="A comprehensive index of all removal services, West Midlands coverage towns, and company resources."
+    badge="Site Navigation"
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- Core Pages -->
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+          <Icon name="home" class="w-5 h-5 text-amber-500" />
+          <span>Core Pages</span>
+        </h2>
+        <ul class="space-y-2.5 text-sm">
+          {corePages.map((page) => (
+            <li>
+              <a
+                href={page.href}
+                class="text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></span>
+                <span>{page.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+          <Icon name="truck" class="w-5 h-5 text-amber-500" />
+          <span>Services ({services.length})</span>
+        </h2>
+        <ul class="space-y-2.5 text-sm">
+          {services.map((svc) => (
+            <li>
+              <a
+                href={`/removals/${svc.id}/`}
+                class="text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></span>
+                <span>{svc.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Tier 1 Primary Towns -->
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+          <Icon name="map-pin" class="w-5 h-5 text-amber-500" />
+          <span>Tier 1 Hubs ({tier1Locations.length})</span>
+        </h2>
+        <ul class="space-y-2.5 text-sm">
+          {tier1Locations.map((loc) => (
+            <li>
+              <a
+                href={`/areas/${loc.id}/`}
+                class="text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2 font-medium"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span>{loc.data.town} Removals</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Tier 2 Towns -->
+      <div class="md:col-span-2 lg:col-span-3 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+          <Icon name="map" class="w-5 h-5 text-amber-500" />
+          <span>Extended Coverage Towns & Districts ({tier2Locations.length})</span>
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-sm">
+          {tier2Locations.map((loc) => (
+            <a
+              href={`/areas/${loc.id}/`}
+              class="p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></span>
+              <span>{loc.data.town}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Service-Area Routes -->
+      <div class="md:col-span-2 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+          <Icon name="navigation" class="w-5 h-5 text-amber-500" />
+          <span>Specialist Service Routes ({serviceAreas.length})</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-sm">
+          {serviceAreas.map((sa) => (
+            <a
+              href={`/removals/${sa.data.service}/${sa.data.location}/`}
+              class="text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></span>
+              <span>{sa.data.service.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} in {sa.data.location.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Legal & Company Governance -->
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+          <Icon name="shield-check" class="w-5 h-5 text-amber-500" />
+          <span>Legal & Policies</span>
+        </h2>
+        <ul class="space-y-2.5 text-sm">
+          {legalPages.map((page) => (
+            <li>
+              <a
+                href={page.href}
+                class="text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-600"></span>
+                <span>{page.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {blogPosts.length > 0 && (
+          <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3">Blog Guides</h3>
+            <ul class="space-y-2 text-sm">
+              {blogPosts.map((post) => (
+                <li>
+                  <a
+                    href={`/blog/${post.id}/`}
+                    class="text-slate-600 dark:text-slate-400 hover:text-amber-500 transition-colors"
+                  >
+                    {post.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,72 @@
+{
+  "town": "Wolverhampton",
+  "slug": "wolverhampton",
+  "county": "West Midlands",
+  "metaTitle": "Wolverhampton Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Wolverhampton. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "For house removals, apartment relocations, and commercial relocations across Wolverhampton, Jimmys Removals provides an experienced, trusted local service. From leafy detached properties in Tettenhall, Wightwick, and Penn to dense residential communities in Whitmore Reans, Blakenhall, and Wednesfield, we deliver reliable, fully insured removals backed by courteous professionals. Moving home in Wolverhampton demands a team that understands local traffic flows around the inner ring road and can navigate Victorian avenues as smoothly as modern estates off the Stafford Road corridor. We supply complete packing, dismantling, and transit services tailored to your exact timetable, protecting your possessions with heavy-duty transit blankets, quilted mattress covers, and specialist webbing throughout the journey.  Whether you are moving from a suburban semi-detached house, an executive detached property, or a modern apartment, our removal porters handle the loading, transit, and unloading with meticulous care and attention to detail. Every customer receives our comprehensive service guarantee, protective mattress bags, and clear fixed-rate quotation.",
+  "localKnowledge": "Operating in Wolverhampton requires familiarity with the city's key road arteries and urban layout. The Wolverhampton Ring Road (St Davids and St Peters) links all major radials, and timing moves to avoid peak school runs along the A449 Penn Road or the A4123 Birmingham New Road prevents unnecessary transit delays. In historic residential pockets such as Tettenhall Wood and Compton, gravel driveways and mature overhanging trees require careful vehicle manoeuvring, which our drivers handle using low-profile Luton vehicles.\n\nConversely, in high-density terraced streets around Whitmore Reans and Graiseley, on-street parking requires careful early-morning vehicle placement. We also frequently service new housing developments towards i54 and Wobaston Road, where unfinished estate roads and builder traffic require strategic approach routes. Whatever the property style, we ensure your possessions are protected with quilted blankets and anchored securely during transit.",
+  "postcodes": [
+    "WV1",
+    "WV2",
+    "WV3",
+    "WV4",
+    "WV6",
+    "WV10",
+    "WV11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Dudley",
+      "slug": "dudley"
+    },
+    {
+      "name": "Walsall",
+      "slug": "walsall"
+    },
+    {
+      "name": "Bilston",
+      "slug": "bilston"
+    }
+  ],
+  "travelInfo": "Connected via the A449 Penn Road / Stafford Road, A4123 Birmingham New Road, and M54 Junction 2.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Wolverhampton does not operate a Clean Air Zone charging scheme. No emission surcharges apply."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover all Wolverhampton postcodes?",
+      "answer": "Yes, we cover all WV postcodes including WV1 through WV11, servicing Tettenhall, Penn, Bushbury, Wednesfield, Compton, and surrounding Black Country neighbourhoods.",
+      "display": true
+    },
+    {
+      "question": "Can you move heavy furniture into older Victorian homes in Wolverhampton?",
+      "answer": "Yes, our team is equipped with furniture dollies, protective doorway pads, and disassembly tools to navigate traditional tight hallways and staircases safely.",
+      "display": true
+    },
+    {
+      "question": "Is Goods in Transit insurance included for Wolverhampton removals?",
+      "answer": "Yes, every quote includes up to £50,000 Goods in Transit cover and £2,000,000 Public Liability insurance as standard.",
+      "display": true
+    },
+    {
+      "question": "How do you navigate Wolverhampton's inner ring road during busy periods?",
+      "answer": "Our operations desk schedules moves to bypass morning bottlenecks near Chapel Ash and the railway station, selecting optimal transit corridors across the city.",
+      "display": true
+    }
+  ],
+  "lat": 52.5862,
+  "lng": -2.1288,
+  "tier": 1,
+  "heroImage": "/images/locations/wolverhampton.webp"
+}

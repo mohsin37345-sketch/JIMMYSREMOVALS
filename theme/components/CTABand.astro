@@ -1,0 +1,65 @@
+---
+import { siteConfig } from 'src/data/site';
+import Icon from './Icon.astro';
+
+export interface Props {
+  heading?: string;
+  subheading?: string;
+  variant?: 'quote' | 'phone' | 'contact' | string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+}
+
+const {
+  heading = 'Ready to Plan Your Move Across the West Midlands?',
+  subheading = 'Speak directly with our Birmingham operations desk for instant advice, availability, and a guaranteed fixed quotation.',
+  variant = 'quote',
+  primaryCtaText = 'Get a Free Quote',
+  primaryCtaHref = '/get-a-quote/',
+  secondaryCtaText = `Call ${siteConfig.phone}`,
+  secondaryCtaHref = `tel:${siteConfig.phoneE164}`
+} = Astro.props;
+---
+
+<section data-variant={variant} class="py-16 bg-gradient-to-r from-primary-950 via-primary-900 to-slate-900 text-white relative overflow-hidden rounded-3xl my-8">
+  <div class="absolute inset-0 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none"></div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+      <Icon name="shield" class="w-4 h-4" />
+      <span>Insured & DBS-Checked Moving Crews</span>
+    </div>
+
+    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+      {heading}
+    </h2>
+
+    <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+      {subheading}
+    </p>
+
+    <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={primaryCtaHref}
+        class="px-8 py-3.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-amber-600/30 transition-all interactive-btn"
+      >
+        {primaryCtaText}
+      </a>
+      <a
+        href={secondaryCtaHref}
+        class="inline-flex items-center gap-2 px-6 py-3.5 border border-slate-700 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl transition"
+      >
+        <Icon name="phone" class="w-4 h-4 text-amber-400" />
+        <span>{secondaryCtaText}</span>
+      </a>
+    </div>
+
+    <div class="pt-2 text-xs text-slate-400 flex items-center justify-center gap-4 flex-wrap">
+      <span>✓ £50k Goods in Transit Cover</span>
+      <span>✓ Clean Air Zone Compliant Fleet</span>
+      <span>✓ Operating 7 Days a Week</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,166 @@
+---
+import LegalLayout from 'theme/layouts/LegalLayout.astro';
+import { siteConfig } from 'src/data/site';
+
+const title = 'Cookie Policy';
+const description = `Cookie Policy for ${siteConfig.legalName}. Information on our use of essential, functional, and analytical cookies under UK privacy laws.`;
+const lastUpdated = '2026-06-10';
+
+const headings = [
+  { depth: 2, slug: 'what-are-cookies', text: '1. What Are Cookies & Web Storage?' },
+  { depth: 2, slug: 'consent-mode', text: '2. Google Consent Mode v2 Implementation' },
+  { depth: 2, slug: 'cookie-table', text: '3. Inventory of Cookies Used on Our Website' },
+  { depth: 2, slug: 'managing-preferences', text: '4. Managing & Revoking Cookie Preferences' },
+  { depth: 2, slug: 'browser-controls', text: '5. Browser-Level Cookie Management' }
+];
+
+const cookiesData = [
+  {
+    name: 'jimmys_theme',
+    provider: 'Jimmys Removals (First-party)',
+    purpose: 'Stores your preferred visual theme (light mode or dark mode) to prevent screen flickering between pages.',
+    type: 'Essential / Functional',
+    duration: 'Persistent (Local Storage)'
+  },
+  {
+    name: 'jimmys_quote_draft',
+    provider: 'Jimmys Removals (First-party)',
+    purpose: 'Preserves form field entries across the 7-step quote workflow in case of browser refresh.',
+    type: 'Essential / Functional',
+    duration: 'Session (Cleared on browser close)'
+  },
+  {
+    name: 'jimmys_exit_shown',
+    provider: 'Jimmys Removals (First-party)',
+    purpose: 'Ensures the moving checklist exit-intent modal displays at most once per browsing session.',
+    type: 'Essential / Functional',
+    duration: 'Session (Cleared on browser close)'
+  },
+  {
+    name: 'cookieyes-consent / cookie_consent',
+    provider: 'Consent Management Platform',
+    purpose: 'Records your explicit consent choices for analytical and marketing scripts under PECR regulations.',
+    type: 'Essential',
+    duration: '12 Months'
+  },
+  {
+    name: '_ga',
+    provider: 'Google Analytics 4',
+    purpose: 'Distinguishes unique website visitors to measure anonymous visitor traffic, popular routes, and device types.',
+    type: 'Analytics (Consent-Gated)',
+    duration: '2 Years'
+  },
+  {
+    name: '_ga_*',
+    provider: 'Google Analytics 4',
+    purpose: 'Maintains session state and measures interactions during a visit to identify slow-loading pages.',
+    type: 'Analytics (Consent-Gated)',
+    duration: '2 Years'
+  }
+];
+---
+
+<LegalLayout
+  title={title}
+  description={description}
+  lastUpdated={lastUpdated}
+  headings={headings}
+>
+  <p class="lead text-lg font-medium text-slate-800 dark:text-slate-200">
+    This Cookie Policy provides a comprehensive explanation of how {siteConfig.legalName} ("we", "us", "our") uses cookies, local browser storage, and related tracking technologies on our website (<a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a>).
+  </p>
+
+  <p>
+    We strictly adhere to the Privacy and Electronic Communications Regulations 2003 (PECR) and the UK GDPR. Non-essential analytical and advertising cookies are <strong>blocked by default</strong> until you grant explicit opt-in consent through our cookie preferences banner.
+  </p>
+
+  <h2 id="what-are-cookies">1. What Are Cookies & Web Storage?</h2>
+  <p>
+    Cookies are small text files placed on your computer, tablet, or smartphone when you navigate web pages. They enable the website to recognise your device, preserve your moving quote selections as you navigate between steps, remember your dark mode preference, and deliver an efficient browsing experience.
+  </p>
+  <p>
+    In addition to HTTP cookies, our website utilises browser <code>sessionStorage</code> and <code>localStorage</code> to safeguard your quote form progress and prevent frustrating data loss if your connection drops.
+  </p>
+
+  <h2 id="consent-mode">2. Google Consent Mode v2 Implementation</h2>
+  <p>
+    Our website implements <strong>Google Consent Mode v2</strong> as the foundational script in the document <code>&lt;head&gt;</code>. Before any analytical or tracking script executes, default consent parameters for <code>ad_storage</code>, <code>analytics_storage</code>, <code>ad_user_data</code>, and <code>ad_personalization</code> are set to <strong>"denied"</strong>.
+  </p>
+  <p>
+    Only strictly necessary functional cookies (such as security tokens and theme preferences) operate prior to consent. Analytical cookies remain completely inactive until you choose "Accept All" or configure granular permissions in our consent dialogue.
+  </p>
+
+  <h2 id="cookie-table">3. Inventory of Cookies Used on Our Website</h2>
+  <p>
+    The table below provides a complete, transparent inventory of every cookie and browser storage key utilised across our domain:
+  </p>
+
+  <div class="overflow-x-auto my-6">
+    <table class="w-full text-left border-collapse border border-slate-200 dark:border-slate-800 text-xs sm:text-sm">
+      <thead class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white">
+        <tr>
+          <th class="p-3.5 border border-slate-200 dark:border-slate-700 font-bold">Cookie / Key Name</th>
+          <th class="p-3.5 border border-slate-200 dark:border-slate-700 font-bold">Provider</th>
+          <th class="p-3.5 border border-slate-200 dark:border-slate-700 font-bold">Operational Purpose</th>
+          <th class="p-3.5 border border-slate-200 dark:border-slate-700 font-bold">Classification</th>
+          <th class="p-3.5 border border-slate-200 dark:border-slate-700 font-bold">Lifespan</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+        {cookiesData.map((c) => (
+          <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-900/50">
+            <td class="p-3.5 border border-slate-200 dark:border-slate-800 font-mono font-bold text-amber-600 dark:text-amber-400">{c.name}</td>
+            <td class="p-3.5 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">{c.provider}</td>
+            <td class="p-3.5 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">{c.purpose}</td>
+            <td class="p-3.5 border border-slate-200 dark:border-slate-800">
+              <span class={`px-2 py-0.5 rounded text-[11px] font-bold ${
+                c.type.includes('Essential') 
+                  ? 'bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300' 
+                  : 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300'
+              }`}>
+                {c.type}
+              </span>
+            </td>
+            <td class="p-3.5 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-mono text-xs">{c.duration}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="managing-preferences">4. Managing & Revoking Cookie Preferences</h2>
+  <p>
+    You maintain full sovereignty over non-essential cookies. You can inspect, modify, or revoke your consent choices at any time without penalty:
+  </p>
+  <div class="my-4 p-5 rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div>
+      <h4 class="font-bold text-sm text-slate-900 dark:text-white">Adjust Your Cookie Choices</h4>
+      <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Reopen our consent interface to grant or withdraw analytics consent.</p>
+    </div>
+    <button
+      type="button"
+      id="open-cookie-banner-btn"
+      class="px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow transition interactive-btn whitespace-nowrap cursor-pointer"
+      onclick="if(window.openCookiePreferences){window.openCookiePreferences();}else{alert('You can manage cookies directly via your browser settings or clear cookies to reopen the consent banner.');}"
+    >
+      Open Cookie Preferences
+    </button>
+  </div>
+  <p class="text-xs text-slate-500 dark:text-slate-400">
+    A permanent "Cookie Preferences" link is also maintained in the footer of every page on this website.
+  </p>
+
+  <h2 id="browser-controls">5. Browser-Level Cookie Management</h2>
+  <p>
+    In addition to our on-site controls, all modern web browsers allow you to block or delete cookies across all websites you visit:
+  </p>
+  <ul>
+    <li><strong>Google Chrome:</strong> Settings &rarr; Privacy and security &rarr; Third-party cookies.</li>
+    <li><strong>Mozilla Firefox:</strong> Settings &rarr; Privacy & Security &rarr; Enhanced Tracking Protection.</li>
+    <li><strong>Apple Safari:</strong> Settings &rarr; Safari &rarr; Advanced &rarr; Block All Cookies.</li>
+    <li><strong>Microsoft Edge:</strong> Settings &rarr; Cookies and site permissions &rarr; Manage and delete cookies.</li>
+  </ul>
+  <p>
+    Please note that disabling strictly necessary cookies may degrade core website functions, such as retaining multi-step quote progress or remembering your preferred display settings.
+  </p>
+</LegalLayout>

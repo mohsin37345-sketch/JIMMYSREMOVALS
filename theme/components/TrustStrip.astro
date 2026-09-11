@@ -1,0 +1,49 @@
+---
+import { siteConfig } from 'src/data/site';
+import Icon from './Icon.astro';
+
+const trustItems = [
+  {
+    title: 'Fully Insured Fleet',
+    desc: `Goods in Transit ${siteConfig.insurance.goodsInTransit} & Public Liability ${siteConfig.insurance.publicLiability}`,
+    icon: 'shield'
+  },
+  {
+    title: 'DBS-Checked Crews',
+    desc: 'Uniformed, vetted and experienced professional porters',
+    icon: 'check'
+  },
+  {
+    title: 'Clean Air Zone Compliant',
+    desc: 'Euro 6 low-emission vans with zero CAZ surcharge pass-through',
+    icon: 'truck'
+  },
+  {
+    title: 'Transparent Pricing',
+    desc: 'Guaranteed fixed quotes with no hidden fuel or weekend fees',
+    icon: 'clock'
+  }
+];
+---
+
+<section class="border-y border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {trustItems.map((item) => (
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <Icon name={item.icon} class="w-5 h-5" />
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white">
+              {item.title}
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

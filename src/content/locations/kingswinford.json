@@ -1,0 +1,66 @@
+{
+  "town": "Kingswinford",
+  "slug": "kingswinford",
+  "county": "West Midlands",
+  "metaTitle": "Kingswinford Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Kingswinford. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides premium house removals and full packing services throughout Kingswinford and Wall Heath. Characterised by spacious semi-detached and detached family residences, quiet cul-de-sacs, and good schools, Kingswinford is a favoured residential location where our courteous, DBS-checked staff ensure an effortless move. We supply floor protection, wardrobe cartons, and furniture assembly tools so your transition is completely seamless from start to finish.  Our complete removals service includes optional professional packing, protective carpet runners, and careful furniture reassembly, giving Kingswinford residents total peace of mind on moving day. We treat your property with meticulous respect and ensure your transition is completed with zero hassle.",
+  "localKnowledge": "Kingswinford's quiet suburban layouts around Crestwood Park, Charterfields, and Wall Heath feature private driveways and wide cul-de-sacs. Our 3.5-tonne Luton vans reverse easily onto driveways, reducing the walking distance and keeping loading times remarkably swift.",
+  "postcodes": [
+    "DY6"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Stourbridge",
+      "slug": "stourbridge"
+    },
+    {
+      "name": "Dudley",
+      "slug": "dudley"
+    },
+    {
+      "name": "Brierley Hill",
+      "slug": "brierley-hill"
+    }
+  ],
+  "travelInfo": "Easy access via the A449, A491, and A4101 towards Dudley and Wolverhampton.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Kingswinford operates without Clean Air Zone fees."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Wall Heath and Swindon as well?",
+      "answer": "Yes, we cover Kingswinford, Wall Heath, and surrounding South Staffordshire borders.",
+      "display": true
+    },
+    {
+      "question": "Can you provide storage for Kingswinford homeowners?",
+      "answer": "Yes, we offer secure containerised storage with collection and redelivery.",
+      "display": true
+    },
+    {
+      "question": "Do you protect carpets inside the house?",
+      "answer": "Yes, we lay specialized floor runners across hallways and carpets on moving day.",
+      "display": true
+    },
+    {
+      "question": "Can you move pianos in Kingswinford?",
+      "answer": "Yes, we have specialised equipment to move upright pianos safely.",
+      "display": true
+    }
+  ],
+  "lat": 52.498,
+  "lng": -2.164,
+  "tier": 2,
+  "heroImage": "/images/locations/kingswinford.webp"
+}

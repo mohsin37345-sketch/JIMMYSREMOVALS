@@ -1,0 +1,35 @@
+---
+import ServiceCard from './ServiceCard.astro';
+
+export interface Props {
+  services?: any[];
+}
+
+const { services = [] } = Astro.props;
+---
+
+{services.length > 0 ? (
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {services.map((srv: any) => {
+      const item = srv && srv.data ? srv.data : srv;
+      const slug = (srv && srv.id) || item?.slug || '';
+      return (
+        <ServiceCard
+          title={item?.title || ''}
+          slug={slug}
+          icon={item?.icon || 'truck'}
+          summary={item?.summary || ''}
+          priceFrom={item?.priceFrom}
+          priceUnit={item?.priceUnit}
+          featured={item?.featured}
+        />
+      );
+    })}
+  </div>
+) : (
+  <div class="p-8 text-center bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+    <p class="text-slate-600 dark:text-slate-400 text-sm">
+      Our removal services list is currently being refreshed. Please call us directly for quote information.
+    </p>
+  </div>
+)}

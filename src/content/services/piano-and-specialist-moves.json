@@ -1,0 +1,86 @@
+{
+  "title": "Piano & Specialist Antique Removals Birmingham",
+  "slug": "piano-and-specialist-moves",
+  "shortTitle": "Piano & Specialist Moves",
+  "metaTitle": "Piano & Antique Removals Birmingham | Specialist Mover",
+  "metaDescription": "Specialist upright piano, antique and fine art removals in Birmingham & West Midlands. Heavy-duty piano shoes, quilted transit covers and tail-lift Luton vans.",
+  "heroHeading": "Specialist Care for Pianos, Antiques & Fine Art",
+  "heroSubheading": "Precision handling for upright pianos, grandfather clocks, delicate marble, and heirlooms. Padded piano shoes, hydraulic tail lifts, and high-value transit protection.",
+  "icon": "shield",
+  "summary": "Heavy, irreplaceable, and mechanically delicate items demand specialised equipment and skilled handling techniques. Jimmys Removals provides dedicated transport for upright pianos, baby grands, antique grandfather clocks, and fine art pieces across Birmingham and beyond.",
+  "benefits": [
+    "Heavy-duty piano shoes, quilted transit jackets, and non-marking dollies",
+    "Hydraulic tail-lift Luton vans ensuring zero jolting during loading",
+    "Tailored stair-climbing gear and heavy-duty load strapping",
+    "Enhanced goods in transit insurance for declared high-value items",
+    "Climate-controlled, clean van cargo interiors"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Access & Instrument Appraisal",
+      "description": "We evaluate piano dimensions, weight, flights of stairs, tight corner turns, and entrance thresholds at both pickup and drop-off points."
+    },
+    {
+      "step": 2,
+      "title": "Custom Protective Padding",
+      "description": "The instrument is wrapped in thick, quilted moving blankets, secured onto a reinforced piano shoe, and wrapped with protective film."
+    },
+    {
+      "step": 3,
+      "title": "Hydraulic Van Loading",
+      "description": "Using heavy-duty non-slip ramps and tail lifts, the item is rolled smoothly into the van and anchored firmly against cargo lashing rails."
+    },
+    {
+      "step": 4,
+      "title": "Careful Positioning in New Room",
+      "description": "We wheel and settle your piano into its designated room, positioning it away from direct radiators or damp external walls."
+    }
+  ],
+  "whatsIncluded": [
+    "Specialist upright piano moving crew (2 to 4 technicians)",
+    "Padded piano shoe, heavy-duty wheeled dolly, and transit covers",
+    "Hydraulic tail-lift van transport",
+    "Goods in transit insurance coverage up to declared item value",
+    "Floor runners to protect parquet, tiles, and delicate carpets"
+  ],
+  "whatsNotIncluded": [
+    "Tuning services (we advise waiting 2 weeks after moving before tuning)",
+    "External window removal or mobile crane hiring for upper floor access",
+    "Transport of concert grand pianos requiring complete leg disassembly without notice",
+    "Internal acoustic mechanism restoration"
+  ],
+  "priceFrom": 175,
+  "priceUnit": "fixed move",
+  "priceNotes": "Achievable starting price for a ground-floor to ground-floor upright piano move within a 10-mile radius in the West Midlands.",
+  "faqs": [
+    {
+      "question": "Do you move upright pianos up or down flights of stairs?",
+      "answer": "Yes, we can move upright pianos across external or internal steps using specialised ramp systems and multi-crew lifting straps. Please specify the exact step count during your quote request.",
+      "display": true
+    },
+    {
+      "question": "Will my piano need retuning after the move?",
+      "answer": "Yes. Any movement and transition between varying room temperatures and humidity levels causes string tension to adjust. We recommend giving the piano 10-14 days to acclimate in its new environment before booking your tuner.",
+      "display": true
+    },
+    {
+      "question": "Can you move heavy antique furniture like Welsh dressers or grandfather clocks?",
+      "answer": "Yes. We regularly move antique armoires, grandfather clocks (with weights and pendulums separately secured), marble tables, and display cabinets.",
+      "display": true
+    },
+    {
+      "question": "Are you fully insured for high-value antiques?",
+      "answer": "Yes. Our standard Goods in Transit insurance provides £50,000 cover, and we can arrange extended cover for declared individual items of exceptional value.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "flat-removals", "packing-services", "storage"],
+  "heroImage": "/images/services/piano-moves.webp",
+  "gallery": [
+    "/images/gallery/piano-padded.webp",
+    "/images/gallery/antique-transport.webp"
+  ],
+  "order": 9,
+  "featured": false
+}

@@ -1,0 +1,28 @@
+{
+  "service": "house-removals",
+  "location": "wolverhampton",
+  "uniqueIntro": "Moving house in Wolverhampton? Jimmys Removals delivers dependable, fully insured house removals across all WV postcode districts. From prestigious detached properties in Tettenhall and Wightwick to family residences in Penn, Wednesfield, and Bushbury, our friendly crew makes your move seamless and stress-free.",
+  "localAngle": "Navigating the Wolverhampton inner ring road and main radials like the A449 Penn Road requires route familiarity to avoid peak school and commuter congestion. We coordinate arrival times carefully to ensure loading and unloading proceed without delays.",
+  "faqs": [
+    {
+      "question": "Do you cover all Wolverhampton neighbourhoods for house moves?",
+      "answer": "Yes, we service Tettenhall, Penn, Bushbury, Wednesfield, Compton, and all surrounding areas.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle large wardrobes during a Wolverhampton house move?",
+      "answer": "Yes, our porters carry full toolkits to disassemble and reconstruct flat-pack and custom wardrobes.",
+      "display": true
+    },
+    {
+      "question": "How much notice do I need for a house move in Wolverhampton?",
+      "answer": "We recommend 1 to 2 weeks notice once exchange of contracts has occurred, although short-notice bookings can often be accommodated.",
+      "display": true
+    },
+    {
+      "question": "Are your Wolverhampton removal staff DBS-checked?",
+      "answer": "Yes, every member of our removals crew is thoroughly DBS-checked and professionally trained.",
+      "display": true
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "town": "Wednesbury",
+  "slug": "wednesbury",
+  "county": "West Midlands",
+  "metaTitle": "Wednesbury Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Wednesbury. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals is your local moving expert in Wednesbury and the WS10 district. Whether you are moving from a traditional semi-detached house in Friar Park, a period terraced home near the historic Market Place, or a modern family estate near Gallagher Retail Park, we provide punctual moving services with tailored packing, furniture assembly, and secure storage options. Our trained porters handle heavy appliances and delicate items with equal care, ensuring your relocation is completely stress-free.  We understand that moving home can feel overwhelming, which is why our courteous crew arrives on time, works methodically, and handles every piece of furniture with total professionalism throughout your Wednesbury move. We also offer full packing and furniture reassembly options for total convenience.",
+  "localKnowledge": "Wednesbury benefits from immediate proximity to M6 Junction 9. Our drivers utilize alternative routes via Darlaston and Woods Bank when motorway entry slip roads experience heavy freight queues, ensuring that house moves remain on schedule throughout the day.",
+  "postcodes": [
+    "WS10"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Walsall",
+      "slug": "walsall"
+    },
+    {
+      "name": "West Bromwich",
+      "slug": "west-bromwich"
+    },
+    {
+      "name": "Tipton",
+      "slug": "tipton"
+    }
+  ],
+  "travelInfo": "Immediate access to the M6 at Junction 9 and the Black Country Route (A454).",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Wednesbury has no Clean Air Zone charges."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover all areas in WS10?",
+      "answer": "Yes, we cover central Wednesbury, Friar Park, Woods Bank, and surrounding areas.",
+      "display": true
+    },
+    {
+      "question": "Can you provide commercial deliveries from Wednesbury industrial parks?",
+      "answer": "Yes, we offer same-day pallet and commercial delivery services across the UK.",
+      "display": true
+    },
+    {
+      "question": "Are your removal porters DBS checked?",
+      "answer": "Yes, all our staff are DBS-checked and wear smart company uniforms.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with packing delicate china?",
+      "answer": "Yes, our fragile packing service carefully wraps glassware and ceramics in protective materials.",
+      "display": true
+    }
+  ],
+  "lat": 52.553,
+  "lng": -2.015,
+  "tier": 2,
+  "heroImage": "/images/locations/wednesbury.webp"
+}

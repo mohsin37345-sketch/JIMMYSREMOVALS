@@ -1,0 +1,86 @@
+{
+  "title": "Secure Storage Solutions Birmingham",
+  "slug": "storage",
+  "shortTitle": "Storage Solutions",
+  "metaTitle": "Storage Solutions Birmingham | Secure & Flexible | Jimmys Removals",
+  "metaDescription": "Secure, dry, containerised storage in Birmingham for short and long-term domestic and commercial needs. Collection, packing and redelivery available.",
+  "heroHeading": "Flexible, Secure Containerised Storage in Birmingham",
+  "heroSubheading": "Clean, dry and alarmed storage facilities for gap moves, home renovations, commercial excess stock, and student holidays. Full collection and redelivery service.",
+  "icon": "archive",
+  "summary": "Whether bridging the gap between sale and purchase, decluttering prior to a house sale, or undertaking major home extensions, Jimmys Removals provides flexible domestic and commercial containerised storage across the West Midlands.",
+  "benefits": [
+    "24/7 CCTV surveillance, perimeter alarms, and climate-controlled units",
+    "Complete collection and redelivery service by our removals team",
+    "Comprehensive itemised inventory created upon container loading",
+    "Flexible rolling weekly or monthly rental terms with no lengthy lock-ins",
+    "Direct van-to-container loading to minimise handling"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Storage Volume Sizing",
+      "description": "We determine the appropriate container volume (from 35 sq ft rooms to full 250 sq ft units) required to house your belongings safely."
+    },
+    {
+      "step": 2,
+      "title": "Collection & Inventory",
+      "description": "Our team loads your items from your property into protective transit blankets, itemising every carton and piece of furniture."
+    },
+    {
+      "step": 3,
+      "title": "Secure Warehouse Storage",
+      "description": "Your goods are stored in our secure, dry, purpose-built Birmingham storage facility under round-the-clock monitoring."
+    },
+    {
+      "step": 4,
+      "title": "Scheduled Redelivery",
+      "description": "When your new property is ready, simply give us notice and we deliver, unload, and reassemble items in your new home."
+    }
+  ],
+  "whatsIncluded": [
+    "Clean, dry, purpose-built wooden or steel storage containers",
+    "24/7 CCTV and access control security monitoring",
+    "Protective furniture pads and sofa covers while stored",
+    "Digital barcode tracking and written storage manifest",
+    "Optional collection and redelivery by our removal crew"
+  ],
+  "whatsNotIncluded": [
+    "Storage of food, plants, or perishable organic materials",
+    "Storage of flammable fluids, gas canisters, or paints",
+    "Storage of firearms, explosives, or illegal contraband",
+    "Self-access outside standard warehouse operational hours without notice"
+  ],
+  "priceFrom": 25,
+  "priceUnit": "per week",
+  "priceNotes": "Achievable starting price for a 35 sq ft personal container (equivalent to a studio flat or decluttering load).",
+  "faqs": [
+    {
+      "question": "How does containerised storage work compared to self-storage?",
+      "answer": "With our containerised storage, we load your goods directly into secure storage containers at your home or warehouse, sealing them on site. This cuts handling in half compared to self-storage, saving you time and preventing damage.",
+      "display": true
+    },
+    {
+      "question": "How much notice do I need to give to access or retrieve my goods?",
+      "answer": "We ask for at least 48 hours notice so our warehouse technicians can safely locate and unstack your storage container for your access or scheduled delivery.",
+      "display": true
+    },
+    {
+      "question": "Is insurance included while my items are stored?",
+      "answer": "Basic cover is included and comprehensive storage insurance can be scaled according to your declared inventory value.",
+      "display": true
+    },
+    {
+      "question": "Can I store just a few bulky furniture items during decorating?",
+      "answer": "Yes, we regularly store single suites, dining sets, or carpet clearance items for periods ranging from two weeks to several months.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "flat-removals", "packing-services", "student-moves"],
+  "heroImage": "/images/services/storage.webp",
+  "gallery": [
+    "/images/gallery/storage-facility.webp",
+    "/images/gallery/container-loading.webp"
+  ],
+  "order": 7,
+  "featured": false
+}

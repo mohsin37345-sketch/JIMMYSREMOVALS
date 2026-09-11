@@ -1,0 +1,175 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import HowItWorks from 'theme/components/HowItWorks.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import Icon from 'theme/components/Icon.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'How It Works', item: '/how-it-works/' }
+];
+
+const howItWorksFaqs = [
+  {
+    question: "Do you visit our property before providing a quote?",
+    answer: "We offer both flexible video surveys (via WhatsApp or Zoom) and in-person home visits across the West Midlands for larger 3+ bedroom properties. This ensures our cubic volume calculation and access assessment are 100% accurate, resulting in a firm, fixed-price quote.",
+    display: true
+  },
+  {
+    question: "What time will the removal van arrive on moving day?",
+    answer: "For standard domestic house moves, our removal team arrives promptly between 08:00 and 08:30am. This provides ample loading time before the typical midday to 1:00pm solicitor completion and estate key handover window.",
+    display: true
+  },
+  {
+    question: "How do you protect mattresses, upholstery, and delicate televisions?",
+    answer: "We provide heavy-duty quilted transit covers for 2-seater and 3-seater sofas, thick polythene mattress bags to guard against damp and dust, and custom padded flight cases for flat-screen LED/OLED televisions.",
+    display: true
+  },
+  {
+    question: "What happens if there is a delay releasing keys on completion day?",
+    answer: "Chain delays are common in UK property transactions. We include up to 60 minutes of complimentary waiting time after 1:00pm. If solicitors delay fund transfers until late afternoon, our crew remains with your loaded vehicle securely outside the new property.",
+    display: true
+  },
+  {
+    question: "Do I need to arrange council parking suspensions for the removal van?",
+    answer: "If your road has permit restrictions, pay-and-display bays, or double yellow lines (particularly common in central Birmingham, Moseley, or Leamington Spa), you should request a temporary parking dispensation from your local council 10 working days prior. We provide our vehicle dimensions and registration marks upon request.",
+    display: true
+  }
+];
+---
+
+<BaseLayout
+  title="How House Removals Work | Step-by-Step Guide | Jimmys"
+  description="Explore our proven 4-stage relocation process. From video survey and packing to loading day, key exchange, and room-by-room delivery across the West Midlands."
+  breadcrumbs={breadcrumbs}
+  faqs={howItWorksFaqs}
+>
+  <Hero
+    variant="page"
+    title="How Our Removals Process Works"
+    subtitle="From your initial fixed quotation to unloading the final carton, discover our proven 4-stage West Midlands moving framework."
+    badge="Step-by-Step Moving Guide"
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- 4 Steps Component -->
+    <HowItWorks />
+
+    <!-- Detailed Moving Day Deep Dive -->
+    <div class="p-8 sm:p-12 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-8">
+      <div class="max-w-3xl space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+          Moving Day Execution
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Our Moving Day Safeguards & Protocols
+        </h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Punctuality and structured workflow eliminate the chaos typical of moving day. Here is exactly what you can expect when our uniformed removals team arrives at your property:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs mb-2">
+            01
+          </div>
+          <strong class="text-slate-900 dark:text-white block font-bold text-sm">Property Safeguarding</strong>
+          <p class="leading-relaxed">
+            Before lifting furniture, our porters lay protective non-slip carpet runners across hallways and fit padded doorway guards to avoid wall scuffs and muddy footprints.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs mb-2">
+            02
+          </div>
+          <strong class="text-slate-900 dark:text-white block font-bold text-sm">Systematic Loading & Securing</strong>
+          <p class="leading-relaxed">
+            Heaviest items and appliances are positioned over vehicle axles and secured with ratchet webbing. Mirrors, glass tables, and artwork travel in dedicated padded slots.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs mb-2">
+            03
+          </div>
+          <strong class="text-slate-900 dark:text-white block font-bold text-sm">Direct Transit (No Consolidation)</strong>
+          <p class="leading-relaxed">
+            Your load is never mixed with another household's goods. The vehicle travels directly to your new address with zero intermediate depot transfers or delays.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Council Parking & Key Delay Advice -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <h4 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <Icon name="map-pin" class="w-5 h-5 text-amber-500" />
+          <span>Parking Suspensions & Bay Dispensations</span>
+        </h4>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          If your current or new property is located in a controlled parking zone, red route, or narrow high-density street (such as in central Birmingham, Edgbaston, or Royal Leamington Spa), parking dispensations prevent PCN fines and long carrying distances.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Apply to your local borough council at least 10 working days prior.</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>We supply our exact vehicle registration numbers and dimensions.</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Reserve at least 2 car lengths (approx 10 metres) outside the doorway.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <h4 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <Icon name="clock" class="w-5 h-5 text-amber-500" />
+          <span>Handling Chain & Key Release Delays</span>
+        </h4>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Property chains in the UK often face banking or conveyancing delays on completion day. We understand how nerve-wracking this is for buyers and sellers, which is why we maintain a flexible waiting policy:
+        </p>
+        <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>60 minutes of complimentary waiting time after 1:00pm as standard.</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Our crew stays safely with your locked, insured vehicle outside.</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+            <span>Emergency overnight container storage available if a chain collapses.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <FAQ faqs={howItWorksFaqs} title="Moving Process: Frequently Asked Questions" />
+
+    <CTABand
+      variant="quote"
+      heading="Ready for an Organised, Methodical Move?"
+      subheading="Get an itemised fixed quote from our West Midlands removals team today."
+      primaryCtaText="Request Your Moving Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </div>
+</BaseLayout>

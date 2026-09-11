@@ -1,0 +1,142 @@
+---
+import Icon from './Icon.astro';
+
+export interface PriceTier {
+  service: string;
+  priceFrom: number;
+  unit: string;
+  condition: string;
+  cazNote: string;
+  features: string[];
+}
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = 'Clear, Transparent Removals Pricing',
+  subtitle = 'Genuinely achievable guide rates with all qualifying conditions displayed clearly upfront. No hidden surcharges.'
+} = Astro.props;
+
+const tiers: PriceTier[] = [
+  {
+    service: 'Man & Van (Small Moves)',
+    priceFrom: 65,
+    unit: 'per hour',
+    condition: 'Based on 1 mover & 3.5t Luton van with 2-hour minimum booking within 10 miles.',
+    cazNote: 'Zero Clean Air Zone fee — 100% Euro 6 compliant fleet.',
+    features: [
+      '3.5-tonne Luton van with tail lift',
+      '1 professional driver/mover',
+      '£50,000 Goods in Transit cover',
+      'Fuel for agreed local mileage included'
+    ]
+  },
+  {
+    service: 'Flat & Apartment Removals',
+    priceFrom: 280,
+    unit: 'fixed quote',
+    condition: 'Based on 1-bedroom flat move with lift access within 10 miles of Birmingham base.',
+    cazNote: 'Zero Clean Air Zone fee inside Birmingham Middleway.',
+    features: [
+      'Full Luton van & 2-man crew',
+      'Floor runners & communal wall protection',
+      'Furniture blankets & mattress bags',
+      'Stair/lift slot management'
+    ]
+  },
+  {
+    service: 'House Removals (Flagship)',
+    priceFrom: 350,
+    unit: 'fixed quote',
+    condition: 'Based on a 2-bedroom home move within a 10-mile radius with standard vehicular access.',
+    cazNote: 'Zero Clean Air Zone fee inside Birmingham Middleway.',
+    features: [
+      'Dedicated Luton van & 2-3 porters',
+      'Full furniture blanket-wrapping',
+      'Room-by-room unloading & placement',
+      'DBS-checked, uniformed removals team'
+    ]
+  },
+  {
+    service: 'Long-Distance UK Removals',
+    priceFrom: 550,
+    unit: 'fixed UK quote',
+    condition: 'Based on 1-bed flat relocation from Birmingham to London (125 miles).',
+    cazNote: 'London ULEZ compliant with zero pass-through surcharge.',
+    features: [
+      'Dedicated vehicle — zero co-loading',
+      'Guaranteed delivery date agreed in writing',
+      'Live driver tracking updates',
+      'All motorway fuel & tolls included'
+    ]
+  }
+];
+---
+
+<section class="py-16 bg-white dark:bg-slate-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+        Transparent Upfront Rates
+      </span>
+      <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1">
+        {title}
+      </h2>
+      <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-2">
+        {subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {tiers.map((t) => (
+        <div class="flex flex-col justify-between p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-md transition">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">
+              {t.service}
+            </h3>
+
+            <div class="my-4">
+              <span class="text-xs text-slate-400">From</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-extrabold text-amber-600 dark:text-amber-400">£{t.priceFrom}</span>
+                <span class="text-xs text-slate-500 dark:text-slate-400">/{t.unit}</span>
+              </div>
+            </div>
+
+            <!-- Adjacent Qualifying Conditions per Advertising Standards -->
+            <div class="p-3 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-xs space-y-1.5 mb-5">
+              <p class="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                <strong>Qualifying condition:</strong> {t.condition}
+              </p>
+              <p class="text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold flex items-center gap-1">
+                <Icon name="check" class="w-3.5 h-3.5" />
+                <span>{t.cazNote}</span>
+              </p>
+            </div>
+
+            <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+              {t.features.map((f) => (
+                <li class="flex items-center gap-2">
+                  <span class="text-amber-500"><Icon name="check" class="w-3.5 h-3.5" /></span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800">
+            <a
+              href="/get-a-quote/"
+              class="w-full py-2.5 px-4 block text-center font-bold text-xs text-white bg-amber-600 hover:bg-amber-700 rounded-lg transition shadow interactive-btn"
+            >
+              Request Quote
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

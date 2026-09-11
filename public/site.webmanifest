@@ -1,0 +1,16 @@
+{
+  "name": "Jimmys Removals and Logistics LTD",
+  "short_name": "Jimmys Removals",
+  "description": "Professional house removals, logistics, and same-day delivery across Birmingham and the West Midlands.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f243e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "32x32 48x48 72x72 96x96 128x128 256x256",
+      "type": "image/svg+xml"
+    }
+  ]
+}

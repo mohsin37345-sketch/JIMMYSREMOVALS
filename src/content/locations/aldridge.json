@@ -1,0 +1,66 @@
+{
+  "town": "Aldridge",
+  "slug": "aldridge",
+  "county": "West Midlands",
+  "metaTitle": "Aldridge Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Aldridge. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides first-class house removals, furniture dismantling, and bespoke packing services in Aldridge. With its charming village atmosphere, prestigious properties around the Croft, and leafy residential avenues towards Leighswood and Stubbers Green, Aldridge is a prime residential location. Our polite, careful team treats your furniture with the highest standard of care, ensuring floors are protected and items are blanket-wrapped for transit.  From single item transfers to substantial multi-bedroom family home relocations, our team brings the equipment, expertise, and courteous approach required for a truly seamless Aldridge move. We lay protective floor runners, wrap delicate furnishings, and handle every detail with pride.",
+  "localKnowledge": "Aldridge features generous detached homes and bungalows with wide driveways, particularly along Erdington Road and Bosty Lane. We utilize floor runners to protect oak flooring and provide comprehensive packing for high-value antiques, mirrors, and garden ornaments.",
+  "postcodes": [
+    "WS9"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Walsall",
+      "slug": "walsall"
+    },
+    {
+      "name": "Sutton Coldfield",
+      "slug": "sutton-coldfield"
+    },
+    {
+      "name": "Lichfield",
+      "slug": "lichfield"
+    }
+  ],
+  "travelInfo": "Connected via the A454, A452 Chester Road, and close to the M6 Toll.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Aldridge is outside any Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you service Rushall and Walsall Wood from Aldridge?",
+      "answer": "Yes, we cover all WS9 postcodes including Rushall, Walsall Wood, and Streetly borders.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle large garden furniture or trampolines?",
+      "answer": "Yes, our team can dismantle and rebuild outdoor play sets, trampolines, and garden suites.",
+      "display": true
+    },
+    {
+      "question": "Do you provide insurance for fragile antiques in Aldridge?",
+      "answer": "Yes, £50,000 Goods in Transit insurance protects your declared fragile items.",
+      "display": true
+    },
+    {
+      "question": "Can you pack our entire house the day before moving?",
+      "answer": "Yes, our full packing service packs everything the day prior to completion.",
+      "display": true
+    }
+  ],
+  "lat": 52.607,
+  "lng": -1.919,
+  "tier": 2,
+  "heroImage": "/images/locations/aldridge.webp"
+}

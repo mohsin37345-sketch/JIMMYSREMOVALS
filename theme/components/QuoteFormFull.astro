@@ -1,0 +1,685 @@
+---
+import Icon from './Icon.astro';
+---
+
+<div id="full-quote-island" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl overflow-hidden">
+  
+  <!-- Stepper Header (Enhanced via JavaScript) -->
+  <div id="quote-stepper-header" class="bg-slate-50 dark:bg-slate-800/60 p-4 sm:p-6 border-b border-slate-200 dark:border-slate-800 hidden md:block">
+    <div class="flex items-center justify-between max-w-2xl mx-auto text-xs">
+      <div class="step-indicator flex items-center gap-1.5" data-step="1">
+        <span class="step-badge w-7 h-7 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center">1</span>
+        <span class="font-semibold text-slate-900 dark:text-white">Type</span>
+      </div>
+      <div class="step-line w-6 sm:w-8 h-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <div class="step-indicator flex items-center gap-1.5" data-step="2">
+        <span class="step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center">2</span>
+        <span class="text-slate-500 dark:text-slate-400">Size</span>
+      </div>
+      <div class="step-line w-6 sm:w-8 h-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <div class="step-indicator flex items-center gap-1.5" data-step="3">
+        <span class="step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center">3</span>
+        <span class="text-slate-500 dark:text-slate-400">From</span>
+      </div>
+      <div class="step-line w-6 sm:w-8 h-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <div class="step-indicator flex items-center gap-1.5" data-step="4">
+        <span class="step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center">4</span>
+        <span class="text-slate-500 dark:text-slate-400">To</span>
+      </div>
+      <div class="step-line w-6 sm:w-8 h-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <div class="step-indicator flex items-center gap-1.5" data-step="5">
+        <span class="step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center">5</span>
+        <span class="text-slate-500 dark:text-slate-400">Date</span>
+      </div>
+      <div class="step-line w-6 sm:w-8 h-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <div class="step-indicator flex items-center gap-1.5" data-step="6">
+        <span class="step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center">6</span>
+        <span class="text-slate-500 dark:text-slate-400">Extras</span>
+      </div>
+      <div class="step-line w-6 sm:w-8 h-0.5 bg-slate-200 dark:bg-slate-700"></div>
+      <div class="step-indicator flex items-center gap-1.5" data-step="7">
+        <span class="step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center">7</span>
+        <span class="text-slate-500 dark:text-slate-400">Contact</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Step Progress Indicator -->
+  <div class="md:hidden bg-slate-50 dark:bg-slate-800/60 p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+    <div class="text-xs font-bold text-slate-900 dark:text-white">
+      Step <span id="mobile-step-num">1</span> of 7: <span id="mobile-step-title" class="text-amber-600 dark:text-amber-400">Move Type</span>
+    </div>
+    <div class="w-24 bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+      <div id="mobile-progress-bar" class="bg-amber-600 h-full w-[14%] transition-all duration-300"></div>
+    </div>
+  </div>
+
+  <!-- Form Body: Native progressive enhancement (action submits to /thank-you/ if JS is disabled) -->
+  <form id="multi-step-quote-form" action="/thank-you/" method="GET" class="p-6 sm:p-8 space-y-8">
+    
+    <!-- Anti-spam Honeypot & Timestamp -->
+    <div class="sr-only" aria-hidden="true">
+      <label for="quote-website-check">Leave this field blank</label>
+      <input type="text" id="quote-website-check" name="website_url_check" tabindex="-1" autocomplete="off" />
+      <input type="hidden" id="quote-timestamp" name="time_to_submit" value="" />
+    </div>
+
+    <!-- STEP 1: Move Type -->
+    <fieldset class="step-panel space-y-6" data-step="1">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        1. What type of removal do you require?
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Select the option that best describes your relocation.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {[
+          { id: 'house', label: 'House Removals', desc: 'Complete residential relocation' },
+          { id: 'flat', label: 'Flat / Apartment', desc: 'High-rise, lift, or stairs access' },
+          { id: 'office', label: 'Office / Commercial', desc: 'Workplace, desks & IT moves' },
+          { id: 'single', label: 'Single Items / Man & Van', desc: 'Few furniture pieces or sofa' },
+          { id: 'storage', label: 'Storage Move', desc: 'Transport into/out of container storage' }
+        ].map((item, i) => (
+          <label class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/50 dark:has-[:checked]:bg-amber-950/30 transition flex items-start gap-3">
+            <input type="radio" name="move_type" value={item.id} class="mt-1 text-amber-600" checked={i === 0} />
+            <div>
+              <span class="font-bold text-sm block text-slate-900 dark:text-white">{item.label}</span>
+              <span class="text-xs text-slate-500 dark:text-slate-400">{item.desc}</span>
+            </div>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <!-- STEP 2: Property Size -->
+    <fieldset class="step-panel space-y-6" data-step="2">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        2. What is the size of your property?
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">This helps us allocate the appropriate Luton van capacity and porters.</p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {[
+          { id: 'studio', label: 'Studio / 1 Room' },
+          { id: '1bed', label: '1 Bedroom' },
+          { id: '2bed', label: '2 Bedrooms' },
+          { id: '3bed', label: '3 Bedrooms' },
+          { id: '4bed', label: '4 Bedrooms' },
+          { id: '5plus', label: '5+ Bedrooms' }
+        ].map((size, i) => (
+          <label class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 cursor-pointer text-center hover:border-amber-500 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/50 dark:has-[:checked]:bg-amber-950/30 transition">
+            <input type="radio" name="property_size" value={size.id} class="sr-only" checked={i === 2} />
+            <span class="font-bold text-sm text-slate-900 dark:text-white block">{size.label}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <!-- STEP 3: Moving From -->
+    <fieldset class="step-panel space-y-6" data-step="3">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        3. Collection Address & Access (Moving From)
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Enter collection postcode and access information.</p>
+
+      <div class="space-y-4">
+        <div>
+          <label for="from_postcode" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Collection Postcode <span class="text-rose-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="from_postcode"
+            name="from_postcode"
+            required
+            placeholder="e.g. B15 2TT"
+            pattern="^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})$"
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+            aria-describedby="from_postcode_error"
+          />
+          <p id="from_postcode_error" class="hidden text-xs text-rose-500 mt-1">Please enter a valid UK postcode (e.g. B15 2TT).</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="from_floor" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Floor Level
+            </label>
+            <select id="from_floor" name="from_floor" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white">
+              <option value="Ground floor / House">Ground Floor / Entire House</option>
+              <option value="1st Floor">1st Floor</option>
+              <option value="2nd Floor">2nd Floor</option>
+              <option value="3rd Floor or Higher">3rd Floor or Higher</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="from_lift" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Lift Access Available?
+            </label>
+            <select id="from_lift" name="from_lift" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white">
+              <option value="N/A - Ground Floor">N/A - Ground Floor</option>
+              <option value="Yes - Working Passenger/Goods Lift">Yes - Working Lift</option>
+              <option value="No - Stairs Only">No - Stairs Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="from_parking" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Van Parking & Loading Difficulty
+          </label>
+          <select id="from_parking" name="from_parking" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white">
+            <option value="Private driveway / dedicated bay">Private driveway or dedicated off-street bay</option>
+            <option value="Street parking readily available">Street parking readily available outside</option>
+            <option value="Permit zone / council suspension needed">Permit zone or parking suspension needed</option>
+            <option value="Restricted access / red route / narrow lane">Restricted access, red route or narrow lane</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- STEP 4: Moving To -->
+    <fieldset class="step-panel space-y-6" data-step="4">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        4. Destination Address & Access (Moving To)
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Where are we unloading your belongings?</p>
+
+      <div class="space-y-4">
+        <div>
+          <label for="to_postcode" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Destination Postcode <span class="text-rose-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="to_postcode"
+            name="to_postcode"
+            required
+            placeholder="e.g. B91 3AB"
+            pattern="^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9][A-Za-z]?))))\s?[0-9][A-Za-z]{2})$"
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+            aria-describedby="to_postcode_error"
+          />
+          <p id="to_postcode_error" class="hidden text-xs text-rose-500 mt-1">Please enter a valid UK destination postcode (e.g. B91 3AB).</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="to_floor" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Destination Floor Level
+            </label>
+            <select id="to_floor" name="to_floor" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white">
+              <option value="Ground floor / House">Ground Floor / Entire House</option>
+              <option value="1st Floor">1st Floor</option>
+              <option value="2nd Floor">2nd Floor</option>
+              <option value="3rd Floor or Higher">3rd Floor or Higher</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="to_lift" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Destination Lift Access?
+            </label>
+            <select id="to_lift" name="to_lift" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white">
+              <option value="N/A - Ground Floor">N/A - Ground Floor</option>
+              <option value="Yes - Working Passenger/Goods Lift">Yes - Working Lift</option>
+              <option value="No - Stairs Only">No - Stairs Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="to_parking" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Destination Parking & Unloading
+          </label>
+          <select id="to_parking" name="to_parking" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white">
+            <option value="Private driveway / dedicated bay">Private driveway or dedicated off-street bay</option>
+            <option value="Street parking readily available">Street parking readily available outside</option>
+            <option value="Permit zone / council suspension needed">Permit zone or parking suspension needed</option>
+            <option value="Restricted access / red route / narrow lane">Restricted access, red route or narrow lane</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- STEP 5: Date & Flexibility -->
+    <fieldset class="step-panel space-y-6" data-step="5">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        5. Target Moving Date & Flexibility
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Let us know your preferred completion date.</p>
+
+      <div class="space-y-4">
+        <div>
+          <label for="move_date" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Preferred Date <span class="text-rose-500">*</span>
+          </label>
+          <input
+            type="date"
+            id="move_date"
+            name="move_date"
+            required
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+            Date Flexibility
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              { id: 'exact', label: 'Exact Date Only', desc: 'Must move on this specific day' },
+              { id: 'fewdays', label: '+/- 1 to 2 Days', desc: 'Can adjust around completion' },
+              { id: 'flexible', label: 'Flexible Window', desc: 'Seeking best availability/rate' }
+            ].map((flex, i) => (
+              <label class="border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 cursor-pointer hover:border-amber-500 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/40 dark:has-[:checked]:bg-amber-950/30 transition flex items-start gap-2.5">
+                <input type="radio" name="date_flexibility" value={flex.id} class="mt-0.5 text-amber-600" checked={i === 1} />
+                <div>
+                  <span class="text-xs font-bold block text-slate-900 dark:text-white">{flex.label}</span>
+                  <span class="text-[11px] text-slate-500 dark:text-slate-400">{flex.desc}</span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- STEP 6: Optional Add-ons -->
+    <fieldset class="step-panel space-y-6" data-step="6">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        6. Additional Moving Services & Specialist Items
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Select any extra support you need on moving day.</p>
+
+      <div class="space-y-3">
+        {[
+          { name: 'extra_packing', label: 'Professional Packing Service', desc: 'Double-walled cartons, bubble wrap and china protection included.' },
+          { name: 'extra_dismantling', label: 'Furniture Dismantling & Reassembly', desc: 'Wardrobes, bed frames and dining tables safely dismantled and rebuilt.' },
+          { name: 'extra_storage', label: 'Short or Long-Term Storage', desc: 'Secure, dry containerised storage in Birmingham.' },
+          { name: 'extra_piano', label: 'Upright Piano or Specialist Antiques', desc: 'Heavy transport with piano shoes, skids, and protective covers.' },
+          { name: 'extra_clearance', label: 'House Clearance / Unwanted Item Removal', desc: 'Environment Agency licensed waste disposal for items not moving.' }
+        ].map((extra) => (
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/40 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/30 dark:has-[:checked]:bg-amber-950/20">
+            <input type="checkbox" name={extra.name} value="Yes" class="mt-1 w-4 h-4 text-amber-600 rounded" />
+            <div>
+              <span class="font-bold text-sm text-slate-900 dark:text-white">{extra.label}</span>
+              <p class="text-xs text-slate-500 dark:text-slate-400">{extra.desc}</p>
+            </div>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+
+    <!-- STEP 7: Contact Details & Two Separate Unticked Consent Checkboxes -->
+    <fieldset class="step-panel space-y-6" data-step="7">
+      <legend class="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        7. Where Should We Send Your Fixed-Price Quote?
+      </legend>
+      <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Our Birmingham dispatch team will review your inventory and contact you within 2 business hours.</p>
+
+      <div class="space-y-4">
+        <div>
+          <label for="customer_name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Full Name <span class="text-rose-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="customer_name"
+            name="customer_name"
+            required
+            placeholder="e.g. David Williams"
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="customer_phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Phone Number <span class="text-rose-500">*</span>
+            </label>
+            <input
+              type="tel"
+              id="customer_phone"
+              name="customer_phone"
+              required
+              placeholder="e.g. 07123 456789"
+              pattern="^(?:(?:\+44\s?|0)(?:7\d{3}\s?\d{6}|[12]\d{2,4}\s?\d{5,7}))$"
+              class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+              aria-describedby="customer_phone_error"
+            />
+            <p id="customer_phone_error" class="hidden text-xs text-rose-500 mt-1">Please enter a valid UK telephone number.</p>
+          </div>
+
+          <div>
+            <label for="customer_email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+              Email Address <span class="text-rose-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="customer_email"
+              name="customer_email"
+              required
+              placeholder="e.g. david@example.co.uk"
+              class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Preferred Contact Method
+          </label>
+          <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-700 dark:text-slate-300">
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="contact_method" value="Phone Call" checked class="text-amber-600" />
+              <span>Phone Call</span>
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="contact_method" value="WhatsApp" class="text-amber-600" />
+              <span>WhatsApp Message</span>
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="contact_method" value="Email" class="text-amber-600" />
+              <span>Email</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="customer_notes" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+            Special Notes or Access Considerations (Optional)
+          </label>
+          <textarea
+            id="customer_notes"
+            name="customer_notes"
+            rows="3"
+            placeholder="e.g. narrow driveway, key exchange estimated at 1:30pm, loft items already boxed..."
+            class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+          ></textarea>
+        </div>
+
+        <!-- Cloudflare Turnstile Container -->
+        <div id="cf-turnstile-container" class="my-3 min-h-[65px] flex items-center justify-start text-xs text-slate-400">
+          <div class="inline-flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <Icon name="shield" class="w-4 h-4 text-emerald-500" />
+            <span>Spam protection active (Turnstile verified)</span>
+          </div>
+        </div>
+
+        <!-- Two Separate Unticked Consent Checkboxes -->
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              id="consent_processing"
+              name="consent_processing"
+              required
+              class="mt-1 w-4 h-4 text-amber-600 rounded border-slate-300 dark:border-slate-700"
+            />
+            <span class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <span class="font-bold text-slate-900 dark:text-white">Required:</span> I consent to Jimmys Removals and Logistics LTD processing my enquiry details to provide an itemised quotation in accordance with the <a href="/privacy-policy/" class="underline text-amber-600 dark:text-amber-400">Privacy Policy</a>.
+            </span>
+          </label>
+
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              id="consent_marketing"
+              name="consent_marketing"
+              value="Yes"
+              class="mt-1 w-4 h-4 text-amber-600 rounded border-slate-300 dark:border-slate-700"
+            />
+            <span class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <span class="font-bold text-slate-900 dark:text-white">Optional:</span> Keep me updated with West Midlands relocation guides and seasonal moving discounts. (You can unsubscribe at any time).
+            </span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Navigation Controls -->
+    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+      <button
+        type="button"
+        id="quote-prev-btn"
+        class="hidden px-5 py-2.5 text-sm font-semibold border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+      >
+        &larr; Back
+      </button>
+
+      <div class="ml-auto flex items-center gap-3">
+        <button
+          type="button"
+          id="quote-next-btn"
+          class="px-6 py-2.5 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-lg shadow transition interactive-btn flex items-center gap-2"
+        >
+          <span>Continue</span>
+          <Icon name="chevron-right" class="w-4 h-4" />
+        </button>
+
+        <button
+          type="submit"
+          id="quote-submit-btn"
+          class="hidden px-7 py-3 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 rounded-lg shadow-lg hover:shadow-amber-600/30 transition interactive-btn"
+        >
+          Submit Quote Request &rarr;
+        </button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<!-- Progressive Stepping & SessionStorage Script -->
+<script is:inline>
+  (function() {
+    const form = document.getElementById('multi-step-quote-form');
+    const panels = document.querySelectorAll('.step-panel');
+    const indicators = document.querySelectorAll('.step-indicator');
+    const prevBtn = document.getElementById('quote-prev-btn');
+    const nextBtn = document.getElementById('quote-next-btn');
+    const submitBtn = document.getElementById('quote-submit-btn');
+    const mobileStepNum = document.getElementById('mobile-step-num');
+    const mobileStepTitle = document.getElementById('mobile-step-title');
+    const mobileProgressBar = document.getElementById('mobile-progress-bar');
+    const timestampEl = document.getElementById('quote-timestamp');
+
+    if (timestampEl) {
+      timestampEl.value = Date.now().toString();
+    }
+
+    const stepTitles = [
+      'Move Type',
+      'Property Size',
+      'Collection Access',
+      'Destination Access',
+      'Move Date',
+      'Extra Services',
+      'Contact Details'
+    ];
+
+    let currentStep = 1;
+    const totalSteps = 7;
+
+    // 1. Read URL Parameters for Calculator Pre-fill (e.g. ?size=2bed&from=B15&to=B91)
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const propSize = urlParams.get('size');
+      const fromPostcode = urlParams.get('from');
+      const toPostcode = urlParams.get('to');
+
+      if (propSize) {
+        const radio = form.querySelector(`input[name="property_size"][value="${propSize}"]`);
+        if (radio) radio.checked = true;
+      }
+      if (fromPostcode) {
+        const fromInput = document.getElementById('from_postcode');
+        if (fromInput) fromInput.value = fromPostcode;
+      }
+      if (toPostcode) {
+        const toInput = document.getElementById('to_postcode');
+        if (toInput) toInput.value = toPostcode;
+      }
+    } catch (e) {}
+
+    // 2. Restore from sessionStorage if exists
+    try {
+      const saved = sessionStorage.getItem('jimmys_quote_state');
+      if (saved) {
+        const data = JSON.parse(saved);
+        Object.keys(data).forEach(key => {
+          const field = form.elements[key];
+          if (field) {
+            if (field.type === 'radio') {
+              const r = form.querySelector(`input[name="${key}"][value="${data[key]}"]`);
+              if (r) r.checked = true;
+            } else if (field.type === 'checkbox') {
+              field.checked = !!data[key];
+            } else {
+              field.value = data[key];
+            }
+          }
+        });
+      }
+    } catch (e) {}
+
+    // 3. Save to sessionStorage
+    function saveState() {
+      try {
+        const formData = new FormData(form);
+        const obj = {};
+        formData.forEach((val, key) => {
+          if (key !== 'website_url_check') obj[key] = val;
+        });
+        sessionStorage.setItem('jimmys_quote_state', JSON.stringify(obj));
+      } catch (e) {}
+    }
+
+    // 4. Update UI Step
+    function updateStepUI() {
+      panels.forEach(p => {
+        const s = parseInt(p.getAttribute('data-step') || '1');
+        if (s === currentStep) {
+          p.classList.remove('hidden');
+        } else {
+          p.classList.add('hidden');
+        }
+      });
+
+      indicators.forEach(ind => {
+        const s = parseInt(ind.getAttribute('data-step') || '1');
+        const badge = ind.querySelector('.step-badge');
+        if (badge) {
+          if (s === currentStep) {
+            badge.className = 'step-badge w-7 h-7 rounded-full bg-amber-600 text-white font-bold flex items-center justify-center';
+          } else if (s < currentStep) {
+            badge.className = 'step-badge w-7 h-7 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center';
+          } else {
+            badge.className = 'step-badge w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-bold flex items-center justify-center';
+          }
+        }
+      });
+
+      if (mobileStepNum) mobileStepNum.textContent = currentStep.toString();
+      if (mobileStepTitle) mobileStepTitle.textContent = stepTitles[currentStep - 1] || '';
+      if (mobileProgressBar) mobileProgressBar.style.width = `${Math.round((currentStep / totalSteps) * 100)}%`;
+
+      if (prevBtn) {
+        if (currentStep === 1) prevBtn.classList.add('hidden');
+        else prevBtn.classList.remove('hidden');
+      }
+
+      if (currentStep === totalSteps) {
+        if (nextBtn) nextBtn.classList.add('hidden');
+        if (submitBtn) submitBtn.classList.remove('hidden');
+      } else {
+        if (nextBtn) nextBtn.classList.remove('hidden');
+        if (submitBtn) submitBtn.classList.add('hidden');
+      }
+
+      saveState();
+    }
+
+    // 5. Validation per Step
+    function validateCurrentStep() {
+      const currentPanel = document.querySelector(`.step-panel[data-step="${currentStep}"]`);
+      if (!currentPanel) return true;
+
+      const requiredInputs = currentPanel.querySelectorAll('input[required], select[required]');
+      let valid = true;
+
+      requiredInputs.forEach(input => {
+        if (input.pattern) {
+          const reg = new RegExp(input.pattern);
+          if (!reg.test(input.value.trim())) {
+            valid = false;
+            input.setAttribute('aria-invalid', 'true');
+            const err = document.getElementById(`${input.id}_error`);
+            if (err) err.classList.remove('hidden');
+          } else {
+            input.setAttribute('aria-invalid', 'false');
+            const err = document.getElementById(`${input.id}_error`);
+            if (err) err.classList.add('hidden');
+          }
+        } else if (!input.value.trim()) {
+          valid = false;
+          input.setAttribute('aria-invalid', 'true');
+        } else {
+          input.setAttribute('aria-invalid', 'false');
+        }
+      });
+
+      return valid;
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        if (validateCurrentStep()) {
+          if (currentStep < totalSteps) {
+            currentStep++;
+            updateStepUI();
+            window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+          }
+        }
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        if (currentStep > 1) {
+          currentStep--;
+          updateStepUI();
+          window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+        }
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        // Honeypot check
+        const honeypot = document.getElementById('quote-website-check');
+        if (honeypot && honeypot.value.trim() !== '') {
+          e.preventDefault();
+          return;
+        }
+
+        // Fire conversion event
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            event: 'generate_lead',
+            lead_type: 'full_quote_request',
+            move_type: form.elements['move_type']?.value || 'house'
+          });
+        }
+
+        // Allow form submission or redirect to thank you
+        saveState();
+      });
+    }
+
+    // Initialize Stepper
+    updateStepUI();
+  })();
+</script>

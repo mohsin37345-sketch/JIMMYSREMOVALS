@@ -1,0 +1,59 @@
+---
+import BlogCard from './BlogCard.astro';
+import { siteConfig } from 'src/data/site';
+import Icon from './Icon.astro';
+
+export interface Props {
+  posts?: any[];
+}
+
+const { posts = [] } = Astro.props;
+---
+
+{posts.length > 0 ? (
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {posts.map((post) => {
+      const title = post.title || post.data?.title || '';
+      const slug = post.slug || (post.id ? post.id.replace(/\.(md|mdx)$/, '') : '');
+      const description = post.description || post.data?.description || '';
+      const image = post.image || post.data?.image || '/images/hero-removals-fleet.avif';
+      const imageAlt = post.imageAlt || post.data?.imageAlt || title;
+      const date = post.date || post.data?.date || new Date();
+      const author = post.author || post.data?.author || 'Jimmys Removals';
+      const category = post.category || post.data?.category || 'General';
+      const readingTimeText = post.readingTimeText || post.data?.readingTimeText || '4 min read';
+
+      return (
+        <BlogCard
+          title={title}
+          slug={slug}
+          description={description}
+          image={image}
+          imageAlt={imageAlt}
+          date={date}
+          author={author}
+          category={category}
+          readingTimeText={readingTimeText}
+        />
+      );
+    })}
+  </div>
+) : (
+  <div class="p-12 text-center bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 max-w-2xl mx-auto space-y-4">
+    <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto">
+      <Icon name="box" class="w-6 h-6" />
+    </div>
+    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Our Moving Guides are On the Way</h3>
+    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+      We are currently drafting practical, straight-talking advice on Birmingham house moves, packing checklists, and tenancy relocations. In the meantime, call us on <a href={`tel:${siteConfig.phoneE164}`} class="underline font-bold text-amber-600">{siteConfig.phone}</a> for personal moving advice.
+    </p>
+    <div class="pt-2">
+      <a
+        href="/get-a-quote/"
+        class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl shadow transition interactive-btn"
+      >
+        Request a Moving Quote
+      </a>
+    </div>
+  </div>
+)}

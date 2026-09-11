@@ -1,0 +1,70 @@
+---
+import Icon from './Icon.astro';
+---
+
+<form
+  id="quote-form-inline"
+  action="/get-a-quote/"
+  method="GET"
+  class="space-y-4"
+>
+  <div>
+    <label for="inline-from-postcode" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+      Moving From (Postcode)
+    </label>
+    <div class="relative">
+      <input
+        type="text"
+        id="inline-from-postcode"
+        name="from"
+        placeholder="e.g. B15 2TT or Harborne"
+        required
+        class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="inline-to-postcode" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+      Moving To (Postcode)
+    </label>
+    <div class="relative">
+      <input
+        type="text"
+        id="inline-to-postcode"
+        name="to"
+        placeholder="e.g. B91 3AB or Solihull"
+        required
+        class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="inline-contact-info" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+      Phone Number or Email
+    </label>
+    <div class="relative">
+      <input
+        type="text"
+        id="inline-contact-info"
+        name="contact"
+        placeholder="e.g. 07123 456789 or name@example.co.uk"
+        required
+        class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+      />
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-bold text-sm rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 interactive-btn"
+  >
+    <span>Get My Free Quote</span>
+    <Icon name="chevron-right" class="w-4 h-4" />
+  </button>
+
+  <p class="text-[11px] text-slate-400 text-center">
+    Free, no-obligation moving quote. No spam guaranteed.
+  </p>
+</form>

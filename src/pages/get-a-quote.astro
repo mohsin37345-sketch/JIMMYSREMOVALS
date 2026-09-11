@@ -1,0 +1,58 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import QuoteFormFull from 'theme/components/QuoteFormFull.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import Icon from 'theme/components/Icon.astro';
+import { siteConfig } from 'src/data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Get a Quote', item: '/get-a-quote/' }
+];
+---
+
+<BaseLayout
+  title="Get a Free Moving Quote | Jimmys Removals Birmingham"
+  description="Request a free, fixed-price house removal quote from Jimmys Removals. Transparent pricing, no hidden fees, fully insured with £50k Goods in Transit cover."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="legal"
+    title="Request a Free, Fixed-Price Moving Quote"
+    subtitle="Complete our straightforward form for an itemised, transparent quotation with zero hidden surcharges."
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Multi-Step Full Quote Island -->
+    <QuoteFormFull />
+
+    <!-- Prefer to talk over the phone? Reassurance Box -->
+    <div class="p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+          <Icon name="phone" class="w-5 h-5" />
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Prefer to talk through your move?</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Our Birmingham team can provide a telephone quotation in under 5 minutes.</p>
+        </div>
+      </div>
+
+      <a
+        href={`tel:${siteConfig.phoneE164}`}
+        class="px-5 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-xs rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition whitespace-nowrap"
+      >
+        Call {siteConfig.phone}
+      </a>
+    </div>
+  </div>
+
+  <CTABand />
+</BaseLayout>

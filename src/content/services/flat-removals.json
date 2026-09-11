@@ -1,0 +1,86 @@
+{
+  "title": "Flat & Apartment Removals Birmingham",
+  "slug": "flat-removals",
+  "shortTitle": "Flat Removals",
+  "metaTitle": "Flat & Apartment Removals Birmingham | Jimmys Removals",
+  "metaDescription": "Specialist flat and apartment removals across Birmingham city centre and suburbs. Experienced with concierge access, goods lifts, parking restrictions and multi-storey moves.",
+  "heroHeading": "Specialist Flat & High-Rise Removals in Birmingham & Beyond",
+  "heroSubheading": "Experienced with Jewellery Quarter, Digbeth, and city-centre apartment complexes. We manage lift slot schedules, parking bays, and multi-storey logistics.",
+  "icon": "building",
+  "summary": "Moving into or out of an apartment presents unique logistical challenges, from allocated goods lift slots to narrow staircases and parking loading bays. Jimmys Removals has extensive experience handling city-centre complexes and multi-storey conversions across the West Midlands.",
+  "benefits": [
+    "Expert navigation of Birmingham city-centre loading restrictions and CAZ",
+    "Coordination with building concierges and building management lift slots",
+    "Specialist narrow-access equipment and furniture protection",
+    "Rapid loading and unloading to respect timed building access windows",
+    "Comprehensive transit insurance covering stairwell and communal areas"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Access & Lift Assessment",
+      "description": "We establish building access protocols: service lift dimensions, parking loading bays, access codes, and designated move-in time windows."
+    },
+    {
+      "step": 2,
+      "title": "Communal Area Protection",
+      "description": "We lay floor protectors and pad internal doorways to ensure communal hallways and lifts remain completely undamaged during transit."
+    },
+    {
+      "step": 3,
+      "title": "Timed Staged Loading",
+      "description": "Our team works efficiently to load the removal van within your booked service lift slot, reducing disruption to fellow residents."
+    },
+    {
+      "step": 4,
+      "title": "Direct Delivery to New Flat",
+      "description": "We transport your goods directly to your new flat, carrying items up to your floor and assembling beds or tables as requested."
+    }
+  ],
+  "whatsIncluded": [
+    "Clean Air Zone compliant Luton removal van",
+    "Two professional removal porters",
+    "Specialist padded furniture covers and mattress bags",
+    "Stair and elevator carry with communal corridor floor protection",
+    "Goods in transit and public liability insurance"
+  ],
+  "whatsNotIncluded": [
+    "Apartment management move-in deposits or building fees",
+    "External crane or hoist lifts for oversized balcony furniture",
+    "Repairs to preexisting communal corridor scuffs",
+    "Plumbing or wiring modifications"
+  ],
+  "priceFrom": 280,
+  "priceUnit": "fixed quote",
+  "priceNotes": "Achievable starting price for a 1-bedroom flat move with working lift access within 8 miles of Birmingham city centre.",
+  "faqs": [
+    {
+      "question": "What if our apartment building does not have a lift?",
+      "answer": "We frequently handle stair-only flats across Victorian conversions and walk-up blocks. Please let us know the floor number and staircase width when requesting a quote so we can allocate appropriate crew members for safe lifting.",
+      "display": true
+    },
+    {
+      "question": "Can you comply with strict 2-hour goods lift slots?",
+      "answer": "Yes. When building management specifies a rigid lift slot, we arrive early, prep and stage items beforehand, and execute the lift transfer with disciplined speed.",
+      "display": true
+    },
+    {
+      "question": "Are you allowed in the Birmingham Clean Air Zone?",
+      "answer": "Yes, our entire fleet meets Euro 6 standards, meaning we operate freely within the Birmingham Middleway ring road without paying charges.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle large sofas that won't fit the lift?",
+      "answer": "Where sofas have removable bolt-on arms or modular sectional feet, we can safely dismantle them for transport and reassemble them inside your apartment.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "man-and-van", "furniture-dismantling", "storage"],
+  "heroImage": "/images/services/flat-removals.webp",
+  "gallery": [
+    "/images/gallery/apartment-move-1.webp",
+    "/images/gallery/furniture-loading.webp"
+  ],
+  "order": 2,
+  "featured": true
+}

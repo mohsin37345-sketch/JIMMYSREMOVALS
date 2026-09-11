@@ -1,0 +1,67 @@
+{
+  "town": "Halesowen",
+  "slug": "halesowen",
+  "county": "West Midlands",
+  "metaTitle": "Halesowen Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Halesowen. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides reliable, cost-effective house removals, furniture assembly, and professional packing services across Halesowen and surrounding areas. Positioned right on the border between the Black Country and picturesque Worcestershire countryside, Halesowen features hillside residences in Hasbury, mature family avenues in Lapal, and convenient commuter developments near Hayley Green and Hawne. Our dedicated removals team brings in-depth local knowledge of the steep Clent-facing slopes, providing punctual, insured moves with high-capacity Luton vehicles. We supply all required mattress covers, floor runners, and transit blankets to ensure every household item is delivered in pristine condition.  We provide a full range of domestic moving services, from fragile-only packing to full house moves and secure containerised storage, ensuring that every transition in Halesowen is executed with skill, courtesy, and complete insurance protection. Our Luton vans navigate steep local residential avenues with absolute ease and stability.",
+  "localKnowledge": "Halesowen's topography rises sharply towards the Clent Hills and Frankley. Roads like Hagley Road and residential avenues in Hasbury present steep drives that demand careful van chocking and secure load strapping. The A456 Manor Way connects directly to M5 Junction 3, allowing fast access for long-distance relocations.",
+  "postcodes": [
+    "B62",
+    "B63"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Stourbridge",
+      "slug": "stourbridge"
+    },
+    {
+      "name": "Dudley",
+      "slug": "dudley"
+    },
+    {
+      "name": "Birmingham",
+      "slug": "birmingham"
+    }
+  ],
+  "travelInfo": "Convenient access to the M5 at Junction 3 and the A456 Manor Way bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Halesowen is outside any Clean Air Zone. No emission fees apply."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you service moves near M5 Junction 3 in Halesowen?",
+      "answer": "Yes, our vans have direct access to Lapal, Hasbury, and central Halesowen via M5 Junction 3.",
+      "display": true
+    },
+    {
+      "question": "Can you handle moves on steep slopes in Hasbury?",
+      "answer": "Yes, our team uses wheel chocks, tail-lift vans, and safety straps designed for hilly Black Country terrain.",
+      "display": true
+    },
+    {
+      "question": "Do you dismantle and reassemble flat-pack furniture?",
+      "answer": "Yes, we regularly dismantle wardrobes, beds, and tables as part of our comprehensive move service.",
+      "display": true
+    },
+    {
+      "question": "Are your Halesowen quotes fixed with no hidden fees?",
+      "answer": "All our quotations are clear, fixed, and fully itemised with zero hidden charges.",
+      "display": true
+    }
+  ],
+  "lat": 52.45,
+  "lng": -2.05,
+  "tier": 2,
+  "heroImage": "/images/locations/halesowen.webp"
+}

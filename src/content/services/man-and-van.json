@@ -1,0 +1,86 @@
+{
+  "title": "Man and Van Birmingham & West Midlands",
+  "slug": "man-and-van",
+  "shortTitle": "Man and Van",
+  "metaTitle": "Man and Van Birmingham | Transparent Hourly Rates | Jimmys Removals",
+  "metaDescription": "Reliable, insured man and van service in Birmingham and the West Midlands. Clean Air Zone compliant Luton vans with 1, 2, or 3 men. Transparent hourly or fixed rates.",
+  "heroHeading": "Professional Man & Van Services Across the West Midlands",
+  "heroSubheading": "Flexible hourly or fixed rates for small home moves, single large items, student transfers, and local deliveries with insured removal staff.",
+  "icon": "van",
+  "summary": "Need a flexible, fast removal solution without the overhead of a multi-day operation? Our Man and Van service pairs modern, clean Luton vans with courteous, heavy-lifting professionals. Whether moving a studio flat or picking up marketplace purchases, we deliver professional care.",
+  "benefits": [
+    "Clean Air Zone compliant vans — no clean air charges added",
+    "Choice of 1, 2, or 3 working movers",
+    "Fully insured with Goods in Transit and Public Liability protection",
+    "Equipped with transit ties, protective blankets, and sack barrows",
+    "7-day availability with evening and weekend time slots"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Select Crew & Duration",
+      "description": "Choose between our flexible hourly rate with a clear minimum booking or a pre-agreed fixed quotation for defined loads."
+    },
+    {
+      "step": 2,
+      "title": "Punctual Van Arrival",
+      "description": "Our driver and crew arrive punctually at your address, inspect the items to be moved, and plan the vehicle load order."
+    },
+    {
+      "step": 3,
+      "title": "Careful Van Loading",
+      "description": "Possessions are loaded, cushioned with protective blankets, and secured using heavy-duty lashing points inside the van."
+    },
+    {
+      "step": 4,
+      "title": "Prompt Delivery & Unload",
+      "description": "We drive directly to your drop-off location, unload items to your specified rooms, and confirm everything has arrived in pristine order."
+    }
+  ],
+  "whatsIncluded": [
+    "Clean, spacious 3.5-tonne Luton van with tail lift",
+    "Professional driver plus optional 1 or 2 porters",
+    "Fuel for agreed local mileage within the West Midlands",
+    "Loading, securing, transport, and unloading assistance",
+    "Goods in transit and public liability cover"
+  ],
+  "whatsNotIncluded": [
+    "Packing materials unless pre-ordered",
+    "Disposal of hazardous building rubble or commercial trade waste",
+    "Toll charges (e.g. M6 Toll if requested by customer)",
+    "Fines arising from lack of customer-provided parking permits"
+  ],
+  "priceFrom": 65,
+  "priceUnit": "per hour",
+  "priceNotes": "Achievable rate for 1 man and Luton van with a 2-hour minimum booking within central Birmingham and surrounding districts.",
+  "faqs": [
+    {
+      "question": "What is the minimum booking time for the man and van service?",
+      "answer": "Our minimum booking period is 2 hours. After the initial 2 hours, time is billed in clear 30-minute increments, so you only pay for what you actually use.",
+      "display": true
+    },
+    {
+      "question": "Can I travel in the van cab with the driver?",
+      "answer": "Subject to seatbelt availability and advance notice, one passenger may accompany the driver in the cab between collection and delivery addresses.",
+      "display": true
+    },
+    {
+      "question": "Are your vans compliant with Birmingham's Clean Air Zone?",
+      "answer": "Yes, our vehicles meet Euro 6 standards, allowing free travel within the Birmingham A4540 Middleway without incurring CAZ fees.",
+      "display": true
+    },
+    {
+      "question": "Can your team help with heavy items like American fridge-freezers?",
+      "answer": "Yes. When you book a 2-man or 3-man crew, we use heavy-duty sack barrows and moving straps to safely manoeuvre bulky appliances.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "student-moves", "same-day-delivery", "furniture-dismantling"],
+  "heroImage": "/images/services/man-and-van.webp",
+  "gallery": [
+    "/images/gallery/van-rear.webp",
+    "/images/gallery/appliance-moving.webp"
+  ],
+  "order": 3,
+  "featured": true
+}

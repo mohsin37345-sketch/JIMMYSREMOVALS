@@ -1,0 +1,28 @@
+{
+  "service": "man-and-van",
+  "location": "wolverhampton",
+  "uniqueIntro": "Jimmys Removals provides reliable man and van hire across Wolverhampton and the surrounding Black Country. Perfect for small flat moves, student transfers, single bulky items, and local store collections, our service pairs modern Luton vans with experienced moving staff at competitive hourly rates.",
+  "localAngle": "From Whitmore Reans to Penn and Wednesfield, our drivers navigate local roads swiftly. We arrive equipped with transit blankets, heavy-duty webbing straps, and sack barrows to protect your items during transit.",
+  "faqs": [
+    {
+      "question": "What are your man and van rates in Wolverhampton?",
+      "answer": "Rates start from £65/hour for 1 man and a 3.5-tonne Luton van with a 2-hour minimum booking.",
+      "display": true
+    },
+    {
+      "question": "Can you help move student rooms in Wolverhampton?",
+      "answer": "Yes, we regularly support University of Wolverhampton students moving to halls or private shared houses.",
+      "display": true
+    },
+    {
+      "question": "Are items insured during man and van moves?",
+      "answer": "Yes, all items are protected under our £50,000 Goods in Transit insurance policy.",
+      "display": true
+    },
+    {
+      "question": "Do you operate man and van on weekends?",
+      "answer": "Yes, we operate 7 days a week, offering Saturday and Sunday moving slots at transparent rates.",
+      "display": true
+    }
+  ]
+}

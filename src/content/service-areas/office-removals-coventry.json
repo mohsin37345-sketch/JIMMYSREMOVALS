@@ -1,0 +1,28 @@
+{
+  "service": "office-removals",
+  "location": "coventry",
+  "uniqueIntro": "Jimmys Removals provides seamless office and commercial relocations across Coventry. Whether moving premises within Friargate business district, Coventry University Technology Park, or industrial centres along the A45/A46 corridor, our project managers ensure your office move is delivered on time and within budget.",
+  "localAngle": "Commercial moves in Coventry benefit from direct access to arterial routes. We coordinate phased moves, desk dismantling, and secure confidential file transport to maintain complete operational efficiency.",
+  "faqs": [
+    {
+      "question": "Can you dismantle and reassemble modular office desks in Coventry?",
+      "answer": "Yes, our commercial technicians dismantle modular bench desks, partition screens, and boardroom tables.",
+      "display": true
+    },
+    {
+      "question": "Do you handle IT equipment and server rack transport?",
+      "answer": "Yes, we use anti-static foam wraps, padded computer crates, and tail-lift vans to move IT gear safely.",
+      "display": true
+    },
+    {
+      "question": "Can you dispose of old, unwanted office furniture?",
+      "answer": "Yes, we offer licensed clearance, ethical recycling, and charity donation for surplus commercial furniture.",
+      "display": true
+    },
+    {
+      "question": "Are your commercial staff DBS-checked?",
+      "answer": "Yes, all our movers are DBS-vetted and carry official company identification.",
+      "display": true
+    }
+  ]
+}

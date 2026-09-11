@@ -1,0 +1,83 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Icon from 'theme/components/Icon.astro';
+import site from 'src/data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Page Not Found', item: '/404/' }
+];
+
+const popularLinks = [
+  { title: 'House Removals', href: '/removals/house-removals/', desc: 'Full-service home moving across the West Midlands.' },
+  { title: 'Man and Van', href: '/removals/man-and-van/', desc: 'Flexible hourly assistance for smaller moves & single items.' },
+  { title: 'Areas Covered', href: '/areas/', desc: 'Full coverage directory across Birmingham, Solihull, Sutton Coldfield & beyond.' },
+  { title: 'Moving Cost Calculator', href: '/moving-cost-calculator/', desc: 'Instant estimate for your upcoming relocation.' },
+  { title: 'Clean Air Zone Guide', href: '/clean-air-zone/', desc: 'Learn how our Euro 6 fleet saves you from CAZ charges.' },
+  { title: 'Get a Free Quote', href: '/get-a-quote/', desc: 'Transparent, fixed-price removals quotation with zero hidden fees.' }
+];
+---
+
+<BaseLayout
+  title="Page Not Found (404) | Jimmys Removals & Logistics"
+  description="Sorry, the page you were looking for could not be found. Let Jimmys Removals help you get moving again."
+  noindex={true}
+  breadcrumbs={breadcrumbs}
+>
+  <div class="min-h-[65vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl w-full text-center">
+      
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-500 mb-6 font-mono font-bold text-xl">
+        404
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        Looks like this page has already moved.
+      </h1>
+
+      <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+        The link you followed may be outdated, or the address might have been typed incorrectly. Don't worry — we can get you moving in the right direction.
+      </p>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-md transition-all hover:scale-[1.02]"
+        >
+          <Icon name="home" class="w-4 h-4" />
+          <span>Return to Homepage</span>
+        </a>
+        <a
+          href={site.phoneHref}
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-bold text-sm hover:bg-slate-800 dark:hover:bg-slate-700 transition-colors"
+        >
+          <Icon name="phone" class="w-4 h-4 text-amber-400" />
+          <span>Call Us: {site.phone}</span>
+        </a>
+      </div>
+
+      <!-- Popular destinations grid -->
+      <div class="mt-14 pt-10 border-t border-slate-200 dark:border-slate-800 text-left">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6 text-center">
+          Popular Removal Pages & Destinations
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {popularLinks.map((item) => (
+            <a
+              href={item.href}
+              class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500 dark:hover:border-amber-500 transition-colors group"
+            >
+              <div class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors">
+                {item.title}
+              </div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                {item.desc}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>

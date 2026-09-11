@@ -1,0 +1,89 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CostCalculator from 'theme/components/CostCalculator.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Moving Cost Calculator', item: '/moving-cost-calculator/' }
+];
+
+const calculatorFaqs = [
+  {
+    question: "How accurate is the moving cost calculator?",
+    answer: "Our calculator provides realistic price ranges based on standard property contents and typical West Midlands access conditions. We follow up with a fixed written quotation once exact inventory details are confirmed.",
+    display: true
+  },
+  {
+    question: "Are Clean Air Zone fees included in the calculation?",
+    answer: "Yes, our fleet is Euro 6 compliant and completely exempt from Birmingham CAZ charges, so zero clean air fees are added.",
+    display: true
+  },
+  {
+    question: "Do you charge extra if my move requires two Luton vans?",
+    answer: "Our estimator automatically factors in the required vehicle capacity (e.g. 1, 2, or 3 Luton vans) according to your selected property size.",
+    display: true
+  },
+  {
+    question: "Can I add packing materials later?",
+    answer: "Yes. You can start with a transport-only quote and add full packing, fragile packing, or double-walled boxes at any point prior to moving day.",
+    display: true
+  }
+];
+---
+
+<BaseLayout
+  title="Moving Cost Calculator | Interactive Removals Estimator | Jimmys Removals"
+  description="Calculate your house removal costs online with our interactive estimator. Accurate price ranges for Birmingham and West Midlands domestic and flat moves."
+  breadcrumbs={breadcrumbs}
+  faqs={calculatorFaqs}
+>
+  <Hero
+    variant="legal"
+    title="House Removals Cost Calculator"
+    subtitle="Calculate an instant, realistic price estimate for your house or flat move across Birmingham and the UK."
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Interactive Island -->
+    <CostCalculator />
+
+    <!-- Factors Influencing Removals Pricing Guide -->
+    <div class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-6">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+        What Factors Determine Your Final Removal Price?
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+        <div>
+          <strong class="text-slate-900 dark:text-white block mb-1">1. Cubic Volume</strong>
+          The total volume of furniture and cartons dictates the number of Luton vans and porters required.
+        </div>
+        <div>
+          <strong class="text-slate-900 dark:text-white block mb-1">2. Travel Distance</strong>
+          Mileage and travel time between your origin property and destination address across UK arterial roads.
+        </div>
+        <div>
+          <strong class="text-slate-900 dark:text-white block mb-1">3. Property Access</strong>
+          Flights of stairs, lift availability, long gravel drives, and curbside van parking clearances.
+        </div>
+        <div>
+          <strong class="text-slate-900 dark:text-white block mb-1">4. Optional Services</strong>
+          Dismantling large wardrobes, upright piano handling, and full or fragile-only packing options.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <FAQ faqs={calculatorFaqs} title="Cost Estimation FAQs" />
+  </div>
+
+  <CTABand />
+</BaseLayout>

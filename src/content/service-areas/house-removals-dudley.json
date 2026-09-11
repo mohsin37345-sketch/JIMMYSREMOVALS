@@ -1,0 +1,28 @@
+{
+  "service": "house-removals",
+  "location": "dudley",
+  "uniqueIntro": "Jimmys Removals delivers dependable house removals across Dudley and the wider Black Country. We understand the physical demands of Dudley's steep roads and hilltop homes around Sedgley, Gornal, and Kate's Hill, deploying agile Luton vans equipped with tail lifts, ramps, and heavy-duty straps.",
+  "localAngle": "Steep gradients in Dudley require careful van positioning and load balancing. Our porters anchor heavy appliances securely against the vehicle bulkhead and use wheel chocks on hillside driveways.",
+  "faqs": [
+    {
+      "question": "How do you handle moves on steep slopes in Dudley?",
+      "answer": "Our vehicles carry heavy wheel chocks and tail lifts, and our crew balances weight carefully for hill stability.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with dismantling flat-pack beds in Dudley?",
+      "answer": "Yes, our team carries full toolkits to disassemble and rebuild bedroom and living room furniture.",
+      "display": true
+    },
+    {
+      "question": "What size vans do you use in Dudley?",
+      "answer": "We use 3.5-tonne Luton low-loaders with tail lifts that navigate narrow Black Country streets with ease.",
+      "display": true
+    },
+    {
+      "question": "Do you offer house clearance in Dudley?",
+      "answer": "Yes, we provide licensed, eco-friendly house clearance and donation services throughout Dudley.",
+      "display": true
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+---
+import { siteConfig } from 'src/data/site';
+import Icon from './Icon.astro';
+
+const currentPath = Astro.url.pathname;
+const whatsappText = encodeURIComponent(`Hello Jimmys Removals, I am viewing ${currentPath} and would like to get a quick quote for my move.`);
+const whatsappUrl = `https://wa.me/${siteConfig.whatsappE164.replace('+', '')}?text=${whatsappText}`;
+---
+
+<aside
+  id="sticky-mobile-bar"
+  class="fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-3 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden shadow-2xl transition-transform duration-200"
+  aria-label="Quick contact bar"
+>
+  <div class="grid grid-cols-3 gap-2 max-w-md mx-auto">
+    <!-- Call Now -->
+    <a
+      href={`tel:${siteConfig.phoneE164}`}
+      class="flex flex-col items-center justify-center py-2 px-2 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+      aria-label={`Call Jimmys Removals on ${siteConfig.phone}`}
+    >
+      <Icon name="phone" class="w-4 h-4 text-amber-600 mb-0.5" />
+      <span class="text-[11px] font-bold">Call Now</span>
+    </a>
+
+    <!-- WhatsApp Deep Link -->
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex flex-col items-center justify-center py-2 px-2 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 rounded-xl hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition"
+      aria-label="Chat directly on WhatsApp"
+    >
+      <Icon name="whatsapp" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 mb-0.5" />
+      <span class="text-[11px] font-bold">WhatsApp</span>
+    </a>
+
+    <!-- Get a Quote -->
+    <a
+      href="/get-a-quote/"
+      class="flex flex-col items-center justify-center py-2 px-2 bg-amber-600 text-white rounded-xl shadow font-bold hover:bg-amber-700 transition"
+      aria-label="Get a Free Quote"
+    >
+      <Icon name="box" class="w-4 h-4 mb-0.5" />
+      <span class="text-[11px] font-bold">Get Quote</span>
+    </a>
+  </div>
+</aside>
+
+<!-- Footer Overlap Prevention Script -->
+<script is:inline>
+  (function() {
+    const bar = document.getElementById('sticky-mobile-bar');
+    const footer = document.querySelector('footer');
+    if (!bar || !footer) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bar.classList.add('translate-y-full');
+        } else {
+          bar.classList.remove('translate-y-full');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(footer);
+  })();
+</script>

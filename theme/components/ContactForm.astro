@@ -1,0 +1,207 @@
+---
+import { siteConfig } from 'src/data/site';
+
+const formEndpoint = import.meta.env.PUBLIC_FORM_ACCESS_KEY 
+  ? `https://api.web3forms.com/submit` 
+  : '';
+---
+
+<div id="contact-form-container" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl p-6 sm:p-8">
+  
+  <!-- Status Feedback Banner (4 States: sending, success, api-error, network-error) -->
+  <div
+    id="contact-status-banner"
+    role="status"
+    aria-live="polite"
+    class="hidden p-4 rounded-xl text-sm font-medium mb-6 space-y-1 transition-all"
+  >
+    <div id="contact-status-text" class="flex items-center gap-2"></div>
+  </div>
+
+  <!-- Main Contact Form -->
+  <form id="contact-form" action="/thank-you/" method="GET" class="space-y-4">
+    {import.meta.env.PUBLIC_FORM_ACCESS_KEY && (
+      <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_FORM_ACCESS_KEY} />
+    )}
+
+    <!-- Honeypot -->
+    <div class="sr-only" aria-hidden="true">
+      <label for="contact-website-check">Leave empty</label>
+      <input type="text" id="contact-website-check" name="website_url_check" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div>
+      <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+        Full Name <span class="text-rose-500">*</span>
+      </label>
+      <input
+        type="text"
+        id="contact-name"
+        name="name"
+        required
+        placeholder="e.g. Sarah Jenkins"
+        class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+          Email Address <span class="text-rose-500">*</span>
+        </label>
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          required
+          placeholder="e.g. sarah@example.co.uk"
+          class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+        />
+      </div>
+
+      <div>
+        <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+          Phone Number <span class="text-rose-500">*</span>
+        </label>
+        <input
+          type="tel"
+          id="contact-phone"
+          name="phone"
+          required
+          placeholder="e.g. 0121 517 1227"
+          class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
+        Message / Relocation Details <span class="text-rose-500">*</span>
+      </label>
+      <textarea
+        id="contact-message"
+        name="message"
+        rows="4"
+        required
+        placeholder="Tell us about your moving requirements, target dates, or any special access considerations..."
+        class="w-full px-3.5 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-amber-500"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      id="contact-submit-btn"
+      class="w-full py-3.5 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl shadow-md hover:shadow-amber-600/30 transition interactive-btn flex items-center justify-center gap-2"
+    >
+      <span id="contact-btn-text">Send Message</span>
+      <span id="contact-btn-spinner" class="hidden">
+        <svg class="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+      </span>
+    </button>
+  </form>
+
+  <!-- Fallback Direct Mailto Link Below Form -->
+  <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
+    <span>Prefer email directly? Write to us at: </span>
+    <a href={`mailto:${siteConfig.email}`} class="font-bold text-amber-600 dark:text-amber-400 hover:underline">
+      {siteConfig.email}
+    </a>
+    <span class="block mt-1">Or call our Birmingham dispatch desk: <a href={`tel:${siteConfig.phoneE164}`} class="font-bold text-slate-900 dark:text-white hover:underline">{siteConfig.phone}</a></span>
+  </div>
+</div>
+
+<script is:inline define:vars={{ formEndpoint, fallbackEmail: siteConfig.email }}>
+  (function() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('contact-submit-btn');
+    const btnText = document.getElementById('contact-btn-text');
+    const btnSpinner = document.getElementById('contact-btn-spinner');
+    const banner = document.getElementById('contact-status-banner');
+    const bannerText = document.getElementById('contact-status-text');
+
+    function showStatus(type, message) {
+      if (!banner || !bannerText) return;
+      banner.className = 'p-4 rounded-xl text-sm font-medium mb-6 space-y-1 block transition-all';
+      
+      if (type === 'sending') {
+        banner.classList.add('bg-amber-50', 'dark:bg-amber-950/40', 'border', 'border-amber-200', 'dark:border-amber-800', 'text-amber-800', 'dark:text-amber-200');
+        bannerText.innerHTML = `<span>⏳ ${message}</span>`;
+      } else if (type === 'success') {
+        banner.classList.add('bg-emerald-50', 'dark:bg-emerald-950/40', 'border', 'border-emerald-300', 'dark:border-emerald-800', 'text-emerald-800', 'dark:text-emerald-200');
+        bannerText.innerHTML = `<span>✓ ${message}</span>`;
+      } else if (type === 'api_error' || type === 'network_error') {
+        banner.classList.add('bg-rose-50', 'dark:bg-rose-950/40', 'border', 'border-rose-300', 'dark:border-rose-800', 'text-rose-800', 'dark:text-rose-200');
+        bannerText.innerHTML = `<span>⚠ ${message}</span>`;
+      }
+    }
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        // Check honeypot
+        const hp = document.getElementById('contact-website-check');
+        if (hp && hp.value.trim() !== '') {
+          e.preventDefault();
+          return;
+        }
+
+        e.preventDefault();
+
+        // 1. Sending State
+        submitBtn.disabled = true;
+        btnText.textContent = 'Sending...';
+        btnSpinner.classList.remove('hidden');
+        showStatus('sending', 'Sending your enquiry to our Birmingham desk...');
+
+        const formData = new FormData(form);
+
+        if (!formEndpoint) {
+          // Simulation / Local dev mode: simulate success, fire conversion, redirect
+          setTimeout(function() {
+            if (typeof window !== 'undefined' && window.dataLayer) {
+              window.dataLayer.push({ event: 'generate_lead', form_type: 'contact_form' });
+            }
+            showStatus('success', 'Enquiry received. Redirecting to confirmation page...');
+            setTimeout(function() {
+              window.location.href = '/thank-you/';
+            }, 500);
+          }, 600);
+          return;
+        }
+
+        try {
+          const response = await fetch(formEndpoint, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            // 2. Success State
+            if (typeof window !== 'undefined' && window.dataLayer) {
+              window.dataLayer.push({ event: 'generate_lead', form_type: 'contact_form' });
+            }
+            showStatus('success', 'Message sent successfully. Redirecting to confirmation page...');
+            setTimeout(function() {
+              window.location.href = '/thank-you/';
+            }, 600);
+          } else {
+            // 3. API Error State
+            submitBtn.disabled = false;
+            btnText.textContent = 'Send Message';
+            btnSpinner.classList.add('hidden');
+            showStatus('api_error', `Submission error from server (code ${response.status}). Please try again or email us directly at ${fallbackEmail}`);
+          }
+        } catch (err) {
+          // 4. Network Error State
+          submitBtn.disabled = false;
+          btnText.textContent = 'Send Message';
+          btnSpinner.classList.add('hidden');
+          showStatus('network_error', `Network connection error. Please check your internet connection or email us directly at ${fallbackEmail}`);
+        }
+      });
+    }
+  })();
+</script>

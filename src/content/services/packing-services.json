@@ -1,0 +1,86 @@
+{
+  "title": "Professional Packing Services & Removal Materials Birmingham",
+  "slug": "packing-services",
+  "shortTitle": "Packing Services",
+  "metaTitle": "Packing Services & Materials Birmingham | Jimmys Removals",
+  "metaDescription": "Full and partial packing services across Birmingham & West Midlands. High-grade double-walled cartons, wardrobe boxes, bubble wrap and china wrapping.",
+  "heroHeading": "Full-Service Packing & Protective Removal Materials",
+  "heroSubheading": "Save days of stressful packing. Our skilled team protects your fine china, artwork, and everyday household items with double-walled boxes and specialist wraps.",
+  "icon": "box",
+  "summary": "Packing is frequently the most time-consuming and exhausting element of any house move. At Jimmys Removals, our trained packing crews systematically box and protect your possessions using export-grade materials, labelling every carton for seamless unpacking.",
+  "benefits": [
+    "Full-house, kitchen-only, or fragile-only packing packages",
+    "Heavy-duty double-walled cardboard boxes designed for removals",
+    "Acid-free tissue paper and anti-static bubble wrap for delicate china",
+    "Hanging wardrobe boxes to keep clothing pristine and crease-free",
+    "Clear, systematic room-by-room box labelling"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Survey & Material Estimation",
+      "description": "We calculate the exact volume and types of packing boxes, tape, bubble wrap, and wardrobe cartons required for your home."
+    },
+    {
+      "step": 2,
+      "title": "Delivery or Packing Day",
+      "description": "We either deliver moving kits in advance for self-packing or arrive the day prior to moving to pack entire rooms efficiently."
+    },
+    {
+      "step": 3,
+      "title": "Specialist Item Wrapping",
+      "description": "Fragile glassware, bone china, picture frames, and electronics are individually cushioned and safely packed into reinforced cartons."
+    },
+    {
+      "step": 4,
+      "title": "Structured Labelling & Placement",
+      "description": "Every box is catalogued with contents and designated destination rooms, ensuring effortless unloading at your new property."
+    }
+  ],
+  "whatsIncluded": [
+    "Full supply of double-walled corrugated cardboard boxes",
+    "Specialist packing tape, bubble wrap, and clean tissue paper",
+    "Portable hanging wardrobe cartons for coats and suits",
+    "Experienced packers handling delicate and high-value items",
+    "Transit insurance coverage on all items packed by our team"
+  ],
+  "whatsNotIncluded": [
+    "Packing of perishable food from freezers on pre-move days",
+    "Packing of flammable gases, paints, lighter fluids or fuel cans",
+    "Unpacking into closed internal cupboards unless pre-arranged",
+    "Safe disposal of customer discarded domestic refuse"
+  ],
+  "priceFrom": 180,
+  "priceUnit": "fixed package",
+  "priceNotes": "Achievable price for a fragile-only packing package (kitchen glassware, china, lamps, and pictures) for a 2-bedroom home.",
+  "faqs": [
+    {
+      "question": "Can I buy packing boxes from you if I prefer to pack myself?",
+      "answer": "Yes. We offer self-pack moving kits containing assorted small, medium, and large double-walled boxes, tape, bubble wrap, and marker pens delivered across Birmingham.",
+      "display": true
+    },
+    {
+      "question": "When does the packing service take place?",
+      "answer": "For larger homes (3+ bedrooms), we usually complete packing the day before your move. For 1-2 bedroom properties, we can often pack earlier on moving morning.",
+      "display": true
+    },
+    {
+      "question": "Are my breakables covered by insurance if you pack them?",
+      "answer": "Yes. When our professional team packs your fragile items, they are fully covered under our £50,000 Goods in Transit policy. Self-packed boxes are covered against vehicle transit incidents but not internal packing shifts.",
+      "display": true
+    },
+    {
+      "question": "Do you offer an unpacking service at our new home?",
+      "answer": "Yes, we can unpack boxes onto flat surfaces and clear away empty cardboard cartons and wrapping paper on the same day.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "flat-removals", "furniture-dismantling", "storage"],
+  "heroImage": "/images/services/packing-services.webp",
+  "gallery": [
+    "/images/gallery/packing-boxes.webp",
+    "/images/gallery/glassware-wrapping.webp"
+  ],
+  "order": 4,
+  "featured": false
+}

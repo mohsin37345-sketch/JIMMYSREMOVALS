@@ -1,0 +1,195 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import RelatedLinks from 'theme/components/RelatedLinks.astro';
+import Icon from 'theme/components/Icon.astro';
+
+export interface Props {
+  service: {
+    title: string;
+    slug: string;
+    shortTitle: string;
+    metaTitle: string;
+    metaDescription: string;
+    heroHeading: string;
+    heroSubheading: string;
+    icon: string;
+    summary: string;
+    benefits: string[];
+    process: Array<{ step: number; title: string; description: string }>;
+    whatsIncluded: string[];
+    whatsNotIncluded: string[];
+    priceFrom: number;
+    priceUnit: string;
+    priceNotes: string;
+    faqs: Array<{ question: string; answer: string; display: boolean }>;
+    relatedServices: string[];
+  };
+}
+
+const { service } = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Removals', item: '/removals/' },
+  { name: service.shortTitle, item: `/removals/${service.slug}/` }
+];
+
+const serviceData = {
+  name: service.title,
+  description: service.summary,
+  priceFrom: service.priceFrom,
+  url: `/removals/${service.slug}/`
+};
+---
+
+<BaseLayout
+  title={service.metaTitle}
+  description={service.metaDescription}
+  schemaType="Service"
+  breadcrumbs={breadcrumbs}
+  faqs={service.faqs}
+  serviceData={serviceData}
+>
+  <!-- Service Hero -->
+  <Hero
+    variant="service"
+    title={service.heroHeading}
+    subtitle={service.heroSubheading}
+    badge={`Jimmys ${service.shortTitle}`}
+    priceFrom={service.priceFrom}
+    priceUnit={service.priceUnit}
+  />
+
+  <TrustStrip />
+
+  <!-- Main Content Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Overview & Benefits Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-8 space-y-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            Overview of Our {service.shortTitle} Service
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+            {service.summary}
+          </p>
+        </div>
+
+        <!-- Benefits List -->
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4">
+            Key Advantages & Inclusions
+          </h3>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {service.benefits.map((benefit) => (
+              <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                <span class="text-amber-500 mt-0.5 shrink-0"><Icon name="check" class="w-4 h-4" /></span>
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sticky Sidebar with Fast CTA & Price Note -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="p-6 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 rounded-2xl space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+            Guaranteed Fixed Pricing
+          </span>
+          <div class="flex items-baseline gap-1">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">£{service.priceFrom}</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400">/{service.priceUnit}</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            {service.priceNotes}
+          </p>
+          <a
+            href="/get-a-quote/"
+            class="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow transition block text-center interactive-btn"
+          >
+            Get a Quote for {service.shortTitle}
+          </a>
+        </div>
+
+        <RelatedLinks currentHref={`/removals/${service.slug}/`} />
+      </aside>
+    </div>
+
+    <!-- Step-by-Step Service Process -->
+    <div class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+          The {service.shortTitle} Journey
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Every stage planned and executed with disciplined care.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {service.process.map((step) => (
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="w-8 h-8 rounded-full bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 font-extrabold text-xs flex items-center justify-center mb-3">
+                {step.step}
+              </span>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1.5">
+                {step.title}
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- What's Included vs Not Included -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-6 rounded-2xl bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40">
+        <h3 class="text-base font-bold text-emerald-900 dark:text-emerald-300 flex items-center gap-2 mb-4">
+          <Icon name="check" class="w-5 h-5 text-emerald-600" />
+          What's Included as Standard
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+          {service.whatsIncluded.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 mt-0.5">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+        <h3 class="text-base font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2 mb-4">
+          <Icon name="close" class="w-4 h-4 text-slate-400" />
+          What's Not Included / Excluded
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+          {service.whatsNotIncluded.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="text-slate-400 mt-0.5">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Service FAQs -->
+    <FAQ faqs={service.faqs} title={`${service.shortTitle} FAQs`} />
+  </div>
+
+  <CTABand />
+</BaseLayout>

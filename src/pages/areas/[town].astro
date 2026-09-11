@@ -1,0 +1,21 @@
+---
+import LocationLayout from 'theme/layouts/LocationLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map((loc) => ({
+    params: { town: loc.id },
+    props: {
+      location: {
+        ...loc.data,
+        slug: loc.id
+      }
+    }
+  }));
+}
+
+const { location } = Astro.props;
+---
+
+<LocationLayout location={location} />

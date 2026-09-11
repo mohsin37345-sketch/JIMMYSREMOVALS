@@ -1,0 +1,28 @@
+{
+  "service": "man-and-van",
+  "location": "birmingham",
+  "uniqueIntro": "Need an affordable, agile man and van service in Birmingham? Jimmys Removals provides flexible hourly or fixed-rate man and van bookings across the city. Whether you are moving a studio flat in Digbeth, buying furniture on Facebook Marketplace, or relocating a student room in Selly Oak, we provide the muscle and modern transport.",
+  "localAngle": "Our man and van fleet is 100% Clean Air Zone compliant, allowing free transit across the A4540 Middleway without daily emissions penalties. We offer 1, 2, or 3 working movers depending on your requirements.",
+  "faqs": [
+    {
+      "question": "Is your Birmingham man and van service compliant with the Clean Air Zone?",
+      "answer": "Yes, all our vans meet Euro 6 standards, so you will never pay CAZ surcharges in central Birmingham.",
+      "display": true
+    },
+    {
+      "question": "What is the minimum booking period for man and van in Birmingham?",
+      "answer": "Our minimum booking period is 2 hours, billed in clear 30-minute increments thereafter.",
+      "display": true
+    },
+    {
+      "question": "Can I travel in the van cab with the driver?",
+      "answer": "Subject to advance notice and seatbelt availability, one passenger may accompany the driver.",
+      "display": true
+    },
+    {
+      "question": "Do you help with lifting heavy items like sofas and appliances?",
+      "answer": "Yes, our drivers and porters actively load, carry, secure, and unload all agreed items.",
+      "display": true
+    }
+  ]
+}

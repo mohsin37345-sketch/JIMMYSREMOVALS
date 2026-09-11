@@ -1,0 +1,189 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CleanAirZoneNotice from 'theme/components/CleanAirZoneNotice.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import RelatedLinks from 'theme/components/RelatedLinks.astro';
+import Icon from 'theme/components/Icon.astro';
+
+export interface Props {
+  location: {
+    town: string;
+    slug: string;
+    county: string;
+    metaTitle: string;
+    metaDescription: string;
+    intro: string;
+    localKnowledge: string;
+    postcodes: string[];
+    nearbyAreas: Array<{ name: string; slug: string }>;
+    travelInfo: string;
+    cleanAirZone: {
+      enabled: boolean;
+      note: string;
+    };
+    servicesOffered: string[];
+    localFaqs: Array<{ question: string; answer: string; display: boolean }>;
+    lat: number;
+    lng: number;
+    tier: 1 | 2;
+  };
+}
+
+const { location } = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Areas Covered', item: '/areas/' },
+  { name: `${location.town} Removals`, item: `/areas/${location.slug}/` }
+];
+
+const locationData = {
+  town: location.town,
+  county: location.county,
+  postcodes: location.postcodes,
+  lat: location.lat,
+  lng: location.lng,
+  url: `/areas/${location.slug}/`
+};
+
+const nearbyLinks = location.nearbyAreas.map((a) => ({
+  title: `${a.name} Removals`,
+  href: `/areas/${a.slug}/`
+}));
+---
+
+<BaseLayout
+  title={location.metaTitle}
+  description={location.metaDescription}
+  schemaType="Location"
+  breadcrumbs={breadcrumbs}
+  faqs={location.localFaqs}
+  locationData={locationData}
+>
+  <!-- Location Hero -->
+  <Hero
+    variant="location"
+    title={`${location.town} House Removals & Logistics`}
+    subtitle={`Professional domestic and commercial removals across ${location.town}, ${location.county}. Operating 7 days a week with fully insured crews.`}
+    town={location.town}
+    county={location.county}
+    postcodes={location.postcodes}
+    cazEnabled={location.cleanAirZone.enabled}
+    cazNote={location.cleanAirZone.note}
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <!-- Intro & Local Knowledge Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-8 space-y-8">
+        
+        <!-- Unique Town Intro -->
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            Removals & Moving Services in {location.town}
+          </h2>
+          <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 mt-4 leading-relaxed">
+            {location.intro}
+          </p>
+        </div>
+
+        <!-- Clean Air Zone Notice if enabled -->
+        <CleanAirZoneNotice
+          enabled={location.cleanAirZone.enabled}
+          note={location.cleanAirZone.note}
+          town={location.town}
+        />
+
+        <!-- In-Depth Local Knowledge -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <Icon name="map" class="w-5 h-5 text-amber-500" />
+            Local Moving Knowledge & Access Considerations
+          </h3>
+          <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-4 leading-relaxed whitespace-pre-line">
+            {location.localKnowledge}
+          </div>
+        </div>
+
+        <!-- Travel & Arterial Highway Connections -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <Icon name="truck" class="w-5 h-5" />
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white">Arterial Road & Motorway Access</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              {location.travelInfo}
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-4 space-y-6">
+        <!-- Fast Quote CTA -->
+        <div class="p-6 bg-slate-900 text-white rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">
+            Local Operations
+          </span>
+          <h3 class="text-lg font-bold">
+            Moving to or from {location.town}?
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Get an instant, itemised fixed quote with no deposit required. We operate 7 days a week.
+          </p>
+          <a
+            href="/get-a-quote/"
+            class="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow transition block text-center interactive-btn"
+          >
+            Get a Free Quote in {location.town}
+          </a>
+        </div>
+
+        <!-- Nearby Areas -->
+        {nearbyLinks.length > 0 && (
+          <RelatedLinks
+            title={`Nearby Coverage Areas to ${location.town}`}
+            links={nearbyLinks}
+            currentHref={`/areas/${location.slug}/`}
+          />
+        )}
+      </aside>
+    </div>
+
+    <!-- Services Offered in This Town -->
+    <div class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+          Removal Services Available in {location.town}
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Complete domestic, student and commercial relocation services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        {location.servicesOffered.map((srv) => (
+          <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+            <span class="text-amber-500"><Icon name="check" class="w-4 h-4" /></span>
+            <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">{srv}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Local Town FAQs -->
+    <FAQ faqs={location.localFaqs} title={`${location.town} Moving FAQs`} />
+  </div>
+
+  <CTABand heading={`Book Your ${location.town} Removal Today`} />
+</BaseLayout>

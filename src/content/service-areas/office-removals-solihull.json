@@ -1,0 +1,28 @@
+{
+  "service": "office-removals",
+  "location": "solihull",
+  "uniqueIntro": "Relocating your business in Solihull? Jimmys Removals provides bespoke corporate removals for professional practices, technology firms, and corporate headquarters across Solihull town centre, Blythe Valley Park, and Birmingham Business Park.",
+  "localAngle": "Blythe Valley and Birmingham Business Park feature modern corporate offices with strict landlord protection guidelines. We install lift wall pads and floor runners, ensuring commercial facilities remain immaculate throughout the relocation.",
+  "faqs": [
+    {
+      "question": "Do you have experience in business parks like Blythe Valley?",
+      "answer": "Yes, we regularly service corporate clients in Blythe Valley, Fore Business Park, and Birmingham Business Park.",
+      "display": true
+    },
+    {
+      "question": "Can you provide weekend office moves in Solihull?",
+      "answer": "Yes, we execute relocations from Friday evening through Sunday night so trading resumes seamlessly Monday.",
+      "display": true
+    },
+    {
+      "question": "Do you provide crate hire in Solihull?",
+      "answer": "Yes, we supply stackable commercial plastic crates for desk contents and secure document filing.",
+      "display": true
+    },
+    {
+      "question": "Can you move heavy fireproof filing safes in Solihull?",
+      "answer": "Yes, our specialist team uses heavy-duty dollies and stair-climbers for commercial safes.",
+      "display": true
+    }
+  ]
+}

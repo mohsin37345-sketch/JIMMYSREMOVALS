@@ -1,0 +1,68 @@
+---
+import { siteConfig } from 'src/data/site';
+import BlogCard from './BlogCard.astro';
+import Icon from './Icon.astro';
+
+export interface Props {
+  posts?: any[];
+}
+
+const { posts = [] } = Astro.props;
+const displayPosts = posts.slice(0, 3);
+---
+
+<section class="py-16 bg-slate-50 dark:bg-slate-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+          Moving Tips & Guides
+        </span>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1">
+          Latest Moving Advice
+        </h2>
+      </div>
+      {displayPosts.length > 0 && (
+        <a href="/blog/" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1">
+          View All Guides <Icon name="chevron-right" class="w-3.5 h-3.5" />
+        </a>
+      )}
+    </div>
+
+    {displayPosts.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {displayPosts.map((post) => (
+          <BlogCard
+            title={post.data.title}
+            slug={post.id || post.slug}
+            description={post.data.description}
+            image={post.data.image}
+            imageAlt={post.data.imageAlt}
+            date={post.data.date}
+            author={post.data.author}
+            category={post.data.category}
+          />
+        ))}
+      </div>
+    ) : (
+      <!-- Designed fallback card per spec when zero posts exist -->
+      <div class="p-8 sm:p-12 text-center bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm max-w-2xl mx-auto space-y-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto">
+          <Icon name="box" class="w-6 h-6" />
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Our Moving Guides are On the Way</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          Our moving guides are on the way. In the meantime, call us on <a href={`tel:${siteConfig.phoneE164}`} class="underline font-bold text-amber-600 dark:text-amber-400">{siteConfig.phone}</a> for straight-talking advice.
+        </p>
+        <div class="pt-2">
+          <a
+            href="/get-a-quote/"
+            class="inline-block px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm rounded-xl shadow transition interactive-btn"
+          >
+            Get a Free Quote
+          </a>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

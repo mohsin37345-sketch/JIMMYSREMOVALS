@@ -1,0 +1,68 @@
+{
+  "town": "Tamworth",
+  "slug": "tamworth",
+  "county": "Staffordshire",
+  "metaTitle": "Tamworth Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Tamworth. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides reliable, insured house removals, furniture assembly, and packing across Tamworth. Steeped in Mercian history, Tamworth features riverside residences, established estates in Belgrave and Amington, and modern developments near Ventura Retail Park. Our experienced team ensures your move proceeds smoothly with clean Luton vans, careful loading, and guaranteed fixed pricing.  Our team delivers friendly, punctual, and hardworking removals support, ensuring that heavy appliances, furniture, and boxed items are transported safely to your new Tamworth home. We offer fixed pricing with zero hidden surcharges and full Goods in Transit insurance cover. Our porters handle dismantling and rebuilding of beds and tables with complete professional expertise.",
+  "localKnowledge": "Tamworth is framed by the busy A5 bypass and M42 Junction 10. Our drivers monitor retail traffic around Ventura Park, opting for arterial routes via Bitterscote or Fazeley to maintain punctual delivery times at residential properties.",
+  "postcodes": [
+    "B77",
+    "B78",
+    "B79"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Sutton Coldfield",
+      "slug": "sutton-coldfield"
+    },
+    {
+      "name": "Lichfield",
+      "slug": "lichfield"
+    },
+    {
+      "name": "Nuneaton",
+      "slug": "nuneaton"
+    }
+  ],
+  "travelInfo": "Superb connectivity via the A5 bypass, A51, and M42 Junction 10.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Tamworth is outside any Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Amington and Dosthill in Tamworth?",
+      "answer": "Yes, we cover all B77, B78, and B79 postcodes across Tamworth.",
+      "display": true
+    },
+    {
+      "question": "Can you move heavy garden furniture and sheds?",
+      "answer": "Yes, we can dismantle and move heavy garden suites, planters, and timber sheds.",
+      "display": true
+    },
+    {
+      "question": "Do you provide moving boxes in Tamworth?",
+      "answer": "Yes, we deliver robust double-walled cartons, tape, and bubble wrap.",
+      "display": true
+    },
+    {
+      "question": "Are your vans clean and fully equipped?",
+      "answer": "Yes, all our Luton vans carry clean blankets, mattress bags, and ties.",
+      "display": true
+    }
+  ],
+  "lat": 52.634,
+  "lng": -1.695,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp"
+}

@@ -1,0 +1,60 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import TrustStrip from 'theme/components/TrustStrip.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import { siteConfig } from 'src/data/site';
+import faqsData from 'src/data/faqs.json';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'FAQs', item: '/faqs/' }
+];
+---
+
+<BaseLayout
+  title="Frequently Asked Questions | Jimmys Removals Birmingham"
+  description="Answers to common questions about house removals, Birmingham Clean Air Zone compliance, packing services, furniture dismantling, and insurance cover."
+  breadcrumbs={breadcrumbs}
+  faqs={faqsData}
+>
+  <Hero
+    variant="legal"
+    title="Frequently Asked Questions"
+    subtitle="Clear, straightforward answers about our moving services, insurance, vehicle capacities, and booking policies."
+  />
+
+  <TrustStrip />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <FAQ faqs={faqsData} />
+
+    <!-- Unanswered Question Support Box -->
+    <div class="max-w-4xl mx-auto p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 text-center space-y-4">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white">Have a Specific Moving Question?</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+        Our Birmingham operations team is on hand 7 days a week to answer logistical, parking, and scheduling questions.
+      </p>
+      <div class="pt-2 flex justify-center gap-4 flex-wrap">
+        <a
+          href={`tel:${siteConfig.phoneE164}`}
+          class="px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow transition interactive-btn"
+        >
+          Call {siteConfig.phone}
+        </a>
+        <a
+          href="/contact-us/"
+          class="px-6 py-2.5 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs rounded-xl transition"
+        >
+          Send an Online Enquiry
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <CTABand />
+</BaseLayout>

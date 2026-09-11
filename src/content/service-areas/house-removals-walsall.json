@@ -1,0 +1,28 @@
+{
+  "service": "house-removals",
+  "location": "walsall",
+  "uniqueIntro": "Moving house in Walsall? Jimmys Removals provides experienced, insured domestic removals throughout the borough. From period terraces in Caldmore and Palfrey to generous semi-detached family homes along the Broadway and Park Hall, our friendly, hardworking porters handle your furniture with care.",
+  "localAngle": "With close proximity to the M6 corridor (Junctions 7, 9, and 10), we coordinate arrival and departure timings to circumvent commuter queues along the A454 and Pleck Road, keeping your Walsall move on schedule.",
+  "faqs": [
+    {
+      "question": "How do you manage tight streets in Caldmore and Palfrey?",
+      "answer": "Our compact Luton vans navigate narrow terraced roads without blocking traffic, allowing efficient curbside loading.",
+      "display": true
+    },
+    {
+      "question": "Do you offer packing services in Walsall?",
+      "answer": "Yes, we provide full packing and fragile-only packing using heavy-duty double-walled boxes.",
+      "display": true
+    },
+    {
+      "question": "Are your Walsall removal quotes fixed?",
+      "answer": "Yes, all our written quotations provide a guaranteed fixed price with zero unexpected charges.",
+      "display": true
+    },
+    {
+      "question": "Can you supply moving materials before moving day?",
+      "answer": "Yes, we deliver boxes, bubble wrap, tape, and paper directly to your home in Walsall.",
+      "display": true
+    }
+  ]
+}

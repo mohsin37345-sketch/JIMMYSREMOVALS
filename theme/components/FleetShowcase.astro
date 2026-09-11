@@ -1,0 +1,280 @@
+---
+import Icon from './Icon.astro';
+
+const fleetPhotos = [
+  {
+    id: 'photo-tail-lift',
+    src: '/images/moves/luton-van-tail-lift.webp',
+    fallbackSrc: '/images/moves/luton-van-tail-lift.jpg',
+    alt: 'Jimmys Removals 3.5T Luton box van with electric hydraulic tail-lift lowered for ground-level loading on a UK street',
+    tag: 'Vehicle & Equipment',
+    title: '500kg Hydraulic Tail-Lift Loading',
+    location: 'Solihull & Birmingham Move',
+    description: 'Our Luton vans feature electric hydraulic tail-lifts that lower completely flush to street level. This eliminates manual lifting strain and ensures safe, level loading for heavy sofas, solid wood furniture, and bulky mattresses.',
+    badges: ['500kg Electric Lift', 'Flush Ground Loading', 'Clean Air Zone Compliant'],
+    stat: '3.5 Tonne Luton Fleet'
+  },
+  {
+    id: 'photo-appliances',
+    src: '/images/moves/secure-appliance-transport.webp',
+    fallbackSrc: '/images/moves/secure-appliance-transport.jpg',
+    alt: 'Secure appliance transport inside Jimmys Removals van showing washing machine, upright fridge-freezer, and garden tools locked with ratchet straps',
+    tag: 'White-Glove Care',
+    title: 'Upright Appliance & Equipment Transit',
+    location: 'Kitchen & Utility Relocation',
+    description: 'Refrigerators and freezers must always remain upright to safeguard compressor seals. We secure washing machines, garden machinery, and heavy goods with industrial ratchet webbing straps and protective cushions.',
+    badges: ['Upright Fridge Transit', 'Industrial Ratchet Straps', 'Drum Protection'],
+    stat: 'Zero Transit Shift'
+  },
+  {
+    id: 'photo-blankets',
+    src: '/images/moves/furniture-packing-blankets.webp',
+    fallbackSrc: '/images/moves/furniture-packing-blankets.jpg',
+    alt: 'Household furniture and storage units carefully packed with protective quilted transit blankets inside Jimmys Removals truck',
+    tag: 'Damage Prevention',
+    title: 'Quilted Transit Blankets & High-Cube Stacking',
+    location: 'Full House Domestic Move',
+    description: 'Every vehicle carries dozens of heavy-duty quilted removal blankets. Furniture pieces, storage cubes, and delicate units are layered and cushioned to prevent scuffs, rubbing, and transit vibration.',
+    badges: ['Quilted Furniture Blankets', 'Scratch Protection', 'Tetrised Packing'],
+    stat: '100% Surface Cushioned'
+  }
+];
+---
+
+<section id="fleet-showcase" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+  <!-- Subtle ambient glow -->
+  <div class="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-primary-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-2xl space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/15 border border-amber-500/30 text-amber-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Real Moves • Real Fleet • Real Care</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Inside Our Clean Air Zone Compliant Luton Fleet
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Unlike booking brokers who subcontract to unverified drivers, Jimmys Removals operates our own dedicated 3.5T Luton box vans equipped with electric tail-lifts, ratchet securing rails, and full transit blankets.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <a
+          href="/get-a-quote/"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-sm font-bold shadow-lg shadow-amber-600/20 transition-all interactive-btn"
+        >
+          <span>Book Our Fleet</span>
+          <Icon name="chevron-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+    <!-- 3-Column Modern Photo Gallery Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {fleetPhotos.map((photo) => (
+        <div
+          class="group relative bg-slate-800/80 rounded-3xl border border-slate-700/80 overflow-hidden shadow-2xl transition-all duration-300 hover:-translate-y-1.5 hover:border-amber-500/50 hover:shadow-amber-500/10 flex flex-col"
+        >
+          <!-- Image Container with Aspect Ratio and Modern Zoom -->
+          <div class="relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-slate-950 cursor-pointer fleet-photo-trigger" data-img-src={photo.fallbackSrc} data-img-title={photo.title} data-img-desc={photo.description}>
+            <picture>
+              <source srcset={photo.src} type="image/webp" />
+              <img
+                src={photo.fallbackSrc}
+                alt={photo.alt}
+                width="800"
+                height="1066"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+              />
+            </picture>
+
+            <!-- Subtle dark gradient vignette for readable tags -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+
+            <!-- Top Overlay Badges -->
+            <div class="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-900/85 backdrop-blur-md text-amber-400 border border-slate-700">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                {photo.tag}
+              </span>
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-900/85 backdrop-blur-md text-slate-300 border border-slate-700">
+                {photo.stat}
+              </span>
+            </div>
+
+            <!-- Click to expand hint overlay (visible on hover) -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-slate-950/40 backdrop-blur-[2px]">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600/90 text-white text-xs font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                <span>View Full Photo</span>
+              </span>
+            </div>
+
+            <!-- Bottom Location Tag over Image -->
+            <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
+              <div class="flex items-center gap-1.5 text-xs text-amber-300 font-semibold mb-1">
+                <Icon name="map-pin" class="w-3.5 h-3.5 text-amber-400" />
+                <span>{photo.location}</span>
+              </div>
+              <h3 class="text-xl font-bold text-white leading-snug drop-shadow-md">
+                {photo.title}
+              </h3>
+            </div>
+          </div>
+
+          <!-- Content Description & Badge Pills -->
+          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4 bg-slate-900/90">
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              {photo.description}
+            </p>
+
+            <!-- Feature Tags -->
+            <div class="pt-2 border-t border-slate-800 flex flex-wrap gap-2">
+              {photo.badges.map((badge) => (
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-medium bg-slate-800 text-slate-200 border border-slate-700/70">
+                  <Icon name="check" class="w-3 h-3 text-emerald-400" />
+                  <span>{badge}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Fleet Specs & Standards Strip -->
+    <div class="mt-12 p-6 rounded-3xl bg-slate-800/60 border border-slate-700/80 backdrop-blur-md grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0">
+          <Icon name="truck" class="w-6 h-6" />
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">3.5T Luton Fleet</div>
+          <div class="text-xs text-slate-400 mt-0.5">Electric hydraulic tail-lifts</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+          <Icon name="shield-check" class="w-6 h-6" />
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">£10k - £50k Cover</div>
+          <div class="text-xs text-slate-400 mt-0.5">Goods in Transit insured</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-blue-500/15 text-blue-400 flex items-center justify-center shrink-0">
+          <Icon name="box" class="w-6 h-6" />
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">Quilted Blankets</div>
+          <div class="text-xs text-slate-400 mt-0.5">100+ pads & ratchet rails</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0">
+          <Icon name="check" class="w-6 h-6" />
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white">Euro 6 Compliant</div>
+          <div class="text-xs text-slate-400 mt-0.5">0% CAZ fees in Birmingham</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox Modal Dialog for Full-Screen Image Viewing -->
+<div
+  id="fleet-lightbox-modal"
+  class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Full-screen photo view"
+>
+  <div class="relative max-w-3xl w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl space-y-4">
+    <button
+      type="button"
+      id="close-fleet-lightbox"
+      class="absolute top-4 right-4 z-10 p-2 rounded-xl bg-slate-950/70 text-slate-300 hover:text-white hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-amber-500"
+      aria-label="Close photo preview"
+    >
+      <Icon name="close" class="w-5 h-5" />
+    </button>
+
+    <div class="relative max-h-[65vh] overflow-hidden flex items-center justify-center bg-black">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-h-[65vh] w-auto max-w-full object-contain"
+      />
+    </div>
+
+    <div class="p-6 pt-2 space-y-2">
+      <h3 id="lightbox-title" class="text-xl font-bold text-white"></h3>
+      <p id="lightbox-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const triggers = document.querySelectorAll('.fleet-photo-trigger');
+    const modal = document.getElementById('fleet-lightbox-modal');
+    const closeBtn = document.getElementById('close-fleet-lightbox');
+    const imgEl = document.getElementById('lightbox-img');
+    const titleEl = document.getElementById('lightbox-title');
+    const descEl = document.getElementById('lightbox-desc');
+
+    function openModal(src, title, desc) {
+      if (!modal || !imgEl) return;
+      imgEl.src = src;
+      imgEl.alt = title;
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = desc;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.add('hidden');
+    }
+
+    triggers.forEach(trig => {
+      trig.addEventListener('click', () => {
+        const src = trig.getAttribute('data-img-src') || '';
+        const title = trig.getAttribute('data-img-title') || '';
+        const desc = trig.getAttribute('data-img-desc') || '';
+        openModal(src, title, desc);
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  })();
+</script>

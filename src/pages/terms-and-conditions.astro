@@ -1,0 +1,92 @@
+---
+import LegalLayout from 'theme/layouts/LegalLayout.astro';
+import { siteConfig } from 'src/data/site';
+
+const title = 'Website Terms & Conditions';
+const description = `Terms and Conditions governing access to and use of the ${siteConfig.legalName} website and online moving tools.`;
+const lastUpdated = '2026-06-10';
+
+const headings = [
+  { depth: 2, slug: 'acceptance', text: '1. Acceptance of Terms & Company Information' },
+  { depth: 2, slug: 'intellectual-property', text: '2. Intellectual Property Rights & Trademarks' },
+  { depth: 2, slug: 'permitted-use', text: '3. Permitted & Prohibited Website Use' },
+  { depth: 2, slug: 'online-estimates', text: '4. Accuracy of Online Calculators & Estimators' },
+  { depth: 2, slug: 'external-links', text: '5. External Links & Third-Party Services' },
+  { depth: 2, slug: 'liability-limitation', text: '6. Limitation of Website Liability' },
+  { depth: 2, slug: 'governing-law', text: '7. Governing Law & English Jurisdiction' }
+];
+---
+
+<LegalLayout
+  title={title}
+  description={description}
+  lastUpdated={lastUpdated}
+  headings={headings}
+>
+  <p class="lead text-lg font-medium text-slate-800 dark:text-slate-200">
+    Welcome to the official website of {siteConfig.legalName} (<a href={siteConfig.siteUrl}>{siteConfig.siteUrl}</a>). These Terms and Conditions govern your access to, browsing of, and interaction with our website, cost calculators, quote forms, and moving advice resources.
+  </p>
+
+  <p>
+    By accessing or using this website, you confirm your unconditional acceptance of these terms. If you do not agree to these terms, you must refrain from using this website immediately.
+  </p>
+
+  <h2 id="acceptance">1. Acceptance of Terms & Company Information</h2>
+  <p>
+    This website is operated by <strong>{siteConfig.legalName}</strong> (trading as <em>{siteConfig.businessName}</em>), a private limited company registered in England and Wales under Companies House registration number <strong>{siteConfig.companyNumber}</strong>.
+  </p>
+  <p>
+    Our registered office is located at: {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.addressRegion}, {siteConfig.address.postalCode}. For legal enquiries regarding website operations, email <a href={`mailto:${siteConfig.email}`} class="underline text-amber-600 dark:text-amber-400">{siteConfig.email}</a>.
+  </p>
+
+  <h2 id="intellectual-property">2. Intellectual Property Rights & Trademarks</h2>
+  <p>
+    Unless otherwise expressly stated, {siteConfig.legalName} is the exclusive owner or licensed licensee of all intellectual property rights in this website and in the material published on it, including but not limited to:
+  </p>
+  <ul>
+    <li>All editorial text copy, local town guides, moving checklists, and FAQ compilations.</li>
+    <li>Graphic design elements, brand logos, custom illustrations, schematic vector maps, and user interface components.</li>
+    <li>Source code, proprietary moving cost calculation algorithms, and layout architecture.</li>
+  </ul>
+  <p>
+    All works are protected under the Copyright, Designs and Patents Act 1988 and international treaties. All rights are reserved. You may download or print extracts from this website solely for personal, non-commercial use in planning your house move. Systematic extraction, scraping, republishing, or commercial exploitation without prior written consent is strictly prohibited.
+  </p>
+
+  <h2 id="permitted-use">3. Permitted & Prohibited Website Use</h2>
+  <p>
+    You agree to use our website only for lawful purposes related to evaluating, planning, and booking legitimate removal and logistics services. You must not:
+  </p>
+  <ul>
+    <li>Submit false, fraudulent, automated, or misleading quotation requests.</li>
+    <li>Introduce computer viruses, trojans, worms, logic bombs, or any malicious code.</li>
+    <li>Attempt unauthorised access to our server, hosting infrastructure, or connected databases.</li>
+    <li>Use automated software, spiders, or scrapers to extract pricing data, postcode tables, or editorial content.</li>
+    <li>Circumvent or tamper with security features, anti-spam honeypot fields, or Cloudflare verification mechanisms.</li>
+  </ul>
+
+  <h2 id="online-estimates">4. Accuracy of Online Calculators & Estimators</h2>
+  <p>
+    Our interactive moving cost calculator provides indicative guide price ranges based on standard property contents and average loading conditions across Birmingham and the West Midlands.
+  </p>
+  <p>
+    <strong>Online calculations do not constitute a binding contractual quote.</strong> A fixed-price removals contract requires a verified inventory survey (in-person, telephone, or video survey) and written quotation issued by our operations coordinators. We accept no liability for discrepancies between preliminary calculator estimates and the final surveyed quotation.
+  </p>
+
+  <h2 id="external-links">5. External Links & Third-Party Services</h2>
+  <p>
+    Where our website contains links to external sites (such as Birmingham City Council for Clean Air Zone charges and parking dispensations, or the Information Commissioner's Office), these links are provided for informational reference only. We exercise no control over the content, uptime, or privacy practices of external websites and accept no responsibility for loss or damage arising from your use of them.
+  </p>
+
+  <h2 id="liability-limitation">6. Limitation of Website Liability</h2>
+  <p>
+    While we strive to ensure that all information on this website is up to date and correct, we do not warrant its absolute completeness or accuracy. To the maximum extent permitted by English law, we exclude all representations, warranties, and conditions relating to the website and its content.
+  </p>
+  <p>
+    Nothing in these website terms excludes or limits our liability for death or personal injury arising from our negligence, fraudulent misrepresentation, or any liability which cannot be excluded or limited under the Consumer Rights Act 2015 or English law. Contractual liability for physical removal operations is governed exclusively by our <a href="/terms-of-business/" class="underline text-amber-600 dark:text-amber-400">Terms of Business</a>.
+  </p>
+
+  <h2 id="governing-law">7. Governing Law & English Jurisdiction</h2>
+  <p>
+    These Terms and Conditions, their subject matter, and their formation are governed by the laws of England and Wales. You and {siteConfig.legalName} agree that the courts of England and Wales shall have exclusive jurisdiction to settle any dispute or claim arising out of or in connection with the use of this website.
+  </p>
+</LegalLayout>

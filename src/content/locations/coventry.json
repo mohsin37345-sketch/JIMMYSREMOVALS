@@ -1,0 +1,71 @@
+{
+  "town": "Coventry",
+  "slug": "coventry",
+  "county": "West Midlands",
+  "metaTitle": "Coventry Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Coventry. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Jimmys Removals provides premier domestic and commercial removal services across the historic city of Coventry. Whether you are moving between classic 1930s suburban semi-detached homes in Cheylesmore and Styvechale, settling into a modern apartment overlooking the regenerated canal basin, or relocating office facilities near the University of Warwick Science Park, our experienced team ensures a seamless transition. We provide fully equipped Luton removal vehicles, DBS-checked porters, and optional packing materials to make your Coventry move efficient, stress-free, and cost-effective. Every item is blanket-wrapped, securely lashed to internal van rails, and transported directly to your destination with zero intermediate co-loading.  Our moving consultants work with you from initial inquiry to completion day, offering transparent advice on vehicle sizes, packing boxes, and time windows so your transition into your new Coventry home is completely effortless and reliable. We supply hanging wardrobe boxes, sofa protectors, and floor runners for every move.",
+  "localKnowledge": "Coventry's unique infrastructure is defined by its iconic ring road (A4053), notorious for short entry slip roads and rapid lane merges that demand confident, defensive driving when piloting loaded 3.5-tonne vans. Our drivers know precisely which junction exits to take for access into Spon End, Hillfields, and the city centre without getting caught in congested circular loops.\n\nIn student hubs such as Earlsdon and Canley, end-of-term turnover creates intense moving activity, requiring scheduled vehicle positioning along narrow residential avenues where roadside parking is at a premium. Towards the south, along the Kenilworth Road and Styvechale suburbs, sprawling grounds and private gravel drives call for floor coverings and careful vehicle turning. With direct routes onto the A45 and A46, we also provide fast connectivity for long-distance relocations out of Coventry to London or the north.",
+  "postcodes": [
+    "CV1",
+    "CV2",
+    "CV3",
+    "CV4",
+    "CV5",
+    "CV6"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Solihull",
+      "slug": "solihull"
+    },
+    {
+      "name": "Nuneaton",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Bedworth",
+      "slug": "bedworth"
+    }
+  ],
+  "travelInfo": "Direct access via the Coventry Ringway (A4053), A45 Foleshill/Stonebridge Highway, and A46 bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Coventry operates a Class E targeted CAZ for buses and taxis only; private removals vans are completely exempt from charges."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Are your removal vans subject to clean air charges in Coventry?",
+      "answer": "No. Coventry's clean air measures do not charge private removals vans or light goods vehicles, meaning zero additional emissions fees.",
+      "display": true
+    },
+    {
+      "question": "Do you service student moves for Coventry University and University of Warwick?",
+      "answer": "Yes, we regularly support students moving into halls, shared student houses in Earlsdon, or returning home across the UK with affordable hourly and fixed rates.",
+      "display": true
+    },
+    {
+      "question": "How do you manage parking along busy streets in Earlsdon or Foleshill?",
+      "answer": "We liaise with you beforehand to arrange vehicle space directly outside your property, arriving early to secure safe loading without blocking narrow thoroughfares.",
+      "display": true
+    },
+    {
+      "question": "Can you provide packing boxes in Coventry before our moving day?",
+      "answer": "Yes, we deliver robust double-walled boxes, bubble wrap, packing paper, and tape ahead of time if you prefer self-packing.",
+      "display": true
+    }
+  ],
+  "lat": 52.4068,
+  "lng": -1.5197,
+  "tier": 1,
+  "heroImage": "/images/locations/coventry.webp"
+}

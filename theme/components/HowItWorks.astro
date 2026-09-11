@@ -1,0 +1,84 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = 'How Our Removal Process Works',
+  subtitle = 'From your initial quotation to settling into your new home, our four-step process guarantees complete peace of mind.'
+} = Astro.props;
+
+const steps = [
+  {
+    step: 1,
+    title: 'Transparent Fixed Quote',
+    description: 'Provide your move details online or via video survey for an itemised, guaranteed price with no hidden fuel or waiting fees.',
+    icon: 'briefcase'
+  },
+  {
+    step: 2,
+    title: 'Preparation & Packing',
+    description: 'We deliver double-walled cartons in advance or arrive to pack fragile glassware and dismantle furniture before moving day.',
+    icon: 'box'
+  },
+  {
+    step: 3,
+    title: 'Move-Day Transit',
+    description: 'Your possessions are wrapped in quilted blankets, secured with straps, and transported in Clean Air Zone compliant Luton vans.',
+    icon: 'truck'
+  },
+  {
+    step: 4,
+    title: 'Room-by-Room Placement',
+    description: 'We position furniture exactly where you want it in your new home, rebuild essential beds, and complete final sign-off.',
+    icon: 'check'
+  }
+];
+---
+
+<section class="py-16 bg-white dark:bg-slate-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+        Simple 4-Step Process
+      </span>
+      <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1">
+        {title}
+      </h2>
+      <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-2">
+        {subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {steps.map((s) => (
+        <div class="relative p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-8 h-8 rounded-full bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shadow">
+                {s.step}
+              </span>
+              <div class="text-amber-600 dark:text-amber-400">
+                <Icon name={s.icon} class="w-5 h-5" />
+              </div>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">
+              {s.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              {s.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Optional Slot Support for Custom Page Injections -->
+    <div class="mt-8">
+      <slot />
+    </div>
+  </div>
+</section>

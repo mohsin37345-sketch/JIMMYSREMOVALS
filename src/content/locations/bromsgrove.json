@@ -1,0 +1,67 @@
+{
+  "town": "Bromsgrove",
+  "slug": "bromsgrove",
+  "county": "Worcestershire",
+  "metaTitle": "Bromsgrove Removals & Storage | Jimmys Removals",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Bromsgrove. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "intro": "Planning a house move in Bromsgrove? Jimmys Removals delivers an outstanding domestic moving and packing service. From elegant period residences near Bromsgrove School and Finstall to family semi-detached properties in Aston Fields, Catshill, and Marlbrook, our polite team ensures that your transition is executed with utmost care. We offer complete wardrobe packing, furniture assembly, and full transit insurance coverage.  We provide tailored removals packages for homes of all sizes in Bromsgrove, offering full packing, secure containerised storage, and experienced porters who treat your property with genuine care. We use floor runners to keep your hallways pristine and protect all delicate items.",
+  "localKnowledge": "Bromsgrove sits strategically between the M5 and M42 motorways. In leafy semi-rural lanes around Blackwell, Barnt Green, and Stoke Prior, gravel drives and mature tree canopies require our drivers to manoeuvre low-loader Luton vans with care, preserving manicured grounds.",
+  "postcodes": [
+    "B60",
+    "B61"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Redditch",
+      "slug": "redditch"
+    },
+    {
+      "name": "Northfield",
+      "slug": "northfield"
+    },
+    {
+      "name": "Halesowen",
+      "slug": "halesowen"
+    }
+  ],
+  "travelInfo": "Outstanding motorway links at M5 Junction 4/4A and M42 Junction 1.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": "Bromsgrove operates without a Clean Air Zone."
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Do you cover Barnt Green and Blackwell?",
+      "answer": "Yes, we regularly conduct moves in Barnt Green, Blackwell, and surrounding villages.",
+      "display": true
+    },
+    {
+      "question": "Can you handle moves from Bromsgrove to London?",
+      "answer": "Yes, we provide dedicated long-distance relocations throughout the UK.",
+      "display": true
+    },
+    {
+      "question": "Do you lay floor protectors on carpets and tiles?",
+      "answer": "Yes, our team uses heavy-duty walkway runners to keep your floors spotless.",
+      "display": true
+    },
+    {
+      "question": "Can you pack fragile kitchenware in Bromsgrove?",
+      "answer": "Yes, our fragile packing service takes care of all glassware, china, and ornaments.",
+      "display": true
+    }
+  ],
+  "lat": 52.335,
+  "lng": -2.059,
+  "tier": 2,
+  "heroImage": "/images/locations/bromsgrove.webp"
+}

@@ -1,0 +1,33 @@
+{
+  "service": "office-removals",
+  "location": "birmingham",
+  "uniqueIntro": "Minimise business downtime with professional office removals in Birmingham by Jimmys Removals. We specialise in out-of-hours, evening, and weekend business relocations across the Colmore Business District, Brindleyplace, Jewellery Quarter, and surrounding commercial centres.",
+  "localAngle": "Birmingham commercial relocations require coordination with building facility managers, loading bay access, and service lift slots. We supply sealable commercial plastic crates, anti-static IT computer bags, and workstation labels to ensure staff walk into a fully operational office on Monday morning.",
+  "faqs": [
+    {
+      "question": "Can you complete our Birmingham office move over the weekend?",
+      "answer": "Yes, the majority of our commercial clients schedule moves starting Friday evening to guarantee zero trading downtime.",
+      "display": true
+    },
+    {
+      "question": "Do you supply plastic crates for IT and desk contents?",
+      "answer": "Yes, we deliver heavy-duty lidded plastic crates and numbered security seals ahead of moving day.",
+      "display": true
+    },
+    {
+      "question": "Are your vans compliant with the Birmingham Clean Air Zone?",
+      "answer": "Yes, our fleet is Euro 6 compliant with zero CAZ charges when operating in central business zones.",
+      "display": true
+    },
+    {
+      "question": "What liability insurance do you carry for commercial moves?",
+      "answer": "We carry £2,000,000 Public Liability insurance and comprehensive commercial transit cover.",
+      "display": true
+    }
+  ],
+  "caseStudy": {
+    "title": "35-Desk Law Firm Relocation on Colmore Row",
+    "scenario": "Relocating a legal practice with confidential document archives and multi-screen IT setups over a single weekend with strict landlord protection rules.",
+    "outcome": "All workstations, file cabinets, and IT servers relocated and set up with zero business disruption."
+  }
+}

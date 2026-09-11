@@ -1,0 +1,110 @@
+---
+import LegalLayout from 'theme/layouts/LegalLayout.astro';
+import { siteConfig } from 'src/data/site';
+
+const title = 'Customer Complaints Procedure';
+const description = `Clear guidelines, response timescales, and escalation pathways for submitting feedback or formal complaints to ${siteConfig.legalName}.`;
+const lastUpdated = '2026-06-10';
+
+const headings = [
+  { depth: 2, slug: 'commitment', text: '1. Our Customer Service Commitment' },
+  { depth: 2, slug: 'stage-1-informal', text: '2. Stage 1: Informal Immediate Resolution' },
+  { depth: 2, slug: 'stage-2-formal', text: '3. Stage 2: Formal Written Complaint' },
+  { depth: 2, slug: 'investigation-timescales', text: '4. Investigation Process & Response Timescales' },
+  { depth: 2, slug: 'stage-3-appeal', text: '5. Stage 3: Senior Management Appeal Review' },
+  { depth: 2, slug: 'independent-escalation', text: '6. Independent Dispute Resolution & Legal Recourse' }
+];
+---
+
+<LegalLayout
+  title={title}
+  description={description}
+  lastUpdated={lastUpdated}
+  headings={headings}
+>
+  <p class="lead text-lg font-medium text-slate-800 dark:text-slate-200">
+    At {siteConfig.legalName}, we pride ourselves on exceptional customer service, punctual timekeeping, and treating your home and belongings with utmost care. However, we recognise that moving house can be stressful and unforeseen issues occasionally arise.
+  </p>
+
+  <p>
+    This Complaints Procedure outlines our structured, transparent framework for receiving, investigating, and resolving customer concerns fairly and efficiently.
+  </p>
+
+  <h2 id="commitment">1. Our Customer Service Commitment</h2>
+  <p>
+    We view constructive customer feedback as an invaluable opportunity to continuously refine our operational standards and porter training. When you raise a concern:
+  </p>
+  <ul>
+    <li>Your complaint will be handled impartially, courteously, and with complete confidentiality.</li>
+    <li>Raising a complaint will never compromise any ongoing services or future bookings.</li>
+    <li>We adhere strictly to our published investigation timescales and provide clear written explanations of our findings and proposed remedies.</li>
+  </ul>
+
+  <h2 id="stage-1-informal">2. Stage 1: Informal Immediate Resolution</h2>
+  <p>
+    Many operational concerns—such as vehicle arrival timing, parking logistics, or room-by-room item placement—can be resolved immediately on the day:
+  </p>
+  <ul>
+    <li><strong>On Moving Day:</strong> Speak directly to your appointed removal team leader. Our foremen have full authority to adjust loading sequences, deploy extra blankets, or contact operations coordinators to dispatch additional resources where necessary.</li>
+    <li><strong>Telephone Enquiries:</strong> You can contact our Birmingham customer care desk by telephone on <a href={`tel:${siteConfig.phoneE164}`} class="underline text-amber-600 dark:text-amber-400">{siteConfig.phone}</a> (Monday to Saturday, 8am - 7pm). If our customer service coordinators can resolve your matter within 24 hours, we will do so immediately and follow up with a confirmation email.</li>
+  </ul>
+
+  <h2 id="stage-2-formal">3. Stage 2: Formal Written Complaint</h2>
+  <p>
+    If informal discussions fail to resolve the issue to your satisfaction, or if your concern relates to property damage, contract discrepancies, or staff conduct, please submit a formal written complaint:
+  </p>
+  <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 text-sm">
+    <p><strong>Send Formal Written Complaints To:</strong></p>
+    <p>
+      <strong>Email:</strong> <a href={`mailto:${siteConfig.email}?subject=Formal%20Customer%20Complaint`} class="underline text-amber-600 dark:text-amber-400">{siteConfig.email}</a>
+    </p>
+    <p>
+      <strong>Postal Address:</strong> Complaints Department, {siteConfig.legalName}, {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.addressRegion}, {siteConfig.address.postalCode}
+    </p>
+    <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+      <p class="font-bold mb-1">To expedite investigation, please include:</p>
+      <ul class="list-disc pl-5 space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+        <li>Your full name, current telephone number, and email address.</li>
+        <li>Your removals invoice or quotation reference number.</li>
+        <li>The moving date, collection address, and destination address.</li>
+        <li>A clear, factual summary of the incident or concern.</li>
+        <li>Photographic evidence and item details where damage is alleged.</li>
+        <li>Your proposed outcome or remedial resolution.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="investigation-timescales">4. Investigation Process & Response Timescales</h2>
+  <p>
+    We enforce strict operational response deadlines at every stage:
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <div class="text-amber-600 dark:text-amber-400 font-bold text-base mb-1">Within 2 Working Days</div>
+      <p class="text-xs text-slate-600 dark:text-slate-400">
+        Written acknowledgment confirming receipt, assigning an internal case reference number and naming the investigating manager.
+      </p>
+    </div>
+    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+      <div class="text-amber-600 dark:text-amber-400 font-bold text-base mb-1">Within 10 Working Days</div>
+      <p class="text-xs text-slate-600 dark:text-slate-400">
+        Full written investigation findings, including crew statements, telematics data, insurer input where relevant, and our definitive resolution offer.
+      </p>
+    </div>
+  </div>
+
+  <h2 id="stage-3-appeal">5. Stage 3: Senior Management Appeal Review</h2>
+  <p>
+    If you remain unsatisfied with the Stage 2 investigation outcome, you may request an internal appeal within 14 calendar days of receiving our response. Your case will be escalated directly to our Managing Director, who will conduct an independent review of the entire complaint file and issue a final written decision within <strong>7 working days</strong>.
+  </p>
+
+  <h2 id="independent-escalation">6. Independent Dispute Resolution & Legal Recourse</h2>
+  <p>
+    If we reach a formal deadlock and cannot agree on an amicable resolution:
+  </p>
+  <ul>
+    <li><strong>Alternative Dispute Resolution (ADR):</strong> We will provide details of an approved, independent Alternative Dispute Resolution body certified under the Alternative Dispute Resolution for Consumer Disputes (Competent Authorities and Information) Regulations 2015 to facilitate impartial mediation or adjudication.</li>
+    <li><strong>Citizens Advice Consumer Service:</strong> For independent advice regarding your statutory rights under the Consumer Rights Act 2015, contact the Citizens Advice Consumer Service on 0808 223 1133 or visit <a href="https://www.citizensadvice.org.uk" target="_blank" rel="noopener noreferrer" class="underline text-amber-600 dark:text-amber-400">citizensadvice.org.uk</a>.</li>
+    <li><strong>Legal Jurisdiction:</strong> Nothing in this procedure affects your statutory right to bring proceedings before the courts of England and Wales.</li>
+  </ul>
+</LegalLayout>

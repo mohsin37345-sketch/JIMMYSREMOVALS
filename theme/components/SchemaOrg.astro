@@ -1,0 +1,344 @@
+---
+import { siteConfig } from 'src/data/site';
+import socialLinks from 'src/data/social.json';
+import navigation from 'src/data/navigation.json';
+import { absoluteUrl } from 'theme/utils/absoluteUrl';
+
+export interface BreadcrumbItem {
+  name: string;
+  item: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
+  display?: boolean;
+}
+
+export interface ReviewItem {
+  name: string;
+  town?: string;
+  service?: string;
+  rating: number;
+  date: string;
+  body: string;
+  verified: boolean;
+}
+
+export interface Props {
+  type?: 'Home' | 'Service' | 'Location' | 'ServiceArea' | 'About' | 'Contact' | 'Blog' | 'BlogPost' | 'Legal' | 'Generic';
+  breadcrumbs?: BreadcrumbItem[];
+  faqs?: FaqItem[];
+  serviceData?: {
+    name: string;
+    description: string;
+    priceFrom?: number;
+    url: string;
+  };
+  locationData?: {
+    town: string;
+    county: string;
+    postcodes: string[];
+    lat: number;
+    lng: number;
+    url: string;
+  };
+  reviews?: ReviewItem[];
+  blogPost?: {
+    headline: string;
+    description: string;
+    image: string;
+    datePublished: string;
+    dateModified?: string;
+    author: string;
+    wordCount?: number;
+    category?: string;
+    url: string;
+  };
+  blogItems?: Array<{
+    title: string;
+    url: string;
+    position?: number;
+  }>;
+}
+
+const {
+  type = 'Generic',
+  breadcrumbs = [],
+  faqs = [],
+  serviceData,
+  locationData,
+  reviews = [],
+  blogPost,
+  blogItems = []
+} = Astro.props;
+
+const orgId = `${siteConfig.siteUrl}/#organisation`;
+const websiteId = `${siteConfig.siteUrl}/#website`;
+
+// Social URLs for sameAs
+const sameAs = Object.values(socialLinks).filter((url) => typeof url === 'string' && url.trim().length > 0);
+
+// Verified reviews calculation (AggregateRating emitted ONLY from verified reviews)
+const verifiedReviews = reviews.filter((r) => r.verified === true);
+let aggregateRatingSchema = undefined;
+if (verifiedReviews.length > 0) {
+  const sum = verifiedReviews.reduce((acc, r) => acc + r.rating, 0);
+  const avg = (sum / verifiedReviews.length).toFixed(1);
+  aggregateRatingSchema = {
+    '@type': 'AggregateRating',
+    ratingValue: avg,
+    reviewCount: verifiedReviews.length,
+    bestRating: '5',
+    worstRating: '1'
+  };
+}
+
+// 1. Organization (MovingCompany / LocalBusiness)
+const organizationSchema: Record<string, any> = {
+  '@type': 'MovingCompany',
+  '@id': orgId,
+  name: siteConfig.businessName,
+  legalName: siteConfig.legalName,
+  url: siteConfig.siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteConfig.siteUrl}/favicon.svg`
+  },
+  image: `${siteConfig.siteUrl}/images/og-default.webp`,
+  description: 'Fully insured, DBS-checked house removals, office relocations, and same-day delivery across Birmingham and the West Midlands.',
+  telephone: siteConfig.phoneE164,
+  email: siteConfig.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.address.streetAddress,
+    addressLocality: siteConfig.address.addressLocality,
+    addressRegion: siteConfig.address.addressRegion,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: siteConfig.address.addressCountry
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: siteConfig.geo.latitude,
+    longitude: siteConfig.geo.longitude
+  },
+  priceRange: siteConfig.priceRange,
+  paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
+  currenciesAccepted: 'GBP',
+  vatID: siteConfig.vatNumber,
+  sameAs: sameAs.length > 0 ? sameAs : undefined,
+  openingHoursSpecification: siteConfig.openingHours.map((h) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes
+  })),
+  areaServed: [
+    {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: siteConfig.geo.latitude,
+        longitude: siteConfig.geo.longitude
+      },
+      geoRadius: '60000'
+    },
+    { '@type': 'AdministrativeArea', name: 'West Midlands' },
+    { '@type': 'City', name: 'Birmingham' },
+    { '@type': 'City', name: 'Wolverhampton' },
+    { '@type': 'City', name: 'Coventry' },
+    { '@type': 'City', name: 'Solihull' },
+    { '@type': 'City', name: 'Dudley' },
+    { '@type': 'City', name: 'Walsall' },
+    { '@type': 'City', name: 'West Bromwich' },
+    { '@type': 'City', name: 'Sutton Coldfield' },
+    { '@type': 'City', name: 'Stourbridge' }
+  ]
+};
+
+if (aggregateRatingSchema) {
+  organizationSchema.aggregateRating = aggregateRatingSchema;
+  organizationSchema.review = verifiedReviews.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.name },
+    datePublished: r.date,
+    reviewBody: r.body,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: r.rating,
+      bestRating: '5',
+      worstRating: '1'
+    }
+  }));
+}
+
+// 2. WebSite Schema
+const websiteSchema: Record<string, any> = {
+  '@type': 'WebSite',
+  '@id': websiteId,
+  url: siteConfig.siteUrl,
+  name: siteConfig.legalName,
+  publisher: { '@id': orgId }
+};
+
+// 3. SiteNavigationElement Graph
+const navigationElements = navigation.mainNav.map((item, index) => ({
+  '@type': 'SiteNavigationElement',
+  position: index + 1,
+  name: item.label,
+  url: absoluteUrl(item.href)
+}));
+
+// Graph Array
+const graph: any[] = [organizationSchema, websiteSchema, ...navigationElements];
+
+// 4. BreadcrumbList (Every page except Homepage)
+if (breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((b, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: b.name,
+      item: absoluteUrl(b.item)
+    }))
+  });
+}
+
+// 5. FAQPage (Filtering out display: false items)
+const visibleFaqs = faqs.filter((f) => f.display !== false);
+if (visibleFaqs.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: visibleFaqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer
+      }
+    }))
+  });
+}
+
+// 6. Service Schema (For Service Pages)
+if ((type === 'Service' || type === 'ServiceArea') && serviceData) {
+  const serviceSchema: Record<string, any> = {
+    '@type': 'Service',
+    name: serviceData.name,
+    serviceType: serviceData.name,
+    description: serviceData.description,
+    provider: { '@id': orgId },
+    url: absoluteUrl(serviceData.url)
+  };
+  if (serviceData.priceFrom) {
+    serviceSchema.offers = {
+      '@type': 'Offer',
+      price: serviceData.priceFrom,
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl(serviceData.url)
+    };
+  }
+  graph.push(serviceSchema);
+}
+
+// 7. LocalBusiness + Service on Location Pages
+if ((type === 'Location' || type === 'ServiceArea') && locationData) {
+  graph.push({
+    '@type': 'LocalBusiness',
+    '@id': `${absoluteUrl(locationData.url)}#localbusiness`,
+    name: `${siteConfig.businessName} ${locationData.town}`,
+    parentOrganization: { '@id': orgId },
+    url: absoluteUrl(locationData.url),
+    telephone: siteConfig.phoneE164,
+    areaServed: {
+      '@type': 'City',
+      name: locationData.town
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: locationData.lat,
+      longitude: locationData.lng
+    }
+  });
+}
+
+// 8. Specific Page Types
+if (type === 'About') {
+  graph.push({
+    '@type': 'AboutPage',
+    '@id': `${siteConfig.siteUrl}/about-us/#page`,
+    url: `${siteConfig.siteUrl}/about-us/`,
+    name: `About ${siteConfig.legalName}`,
+    mainEntity: { '@id': orgId }
+  });
+} else if (type === 'Contact') {
+  graph.push({
+    '@type': 'ContactPage',
+    '@id': `${siteConfig.siteUrl}/contact-us/#page`,
+    url: `${siteConfig.siteUrl}/contact-us/`,
+    name: `Contact ${siteConfig.businessName}`
+  });
+} else if (type === 'Blog') {
+  const blogSchema: Record<string, any> = {
+    '@type': 'Blog',
+    '@id': `${siteConfig.siteUrl}/blog/#blog`,
+    url: `${siteConfig.siteUrl}/blog/`,
+    name: `${siteConfig.businessName} Moving Guides & Advice`,
+    publisher: { '@id': orgId }
+  };
+  graph.push(blogSchema);
+
+  if (blogItems && blogItems.length > 0) {
+    graph.push({
+      '@type': 'ItemList',
+      itemListElement: blogItems.map((item, idx) => ({
+        '@type': 'ListItem',
+        position: item.position || idx + 1,
+        url: absoluteUrl(item.url),
+        name: item.title
+      }))
+    });
+  }
+} else if (type === 'BlogPost' && blogPost) {
+  graph.push({
+    '@type': 'BlogPosting',
+    headline: blogPost.headline.slice(0, 110),
+    description: blogPost.description,
+    image: absoluteUrl(blogPost.image),
+    datePublished: blogPost.datePublished,
+    dateModified: blogPost.dateModified || blogPost.datePublished,
+    author: {
+      '@type': 'Person',
+      name: blogPost.author,
+      url: `${siteConfig.siteUrl}/about-us/#author`
+    },
+    publisher: { '@id': orgId },
+    mainEntityOfPage: absoluteUrl(blogPost.url),
+    wordCount: blogPost.wordCount,
+    articleSection: blogPost.category
+  });
+}
+
+// Helper to strip undefined / null
+function cleanObject(obj: any): any {
+  if (Array.isArray(obj)) {
+    return obj.map(cleanObject).filter((v) => v !== undefined && v !== null);
+  }
+  if (obj !== null && typeof obj === 'object') {
+    return Object.entries(obj).reduce((acc: any, [key, value]) => {
+      const cleaned = cleanObject(value);
+      if (cleaned !== undefined && cleaned !== null && cleaned !== '') {
+        acc[key] = cleaned;
+      }
+      return acc;
+    }, {});
+  }
+  return obj;
+}
+
+const cleanedGraph = cleanObject(graph);
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': cleanedGraph })} />

@@ -1,0 +1,86 @@
+{
+  "title": "House Clearance & Bereavement Services Birmingham",
+  "slug": "house-clearance",
+  "shortTitle": "House Clearance",
+  "metaTitle": "House Clearance Birmingham & West Midlands | Licensed & Compassionate",
+  "metaDescription": "Licensed, compassionate house clearance and probate services in Birmingham and the Black Country. Full property clearances, ethical recycling and donation.",
+  "heroHeading": "Compassionate, Licensed House & Estate Clearance",
+  "heroSubheading": "Respectful, discreet property clearances for bereavement, probate, downsizing, and tenancy ends. Licensed waste carriers prioritising reuse and charity donation.",
+  "icon": "trash",
+  "summary": "Dealing with the clearance of a family home or estate can be an emotionally taxing experience. Jimmys Removals provides a sensitive, thorough, and fully licensed clearance service. We handle everything from sorting and packing to ethical recycling and charity donation.",
+  "benefits": [
+    "Environment Agency registered Upper Tier Waste Carrier",
+    "Over 85% of cleared materials diverted from landfill via donation and recycling",
+    "Respectful, discreet, and patient handling of probate and bereavement estates",
+    "Clear itemised paperwork and waste transfer notes provided for solicitors",
+    "Complete sweep-clean of cleared rooms, garages, lofts, and outbuildings"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Property Walkthrough & Estimate",
+      "description": "We conduct an on-site or video appraisal of items to be retained, donated, recycled, or disposed of, providing a firm fixed quotation."
+    },
+    {
+      "step": 2,
+      "title": "Sentimental Item Segregation",
+      "description": "Any family photographs, legal papers, or sentimental heirlooms discovered during clearance are carefully set aside for your inspection."
+    },
+    {
+      "step": 3,
+      "title": "Systematic Clearing & Loading",
+      "description": "Our team clears furniture, white goods, textiles, and miscellaneous contents from the house, cellar, and garden sheds."
+    },
+    {
+      "step": 4,
+      "title": "Donation, Recycling & Sweep",
+      "description": "Usable items are delivered to West Midlands partner charities, recyclables to licensed stations, and rooms are left swept clean."
+    }
+  ],
+  "whatsIncluded": [
+    "Full property clearance (including lofts, basements, and sheds)",
+    "Environment Agency legal Duty of Care Waste Transfer Note",
+    "Transportation of donated goods to certified charity partners",
+    "Sorting, bagging, lifting, and heavy appliance removal",
+    "Post-clearance broom sweep of all cleared spaces"
+  ],
+  "whatsNotIncluded": [
+    "Removal of hazardous asbestos or chemical pesticide drums",
+    "Structural demolition of masonry outbuildings or walls",
+    "Commercial trade demolition rubble beyond domestic DIY quantities",
+    "Biohazardous clinical waste removal"
+  ],
+  "priceFrom": 220,
+  "priceUnit": "fixed clearance quote",
+  "priceNotes": "Achievable starting price for a single room, garage, or partial flat clearance with reusable items offset.",
+  "faqs": [
+    {
+      "question": "Are you a licensed waste carrier?",
+      "answer": "Yes. Jimmys Removals and Logistics LTD holds a valid Environment Agency Waste Carrier licence. We supply official Waste Transfer Notes for every clearance job.",
+      "display": true
+    },
+    {
+      "question": "Do I need to be present throughout the clearance?",
+      "answer": "No. Many clients and estate executors prefer to grant key access or leave keys with an estate agent. We can photograph the completed swept property and lock up securely.",
+      "display": true
+    },
+    {
+      "question": "What happens to furniture that is still in good condition?",
+      "answer": "We partner with reputable charitable organisations across Birmingham to donate clean, fire-labelled furniture, helping families in need while avoiding landfill.",
+      "display": true
+    },
+    {
+      "question": "Can you clear overgrown gardens, sheds, and garages too?",
+      "answer": "Yes. We clear outdoor sheds, garages, workshops, and greenhouse contents alongside the main domestic residence.",
+      "display": true
+    }
+  ],
+  "relatedServices": ["house-removals", "man-and-van", "storage", "packing-services"],
+  "heroImage": "/images/services/house-clearance.webp",
+  "gallery": [
+    "/images/gallery/property-clearance.webp",
+    "/images/gallery/van-loading-waste.webp"
+  ],
+  "order": 8,
+  "featured": false
+}
