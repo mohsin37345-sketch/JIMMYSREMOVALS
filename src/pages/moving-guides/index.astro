@@ -1,0 +1,38 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import GuidesTeaser from 'theme/components/GuidesTeaser.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Moving Guides', item: '/moving-guides/' }
+];
+---
+
+<BaseLayout
+  title="Moving Guides, Checklists & Tips | Jimmys Removals Birmingham"
+  description="Expert moving guides, room-by-room packing checklists, cost breakdowns, and Clean Air Zone advice from Jimmys Removals and Logistics LTD."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="page"
+    title="Moving Guides & Relocation Advice"
+    subtitle="Clear checklists, cost benchmarks, and local West Midlands logistics guidance to help you plan a stress-free house move."
+    badge="Practical Moving Insights"
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <GuidesTeaser />
+
+    <CTABand
+      heading="Need Personalised Advice for Your Move?"
+      subheading="Call our Birmingham operations desk on 0121 517 1227 for friendly moving advice, survey bookings, and fixed quotes."
+      primaryCtaText="Get a Free Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </div>
+</BaseLayout>

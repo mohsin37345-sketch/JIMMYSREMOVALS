@@ -1,0 +1,65 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CostTable from 'theme/components/CostTable.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Moving Guides', item: '/moving-guides/' },
+  { name: 'How Much Do Removals Cost in the UK?', item: '/moving-guides/how-much-do-removals-cost-uk/' }
+];
+---
+
+<BaseLayout
+  title="How Much Do Removals Cost in the UK? | 2026 Average Price Guide"
+  description="UK removal costs explained. Average prices for 1 to 5-bed houses, hourly man and van rates, packing service costs, and money-saving moving tips."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="blog"
+    title="How Much Do Removals Cost in the UK? (2026 Breakdown)"
+    subtitle="An independent, transparent breakdown of house removal costs across Birmingham and the wider UK."
+    badge="Pricing & Budgeting"
+    author="Jimmys Removals Pricing Team"
+    date="19 September 2026"
+    readingTimeText="8 min read"
+  />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 text-slate-800 dark:text-slate-200">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-base leading-relaxed">
+      <p class="text-lg font-medium text-slate-600 dark:text-slate-300">
+        Budgeting for a house move is critical to avoiding unexpected completion day expenses. On average, UK house removals range between £280 for a 1-bed flat to over £1,450 for a 4-bed detached home on a typical 10 to 50-mile journey.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">UK Average Costs by Property Size</h2>
+      <p>
+        Removal costs depend heavily on the volume of belongings (cubic feet), travel distance, and access conditions:
+      </p>
+      <ul>
+        <li><strong>1-Bed Flat:</strong> £280 – £380 (Local) / £550 – £700 (Long Distance 150mi)</li>
+        <li><strong>2-Bed House:</strong> £390 – £540 (Local) / £750 – £950 (Long Distance 150mi)</li>
+        <li><strong>3-Bed House:</strong> £560 – £850 (Local) / £1,050 – £1,400 (Long Distance 150mi)</li>
+        <li><strong>4-Bed House:</strong> £780 – £1,150 (Local) / £1,450 – £1,950 (Long Distance 150mi)</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Hourly Rates vs Fixed Quotes</h2>
+      <p>
+        Man and van services typically charge £65 to £85 per hour for a 3.5T Luton van with 1–2 movers. For full family moves involving property chains, fixed quotes protect against costly waiting time charges while awaiting solicitor key releases.
+      </p>
+    </div>
+
+    <!-- Embedded Crawlable Cost Table Component -->
+    <CostTable />
+
+    <CTABand
+      heading="Calculate Your Exact Removal Price"
+      subheading="Use our fast quote tool to receive an itemised, binding quote tailored to your inventory."
+      primaryCtaText="Get a Free Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </article>
+</BaseLayout>

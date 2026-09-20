@@ -45,7 +45,7 @@ const visibleFaqs = rawList.filter((f) => f.display !== false);
         {visibleFaqs.map((faq, idx) => (
           <details
             class="group p-5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl transition-all open:bg-white dark:open:bg-slate-900 open:shadow-md"
-            open={idx === 0}
+            open={idx < 6}
           >
             <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-base text-slate-900 dark:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg pr-2">
               <span>{faq.question}</span>

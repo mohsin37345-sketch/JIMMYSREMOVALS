@@ -1,0 +1,56 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import CostTable from 'theme/components/CostTable.astro';
+import PricingTable from 'theme/components/PricingTable.astro';
+import ComparisonTable from 'theme/components/ComparisonTable.astro';
+import FAQ from 'theme/components/FAQ.astro';
+import CTABand from 'theme/components/CTABand.astro';
+import faqsData from 'src/data/faqs.json';
+
+const costFaqs = faqsData.slice(0, 6);
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Removal Costs Birmingham', item: '/removal-costs-birmingham/' }
+];
+---
+
+<BaseLayout
+  title="How Much Do House Removals Cost in Birmingham? | 2026 Price Guide"
+  description="Comprehensive 2026 removal costs guide for Birmingham and the West Midlands. Average prices for 1 to 5-bed houses, hourly man and van rates, and fixed quote calculator."
+  schemaType="Generic"
+  breadcrumbs={breadcrumbs}
+  faqs={costFaqs}
+>
+  <Hero
+    variant="page"
+    title="How Much Do House Removals Cost in Birmingham?"
+    subtitle="Clear, crawlable pricing benchmarks for house moves, flat relocations, and man and van hire across the West Midlands. Zero hidden fees or unexpected CAZ charges."
+    badge="2026 Removals Pricing Guide"
+  />
+
+  <!-- Main Crawlable Cost Table & Price Factors -->
+  <CostTable />
+
+  <!-- Four Core Pricing Tiers -->
+  <PricingTable title="Transparent Removals Pricing" />
+
+  <!-- Comparison Table -->
+  <ComparisonTable title="Jimmys Removals vs Casual Movers vs DIY Van Hire" />
+
+  <!-- Cost-Specific FAQs -->
+  <FAQ
+    faqs={costFaqs}
+    title="Birmingham House Removal Cost FAQs"
+    subtitle="Direct answers to the most common questions regarding removals budgeting, hourly rates, and fixed prices."
+  />
+
+  <!-- Final CTA -->
+  <CTABand
+    heading="Get Your Guaranteed Fixed Birmingham Removals Quote"
+    subheading="Book a free 15-minute video survey or enter your property postcodes for an instant itemised quotation."
+    primaryCtaText="Get a Free Quote"
+    primaryCtaHref="/get-a-quote/"
+  />
+</BaseLayout>

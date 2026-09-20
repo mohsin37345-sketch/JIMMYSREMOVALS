@@ -9,6 +9,7 @@ Disallow: /thank-you/
 Disallow: /*?utm_*
 
 Sitemap: ${siteConfig.siteUrl}/sitemap-index.xml
+Sitemap: ${siteConfig.siteUrl}/sitemap.xml
 `;
 
   return new Response(robotsTxt, {

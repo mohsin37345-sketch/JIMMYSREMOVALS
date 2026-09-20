@@ -1,0 +1,70 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Moving Guides', item: '/moving-guides/' },
+  { name: '8-Week Moving House Checklist', item: '/moving-guides/8-week-moving-house-checklist/' }
+];
+---
+
+<BaseLayout
+  title="8-Week Moving House Checklist | Complete UK Moving Timeline"
+  description="Follow our comprehensive 8-week moving house checklist. From conveyancer paperwork and decluttering to utility changeovers and completion day packing."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="blog"
+    title="The Ultimate 8-Week Moving House Checklist"
+    subtitle="A structured week-by-week timeline to eliminate moving stress, coordinate solicitors, and ensure an effortless move day."
+    badge="Checklists & Timelines"
+    author="Jimmys Removals Operations Team"
+    date="19 September 2026"
+    readingTimeText="6 min read"
+  />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 text-slate-800 dark:text-slate-200">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-base leading-relaxed">
+      <p class="text-lg font-medium text-slate-600 dark:text-slate-300">
+        Moving house is widely regarded as one of life’s most demanding milestones. Breaking down your tasks into an 8-week structured roadmap ensures nothing gets overlooked between exchange and completion.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Week 8: Declutter & Request Early Removal Quotes</h2>
+      <p>
+        Begin by sorting room by room. Categorise items into keep, donate, sell, or clear. Booking a survey with a reputable removal company like Jimmys Removals 8 weeks in advance gives you accurate cubic footage assessments and lock-in rates.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Week 6: School Transfers & Packing Materials</h2>
+      <p>
+        Notify schools, doctors, and dentists. Order double-walled removal boxes, packing tape, bubble wrap, and wardrobe cartons so you can begin packing seasonal clothing and seldom-used loft items.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Week 4: Exchange of Contracts & Parking Permits</h2>
+      <p>
+        Once exchange occurs, your completion date is legally binding. Apply to Birmingham City Council or your local authority for removal van parking bay suspensions or resident dispenser dispensations.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Week 2: Utilities & Change of Address</h2>
+      <p>
+        Contact broadband providers, energy suppliers, water companies, and council tax departments. Arrange Royal Mail postal redirection to protect your identity.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Moving Week: Essentials Box & Completion Day</h2>
+      <p>
+        Pack an essentials survival box: kettle, mugs, tea, phone chargers, toiletries, important legal documents, and children's essentials. Your Jimmys Removals crew arrives promptly on move day to load, transit, and position your furniture in your new home.
+      </p>
+    </div>
+
+    <CTABand
+      heading="Ready to Book Your Birmingham Move?"
+      subheading="Get an itemised fixed quote with no hidden charges. DBS-checked movers and £50k insurance cover."
+      primaryCtaText="Get a Free Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </article>
+</BaseLayout>

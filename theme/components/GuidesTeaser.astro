@@ -1,0 +1,106 @@
+---
+import Icon from './Icon.astro';
+
+const guides = [
+  {
+    title: '8-Week Moving House Checklist',
+    slug: '8-week-moving-house-checklist',
+    readingTime: '6 min read',
+    category: 'Planning & Timelines',
+    summary: 'A structured week-by-week moving house countdown covering conveyancers, council tax notification, utility changeovers, and completion day packing schedules.',
+    icon: 'calendar'
+  },
+  {
+    title: 'How Much Do Removals Cost in the UK?',
+    slug: 'how-much-do-removals-cost-uk',
+    readingTime: '8 min read',
+    category: 'Budgeting & Pricing',
+    summary: 'A comprehensive national breakdown of UK removal costs by property size, distance bands, man and van hourly rates, and money-saving packing tips.',
+    icon: 'coins'
+  },
+  {
+    title: 'Moving Into Birmingham’s Clean Air Zone',
+    slug: 'moving-into-birmingham-clean-air-zone',
+    readingTime: '5 min read',
+    category: 'Local Logistics',
+    summary: 'Everything you need to know about the A4540 Middleway boundary, non-compliant vehicle charges, Euro 6 van standards, and avoiding CAZ surcharges.',
+    icon: 'truck'
+  },
+  {
+    title: 'Packing Fragile Items: A Room-by-Room Guide',
+    slug: 'packing-fragile-items-room-by-room',
+    readingTime: '7 min read',
+    category: 'Packing & Protection',
+    summary: 'Expert wrapping techniques for kitchen chinaware, stem glassware, framed mirrors, and electronic screens using double-walled boxes and bubble wrap.',
+    icon: 'box'
+  }
+];
+---
+
+<section id="guides" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Section Header & H2 -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
+          <Icon name="book-open" class="w-4 h-4" />
+          <span>Practical Moving Insights</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+          Moving House Guides & Advice
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+          Expert checklists, cost benchmarks, and local West Midlands logistics guidance written by professional movers.
+        </p>
+      </div>
+
+      <div class="shrink-0">
+        <a
+          href="/moving-guides/"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 hover:text-amber-500 transition"
+        >
+          <span>View All Moving Guides</span>
+          <Icon name="chevron-right" class="w-3.5 h-3.5" />
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 Guide Cards with H3s -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {guides.map((guide) => (
+        <article class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between text-[11px] text-slate-400 mb-3">
+              <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 font-semibold">
+                {guide.category}
+              </span>
+              <span>{guide.readingTime}</span>
+            </div>
+
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-snug mb-2">
+              <a href={`/moving-guides/${guide.slug}/`}>
+                {guide.title}
+              </a>
+            </h3>
+
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              {guide.summary}
+            </p>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+            <a
+              href={`/moving-guides/${guide.slug}/`}
+              class="inline-flex items-center gap-1 text-xs font-bold text-amber-600 dark:text-amber-400 group-hover:translate-x-1 transition-transform"
+            >
+              <span>Read Guide</span>
+              <Icon name="chevron-right" class="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -4,23 +4,30 @@ export interface SiteConfig {
   legalName: string;
   companyNumber: string;
   vatNumber: string;
+  wasteCarrierLicence: string;
+  insuranceUnderwriter: string;
+  foundedYear: string;
+  googleBusinessProfileUrl: string;
   phone: string;
   phoneHref: string;
   phoneE164: string;
   whatsappE164: string;
   whatsappHref: string;
   email: string;
+  baseLocation: string;
   address: {
     streetAddress: string;
     addressLocality: string;
     addressRegion: string;
     postalCode: string;
     addressCountry: string;
+    fullAddress: string;
   };
   geo: {
-    latitude: number;
-    longitude: number;
+    latitude: string | number;
+    longitude: string | number;
   };
+  openingHoursDisplay: string;
   openingHours: {
     days: string[];
     opens: string;
@@ -44,25 +51,32 @@ export const siteConfig: SiteConfig = {
   siteUrl: 'https://www.jimmysremovalsltd.co.uk',
   businessName: 'Jimmys Removals',
   legalName: 'Jimmys Removals and Logistics LTD',
-  companyNumber: '14829104',
-  vatNumber: 'GB 428 9152 30',
+  companyNumber: '{{COMPANIES_HOUSE_NUMBER}}',
+  vatNumber: '{{VAT_NUMBER}}',
+  wasteCarrierLicence: '{{WASTE_CARRIER_LICENCE_NUMBER}}',
+  insuranceUnderwriter: '{{INSURANCE_UNDERWRITER_NAME}}',
+  foundedYear: '{{FOUNDED_YEAR}}',
+  googleBusinessProfileUrl: '{{GOOGLE_BUSINESS_PROFILE_URL}}',
   phone: '0121 517 1227',
   phoneHref: 'tel:+441215171227',
   phoneE164: '+441215171227',
   whatsappE164: '+447000000000',
   whatsappHref: 'https://wa.me/447000000000',
   email: 'info@jimmysremovalsltd.co.uk',
+  baseLocation: 'Phoenix Business Park, Birmingham',
   address: {
-    streetAddress: 'Unit 4, Phoenix Business Park, Avenue Road',
+    streetAddress: 'Phoenix Business Park',
     addressLocality: 'Birmingham',
     addressRegion: 'West Midlands',
-    postalCode: 'B6 4DY',
-    addressCountry: 'GB'
+    postalCode: '{{FULL_ADDRESS_WITH_POSTCODE}}',
+    addressCountry: 'GB',
+    fullAddress: 'Phoenix Business Park, Birmingham, {{FULL_ADDRESS_WITH_POSTCODE}}'
   },
   geo: {
-    latitude: 52.4862,
-    longitude: -1.8904
+    latitude: '{{LAT}}',
+    longitude: '{{LNG}}'
   },
+  openingHoursDisplay: '{{OPENING_HOURS}}',
   openingHours: [
     {
       days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -75,15 +89,15 @@ export const siteConfig: SiteConfig = {
     publicLiability: '£2,000,000'
   },
   priceRange: '££',
-  accreditations: [], // Empty by default per spec — no fabricated trade logos
+  accreditations: [], // Empty per spec — no fabricated trade logos or unverified accreditations
   positioning: [
-    'Fully Insured (Goods in Transit & Public Liability)',
-    'DBS-Checked Removal Teams',
-    'Clean Air Zone Compliant Fleet',
-    'Transparent Upfront Pricing (No Hidden Fees)',
-    'Operating 7 Days a Week'
+    '£50,000 Goods in Transit & £2,000,000 Public Liability',
+    'DBS-Checked, Uniformed Directly Employed Crews',
+    'Euro 6 Clean Air Zone Compliant Luton Vans',
+    'Fixed Upfront Quotes Following Video or In-Person Survey',
+    'Operating 7 Days a Week Across All 37 West Midlands Towns'
   ],
-  coverageLine: 'Birmingham, the Black Country and the whole West Midlands, with UK-wide long-distance removals.'
+  coverageLine: 'All 37 West Midlands towns with dedicated nationwide transit across mainland Britain.'
 };
 
 export const site = siteConfig;

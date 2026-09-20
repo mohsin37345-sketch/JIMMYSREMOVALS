@@ -7,6 +7,7 @@ import FAQ from 'theme/components/FAQ.astro';
 import CTABand from 'theme/components/CTABand.astro';
 import RelatedLinks from 'theme/components/RelatedLinks.astro';
 import Icon from 'theme/components/Icon.astro';
+import { getCollection } from 'astro:content';
 
 export interface Props {
   service: {
@@ -32,6 +33,40 @@ export interface Props {
 }
 
 const { service } = Astro.props;
+
+const allLocations = await getCollection('locations');
+const allServiceAreas = await getCollection('serviceAreas');
+
+// Find which locations have dedicated service-area pages for this service
+const dedicatedServiceLocations = allServiceAreas
+  .filter((sa) => sa.data.service === service.slug)
+  .map((sa) => {
+    const loc = allLocations.find((l) => l.id === sa.data.location);
+    return {
+      town: loc?.data.town || sa.data.location,
+      slug: sa.data.location,
+      county: loc?.data.county || 'West Midlands',
+      uniqueIntro: sa.data.uniqueIntro,
+      href: `/removals/${service.slug}/${sa.data.location}/`
+    };
+  });
+
+// Tier 1 major locations for broad coverage linking
+const tier1Locations = allLocations
+  .filter((loc) => loc.data.tier === 1)
+  .sort((a, b) => a.data.town.localeCompare(b.data.town));
+
+// Construct sidebar area links
+const sidebarAreaLinks = [
+  ...tier1Locations.map((loc) => {
+    const hasDedicated = dedicatedServiceLocations.some((dsl) => dsl.slug === loc.id);
+    return {
+      title: hasDedicated ? `${loc.data.town} ${service.shortTitle}` : `${loc.data.town} Removals`,
+      href: hasDedicated ? `/removals/${service.slug}/${loc.id}/` : `/areas/${loc.id}/`
+    };
+  }),
+  { title: 'All 37 Coverage Areas & Map', href: '/areas/' }
+];
 
 const breadcrumbs = [
   { name: 'Home', item: '/' },
@@ -121,6 +156,13 @@ const serviceData = {
         </div>
 
         <RelatedLinks currentHref={`/removals/${service.slug}/`} />
+
+        <!-- Areas Covered for This Service -->
+        <RelatedLinks
+          title={`Areas Covered for ${service.shortTitle}`}
+          links={sidebarAreaLinks}
+          currentHref=""
+        />
       </aside>
     </div>
 
@@ -184,6 +226,107 @@ const serviceData = {
             </li>
           ))}
         </ul>
+      </div>
+    </div>
+
+    <!-- Areas Covered for This Service Section -->
+    <div class="space-y-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
+          <Icon name="map-pin" class="w-3.5 h-3.5" />
+          <span>Regional Operations</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+          Where We Provide {service.shortTitle} Across the West Midlands
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+          Operating 7 days a week with low-emission Euro 6 vans, our uniformed movers deliver {service.shortTitle.toLowerCase()} across all 37 West Midlands towns and boroughs.
+        </p>
+      </div>
+
+      <!-- Dedicated Service-Location Hubs (if any exist for this service) -->
+      {dedicatedServiceLocations.length > 0 && (
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span>Dedicated {service.shortTitle} Town Hubs</span>
+            </h3>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Custom routes & local guidance</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {dedicatedServiceLocations.map((dsl) => (
+              <a
+                href={dsl.href}
+                class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-lg transition-all flex flex-col justify-between interactive-card"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-full">
+                      Dedicated Service Page
+                    </span>
+                    <span class="text-xs text-slate-400">{dsl.county}</span>
+                  </div>
+                  <h4 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                    {dsl.town} {service.shortTitle}
+                  </h4>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                    {dsl.uniqueIntro}
+                  </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
+                  <span>Explore {dsl.town} Details</span>
+                  <Icon name="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Primary Coverage Hubs Grid -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">
+              Primary Coverage Areas for {service.shortTitle}
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              Select any location to view local access notes, parking guidance, and road connectivity:
+            </p>
+          </div>
+          <a
+            href="/areas/"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold text-amber-600 dark:text-amber-400 hover:border-amber-500 shadow-sm transition shrink-0"
+          >
+            <span>Interactive Map & All 37 Areas</span>
+            <Icon name="arrow-right" class="w-3.5 h-3.5" />
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+          {tier1Locations.map((loc) => {
+            const hasDedicated = dedicatedServiceLocations.some((dsl) => dsl.slug === loc.id);
+            const targetUrl = hasDedicated ? `/removals/${service.slug}/${loc.id}/` : `/areas/${loc.id}/`;
+            return (
+              <a
+                href={targetUrl}
+                class="p-3 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 hover:border-amber-500 dark:hover:border-amber-500 transition group flex items-center justify-between text-xs"
+              >
+                <div>
+                  <span class="font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors block truncate">
+                    {loc.data.town}
+                  </span>
+                  <span class="text-[10px] text-slate-400 block truncate">
+                    {hasDedicated ? 'Dedicated page' : loc.data.county}
+                  </span>
+                </div>
+                <Icon name="chevron-right" class="w-3 h-3 text-slate-400 group-hover:text-amber-500 group-hover:translate-x-0.5 transition shrink-0 ml-1" />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </div>
 

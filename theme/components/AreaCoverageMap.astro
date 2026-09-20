@@ -11,8 +11,8 @@ const { locations = [], class: className = '' } = Astro.props;
 // Grouped regional clusters
 const regionalGroups = [
   {
-    name: 'Birmingham & Inner Districts',
-    desc: 'B1-B48 postcode zones including Clean Air Zone corridors & suburban hubs',
+    name: 'Birmingham & Inner Districts (B1–B48)',
+    desc: 'B1-B48 postcode zones including Clean Air Zone corridors, Digbeth, Harborne, Selly Oak and Sutton Coldfield',
     towns: [
       { name: 'Birmingham City', slug: 'birmingham', tier: 1 },
       { name: 'Sutton Coldfield', slug: 'sutton-coldfield', tier: 1 },
@@ -49,7 +49,7 @@ const regionalGroups = [
     ]
   },
   {
-    name: 'Coventry & Solihull (Warwickshire)',
+    name: 'Coventry, Solihull & Warwickshire',
     desc: 'M42, A45 and Coventry corridors connecting Warwickshire and East Birmingham',
     towns: [
       { name: 'Coventry', slug: 'coventry', tier: 1 },
@@ -81,9 +81,9 @@ const regionalGroups = [
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-amber-400">
-          Regional Coverage Network
+          Regional Motorway Corridors: M6 • M5 • M42 • A38(M)
         </span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">West Midlands Operations Map</h2>
+        <div class="text-xl sm:text-2xl font-bold text-white mt-1">West Midlands Operations Map</div>
       </div>
       <div class="flex items-center gap-3 text-xs text-slate-300">
         <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Tier 1 Hubs</span>

@@ -18,6 +18,28 @@ export async function getStaticPaths() {
     const svc = services.find((s) => s.id === sa.data.service);
     const loc = locations.find((l) => l.id === sa.data.location);
 
+    // Other dedicated services in this location
+    const otherLocalDedicated = serviceAreas
+      .filter((other) => other.data.location === sa.data.location && other.data.service !== sa.data.service)
+      .map((other) => {
+        const otherSvc = services.find((s) => s.id === other.data.service);
+        return {
+          title: `${otherSvc?.data.shortTitle || other.data.service} in ${loc?.data.town || ''}`,
+          href: `/removals/${other.data.service}/${sa.data.location}/`
+        };
+      });
+
+    // Other towns where this specific service operates
+    const otherTownsWithService = serviceAreas
+      .filter((other) => other.data.service === sa.data.service && other.data.location !== sa.data.location)
+      .map((other) => {
+        const otherLoc = locations.find((l) => l.id === other.data.location);
+        return {
+          title: `${svc?.data.shortTitle || ''} in ${otherLoc?.data.town || other.data.location}`,
+          href: `/removals/${sa.data.service}/${other.data.location}/`
+        };
+      });
+
     return {
       params: {
         service: sa.data.service,
@@ -26,13 +48,15 @@ export async function getStaticPaths() {
       props: {
         item: sa.data,
         service: svc ? { ...svc.data, slug: svc.id } : null,
-        location: loc ? { ...loc.data, slug: loc.id } : null
+        location: loc ? { ...loc.data, slug: loc.id } : null,
+        otherLocalDedicated,
+        otherTownsWithService
       }
     };
   });
 }
 
-const { item, service, location } = Astro.props;
+const { item, service, location, otherLocalDedicated = [], otherTownsWithService = [] } = Astro.props;
 
 if (!service || !location) {
   throw new Error(`Missing service or location data for ${Astro.url.pathname}`);
@@ -159,23 +183,59 @@ const serviceData = {
           </a>
         </div>
 
-        <!-- Links to Town Page & General Service -->
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-3 text-sm">
-          <div class="font-bold text-slate-900 dark:text-white">Explore More:</div>
-          <ul class="space-y-2">
-            <li>
-              <a href={`/areas/${location.slug}/`} class="text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-2">
-                <Icon name="map-pin" class="w-4 h-4 shrink-0" />
-                <span>All {location.town} Removal Services</span>
-              </a>
-            </li>
-            <li>
-              <a href={`/removals/${service.slug}/`} class="text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-2">
-                <Icon name="truck" class="w-4 h-4 shrink-0" />
-                <span>General {service.shortTitle} Information</span>
-              </a>
-            </li>
-          </ul>
+        <!-- Links to Town Page, Local Services & General Services -->
+        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4 text-sm">
+          <div>
+            <div class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1.5">
+              <Icon name="map-pin" class="w-4 h-4 text-amber-500" />
+              <span>{location.town} Removals</span>
+            </div>
+            <ul class="space-y-1.5 text-xs">
+              <li>
+                <a href={`/areas/${location.slug}/`} class="text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1.5 font-medium">
+                  <Icon name="chevron-right" class="w-3 h-3 shrink-0" />
+                  <span>All {location.town} Services & Town Guide</span>
+                </a>
+              </li>
+              {otherLocalDedicated.map((ols) => (
+                <li>
+                  <a href={ols.href} class="text-slate-600 dark:text-slate-300 hover:text-amber-500 flex items-center gap-1.5">
+                    <Icon name="chevron-right" class="w-3 h-3 shrink-0 text-slate-400" />
+                    <span>{ols.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
+            <div class="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1.5">
+              <Icon name="truck" class="w-4 h-4 text-amber-500" />
+              <span>{service.shortTitle} Hubs</span>
+            </div>
+            <ul class="space-y-1.5 text-xs">
+              <li>
+                <a href={`/removals/${service.slug}/`} class="text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1.5 font-medium">
+                  <Icon name="chevron-right" class="w-3 h-3 shrink-0" />
+                  <span>Main {service.shortTitle} Service Page</span>
+                </a>
+              </li>
+              {otherTownsWithService.slice(0, 5).map((ots) => (
+                <li>
+                  <a href={ots.href} class="text-slate-600 dark:text-slate-300 hover:text-amber-500 flex items-center gap-1.5">
+                    <Icon name="chevron-right" class="w-3 h-3 shrink-0 text-slate-400" />
+                    <span>{ots.title}</span>
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a href="/areas/" class="text-slate-500 hover:text-amber-500 flex items-center gap-1.5">
+                  <Icon name="chevron-right" class="w-3 h-3 shrink-0 text-slate-400" />
+                  <span>All 37 West Midlands Areas</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -186,6 +246,69 @@ const serviceData = {
       subtitle={`Answers to common questions about moving in ${location.town}.`}
       items={item.faqs}
     />
+
+    <!-- Cross-Linking Hub Grid: Other Services & Other Towns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Other Services in this location -->
+      <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <Icon name="truck" class="w-4 h-4 text-amber-500" />
+          <span>More Moving Services in {location.town}</span>
+        </h3>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li>
+            <a href={`/areas/${location.slug}/`} class="font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700">
+              <span>View Full {location.town} Coverage & Local Notes</span>
+              <Icon name="arrow-right" class="w-3.5 h-3.5" />
+            </a>
+          </li>
+          {otherLocalDedicated.map((ols) => (
+            <li>
+              <a href={ols.href} class="flex items-center justify-between p-2 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400">
+                <span>{ols.title}</span>
+                <Icon name="chevron-right" class="w-3.5 h-3.5 text-slate-400" />
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/removals/" class="flex items-center justify-between p-2 rounded-lg text-slate-500 hover:text-amber-600">
+              <span>All 12 Removals & Logistics Services</span>
+              <Icon name="chevron-right" class="w-3.5 h-3.5" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Other Towns for this service -->
+      <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <Icon name="map-pin" class="w-4 h-4 text-amber-500" />
+          <span>{service.shortTitle} in Other West Midlands Towns</span>
+        </h3>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          <li>
+            <a href={`/removals/${service.slug}/`} class="font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700">
+              <span>General {service.shortTitle} Overview & Prices</span>
+              <Icon name="arrow-right" class="w-3.5 h-3.5" />
+            </a>
+          </li>
+          {otherTownsWithService.map((ots) => (
+            <li>
+              <a href={ots.href} class="flex items-center justify-between p-2 rounded-lg hover:bg-white dark:hover:bg-slate-800 transition text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400">
+                <span>{ots.title}</span>
+                <Icon name="chevron-right" class="w-3.5 h-3.5 text-slate-400" />
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/areas/" class="flex items-center justify-between p-2 rounded-lg text-slate-500 hover:text-amber-600">
+              <span>All 37 West Midlands Towns & Coverage Map</span>
+              <Icon name="chevron-right" class="w-3.5 h-3.5" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- CTABand -->
     <CTABand

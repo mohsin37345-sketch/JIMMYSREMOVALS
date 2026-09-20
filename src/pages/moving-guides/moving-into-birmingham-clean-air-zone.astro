@@ -1,0 +1,63 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CleanAirZoneNotice from 'theme/components/CleanAirZoneNotice.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Moving Guides', item: '/moving-guides/' },
+  { name: 'Moving Into Birmingham’s Clean Air Zone', item: '/moving-guides/moving-into-birmingham-clean-air-zone/' }
+];
+---
+
+<BaseLayout
+  title="Moving Into Birmingham Clean Air Zone (CAZ) | Complete Resident Guide"
+  description="Essential guide to Birmingham's Clean Air Zone (CAZ). Boundary roads inside the A4540 Middleway, daily charges, Euro 6 van rules, and parking permits."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="blog"
+    title="Moving Into Birmingham’s Clean Air Zone (CAZ Guide)"
+    subtitle="Understand the A4540 Middleway boundaries, daily emissions charges, and how choosing an exempt removal company saves you money."
+    badge="Local Logistics"
+    author="Jimmys Removals Compliance Team"
+    date="19 September 2026"
+    readingTimeText="5 min read"
+  />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 text-slate-800 dark:text-slate-200">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-base leading-relaxed">
+      <p class="text-lg font-medium text-slate-600 dark:text-slate-300">
+        Birmingham operates a Category D Clean Air Zone (CAZ) covering all public roads within the A4540 Middleway ring road. If you are moving into the city centre, Jewellery Quarter, Digbeth, or Southside, understanding these rules is essential.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">The A4540 Middleway Boundary</h2>
+      <p>
+        The zone operates 24 hours a day, 365 days a year. Non-compliant vans and cars incur an £8 daily charge, while non-compliant HGVs and coaches face £50 daily fees. Automatic Number Plate Recognition (ANPR) cameras enforce every entry point.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Why Vehicle Compliance Matters for Removals</h2>
+      <p>
+        Unlicensed casual operators driving older diesel vans will either pass CAZ charges directly onto your moving bill or risk penalties that cause move-day disputes. Jimmys Removals operates an entirely Euro 6 compliant fleet of 3.5T Luton vans that enter the CAZ with zero daily charges and zero pass-through costs.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">City Centre Parking & Concierge Access</h2>
+      <p>
+        Apartment complexes along Broad Street, Holloway Head, and the canals require advance coordination with building management to reserve designated service lift slots and loading bays. Always ensure your removal firm operates tail-lift vehicles to accelerate loading.
+      </p>
+    </div>
+
+    <CleanAirZoneNotice />
+
+    <CTABand
+      heading="Zero CAZ Surcharges Guaranteed"
+      subheading="Move into central Birmingham without emissions penalties. Book your CAZ-compliant Luton van today."
+      primaryCtaText="Get a CAZ-Free Quote"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </article>
+</BaseLayout>

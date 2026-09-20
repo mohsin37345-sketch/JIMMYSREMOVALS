@@ -1,0 +1,310 @@
+---
+import Icon from './Icon.astro';
+import CostCalculator from './CostCalculator.astro';
+
+const propertyTiers = [
+  {
+    type: '1-Bed Flat / Apartment',
+    volume: '350–450 cu ft',
+    crew: '2 movers',
+    vehicle: '1× 3.5T Luton Box Van',
+    localCost: '£280 – £380',
+    regionalCost: '£420 – £520',
+    longDistanceCost: '£550 – £700',
+    condition: 'Ground or lift access, standard inventory, local within 10 miles.'
+  },
+  {
+    type: '2-Bed Terraced / Semi',
+    volume: '600–750 cu ft',
+    crew: '2–3 movers',
+    vehicle: '1× 3.5T Luton Box Van',
+    localCost: '£390 – £540',
+    regionalCost: '£580 – £720',
+    longDistanceCost: '£750 – £950',
+    condition: 'Standard residential parking, typical 2-bed contents, within 10 miles.'
+  },
+  {
+    type: '3-Bed Family House',
+    volume: '900–1,100 cu ft',
+    crew: '3 movers',
+    vehicle: '1–2× 3.5T Luton Vans',
+    localCost: '£560 – £850',
+    regionalCost: '£790 – £1,050',
+    longDistanceCost: '£1,050 – £1,400',
+    condition: 'Full household furniture, white goods, garden items, within 10 miles.'
+  },
+  {
+    type: '4-Bed Detached Home',
+    volume: '1,300–1,600 cu ft',
+    crew: '3–4 movers',
+    vehicle: '2× 3.5T Luton Vans',
+    localCost: '£780 – £1,150',
+    regionalCost: '£1,050 – £1,450',
+    longDistanceCost: '£1,450 – £1,950',
+    condition: 'Multiple living zones, garage/shed contents, dedicated crew.'
+  },
+  {
+    type: '5+ Bed Executive Home',
+    volume: '1,800–2,400+ cu ft',
+    crew: '4 movers',
+    vehicle: '2–3× 3.5T Luton Vans',
+    localCost: '£1,050 – £1,650+',
+    regionalCost: '£1,400 – £2,100+',
+    longDistanceCost: '£1,890 – £2,800+',
+    condition: 'Extensive inventory, phased loading, multi-van allocation.'
+  }
+];
+
+const priceFactors = [
+  {
+    title: 'Volume of Furniture & Belongings',
+    desc: 'The cubic footage of items determines whether you need a single 3.5T Luton removal van or a multi-vehicle crew. An accurate survey avoids surprise second runs.',
+    icon: 'box'
+  },
+  {
+    title: 'Travel Distance & Road Corridors',
+    desc: 'Local Birmingham moves (under 10 miles) are priced on travel time. Regional and long-distance UK moves along the M6, M5, or M42 factor in fuel, mileage, and return transit.',
+    icon: 'truck'
+  },
+  {
+    title: 'Property Access & Flights of Stairs',
+    desc: 'Narrow stairwells, top-floor apartments without lifts, or long gravel walks from the kerb add loading time and require additional porter assistance.',
+    icon: 'building'
+  },
+  {
+    title: 'Parking Permits & Bay Suspensions',
+    desc: 'City-centre moves inside Birmingham B1–B5 or controlled parking zones require council parking dispensation or bay suspensions to park the removal van legally.',
+    icon: 'map-pin'
+  },
+  {
+    title: 'Packing Service Level',
+    desc: 'Choose between self-packing with our supplied double-walled cartons, fragile-only packing for glassware and china, or complete full-home packing prior to move day.',
+    icon: 'shield'
+  },
+  {
+    title: 'Specialist & Heavy Items',
+    desc: 'Upright pianos, American style double fridge-freezers, fireproof safes, and antique sideboards require specialized dollies, piano covers, and electric tail-lift handling.',
+    icon: 'briefcase'
+  },
+  {
+    title: 'Moving Date & Completion Chains',
+    desc: 'Fridays, month-ends, and summer bank holidays are in peak demand across the West Midlands. Flexible mid-week bookings frequently secure the best value removal quote.',
+    icon: 'clock'
+  }
+];
+---
+
+<section id="cost-guide" class="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    
+    <!-- Section Intro & H2 -->
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
+        <Icon name="coins" class="w-4 h-4" />
+        <span>Transparent Birmingham Removals Pricing</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+        How Much Do House Removals Cost in Birmingham?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+        Whether you are moving a 1-bedroom apartment in Digbeth or a 5-bedroom family home in Solihull, we provide upfront, crawlable average costs so you can budget your house move with total confidence.
+      </p>
+    </div>
+
+    <!-- H3 1: Average Removal Costs by Property Size (Crawlable Static HTML Table) -->
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            Average Removal Costs by Property Size
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+            Real average UK guide rates based on standard access, trained DBS-checked movers, and £50,000 transit cover.
+          </p>
+        </div>
+        <a
+          href="/removal-costs-birmingham/"
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 hover:text-amber-500 transition shrink-0"
+        >
+          <span>Explore Complete Cost Pillar Guide</span>
+          <Icon name="chevron-right" class="w-3.5 h-3.5" />
+        </a>
+      </div>
+
+      <!-- Static Crawlable HTML Table -->
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl bg-white dark:bg-slate-900">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="bg-slate-100/80 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white">
+              <th class="p-4 sm:p-5 font-extrabold">Property Type & Volume</th>
+              <th class="p-4 sm:p-5 font-extrabold">Vehicle & Crew</th>
+              <th class="p-4 sm:p-5 font-extrabold bg-amber-50/60 dark:bg-amber-950/20 text-amber-700 dark:text-amber-300 border-x border-amber-500/20">
+                Local Move (≤10 mi)
+              </th>
+              <th class="p-4 sm:p-5 font-extrabold">Regional (≤50 mi)</th>
+              <th class="p-4 sm:p-5 font-extrabold">Long Distance (150 mi)</th>
+              <th class="p-4 sm:p-5 font-extrabold">Qualifying Condition</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+            {propertyTiers.map((tier) => (
+              <tr class="hover:bg-slate-50/70 dark:hover:bg-slate-800/50 transition-colors">
+                <td class="p-4 sm:p-5 font-bold text-slate-900 dark:text-white">
+                  <div>{tier.type}</div>
+                  <span class="text-[11px] font-normal text-slate-500 dark:text-slate-400">{tier.volume}</span>
+                </td>
+                <td class="p-4 sm:p-5 text-slate-700 dark:text-slate-300">
+                  <div class="font-semibold">{tier.crew}</div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400">{tier.vehicle}</div>
+                </td>
+                <td class="p-4 sm:p-5 font-black text-emerald-600 dark:text-emerald-400 bg-amber-50/40 dark:bg-amber-950/10 border-x border-amber-500/20">
+                  {tier.localCost}
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-slate-200">
+                  {tier.regionalCost}
+                </td>
+                <td class="p-4 sm:p-5 font-bold text-slate-800 dark:text-slate-200">
+                  {tier.longDistanceCost}
+                </td>
+                <td class="p-4 sm:p-5 text-slate-500 dark:text-slate-400 text-[11px] max-w-xs leading-relaxed">
+                  {tier.condition}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-[11px] text-slate-500 dark:text-slate-400 italic">
+        * All guide rates include £50,000 Goods in Transit insurance, fuel for agreed mileage, and zero Clean Air Zone surcharges. Final binding price confirmed following free video or in-person survey.
+      </p>
+    </div>
+
+    <!-- H3 2: What Affects the Price of Your Move -->
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          What Affects the Price of Your Move
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Removal costs are calculated transparently around 7 core variables rather than arbitrary guesswork.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {priceFactors.map((factor) => (
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3">
+              <Icon name={factor.icon} class="w-5 h-5" />
+            </div>
+            <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1.5">{factor.title}</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">{factor.desc}</p>
+          </div>
+        ))}
+        
+        <!-- Helpful Summary Card -->
+        <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 text-slate-950 flex flex-col justify-between shadow-lg">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider bg-black/10 px-2 py-0.5 rounded-full">
+              Fixed Price Promise
+            </span>
+            <h4 class="text-base font-black mt-2 mb-1 text-slate-950">Zero Hidden Surcharges</h4>
+            <p class="text-xs text-slate-900/90 leading-relaxed font-medium">
+              We never add unexpected fuel charges, CAZ penalty pass-throughs, or credit card fees. Your quotation is guaranteed in writing.
+            </p>
+          </div>
+          <a
+            href="/get-a-quote/"
+            class="mt-4 inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-slate-950 hover:bg-slate-900 text-white text-xs font-bold rounded-xl transition"
+          >
+            <span>Request Fixed Quote</span>
+            <Icon name="chevron-right" class="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- H3 3: Man and Van Hourly Rates vs Fixed-Price House Removals -->
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          Man and Van Hourly Rates vs Fixed-Price House Removals
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Understanding when to book by the hour versus choosing a guaranteed fixed-price removal contract.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Man and Van Card -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400">
+              Hourly Billing (From £65/hr)
+            </span>
+            <span class="text-xs font-semibold text-slate-400">2-Hour Minimum</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white">When Man and Van is Best</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Our hourly man and van service is ideal for smaller, flexible tasks: 1-bed flat removals, student moves to Aston or University of Birmingham, IKEA furniture collections, and single-item transport. You only pay for the exact hours worked.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 pt-1">
+            <li class="flex items-center gap-2"><Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" /> Fast booking for partial loads</li>
+            <li class="flex items-center gap-2"><Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" /> 1 or 2 professional movers with 3.5T Luton van</li>
+            <li class="flex items-center gap-2"><Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" /> £50k Goods in Transit cover included</li>
+          </ul>
+        </div>
+
+        <!-- Fixed Price House Removals Card -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-amber-500/40 shadow-xl space-y-4 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400">
+              Fixed Quotation (Guaranteed)
+            </span>
+            <span class="text-xs font-semibold text-emerald-500">Recommended for Chains</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 dark:text-white">When Fixed-Price Removals are Essential</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            For 2, 3, 4, and 5-bedroom house moves—especially involving property exchange and completion chains—a fixed price protects you. If key release is delayed by conveyancers or banking transfers until 3:30 PM, your hourly rate won't run up unexpectedly.
+          </p>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 pt-1">
+            <li class="flex items-center gap-2"><Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" /> Guaranteed overall price confirmed in advance</li>
+            <li class="flex items-center gap-2"><Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" /> Dedicated vehicle and multi-man porter team</li>
+            <li class="flex items-center gap-2"><Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" /> Full room-by-room placement & furniture reassembly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- H3 4: Estimate Your Move (Interactive Calculator Island) -->
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          Estimate Your Move
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Use our interactive moving cost calculator to customize property size, transit distance, and optional packing levels for an instant guide estimate.
+        </p>
+      </div>
+
+      <!-- CostCalculator Island Component with non-h2 heading -->
+      <CostCalculator headingTag="div" />
+
+      <!-- Pillar Link Footer -->
+      <div class="text-center pt-4">
+        <a
+          href="/removal-costs-birmingham/"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-slate-800 text-white hover:bg-amber-600 dark:hover:bg-amber-500 text-xs sm:text-sm font-bold transition shadow"
+        >
+          <span>View Detailed Birmingham Removal Costs Pillar & Calculator</span>
+          <Icon name="chevron-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

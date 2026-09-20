@@ -1,0 +1,65 @@
+---
+import BaseLayout from 'theme/layouts/BaseLayout.astro';
+import Hero from 'theme/components/Hero.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import CTABand from 'theme/components/CTABand.astro';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Moving Guides', item: '/moving-guides/' },
+  { name: 'Packing Fragile Items: Room-by-Room Guide', item: '/moving-guides/packing-fragile-items-room-by-room/' }
+];
+---
+
+<BaseLayout
+  title="Packing Fragile Items Room-by-Room Guide | Jimmys Removals"
+  description="Master the art of packing fragile chinaware, stem glassware, framed mirrors, and electronics. Practical room-by-room packaging advice from professional movers."
+  breadcrumbs={breadcrumbs}
+>
+  <Hero
+    variant="blog"
+    title="Packing Fragile Items: A Room-by-Room Guide"
+    subtitle="Learn expert techniques to protect delicate glassware, fine china, artwork, and electronics during transit."
+    badge="Packing & Protection"
+    author="Jimmys Removals Packing Specialists"
+    date="19 September 2026"
+    readingTimeText="7 min read"
+  />
+
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 text-slate-800 dark:text-slate-200">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="prose prose-slate dark:prose-invert max-w-none space-y-6 text-base leading-relaxed">
+      <p class="text-lg font-medium text-slate-600 dark:text-slate-300">
+        Over 80% of accidental breakages during house moves occur due to improper packing materials or poorly cushioned cartons. Using the right double-walled boxes and packing methods eliminates transit risk.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Kitchen: Plates, Bowls & Stem Glassware</h2>
+      <p>
+        Always pack plates vertically on their rims like vinyl records, never flat on their bases. Cushion the bottom of double-walled cartons with crushed butcher paper. Wrap wine glasses individually with acid-free tissue paper and fill hollow glass bowls with bubble wrap.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Living Room: Framed Art, Mirrors & Electronics</h2>
+      <p>
+        Apply painter’s masking tape in an 'X' shape across glass frames to prevent shattering in the event of impact. Wrap mirrors in heavy bubble wrap and slip them into flat telescopic mirror cartons. Televisions should be transported in original packaging or padded TV flight cases.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Bedroom: Wardrobe Clothes & Perfume Bottles</h2>
+      <p>
+        Use tall wardrobe cartons with integrated hanging rails to transfer suits and dresses straight from your closet without wrinkling. Seal perfume and cosmetic liquids in watertight ziplock bags before placing them in cushioned boxes.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Prefer Professional Packers?</h2>
+      <p>
+        Jimmys Removals offers full-service fragile-only and complete-home packing services. Our team brings all double-walled boxes, bubble wrap, and tissue paper, packing your home safely the day before your move.
+      </p>
+    </div>
+
+    <CTABand
+      heading="Need Packing Materials or Full Packing Service?"
+      subheading="We supply heavy-duty boxes, wardrobe cartons, and packing materials directly to your doorstep across the West Midlands."
+      primaryCtaText="Enquire About Packing"
+      primaryCtaHref="/get-a-quote/"
+    />
+  </article>
+</BaseLayout>

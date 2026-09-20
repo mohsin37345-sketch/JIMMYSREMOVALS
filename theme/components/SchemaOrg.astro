@@ -3,6 +3,7 @@ import { siteConfig } from 'src/data/site';
 import socialLinks from 'src/data/social.json';
 import navigation from 'src/data/navigation.json';
 import { absoluteUrl } from 'theme/utils/absoluteUrl';
+import { getCollection } from 'astro:content';
 
 export interface BreadcrumbItem {
   name: string;
@@ -39,8 +40,8 @@ export interface Props {
     town: string;
     county: string;
     postcodes: string[];
-    lat: number;
-    lng: number;
+    lat: number | string;
+    lng: number | string;
     url: string;
   };
   reviews?: ReviewItem[];
@@ -68,47 +69,74 @@ const {
   faqs = [],
   serviceData,
   locationData,
-  reviews = [],
+  reviews: _reviews = [],
   blogPost,
   blogItems = []
 } = Astro.props;
 
-const orgId = `${siteConfig.siteUrl}/#organisation`;
+const movingCompanyId = `${siteConfig.siteUrl}/#movingcompany`;
+const organizationId = `${siteConfig.siteUrl}/#organization`;
 const websiteId = `${siteConfig.siteUrl}/#website`;
 
 // Social URLs for sameAs
 const sameAs = Object.values(socialLinks).filter((url) => typeof url === 'string' && url.trim().length > 0);
 
-// Verified reviews calculation (AggregateRating emitted ONLY from verified reviews)
-const verifiedReviews = reviews.filter((r) => r.verified === true);
-let aggregateRatingSchema = undefined;
-if (verifiedReviews.length > 0) {
-  const sum = verifiedReviews.reduce((acc, r) => acc + r.rating, 0);
-  const avg = (sum / verifiedReviews.length).toFixed(1);
-  aggregateRatingSchema = {
-    '@type': 'AggregateRating',
-    ratingValue: avg,
-    reviewCount: verifiedReviews.length,
-    bestRating: '5',
-    worstRating: '1'
-  };
-}
+// All 37 West Midlands coverage towns for schema areaServed
+const all37Towns = [
+  'Birmingham', 'Solihull', 'Coventry', 'Wolverhampton', 'Dudley', 'Walsall', 'West Bromwich',
+  'Sutton Coldfield', 'Stourbridge', 'Halesowen', 'Oldbury', 'Smethwick', 'Tipton', 'Wednesbury',
+  'Willenhall', 'Bilston', 'Brierley Hill', 'Kingswinford', 'Rowley Regis', 'Cradley Heath',
+  'Bloxwich', 'Aldridge', 'Shirley', 'Nuneaton', 'Bedworth', 'Leamington Spa', 'Tamworth',
+  'Lichfield', 'Cannock', 'Bromsgrove', 'Redditch', 'Harborne', 'Moseley', 'Kings Heath',
+  'Selly Oak', 'Northfield', 'Erdington'
+];
 
-// 1. Organization (MovingCompany / LocalBusiness)
+// 1. Organization Schema (Legal entity and compliance identifiers)
 const organizationSchema: Record<string, any> = {
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: siteConfig.legalName,
+  legalName: siteConfig.legalName,
+  url: siteConfig.siteUrl,
+  vatID: siteConfig.vatNumber,
+  identifier: [
+    {
+      '@type': 'PropertyValue',
+      name: 'Companies House Registration',
+      value: siteConfig.companyNumber
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Environment Agency Waste Carrier Licence',
+      value: siteConfig.wasteCarrierLicence
+    }
+  ]
+};
+
+// 2. MovingCompany Schema (Specialized schema.org subtype)
+const movingCompanySchema: Record<string, any> = {
   '@type': 'MovingCompany',
-  '@id': orgId,
+  '@id': movingCompanyId,
   name: siteConfig.businessName,
   legalName: siteConfig.legalName,
   url: siteConfig.siteUrl,
+  parentOrganization: { '@id': organizationId },
   logo: {
     '@type': 'ImageObject',
     url: `${siteConfig.siteUrl}/favicon.svg`
   },
-  image: `${siteConfig.siteUrl}/images/og-default.webp`,
-  description: 'Fully insured, DBS-checked house removals, office relocations, and same-day delivery across Birmingham and the West Midlands.',
+  image: [
+    `${siteConfig.siteUrl}/images/moves/luton-van-tail-lift.webp`,
+    `${siteConfig.siteUrl}/images/moves/secure-appliance-transport.webp`,
+    `${siteConfig.siteUrl}/images/moves/furniture-packing-blankets.webp`
+  ],
+  description: 'Fixed-price house removals across Birmingham & the West Midlands. DBS-checked movers, £50k transit cover, CAZ-compliant vans. Free 60-second quote — 0121 517 1227.',
   telephone: siteConfig.phoneE164,
   email: siteConfig.email,
+  priceRange: siteConfig.priceRange,
+  paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
+  currenciesAccepted: 'GBP',
+  hasMap: siteConfig.googleBusinessProfileUrl,
   address: {
     '@type': 'PostalAddress',
     streetAddress: siteConfig.address.streetAddress,
@@ -122,11 +150,6 @@ const organizationSchema: Record<string, any> = {
     latitude: siteConfig.geo.latitude,
     longitude: siteConfig.geo.longitude
   },
-  priceRange: siteConfig.priceRange,
-  paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
-  currenciesAccepted: 'GBP',
-  vatID: siteConfig.vatNumber,
-  sameAs: sameAs.length > 0 ? sameAs : undefined,
   openingHoursSpecification: siteConfig.openingHours.map((h) => ({
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: h.days,
@@ -134,54 +157,35 @@ const organizationSchema: Record<string, any> = {
     closes: h.closes
   })),
   areaServed: [
-    {
-      '@type': 'GeoCircle',
-      geoMidpoint: {
-        '@type': 'GeoCoordinates',
-        latitude: siteConfig.geo.latitude,
-        longitude: siteConfig.geo.longitude
-      },
-      geoRadius: '60000'
-    },
     { '@type': 'AdministrativeArea', name: 'West Midlands' },
-    { '@type': 'City', name: 'Birmingham' },
-    { '@type': 'City', name: 'Wolverhampton' },
-    { '@type': 'City', name: 'Coventry' },
-    { '@type': 'City', name: 'Solihull' },
-    { '@type': 'City', name: 'Dudley' },
-    { '@type': 'City', name: 'Walsall' },
-    { '@type': 'City', name: 'West Bromwich' },
-    { '@type': 'City', name: 'Sutton Coldfield' },
-    { '@type': 'City', name: 'Stourbridge' }
-  ]
+    ...all37Towns.map((town) => ({ '@type': 'City', name: town }))
+  ],
+  sameAs: sameAs.length > 0 ? sameAs : undefined
 };
 
-if (aggregateRatingSchema) {
-  organizationSchema.aggregateRating = aggregateRatingSchema;
-  organizationSchema.review = verifiedReviews.map((r) => ({
-    '@type': 'Review',
-    author: { '@type': 'Person', name: r.name },
-    datePublished: r.date,
-    reviewBody: r.body,
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: r.rating,
-      bestRating: '5',
-      worstRating: '1'
-    }
-  }));
-}
+/**
+ * SEO COMPLIANCE NOTICE:
+ * AggregateRating and Review schemas are intentionally omitted from structured data
+ * until genuine, verifiable reviews on the live Google Business Profile can be confirmed.
+ * Outputting unverified review markup violates Google Search Central spam policies
+ * and triggers manual action penalties.
+ */
 
-// 2. WebSite Schema
+// 3. WebSite Schema
 const websiteSchema: Record<string, any> = {
   '@type': 'WebSite',
   '@id': websiteId,
   url: siteConfig.siteUrl,
   name: siteConfig.legalName,
-  publisher: { '@id': orgId }
+  publisher: { '@id': organizationId },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteConfig.siteUrl}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  }
 };
 
-// 3. SiteNavigationElement Graph
+// 4. SiteNavigationElement Graph
 const navigationElements = navigation.mainNav.map((item, index) => ({
   '@type': 'SiteNavigationElement',
   position: index + 1,
@@ -189,11 +193,23 @@ const navigationElements = navigation.mainNav.map((item, index) => ({
   url: absoluteUrl(item.href)
 }));
 
-// Graph Array
-const graph: any[] = [organizationSchema, websiteSchema, ...navigationElements];
+// Base graph initialization
+const graph: any[] = [organizationSchema, movingCompanySchema, websiteSchema, ...navigationElements];
 
-// 4. BreadcrumbList (Every page except Homepage)
-if (breadcrumbs.length > 0) {
+// 5. BreadcrumbList Schema
+if (type === 'Home') {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${siteConfig.siteUrl}/`
+      }
+    ]
+  });
+} else if (breadcrumbs.length > 0) {
   graph.push({
     '@type': 'BreadcrumbList',
     itemListElement: breadcrumbs.map((b, idx) => ({
@@ -205,7 +221,71 @@ if (breadcrumbs.length > 0) {
   });
 }
 
-// 5. FAQPage (Filtering out display: false items)
+// 6. ImageObject Schemas for the 3 Fleet Photographs
+if (type === 'Home') {
+  graph.push(
+    {
+      '@type': 'ImageObject',
+      '@id': `${siteConfig.siteUrl}/images/moves/luton-van-tail-lift.webp#image`,
+      url: `${siteConfig.siteUrl}/images/moves/luton-van-tail-lift.webp`,
+      contentUrl: `${siteConfig.siteUrl}/images/moves/luton-van-tail-lift.webp`,
+      caption: 'Jimmys Removals 3.5T Luton box van with 500kg electric hydraulic tail-lift lowered for ground-level loading on street in Birmingham',
+      author: { '@id': movingCompanyId }
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': `${siteConfig.siteUrl}/images/moves/secure-appliance-transport.webp#image`,
+      url: `${siteConfig.siteUrl}/images/moves/secure-appliance-transport.webp`,
+      contentUrl: `${siteConfig.siteUrl}/images/moves/secure-appliance-transport.webp`,
+      caption: 'Secure appliance transit inside Jimmys Removals van showing refrigerator and washing machine secured with ratchet webbing straps',
+      author: { '@id': movingCompanyId }
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': `${siteConfig.siteUrl}/images/moves/furniture-packing-blankets.webp#image`,
+      url: `${siteConfig.siteUrl}/images/moves/furniture-packing-blankets.webp`,
+      contentUrl: `${siteConfig.siteUrl}/images/moves/furniture-packing-blankets.webp`,
+      caption: 'Household furniture carefully wrapped with protective quilted transit blankets inside Jimmys Removals truck',
+      author: { '@id': movingCompanyId }
+    }
+  );
+}
+
+// 7. 12 Services Schema for Homepage
+if (type === 'Home') {
+  try {
+    const servicesList = await getCollection('services');
+    servicesList.forEach((svc) => {
+      const data = svc.data;
+      const slug = svc.id;
+      graph.push({
+        '@type': 'Service',
+        '@id': `${siteConfig.siteUrl}/services/${slug}/#service`,
+        name: data.title,
+        serviceType: data.shortTitle || data.title,
+        description: data.summary,
+        provider: { '@id': movingCompanyId },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'West Midlands' },
+          ...all37Towns.map((town) => ({ '@type': 'City', name: town }))
+        ],
+        offers: {
+          '@type': 'Offer',
+          url: `${siteConfig.siteUrl}/services/${slug}/`,
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            minPrice: data.priceFrom || 65,
+            priceCurrency: 'GBP'
+          }
+        }
+      });
+    });
+  } catch (e) {
+    // Fallback if collection cannot be read at runtime
+  }
+}
+
+// 8. FAQPage Schema (All 16 visible Q&As, matching visible text exactly)
 const visibleFaqs = faqs.filter((f) => f.display !== false);
 if (visibleFaqs.length > 0) {
   graph.push({
@@ -221,18 +301,18 @@ if (visibleFaqs.length > 0) {
   });
 }
 
-// 6. Service Schema (For Service Pages)
+// 9. Specific Service Schema (On Service Pages)
 if ((type === 'Service' || type === 'ServiceArea') && serviceData) {
-  const serviceSchema: Record<string, any> = {
+  const singleServiceSchema: Record<string, any> = {
     '@type': 'Service',
     name: serviceData.name,
     serviceType: serviceData.name,
     description: serviceData.description,
-    provider: { '@id': orgId },
+    provider: { '@id': movingCompanyId },
     url: absoluteUrl(serviceData.url)
   };
   if (serviceData.priceFrom) {
-    serviceSchema.offers = {
+    singleServiceSchema.offers = {
       '@type': 'Offer',
       price: serviceData.priceFrom,
       priceCurrency: 'GBP',
@@ -240,16 +320,16 @@ if ((type === 'Service' || type === 'ServiceArea') && serviceData) {
       url: absoluteUrl(serviceData.url)
     };
   }
-  graph.push(serviceSchema);
+  graph.push(singleServiceSchema);
 }
 
-// 7. LocalBusiness + Service on Location Pages
+// 10. LocalBusiness + Service on Location Pages
 if ((type === 'Location' || type === 'ServiceArea') && locationData) {
   graph.push({
     '@type': 'LocalBusiness',
     '@id': `${absoluteUrl(locationData.url)}#localbusiness`,
     name: `${siteConfig.businessName} ${locationData.town}`,
-    parentOrganization: { '@id': orgId },
+    parentOrganization: { '@id': movingCompanyId },
     url: absoluteUrl(locationData.url),
     telephone: siteConfig.phoneE164,
     areaServed: {
@@ -264,14 +344,14 @@ if ((type === 'Location' || type === 'ServiceArea') && locationData) {
   });
 }
 
-// 8. Specific Page Types
+// 11. Specific Page Types
 if (type === 'About') {
   graph.push({
     '@type': 'AboutPage',
     '@id': `${siteConfig.siteUrl}/about-us/#page`,
     url: `${siteConfig.siteUrl}/about-us/`,
     name: `About ${siteConfig.legalName}`,
-    mainEntity: { '@id': orgId }
+    mainEntity: { '@id': movingCompanyId }
   });
 } else if (type === 'Contact') {
   graph.push({
@@ -281,14 +361,13 @@ if (type === 'About') {
     name: `Contact ${siteConfig.businessName}`
   });
 } else if (type === 'Blog') {
-  const blogSchema: Record<string, any> = {
+  graph.push({
     '@type': 'Blog',
     '@id': `${siteConfig.siteUrl}/blog/#blog`,
     url: `${siteConfig.siteUrl}/blog/`,
     name: `${siteConfig.businessName} Moving Guides & Advice`,
-    publisher: { '@id': orgId }
-  };
-  graph.push(blogSchema);
+    publisher: { '@id': movingCompanyId }
+  });
 
   if (blogItems && blogItems.length > 0) {
     graph.push({
@@ -314,7 +393,7 @@ if (type === 'About') {
       name: blogPost.author,
       url: `${siteConfig.siteUrl}/about-us/#author`
     },
-    publisher: { '@id': orgId },
+    publisher: { '@id': movingCompanyId },
     mainEntityOfPage: absoluteUrl(blogPost.url),
     wordCount: blogPost.wordCount,
     articleSection: blogPost.category

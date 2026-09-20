@@ -8,57 +8,61 @@ export interface Props {
 
 const {
   title = 'How Our Removal Process Works',
-  subtitle = 'From your initial quotation to settling into your new home, our four-step process guarantees complete peace of mind.'
+  subtitle = 'From your initial survey to key release and final room placement, our structured four-step process guarantees complete peace of mind.'
 } = Astro.props;
 
 const steps = [
   {
     step: 1,
-    title: 'Transparent Fixed Quote',
-    description: 'Provide your move details online or via video survey for an itemised, guaranteed price with no hidden fuel or waiting fees.',
+    title: '1 Free Survey & Fixed Quote',
+    description: 'We evaluate your home via a 15-minute video survey or detailed online inventory. You receive an itemised, guaranteed fixed price with zero hidden fees for fuel, stairs, or Birmingham Clean Air Zone entry.',
     icon: 'briefcase'
   },
   {
     step: 2,
-    title: 'Preparation & Packing',
-    description: 'We deliver double-walled cartons in advance or arrive to pack fragile glassware and dismantle furniture before moving day.',
+    title: '2 Packing & Preparation',
+    description: 'We deliver heavy-duty double-walled cartons and packing materials in advance, or our DBS-checked team arrives to pack fragile china, wrap artwork, and dismantle beds and modular wardrobes.',
     icon: 'box'
   },
   {
     step: 3,
-    title: 'Move-Day Transit',
-    description: 'Your possessions are wrapped in quilted blankets, secured with straps, and transported in Clean Air Zone compliant Luton vans.',
+    title: '3 Move-Day Transit',
+    description: 'Uniformed movers protect floors and banisters, load furnishings via our 500kg electric tail-lifts, wrap items in quilted transit blankets, secure with ratchet webbing straps, and transport directly.',
     icon: 'truck'
   },
   {
     step: 4,
-    title: 'Room-by-Room Placement',
-    description: 'We position furniture exactly where you want it in your new home, rebuild essential beds, and complete final sign-off.',
+    title: '4 Room-by-Room Placement',
+    description: 'At your new property, we position every box and furniture item into its designated room according to your floorplan, reassemble dismantled beds and tables, and complete a final quality walk-through.',
     icon: 'check'
   }
 ];
 ---
 
-<section class="py-16 bg-white dark:bg-slate-950">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-        Simple 4-Step Process
-      </span>
-      <h2 class="text-3xl font-bold text-slate-900 dark:text-white mt-1">
+<section id="how-it-works" class="py-16 sm:py-20 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
+        <Icon name="check" class="w-4 h-4" />
+        <span>Step-by-Step Moving Plan</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
         {title}
       </h2>
-      <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 mt-2">
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
         {subtitle}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- 4 Numbered Step Cards with H3s -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {steps.map((s) => (
-        <div class="relative p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between">
+        <div class="relative p-6 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="w-8 h-8 rounded-full bg-amber-600 text-white font-extrabold text-xs flex items-center justify-center shadow">
+              <span class="w-8 h-8 rounded-full bg-amber-600 text-white font-black text-xs flex items-center justify-center shadow">
                 {s.step}
               </span>
               <div class="text-amber-600 dark:text-amber-400">
@@ -76,9 +80,56 @@ const steps = [
       ))}
     </div>
 
-    <!-- Optional Slot Support for Custom Page Injections -->
-    <div class="mt-8">
-      <slot />
+    <!-- H3 5: New Entity-Rich Section: Moving on Completion Day: Key Release, Chains and Delays -->
+    <div class="rounded-3xl bg-slate-900 text-white p-8 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative max-w-4xl space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-500/30">
+          <Icon name="clock" class="w-3.5 h-3.5" />
+          <span>Move-Day Reality & Chain Management</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Moving on Completion Day: Key Release, Chains and Delays
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <div class="space-y-3">
+            <p>
+              In UK residential property transactions, the gap between mortgage fund transfer across solicitor and conveyancer CHAPS systems and the official release of keys by the estate agent is consistently the most stressful window of moving house. Key release typically occurs between 1:00 PM and 3:30 PM, but chain bottlenecks frequently push this to late afternoon.
+            </p>
+            <p>
+              When completion delays occur, unlicensed casual movers or DIY rental return deadlines create severe distress. At Jimmys Removals, your dedicated 3.5T Luton van and uniformed crew remain on site with your possessions safely secured in our vehicle.
+            </p>
+          </div>
+          <div class="space-y-3 bg-slate-800/80 p-5 rounded-2xl border border-slate-700">
+            <h4 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+              <Icon name="shield-check" class="w-4 h-4 text-emerald-400" />
+              <span>How We Protect Your Completion Day:</span>
+            </h4>
+            <ul class="space-y-2 text-xs text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>Direct Conveyancer Coordination:</strong> Clear updates while waiting outside your new address.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>Transparent Waiting Time Policy:</strong> Zero extortionate cancellation fees or abandonment.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>Late-Key Waiver Options:</strong> Optional waiver cover to cap unexpected delay costs.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>Overnight Transit Security:</strong> Secure containerised storage options if same-day completion fails.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
