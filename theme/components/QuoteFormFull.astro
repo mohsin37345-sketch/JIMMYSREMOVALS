@@ -55,8 +55,16 @@ import Icon from './Icon.astro';
   </div>
 
   <!-- Form Body: Native progressive enhancement (action submits to /thank-you/ if JS is disabled) -->
-  <form id="multi-step-quote-form" action="/thank-you/" method="GET" class="p-6 sm:p-8 space-y-8">
+  <form id="multi-step-quote-form" action="/thank-you/" method="POST" name="full-quote-form" data-netlify="true" class="p-6 sm:p-8 space-y-8">
     
+    <!-- FormSubmit Email Configuration -->
+    <input type="hidden" name="_subject" value="New Full Moving Quote Request - Jimmys Removals" id="quote-form-subject" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" id="calc_min_est" name="calculator_min_estimate" value="" />
+    <input type="hidden" id="calc_max_est" name="calculator_max_estimate" value="" />
+    <input type="hidden" id="calc_distance_param" name="calculator_distance" value="" />
+
     <!-- Anti-spam Honeypot & Timestamp -->
     <div class="sr-only" aria-hidden="true">
       <label for="quote-website-check">Leave this field blank</label>
@@ -509,6 +517,10 @@ import Icon from './Icon.astro';
       const propSize = urlParams.get('size');
       const fromPostcode = urlParams.get('from');
       const toPostcode = urlParams.get('to');
+      const contactInfo = urlParams.get('contact');
+      const minEst = urlParams.get('min_est');
+      const maxEst = urlParams.get('max_est');
+      const distMiles = urlParams.get('dist');
 
       if (propSize) {
         const radio = form.querySelector(`input[name="property_size"][value="${propSize}"]`);
@@ -521,6 +533,24 @@ import Icon from './Icon.astro';
       if (toPostcode) {
         const toInput = document.getElementById('to_postcode');
         if (toInput) toInput.value = toPostcode;
+      }
+      if (contactInfo) {
+        if (contactInfo.includes('@')) {
+          const emailInput = document.getElementById('customer_email');
+          if (emailInput) emailInput.value = contactInfo;
+        } else {
+          const phoneInput = document.getElementById('customer_phone');
+          if (phoneInput) phoneInput.value = contactInfo;
+        }
+      }
+      if (minEst && document.getElementById('calc_min_est')) {
+        document.getElementById('calc_min_est').value = minEst;
+      }
+      if (maxEst && document.getElementById('calc_max_est')) {
+        document.getElementById('calc_max_est').value = maxEst;
+      }
+      if (distMiles && document.getElementById('calc_distance_param')) {
+        document.getElementById('calc_distance_param').value = distMiles;
       }
     } catch (e) {}
 
@@ -657,12 +687,25 @@ import Icon from './Icon.astro';
     }
 
     if (form) {
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
         // Honeypot check
         const honeypot = document.getElementById('quote-website-check');
         if (honeypot && honeypot.value.trim() !== '') {
-          e.preventDefault();
           return;
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Submitting quote request...</span>';
+        }
+
+        const moveType = form.elements['move_type']?.value || 'Removal';
+        const contactName = document.getElementById('customer_name')?.value || '';
+        const subjectInput = document.getElementById('quote-form-subject');
+        if (subjectInput) {
+          subjectInput.value = `New Full Quote Request - ${moveType} (${contactName || 'Website'})`;
         }
 
         // Fire conversion event
@@ -670,12 +713,27 @@ import Icon from './Icon.astro';
           window.dataLayer.push({
             event: 'generate_lead',
             lead_type: 'full_quote_request',
-            move_type: form.elements['move_type']?.value || 'house'
+            move_type: moveType
           });
         }
 
-        // Allow form submission or redirect to thank you
         saveState();
+
+        const formData = new FormData(form);
+
+        try {
+          await fetch('https://formsubmit.co/ajax/jimmyslogisticsandremovals@gmail.com', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+        } catch (err) {
+          console.warn('Quote form submit fallback:', err);
+        }
+
+        window.location.href = '/thank-you/';
       });
     }
 

@@ -185,13 +185,37 @@ import Icon from './Icon.astro';
     }
 
     if (cbForm) {
-      cbForm.addEventListener('submit', (e) => {
+      cbForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        const submitBtn = cbForm.querySelector('button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+        }
+
+        const nameVal = document.getElementById('cb-name')?.value || '';
+        const phoneVal = document.getElementById('cb-phone')?.value || '';
+
+        const formData = new FormData();
+        formData.append('_subject', `Urgent: 30-Minute Callback Request - ${nameVal} (${phoneVal})`);
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
+        formData.append('customer_name', nameVal);
+        formData.append('phone_number', phoneVal);
+
+        try {
+          await fetch('https://formsubmit.co/ajax/jimmyslogisticsandremovals@gmail.com', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+        } catch (err) {}
+
         cbForm.classList.add('hidden');
         if (cbSuccess) cbSuccess.classList.remove('hidden');
         setTimeout(() => {
           closeCallbackModal();
-        }, 2500);
+        }, 3000);
       });
     }
 

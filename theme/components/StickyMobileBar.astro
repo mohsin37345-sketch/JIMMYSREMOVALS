@@ -56,13 +56,14 @@ const whatsappUrl = `https://wa.me/${siteConfig.whatsappE164.replace('+', '')}?t
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        // Only hide bar when footer is significantly in view (>30%), otherwise keep visible
+        if (entry.isIntersecting && entry.intersectionRatio > 0.35) {
           bar.classList.add('translate-y-full');
-        } else {
+        } else if (!entry.isIntersecting || entry.intersectionRatio <= 0.15) {
           bar.classList.remove('translate-y-full');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: [0, 0.15, 0.35] });
 
     observer.observe(footer);
   })();

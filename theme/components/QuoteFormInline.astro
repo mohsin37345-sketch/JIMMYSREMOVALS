@@ -91,3 +91,34 @@ const {
     Free, no-obligation moving quote. No spam guaranteed.
   </p>
 </form>
+
+<script is:inline define:vars={{ formId: `${idPrefix}-quote-form` }}>
+  (function() {
+    const f = document.getElementById(formId);
+    if (!f) return;
+    f.addEventListener('submit', function(e) {
+      const fromVal = f.elements['from']?.value || '';
+      const toVal = f.elements['to']?.value || '';
+      const contactVal = f.elements['contact']?.value || '';
+      const serviceVal = f.elements['service']?.value || '';
+
+      const formData = new FormData();
+      formData.append('_subject', `New Quick Quote Enquiry (From ${fromVal} to ${toVal}) - Jimmys Removals`);
+      formData.append('_template', 'table');
+      formData.append('_captcha', 'false');
+      formData.append('moving_from', fromVal);
+      formData.append('moving_to', toVal);
+      formData.append('contact_info', contactVal);
+      if (serviceVal) formData.append('service_requested', serviceVal);
+
+      try {
+        fetch('https://formsubmit.co/ajax/jimmyslogisticsandremovals@gmail.com', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' },
+          keepalive: true
+        });
+      } catch (err) {}
+    });
+  })();
+</script>

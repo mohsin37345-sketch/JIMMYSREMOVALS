@@ -10,7 +10,7 @@ const breadcrumbs = [
   { name: 'HTML Sitemap', item: '/sitemap/' }
 ];
 
-const services = await getCollection('services');
+const services = (await getCollection('services')).filter((s) => s.id !== 'student-removals');
 const locations = await getCollection('locations');
 const serviceAreas = await getCollection('serviceAreas');
 

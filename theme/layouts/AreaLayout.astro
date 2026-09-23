@@ -72,7 +72,9 @@ const serviceCards = coreServices.map((svc) => {
   );
   return {
     ...svc,
-    href: hasDedicatedPage ? `/removals/${location.slug}/${svc.id}/` : `/services/${svc.id}/`,
+    href: hasDedicatedPage
+      ? `/removals/${location.slug}/${svc.id}/`
+      : (svc.id === 'student-removals' ? '/services/student-moves/' : `/services/${svc.id}/`),
     isDedicated: hasDedicatedPage
   };
 });
@@ -136,6 +138,29 @@ const hasValidReview = location.testimonial &&
   location.testimonial.text &&
   !location.testimonial.text.includes('{{') &&
   !location.testimonial.name.includes('{{');
+
+// Editorial paragraph formatting to break up dense copy for modern UI/UX
+const introParagraphs: string[] = (() => {
+  if (!location.intro) return [];
+  const raw = location.intro.split(/\s{2,}|\n\n/).map((p) => p.trim()).filter(Boolean);
+  if (raw.length === 1 && raw[0].length > 250) {
+    const text = raw[0];
+    const mid = Math.floor(text.length / 2);
+    const periodIdx = text.indexOf('. ', mid);
+    if (periodIdx !== -1) {
+      return [
+        text.slice(0, periodIdx + 1).trim(),
+        text.slice(periodIdx + 2).trim()
+      ];
+    }
+  }
+  return raw;
+})();
+
+const knowledgeParagraphs: string[] = (() => {
+  if (!location.localKnowledge) return [];
+  return location.localKnowledge.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+})();
 
 // Clean NAP data
 const fullBusinessName = siteConfig.legalName;
@@ -361,35 +386,130 @@ const email = siteConfig.email;
     <div class="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        <!-- Left Column: Editorial Content (7 cols) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        
+        <!-- Left Column: Editorial & Structured Storytelling (7 cols) -->
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20" data-nosimilarity="true">
-            <Icon name="truck" class="w-3.5 h-3.5" />
-            <span>Dedicated Local Moving Fleet</span>
+          
+          <!-- Modern Status Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/25 shadow-xs" data-nosimilarity="true">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+            </span>
+            <span>Dedicated {location.town} Moving Fleet</span>
           </div>
 
+          <!-- Section Title with Amber Accent -->
           <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-            Professional Moving & Logistics Across {location.town}
+            Professional Moving & Logistics Across <span class="text-amber-600 dark:text-amber-400 underline decoration-amber-500/30 decoration-wavy decoration-2 underline-offset-4">{location.town}</span>
           </h2>
 
-          <div class="prose prose-slate dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed space-y-4">
-            <p class="font-medium text-slate-900 dark:text-slate-100" data-nosimilarity="true">
-              Removals in {location.town} require careful planning, punctual scheduling, and movers who understand the unique layout of local streets, housing estates, and transport corridors.
-            </p>
-            <p class="text-slate-700 dark:text-slate-300">
-              {location.intro}
-            </p>
+          <!-- Modern Executive Callout Banner -->
+          <div class="relative p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-l-4 border-amber-500 border-y border-r border-amber-500/20 dark:border-amber-500/30 shadow-xs" data-nosimilarity="true">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                <Icon name="badge-check" class="w-4 h-4" />
+              </div>
+              <div class="space-y-1">
+                <p class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                  Precision Local Relocation
+                </p>
+                <p class="text-sm sm:text-base font-medium text-slate-800 dark:text-slate-100 leading-relaxed">
+                  Removals in {location.town} require careful planning, punctual scheduling, and movers who understand the unique layout of local streets, housing estates, and transport corridors.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Structured Content Cards: Breaking Up Monolithic Text -->
+          <div class="space-y-4">
+            
+            <!-- Card 1: Tailored Home & Property Removals -->
+            <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/90 dark:border-slate-700/80 shadow-xs transition hover:shadow-md hover:border-amber-500/40 space-y-3.5 relative overflow-hidden group">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200/60 dark:border-slate-700/60">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-8 h-8 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                    <Icon name="home" class="w-4 h-4" />
+                  </span>
+                  <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                    Tailored Home & Property Moves in {location.town}
+                  </h3>
+                </div>
+                <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full">
+                  DBS-Checked Movers
+                </span>
+              </div>
+
+              <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed space-y-3">
+                {introParagraphs.map((para) => (
+                  <p>{para}</p>
+                ))}
+              </div>
+
+              <!-- Key Service Features Strip -->
+              <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-medium text-slate-600 dark:text-slate-300">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs">
+                  <Icon name="check" class="w-3.5 h-3.5 text-emerald-500" />
+                  Quilted Furniture Blankets
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs">
+                  <Icon name="check" class="w-3.5 h-3.5 text-emerald-500" />
+                  Specialized Floor Runners
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs">
+                  <Icon name="check" class="w-3.5 h-3.5 text-emerald-500" />
+                  Fully Insured Transit
+                </span>
+              </div>
+            </div>
+
+            <!-- Card 2: Local Route & Access Strategy -->
             {location.localKnowledge && (
-              <p class="text-slate-700 dark:text-slate-300">
-                {location.localKnowledge}
-              </p>
+              <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/90 dark:border-slate-700/80 shadow-xs transition hover:shadow-md hover:border-amber-500/40 space-y-3.5 relative overflow-hidden group">
+                <div class="flex items-center justify-between pb-3 border-b border-slate-200/60 dark:border-slate-700/60">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-8 h-8 rounded-xl bg-blue-500/15 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                      <Icon name="map-pin" class="w-4 h-4" />
+                    </span>
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+                      Local Route & Access Strategy
+                    </h3>
+                  </div>
+                  <span class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-2.5 py-0.5 rounded-full">
+                    {location.town} Geography
+                  </span>
+                </div>
+
+                <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed space-y-3">
+                  {knowledgeParagraphs.map((para) => (
+                    <p>{para}</p>
+                  ))}
+                </div>
+
+                <!-- Navigation Highlights Strip -->
+                <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-medium text-slate-600 dark:text-slate-300">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs">
+                    <Icon name="truck" class="w-3.5 h-3.5 text-amber-500" />
+                    Kerbside & Driveway Protection
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs">
+                    <Icon name="shield-check" class="w-3.5 h-3.5 text-blue-500" />
+                    Internal Load-Lock Strapping
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xs">
+                    <Icon name="clock" class="w-3.5 h-3.5 text-emerald-500" />
+                    Punctual Route Navigation
+                  </span>
+                </div>
+              </div>
             )}
+
           </div>
 
           <!-- Modern UX Feature Highlights (3 Interactive Micro-Cards) -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2" data-nosimilarity="true">
-            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1" data-nosimilarity="true">
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col justify-between group hover:border-amber-500/60 hover:shadow-sm transition-all">
               <div class="flex items-center gap-2 mb-1.5">
                 <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
                   <Icon name="truck" class="w-3.5 h-3.5" />
@@ -401,7 +521,7 @@ const email = siteConfig.email;
               </p>
             </div>
 
-            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col justify-between group hover:border-emerald-500/60 hover:shadow-sm transition-all">
               <div class="flex items-center gap-2 mb-1.5">
                 <span class="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">
                   <Icon name="shield-check" class="w-3.5 h-3.5" />
@@ -413,7 +533,7 @@ const email = siteConfig.email;
               </p>
             </div>
 
-            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col justify-between group hover:border-blue-500/60 hover:shadow-sm transition-all">
               <div class="flex items-center gap-2 mb-1.5">
                 <span class="w-7 h-7 rounded-lg bg-blue-500/15 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">
                   <Icon name="badge-check" class="w-3.5 h-3.5" />
@@ -425,11 +545,12 @@ const email = siteConfig.email;
               </p>
             </div>
           </div>
+
         </div>
 
         <!-- Right Column: Visual Showcase with ImageSlot 1 (5 cols) -->
-        <div class="lg:col-span-5 space-y-3">
-          <div class="relative group rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+        <div class="lg:col-span-5 space-y-4">
+          <div class="relative group rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-900/5">
             <ImageSlot
               src={location.images?.hero?.src || location.heroImage}
               alt={location.images?.hero?.alt || `Jimmys Removals Luton van ready for a house move in ${location.town}`}
@@ -439,10 +560,21 @@ const email = siteConfig.email;
               fetchpriority="high"
             />
 
+            <!-- Top Floating Live Dispatch Pill -->
+            <div class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/10 text-white text-[11px] font-semibold flex items-center gap-1.5 shadow-lg pointer-events-none">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>{location.town} Fleet Operations</span>
+            </div>
+
+            <!-- Top Right Capacity Badge -->
+            <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded-full bg-amber-500 text-slate-950 text-[10px] font-black shadow-md pointer-events-none uppercase tracking-wider">
+              3.5T Luton Box Van
+            </div>
+
             <!-- Glassmorphic floating card at the bottom of the photo -->
             <div class="absolute bottom-3 left-3 right-3 p-3.5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/10 text-white flex items-center justify-between shadow-lg" data-nosimilarity="true">
               <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                   <Icon name="shield" class="w-4 h-4" />
                 </div>
                 <div>
@@ -450,20 +582,44 @@ const email = siteConfig.email;
                   <p class="text-[11px] text-slate-300">{location.town} & West Midlands</p>
                 </div>
               </div>
-              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow-sm">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow-sm shrink-0">
                 Fully Insured
               </span>
             </div>
           </div>
 
-          <!-- Micro caption below image -->
-          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1" data-nosimilarity="true">
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span>Clean, equipped Luton low-loaders</span>
-            </span>
-            <span>Open 24 hours, 7 days</span>
+          <!-- Feature & Reassurance Card Below Photo -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-xs space-y-3" data-nosimilarity="true">
+            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
+              <div class="flex items-center gap-2">
+                <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>500kg tail-lift loading</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>Padded furniture blankets</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>DBS background checks</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>Fixed price guarantee</span>
+              </div>
+            </div>
+
+            <div class="pt-2 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <span class="inline-flex items-center gap-1.5 font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Clean, modern fleet
+              </span>
+              <span class="text-[11px] text-slate-400 dark:text-slate-500">
+                Open 24 hours, 7 days
+              </span>
+            </div>
           </div>
+
         </div>
       </div>
     </div>

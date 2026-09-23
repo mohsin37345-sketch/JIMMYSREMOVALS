@@ -26,7 +26,8 @@ export default defineConfig({
     '/removals/packing-services/': '/services/packing-services/',
     '/removals/storage/': '/services/storage/',
     '/removals/student-moves/': '/services/student-moves/',
-    '/removals/student-removals/': '/services/student-removals/',
+    '/removals/student-removals/': '/services/student-moves/',
+    '/services/student-removals/': '/services/student-moves/',
     '/removals/piano-and-specialist-moves/': '/services/piano-and-specialist-moves/',
     '/removals/long-distance-removals/': '/services/long-distance-removals/',
     '/removals/house-clearance/': '/services/house-clearance/',
@@ -69,7 +70,8 @@ export default defineConfig({
         !page.includes('/404') &&
         !page.includes('/thank-you') &&
         !page.includes('/llms.txt') &&
-        !page.includes('/robots.txt'),
+        !page.includes('/robots.txt') &&
+        !page.includes('/services/student-removals'),
       serialize: (item) => {
         const url = item.url;
         // Priority & changefreq configuration
