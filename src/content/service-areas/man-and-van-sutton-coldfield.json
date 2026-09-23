@@ -1,0 +1,32 @@
+{
+  "service": "man-and-van",
+  "location": "sutton-coldfield",
+  "uniqueIntro": "Need an efficient, reliable man and van service in Sutton Coldfield? Jimmys Removals provides flexible transport for flat moves, small home relocations, student departures, and single bulky furniture items across Boldmere, Wylde Green, Walmley, and Four Oaks. Our 3.5-tonne Luton vans come equipped with electric hydraulic tail lifts, internal lashing tracks, and clean furniture blankets. With our directly employed, DBS-checked movers assisting with all heavy lifting, your move is completed punctually and professionally.",
+  "localAngle": "Sutton Coldfield's mix of town-centre apartments near The Parade and traditional residential closes requires nimble vehicles. Our Luton low-loaders provide generous cubic capacity while retaining the maneuverability needed for residential roads.",
+  "faqs": [
+    {
+      "question": "Can I book a man and van at short notice in Sutton Coldfield?",
+      "answer": "Yes. We operate 24 hours, 7 days a week, and accommodate same-day or short-notice bookings across Sutton Coldfield subject to vehicle availability.",
+      "display": true
+    },
+    {
+      "question": "Do you provide straps and blankets on Sutton Coldfield man and van moves?",
+      "answer": "Yes. Every van arrives stocked with thick quilted furniture blankets, heavy-duty ratchet webbing, and a 500kg tail lift for ground-level loading.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Man and van Luton vehicle in Sutton Coldfield residential street"
+    },
+    "local": {
+      "src": "",
+      "alt": "Mover wheeling boxed items using hand truck in Sutton Coldfield"
+    },
+    "team": {
+      "src": "",
+      "alt": "Porters securing furniture inside Luton van"
+    }
+  }
+}

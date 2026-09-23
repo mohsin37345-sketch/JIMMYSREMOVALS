@@ -3,9 +3,9 @@
   "slug": "tamworth",
   "county": "Staffordshire",
   "metaTitle": "Tamworth Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Tamworth. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals provides reliable, insured house removals, furniture assembly, and packing across Tamworth. Steeped in Mercian history, Tamworth features riverside residences, established estates in Belgrave and Amington, and modern developments near Ventura Retail Park. Our experienced team ensures your move proceeds smoothly with clean Luton vans, careful loading, and guaranteed fixed pricing.  Our team delivers friendly, punctual, and hardworking removals support, ensuring that heavy appliances, furniture, and boxed items are transported safely to your new Tamworth home. We offer fixed pricing with zero hidden surcharges and full Goods in Transit insurance cover. Our porters handle dismantling and rebuilding of beds and tables with complete professional expertise.",
-  "localKnowledge": "Tamworth is framed by the busy A5 bypass and M42 Junction 10. Our drivers monitor retail traffic around Ventura Park, opting for arterial routes via Bitterscote or Fazeley to maintain punctual delivery times at residential properties.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Tamworth. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Jimmys Removals provides reliable, insured house removals, furniture assembly, and packing across Tamworth and its 13 surrounding districts. Steeped in rich Mercian history, Tamworth features riverside residences, established estates in Belgrave and Amington, and modern family developments near Ventura Retail Park and the A5 corridor. Our experienced moving team ensures your home transition proceeds smoothly with clean 3.5-tonne Luton vans, careful loading, and guaranteed fixed pricing. We comprehensively cover all 13 local districts across Tamworth including Amington, Bolehall, Dosthill, Glascote, Hopwas, Kettlebrook, Mile Oak, Stonydelph, Two Gates, Wilnecote, Belgrave, Coton Green, and Tamworth Town centre. From protecting delicate glassware to assembling large flat-pack wardrobes, our directly employed porters handle every detail of your moving day with utmost professionalism and care.",
+  "localKnowledge": "Tamworth is framed by the busy A5 bypass and M42 Junction 10. Our drivers monitor retail traffic around Ventura Park, opting for arterial routes via Bitterscote or Fazeley to maintain punctual delivery times at residential properties across all 13 local districts.",
   "postcodes": [
     "B77",
     "B78",
@@ -13,22 +13,62 @@
   ],
   "nearbyAreas": [
     {
-      "name": "Sutton Coldfield",
-      "slug": "sutton-coldfield"
+      "name": "Amington",
+      "slug": "tamworth/amington"
     },
     {
-      "name": "Lichfield",
-      "slug": "lichfield"
+      "name": "Bolehall",
+      "slug": "tamworth/bolehall"
     },
     {
-      "name": "Nuneaton",
-      "slug": "nuneaton"
+      "name": "Dosthill",
+      "slug": "tamworth/dosthill"
+    },
+    {
+      "name": "Glascote",
+      "slug": "tamworth/glascote"
+    },
+    {
+      "name": "Hopwas",
+      "slug": "tamworth/hopwas"
+    },
+    {
+      "name": "Kettlebrook",
+      "slug": "tamworth/kettlebrook"
+    },
+    {
+      "name": "Mile Oak",
+      "slug": "tamworth/mile-oak"
+    },
+    {
+      "name": "Stonydelph",
+      "slug": "tamworth/stonydelph"
+    },
+    {
+      "name": "Two Gates",
+      "slug": "tamworth/two-gates"
+    },
+    {
+      "name": "Wilnecote",
+      "slug": "tamworth/wilnecote"
+    },
+    {
+      "name": "Belgrave",
+      "slug": "tamworth/belgrave"
+    },
+    {
+      "name": "Coton Green",
+      "slug": "tamworth/coton-green"
+    },
+    {
+      "name": "Tamworth Town",
+      "slug": "tamworth/tamworth-town"
     }
   ],
   "travelInfo": "Superb connectivity via the A5 bypass, A51, and M42 Junction 10.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Tamworth is outside any Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -41,28 +81,28 @@
   ],
   "localFaqs": [
     {
-      "question": "Do you cover Amington and Dosthill in Tamworth?",
-      "answer": "Yes, we cover all B77, B78, and B79 postcodes across Tamworth.",
+      "question": "Which areas do you cover across Tamworth?",
+      "answer": "We cover all 13 districts across Tamworth including Amington, Bolehall, Dosthill, Glascote, Hopwas, Kettlebrook, Mile Oak, Stonydelph, Two Gates, Wilnecote, Belgrave, Coton Green, and Tamworth Town centre.",
       "display": true
     },
     {
-      "question": "Can you move heavy garden furniture and sheds?",
-      "answer": "Yes, we can dismantle and move heavy garden suites, planters, and timber sheds.",
+      "question": "Can you move heavy garden furniture and sheds in Tamworth?",
+      "answer": "Yes, we can dismantle and move heavy garden suites, planters, and timber sheds across all Tamworth neighbourhoods.",
       "display": true
     },
     {
       "question": "Do you provide moving boxes in Tamworth?",
-      "answer": "Yes, we deliver robust double-walled cartons, tape, and bubble wrap.",
+      "answer": "Yes, we deliver robust double-walled cartons, tape, and bubble wrap directly to your door prior to moving day.",
       "display": true
     },
     {
-      "question": "Are your vans clean and fully equipped?",
-      "answer": "Yes, all our Luton vans carry clean blankets, mattress bags, and ties.",
+      "question": "Are your vans clean and fully equipped for Tamworth moves?",
+      "answer": "Yes, all our Luton vans carry clean blankets, mattress bags, furniture ties, and hydraulic tail lifts.",
       "display": true
     }
   ],
   "lat": 52.634,
   "lng": -1.695,
-  "tier": 2,
+  "tier": 1,
   "heroImage": "/images/locations/tamworth.webp"
 }

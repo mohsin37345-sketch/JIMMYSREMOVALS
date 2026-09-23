@@ -3,8 +3,8 @@
   "slug": "stourbridge",
   "county": "West Midlands",
   "metaTitle": "Stourbridge Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Stourbridge. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "For trusted home removals, flat moves, and specialist piano transport in Stourbridge, Jimmys Removals delivers an exceptional local service. Famous for its historic glass-making heritage, charming canal networks, and popular residential communities in Norton, Pedmore, Oldswinford, and Wollaston, Stourbridge is a vibrant corner of the Black Country border. Our skilled porters combine friendly manners with meticulous packing and careful van loading, safeguarding your family possessions throughout the moving journey. We handle everything from fragile crystal and mirrors to heavy wardrobes, providing complete peace of mind backed by £50,000 Goods in Transit insurance.  From careful handling of fragile crystal and glassware to dismantling large wardrobes, our dedicated movers provide a polite, stress-free moving service tailored to your personal requirements across Stourbridge. We operate seven days a week with transparent, all-inclusive pricing.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Stourbridge. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "For trusted home removals, flat moves, and specialist piano transport in Stourbridge, Jimmys Removals delivers an exceptional local service. Famous for its historic glass-making heritage, charming canal networks, and popular residential communities in Norton, Pedmore, Oldswinford, and Wollaston, Stourbridge is a vibrant corner of the Black Country border. Our skilled porters combine friendly manners with meticulous packing and careful van loading, safeguarding your family possessions throughout the moving journey. We handle everything from fragile crystal and mirrors to heavy wardrobes, providing complete peace of mind backed by Fully insured.  From careful handling of fragile crystal and glassware to dismantling large wardrobes, our dedicated movers provide a polite, organized moving service tailored to your personal requirements across Stourbridge. We operate 24 hours, 7 days a week with transparent, all-inclusive pricing.",
   "localKnowledge": "Stourbridge's roads range from the busy Stourbridge Ring Road (A491) to narrow, leafy avenues and steep cul-de-sacs in Pedmore and Norton. Properties around Oldswinford often feature long, stepped garden pathways that require strategic porter rotation to carry heavy white goods and furniture safely. In historic canal-side pockets like the Glass Quarter in Wordsley and Amblecote, tight stone bridges and narrow lane turns necessitate the precision handling of our compact 3.5-tonne Luton vehicles.\n\nFurthermore, for clients moving towards Hagley and the Clent Hills along the A456, country lanes require attentive navigation. Our teams are equipped with tail lifts and heavy-duty transit blankets, ensuring items like upright pianos, glass display cabinets, and solid timber furnishings arrive in pristine condition.",
   "postcodes": [
     "DY8",
@@ -27,7 +27,7 @@
   "travelInfo": "Main road access via the A491, A458, and A456 Hagley Road linking towards the M5 at Junction 3 or 4.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Stourbridge operates without a Clean Air Zone. Zero emission surcharges apply."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -56,7 +56,7 @@
     },
     {
       "question": "What days of the week do you operate in Stourbridge?",
-      "answer": "We carry out house removals 7 days a week, including Saturdays and Sundays, with no hidden weekend surcharges.",
+      "answer": "We carry out house removals 24 hours, 7 days a week, including Saturdays and Sundays, with no hidden weekend surcharges.",
       "display": true
     }
   ],

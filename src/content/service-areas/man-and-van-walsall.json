@@ -1,0 +1,32 @@
+{
+  "service": "man-and-van",
+  "location": "walsall",
+  "uniqueIntro": "Need a reliable man and van service in Walsall? Jimmys Removals provides flexible transport for domestic moves, flat transitions, single item furniture transport, and trade deliveries across WS1, WS2, and surrounding Black Country neighbourhoods. Operating equipped 3.5-tonne Luton vans with 500kg hydraulic tail lifts, our directly employed movers handle all lifting, loading, and transit strapping. From terraced roads in Caldmore and Pleck to modern family closes in Park Hall and Rushall, we deliver dependable service with guaranteed fixed quotes.",
+  "localAngle": "Walsall's road layout connects smoothly via the M6 Junctions 9 and 10 and the A34. Our local drivers arrive punctually, navigate narrow residential cul-de-sacs with care, and supply protective transit blankets for every item moved.",
+  "faqs": [
+    {
+      "question": "How quickly can you arrange a man and van in Walsall?",
+      "answer": "We operate 24 hours, 7 days a week, and can arrange same-day or next-day man and van transport across Walsall subject to vehicle scheduling.",
+      "display": true
+    },
+    {
+      "question": "Are my items protected inside the van during a Walsall move?",
+      "answer": "Yes. All items are wrapped in thick quilted furniture blankets and secured to internal van load rails using industrial ratchet straps.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Man and van Luton van in Walsall residential area"
+    },
+    "local": {
+      "src": "",
+      "alt": "Removals driver operating hydraulic tail lift in Walsall"
+    },
+    "team": {
+      "src": "",
+      "alt": "Mover carrying furniture inside Walsall property"
+    }
+  }
+}

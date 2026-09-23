@@ -1,0 +1,32 @@
+{
+  "service": "flat-removals",
+  "location": "birmingham",
+  "uniqueIntro": "Relocating between apartments across Birmingham involves handling diverse multi-storey environments, from canal-side converted lofts in the Jewellery Quarter and Digbeth to modern towers along Broad Street, Holloway Head, and Park Central. Our directly employed movers coordinate with on-site building concierges, book designated service lift windows, and stage loaded items efficiently to ensure quiet, swift apartment transfers. Operating modern 3.5-tonne Luton vans with hydraulic tail lifts, we navigate city-centre loading bays and narrow residential streets with ease, offering guaranteed fixed quotes with zero Clean Air Zone charges added.",
+  "localAngle": "Birmingham city-centre developments often feature controlled parking zones, strict lift access slots, and pedestrianised walkways. Our team manages building guidelines, uses protective floor runners along communal hallways, and handles large furniture pieces with tailored padded wrapping.",
+  "faqs": [
+    {
+      "question": "How do you coordinate moves in Birmingham high-rise apartments?",
+      "answer": "We liaise with your building management or concierge in advance to confirm lift reservation windows and loading bay permits, staging furniture for swift, organized loading.",
+      "display": true
+    },
+    {
+      "question": "Are there Clean Air Zone fees for flat removals in Birmingham?",
+      "answer": "No Clean Air Zone charges are added to your quote. We operate inside the A4540 Middleway ring road with zero CAZ surcharges.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Flat removals Luton van outside Birmingham apartment complex"
+    },
+    "local": {
+      "src": "",
+      "alt": "Removals crew staging furniture near apartment service lift in Birmingham"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed movers carrying boxed goods through apartment entrance"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "town": "Attleborough",
+  "slug": "attleborough",
+  "county": "Warwickshire",
+  "heroHeading": "Professional House Removals in Attleborough",
+  "metaTitle": "Attleborough Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Professional house removals in Attleborough, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Relocating within or to Attleborough? Jimmys Removals provides an expert, insured moving service focused on this vibrant community in eastern Nuneaton. Surrounding the village green, Bull Street, and Kem Street, as well as new housing tracts toward Crowhill and the Coventry Canal, our crew handles moves of all scales. We arrive in modern 3.5-tonne Luton vans with tail lifts, ratchet strapping, and padded covers to keep your belongings pristine.\n\nOur team is known for courteous service and methodical organisation. We unbolt cumbersome bedframes, wrap polished surfaces, and manoeuvre hefty sideboards down awkward turns without scuffing hallway walls. Transparent quotations give you complete financial certainty, with no surprise surcharges on key handover.",
+  "localKnowledge": "Attleborough retains a charming village character around The Green, with narrow streets such as Kem Street and Bull Street experiencing regular parked traffic. Maneuvering large articulated removal lorries through these junctions can cause significant blockages; our agile 3.5-tonne Luton box vans are perfectly sized to access compact residential avenues, park without obstruction, and reverse safely onto private driveways.\n\nPositioned close to the A4254 Eastern Relief Road and the railway line, Attleborough offers swift connectivity across Nuneaton. Our drivers plan journey schedules to avoid school-run traffic near local primary schools on Avenue Road, ensuring punctual arrivals and smooth unloading throughout your moving day.",
+  "postcodes": [
+    "CV11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Whitestone",
+      "slug": "nuneaton/whitestone"
+    },
+    {
+      "name": "Chilvers Coton",
+      "slug": "nuneaton/chilvers-coton"
+    },
+    {
+      "name": "Nuneaton Town",
+      "slug": "nuneaton/nuneaton-town"
+    }
+  ],
+  "travelInfo": "Convenient road access via the A4254 Avenue Road, Eastboro Way, and quick links to the A47 and M69.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans negotiate parked cars around Attleborough Green?",
+      "answer": "Yes, our 3.5-tonne Luton vans are sized specifically to manoeuvre safely past parked cars along Bull Street and Kem Street without causing traffic delays.",
+      "display": true
+    },
+    {
+      "question": "Do you provide full packing services in Attleborough?",
+      "answer": "Yes, we offer complete packing services where our experienced team boxes your entire household contents using professional packing supplies.",
+      "display": true
+    },
+    {
+      "question": "How do you protect floors during moves in Attleborough?",
+      "answer": "We lay durable heavy-duty floor runners and carpet protectors throughout entryways and staircases to keep floors immaculate.",
+      "display": true
+    },
+    {
+      "question": "Are fixed quotes available for Attleborough removals?",
+      "answer": "All quotations are 100% fixed and transparent, inclusive of fuel, loading, unloading, and Fully insured.",
+      "display": true
+    }
+  ],
+  "lat": 52.518,
+  "lng": -1.453,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

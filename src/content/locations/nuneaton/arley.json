@@ -1,0 +1,72 @@
+{
+  "town": "Arley",
+  "slug": "arley",
+  "county": "Warwickshire",
+  "heroHeading": "Professional House Removals in Arley",
+  "metaTitle": "Arley Removals | North Warwickshire Movers | Jimmys",
+  "metaDescription": "Professional house removals in Arley, Warwickshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Settling into a new home in Arley? Jimmys Removals brings dependable, friendly removals assistance to New Arley and Old Arley across North Warwickshire. Whether you are shifting from a historic red-brick miner's cottage along Gun Hill, an expansive 1950s semi on George Street, or a detached rural residence off Spring Hill, our porters make your move day smooth. We utilize clean Luton vans outfitted with protective mattress sacks, quilted webbing, and power tail lifts.\n\nFrom safely boxing crystal stemware to strapping white goods for rural transit, our team focuses on careful handling. We place protective floor guards across entryways to keep carpets clean from country dust. With guaranteed fixed pricing, you avoid hidden charges regardless of key handover delays.",
+  "localKnowledge": "Arley comprises two distinct settlements: the historic rural village of Old Arley and the larger colliery settlement of New Arley. Roads connecting the two, such as Gun Hill and Rectory Road, feature undulating country topography, sharp bends, and high hedges with limited passing places. Standard large HGVs can struggle with tree overhangs and roadside banks; our 3.5-tonne Luton vans are ideally suited for these country roads, providing swift, safe access directly to your property.\n\nIn New Arley, streets such as George Street and Ransome Road feature kerbside parking where our drivers take care to position vehicles considerately. Connecting to the B4098 and B4114, we plan efficient transit into Nuneaton, Coventry, and Birmingham.",
+  "postcodes": [
+    "CV7"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Galley Common",
+      "slug": "nuneaton/galley-common"
+    },
+    {
+      "name": "Stockingford",
+      "slug": "nuneaton/stockingford"
+    },
+    {
+      "name": "Tamworth",
+      "slug": "tamworth"
+    }
+  ],
+  "travelInfo": "Direct access via Gun Hill, Spring Hill, and easy connections to the B4098 and B4114 towards Nuneaton.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your removal vans navigate steep country lanes around Gun Hill in Arley?",
+      "answer": "Yes, our modern 3.5-tonne Luton vans easily negotiate the hills and country turns of Gun Hill and Spring Hill safely.",
+      "display": true
+    },
+    {
+      "question": "Do you cover both Old Arley and New Arley?",
+      "answer": "Yes, we handle residential and country property moves across both Old Arley and New Arley including surrounding farms.",
+      "display": true
+    },
+    {
+      "question": "Do you provide packing materials in advance in Arley?",
+      "answer": "We deliver double-walled cardboard boxes, bubble wrap, and packing tape directly to your home in Arley ahead of moving day.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed for Arley moves?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.508,
+  "lng": -1.583,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

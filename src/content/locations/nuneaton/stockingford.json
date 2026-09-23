@@ -1,0 +1,72 @@
+{
+  "town": "Stockingford",
+  "slug": "stockingford",
+  "county": "Warwickshire",
+  "heroHeading": "Expert House Removals in Stockingford",
+  "metaTitle": "Stockingford Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Expert house removals in Stockingford, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Moving home in Stockingford? Jimmys Removals provides an experienced, insured removals service across this energetic district on Nuneaton's western flank. Whether moving from a traditional brick terrace on Haunchwood Road, an interwar semi along Arbury Road, or a contemporary home near Whittleford Park, our hardworking movers ensure a calm moving day. We use modern 3.5-tonne Luton vans equipped with hydraulic tail lifts and heavy furniture blankets.\n\nOur goal is to make moving effortless for your family. We take apart difficult bed frames, wrap fragile televisions, and carry heavy sofas down tight stairs with steady hands. With transparent fixed pricing, you never face hidden costs for parking waits or heavy items.",
+  "localKnowledge": "Stockingford encompasses a mix of long, continuous residential avenues such as Haunchwood Road and Kingswood Road, crossed by narrower connecting side streets. Many older properties have compact front garden plots and kerbside parking, requiring considerate vehicle positioning during loading. Our 3.5-tonne Luton vans are sized to park securely close to front entrance gates, keeping pavements clear and minimising walking distances for our porters.\n\nDuring school start and dismissal times around Stockingford Academy on Cross Street, traffic can slow down significantly. Our drivers plan arrival routes via Whittleford Road to bypass congestion, guaranteeing prompt arrival and smooth unloading at your new property.",
+  "postcodes": [
+    "CV10"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Camp Hill",
+      "slug": "nuneaton/camp-hill"
+    },
+    {
+      "name": "Galley Common",
+      "slug": "nuneaton/galley-common"
+    },
+    {
+      "name": "Chilvers Coton",
+      "slug": "nuneaton/chilvers-coton"
+    }
+  ],
+  "travelInfo": "Direct road links via Arbury Road, Haunchwood Road, and fast connections to the B4109 and Nuneaton town centre.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans park easily on residential streets in Stockingford?",
+      "answer": "Yes, our 3.5-tonne Luton vans fit neatly along kerbsides on Haunchwood Road and Arbury Road without obstructing oncoming traffic.",
+      "display": true
+    },
+    {
+      "question": "Do you provide moving boxes and packing supplies in Stockingford?",
+      "answer": "We supply heavy-duty double-walled boxes, packing tape, bubble wrap, and wardrobe cartons delivered directly to your home in Stockingford.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle and reassemble flat-pack furniture in Stockingford?",
+      "answer": "Yes, our team brings specialized hand tools to take apart bulky wardrobes, bed frames, and dining tables, rebuilding them securely in your new home.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Stockingford?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.519,
+  "lng": -1.498,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

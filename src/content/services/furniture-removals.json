@@ -1,0 +1,97 @@
+{
+  "title": "Furniture Removals Birmingham & West Midlands",
+  "slug": "furniture-removals",
+  "shortTitle": "Furniture Removals",
+  "metaTitle": "Furniture Removals Birmingham | Single Items & Full Suites",
+  "metaDescription": "Professional furniture removals across Birmingham and the West Midlands. Sofas, wardrobes, dining sets, and antiques moved by uniformed movers in Luton vans.",
+  "heroHeading": "Reliable Furniture Removals Across Birmingham & West Midlands",
+  "heroSubheading": "Careful collection, transport, and room-of-choice placement for sofas, wardrobes, heavy dining sets, and antique furniture.",
+  "icon": "box",
+  "summary": "Need single large furniture pieces or complete household suites transported safely? Jimmys Removals provides dedicated furniture removals across Birmingham and the West Midlands. Our directly employed movers protect each item with quilted furniture covers, thick transit blankets, and heavy-duty webbing straps inside 3.5-tonne Luton vans equipped with hydraulic tail lifts.",
+  "benefits": [
+    "Hydraulic tail lifts for ground-level loading of heavy items",
+    "Heavy-duty protective furniture blankets and quilted sofa covers",
+    "Directly employed, DBS-checked moving crew",
+    "Room-of-choice placement at your destination",
+    "Fully insured transport with written fixed quotes"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Tell Us What Needs Moving",
+      "description": "Send photos or descriptions of your furniture items and access conditions at collection and delivery."
+    },
+    {
+      "step": 2,
+      "title": "Guaranteed Fixed Quote",
+      "description": "Receive an upfront fixed quote with no hidden extras or surprise fees."
+    },
+    {
+      "step": 3,
+      "title": "Protective Wrapping & Loading",
+      "description": "Our movers blanket-wrap each item and secure it to internal van rails with ratchet straps."
+    },
+    {
+      "step": 4,
+      "title": "Delivery & Room Placement",
+      "description": "We unload and place each furniture piece in your chosen room, removing transit wrapping."
+    }
+  ],
+  "whatsIncluded": [
+    "Uniformed, DBS-checked movers and equipped 3.5-tonne Luton van",
+    "Heavy furniture blankets and protective mattress bags",
+    "Tail lift loading for heavy appliances and solid timber units",
+    "Room-of-choice placement upon delivery",
+    "Door frame and hallway protection runners"
+  ],
+  "whatsNotIncluded": [
+    "Hoisting through external windows without prior structural assessment",
+    "Electrical or plumbing disconnections of appliances",
+    "Wall-mounting of mirrors or headboards",
+    "Disposal of unwanted municipal waste"
+  ],
+  "priceFrom": 0,
+  "priceUnit": "fixed quote",
+  "priceNotes": "Priced per job after a quick survey based on furniture size and access requirements.",
+  "faqs": [
+    {
+      "question": "Can you move heavy solid wood wardrobes or American fridge-freezers?",
+      "answer": "Yes. Our 3.5-tonne Luton vans feature 500kg hydraulic tail lifts and heavy-duty piano dollies, allowing our two-person crews to move heavy solid timber wardrobes and bulky appliances safely.",
+      "display": true
+    },
+    {
+      "question": "Do you protect furniture against rain or transit marks?",
+      "answer": "Every furniture piece is wrapped in quilted transit blankets and secured with industrial webbing straps inside clean, carpet-lined vehicle bodies.",
+      "display": true
+    },
+    {
+      "question": "Can you collect furniture purchased from private sellers or auctions?",
+      "answer": "Yes. We arrange scheduled collections from private addresses, showrooms, or auction houses across the West Midlands, delivering directly to your home.",
+      "display": true
+    },
+    {
+      "question": "What is the cost of furniture removals in Birmingham?",
+      "answer": "Furniture removals are priced per job after a quick survey. Costs depend on item dimensions, weight, stair access, and transit mileage, with guaranteed fixed quotes provided before booking.",
+      "display": true
+    }
+  ],
+  "relatedServices": [
+    "furniture-dismantling",
+    "man-and-van",
+    "house-removals"
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Furniture removals loading sofa onto Luton van tail lift"
+    },
+    "local": {
+      "src": "",
+      "alt": "Blanket wrapped furniture ready for transit in Birmingham"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed removals team securing furniture inside Luton van"
+    }
+  }
+}

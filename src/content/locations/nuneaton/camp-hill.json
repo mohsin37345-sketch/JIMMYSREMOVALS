@@ -1,0 +1,72 @@
+{
+  "town": "Camp Hill",
+  "slug": "camp-hill",
+  "county": "Warwickshire",
+  "heroHeading": "Professional House Removals in Camp Hill",
+  "metaTitle": "Camp Hill Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Professional house removals in Camp Hill, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Moving across Camp Hill? Jimmys Removals provides an efficient, fully insured moving service for residents in this redeveloped north-west district of Nuneaton. From eco-friendly modern townhouses along Cedar Road and Copperaminster Way to established post-war family homes on Willow Road, our staff take exceptional care of your possessions. We operate reliable 3.5-tonne Luton vehicles equipped with 500kg tail lifts, heavy-duty quilted covers, and furniture blankets.\n\nOur porters arrive punctually, ready to shoulder the physical strain of moving day. We disassemble flat-pack bunks and wardrobes, pad delicate electronics, and navigate bulky armchairs through narrow doorways with patience. Clear upfront pricing ensures you stay on budget from start to finish.",
+  "localKnowledge": "Camp Hill is set on elevated topography with winding streets and modern traffic-calming speed tables. In regenerated residential phases around Cedar Road and Queen Elizabeth Road, shared parking forecourts and communal access drives are common. Our agile 3.5-tonne Luton vans are ideally proportioned to manoeuvre cleanly through these modern street layouts, parking right outside residential front porches without impeding neighbouring vehicle movements.\n\nConnecting easily to the B4114 Tuttle Hill and Midland Road, Camp Hill provides rapid links to the A5 and Nuneaton town centre. Our drivers plan journey schedules to avoid peak morning school-run traffic near Camp Hill Primary School, ensuring your moving day stays strictly on timetable.",
+  "postcodes": [
+    "CV10"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Stockingford",
+      "slug": "nuneaton/stockingford"
+    },
+    {
+      "name": "Hartshill",
+      "slug": "nuneaton/hartshill"
+    },
+    {
+      "name": "Weddington",
+      "slug": "nuneaton/weddington"
+    }
+  ],
+  "travelInfo": "Direct road links via Cedar Road, Tuttle Hill (B4114), and quick access to the A5 Watling Street.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans access modern shared parking areas in Camp Hill?",
+      "answer": "Yes, our 3.5-tonne Luton vans easily access shared parking courts and communal residential drives in regenerated areas of Camp Hill.",
+      "display": true
+    },
+    {
+      "question": "Do you offer furniture dismantling and assembly in Camp Hill?",
+      "answer": "Yes, our team brings dedicated tools to dismantle and reassemble bulky flat-pack wardrobes, bed frames, and dining tables.",
+      "display": true
+    },
+    {
+      "question": "How do you protect staircases and carpets during a Camp Hill house move?",
+      "answer": "We lay durable heavy-duty floor runners across hallways and staircases to keep carpets spotless throughout loading and unloading.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed for Camp Hill moves?",
+      "answer": "All quotes are fixed and transparent with zero hidden fees for stairs, heavy items, or waiting times during key collection.",
+      "display": true
+    }
+  ],
+  "lat": 52.536,
+  "lng": -1.492,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

@@ -1,0 +1,72 @@
+{
+  "town": "Glascote",
+  "slug": "glascote",
+  "county": "Staffordshire",
+  "heroHeading": "Trusted House Removals in Glascote",
+  "metaTitle": "Glascote Removals | Tamworth Moving Service | Jimmys",
+  "metaDescription": "Trusted house removals in Glascote, Tamworth. DBS-vetted movers, tail-lift vans, and no hidden completion delay fees. Call 07404 353516 for a quote.",
+  "intro": "For trustworthy, professional house and flat removals across Glascote, Jimmys Removals provides an experienced, dependable service designed to keep your moving day relaxed and orderly. Located just east of Tamworth town centre along the River Anker and Coventry Canal, Glascote comprises diverse housing styles, from character Victorian terraces in Glascote Basin and workers' cottages on Glascote Heath to post-war semi-detached houses and modern family estates off Marlborough Way. Our directly employed, DBS-checked movers operate low-emission Luton box vans equipped with 500kg electric tail lifts, allowing heavy sofas, sideboards, and kitchen appliances to be loaded smoothly from ground level.\n\nWe appreciate that moving can be an overwhelming milestone, which is why our removal specialists handle every aspect of the physical heavy lifting. We lay down protective carpet runners, wrap mattresses in waterproof polythene covers, and secure all furniture inside the van with heavy-duty ratchet webbing. With fixed upfront quotes, full Fully insured insurance up to Fully insured, and zero unexpected charges if key handover is delayed, we deliver total peace of mind for every Glascote resident.",
+  "localKnowledge": "Glascote is centred on the busy B5000 Glascote Road, which acts as a primary commuter artery connecting Tamworth with Polesworth and the Warwickshire border. During morning and evening peak hours, traffic density along the B5000 can make roadside loading challenging. Our removal drivers arrive early to position our Luton vehicles directly outside your property frontage, taking care to maintain unobstructed lines of sight for passing vehicles and pedestrians.\n\nIn the historic canal basin quarter around Basin Lane, narrow roads and older stone bridges require attentive manoeuvring. Our 3.5-tonne Luton vans are chosen specifically for their tight turning radius and low height profile, enabling us to service terraced residences where larger lorries simply cannot enter. We also maintain close communication with clients regarding off-street parking dispensations when moving on major bus corridors.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Amington",
+      "slug": "tamworth/amington"
+    },
+    {
+      "name": "Bolehall",
+      "slug": "tamworth/bolehall"
+    },
+    {
+      "name": "Stonydelph",
+      "slug": "tamworth/stonydelph"
+    }
+  ],
+  "travelInfo": "Direct road access via the B5000 Glascote Road, Marlborough Way, and quick connections to the A5 bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you handle removals on the busy B5000 Glascote Road?",
+      "answer": "We coordinate vehicle arrival times to avoid peak school and commuter congestion, positioning our Luton vans with hazard beacons and cones to allow safe, legal loading without blocking traffic.",
+      "display": true
+    },
+    {
+      "question": "Can you navigate narrow roads around Glascote Basin and canal cottages?",
+      "answer": "Yes, our compact 3.5-tonne Luton box vans easily access older lanes, canal towpath approaches, and terraced rows near Basin Lane where heavy goods vehicles cannot fit.",
+      "display": true
+    },
+    {
+      "question": "Do you offer full or partial packing services in Glascote?",
+      "answer": "We offer complete packing services where our team wraps everything the day before, as well as fragile-only packing for glassware, mirrors, artwork, and electronics.",
+      "display": true
+    },
+    {
+      "question": "What happens if there is a delay in getting the keys on moving day in Glascote?",
+      "answer": "We never charge punitive hourly waiting penalties. If completion takes longer than expected, our team waits patiently outside your new home until the keys are released.",
+      "display": true
+    }
+  ],
+  "lat": 52.625,
+  "lng": -1.669,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

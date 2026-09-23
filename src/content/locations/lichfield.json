@@ -3,7 +3,7 @@
   "slug": "lichfield",
   "county": "Staffordshire",
   "metaTitle": "Lichfield Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Lichfield. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Lichfield. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
   "intro": "Jimmys Removals is proud to offer bespoke house removals, piano transport, and packing services across the cathedral city of Lichfield. Famous for its three-spired cathedral, historic cobbled streets, and sought-after residential avenues in Boley Park and Darwin Park, Lichfield demands an experienced removals team with an eye for detail. We treat every antique and personal treasure with the greatest care.  With specialized equipment for upright pianos, fine antiques, and high-value furnishings, our experienced porters ensure your move in the historic city of Lichfield is conducted with complete distinction. We navigate narrow historic lanes with ease and protect all period features throughout.",
   "localKnowledge": "Lichfield's historic centre has pedestrianised zones, narrow archways, and strict weight-restricted streets around the Cathedral Close. Our drivers use agile 3.5-tonne Luton vans to navigate conservation streets safely, without disrupting historic stone curbs or residential parking.",
   "postcodes": [
@@ -27,7 +27,7 @@
   "travelInfo": "Quick access via the A38, A51, and the M6 Toll corridor.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Lichfield operates without Clean Air Zone fees."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -56,7 +56,7 @@
     },
     {
       "question": "What insurance is included with Lichfield moves?",
-      "answer": "All moves include £50,000 Goods in Transit and £2,000,000 Public Liability insurance.",
+      "answer": "All moves include Fully insured.",
       "display": true
     }
   ],

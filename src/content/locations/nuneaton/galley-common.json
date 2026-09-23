@@ -1,0 +1,72 @@
+{
+  "town": "Galley Common",
+  "slug": "galley-common",
+  "county": "Warwickshire",
+  "heroHeading": "Affordable House Removals in Galley Common",
+  "metaTitle": "Galley Common Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Affordable house removals in Galley Common, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Looking for dependable house removals in Galley Common? Jimmys Removals provides an insured moving service across this peaceful semi-rural village west of Nuneaton. From stone cottages and miner's homes along Plough Hill Road to modern detached properties on Chesterton Drive, our team treats your household goods with great respect. We supply 3.5-tonne Luton vans fitted with tail lifts, quilted blankets, and secure strapping.\n\nOur friendly movers lift, carry, and place all your furniture exactly where you want it. We dismantle large wardrobes, safeguard mirrors with bubble wrap, and ensure washing machines and cookers are securely anchored during transit. Our fixed quotations ensure zero surprises on completion day.",
+  "localKnowledge": "Galley Common occupies an elevated, semi-rural setting with narrow country-style roads such as Plough Hill Road, Hickman Road, and Coleshill Road. These routes feature gentle curves, stone walls, and occasional blind summits where oncoming traffic must be negotiated carefully. Our 3.5-tonne Luton vans are ideally proportioned for these lanes, providing superior turning ability and safe positioning on private driveways without obstructing rural bus services.\n\nConnecting towards Arley and Ansley, Galley Common provides scenic rural road transit into north Warwickshire and Birmingham. Our drivers use local knowledge to bypass peak roundabout queues connecting back into Stockingford, ensuring your moving day schedule proceeds smoothly.",
+  "postcodes": [
+    "CV10"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Stockingford",
+      "slug": "nuneaton/stockingford"
+    },
+    {
+      "name": "Arley",
+      "slug": "nuneaton/arley"
+    },
+    {
+      "name": "Hartshill",
+      "slug": "nuneaton/hartshill"
+    }
+  ],
+  "travelInfo": "Direct road access via Plough Hill Road, Chesterton Drive, and scenic links to Ansley and the B4109.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans navigate semi-rural lanes in Galley Common?",
+      "answer": "Yes, our 3.5-tonne Luton vans easily negotiate narrow lanes and country turns along Plough Hill Road and Hickman Road.",
+      "display": true
+    },
+    {
+      "question": "Do you provide moving boxes and packing supplies in Galley Common?",
+      "answer": "We supply heavy-duty double-walled boxes, packing tape, bubble wrap, and wardrobe cartons delivered directly to your home in Galley Common.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle and reassemble flat-pack furniture in Galley Common?",
+      "answer": "Yes, our team brings specialized hand tools to take apart bulky wardrobes, bed frames, and dining tables, rebuilding them securely in your new home.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Galley Common?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.515,
+  "lng": -1.528,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

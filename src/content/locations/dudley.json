@@ -3,8 +3,8 @@
   "slug": "dudley",
   "county": "West Midlands",
   "metaTitle": "Dudley Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Dudley. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals is proud to serve the historic Black Country town of Dudley with professional, reliable removals and storage solutions. Dudley's unique hilly geography and distinctive mix of industrial heritage properties, hilltop semis in Sedgley and Gornal, and tight terraced roads around Kate's Hill and Netherton require an experienced removals team with genuine local driving prowess. We deploy agile 3.5-tonne Luton vans capable of tackling steep gradients and tight turning circles, backed by hard-working porters who take the physical strain out of your move. With full Goods in Transit insurance and upfront fixed pricing, we ensure your home transition is completely stress-free.  Our dedicated team takes care of every detail, from protecting carpets and banisters to reassembling dining sets and beds, ensuring your moving day across the Black Country proceeds smoothly from start to finish. We bring specialised climbing equipment and heavy-duty ramps for properties with stepped or hillside approaches.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Dudley. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Jimmys Removals is proud to serve the historic Black Country town of Dudley with professional, reliable removals and storage solutions. Dudley's unique hilly geography and distinctive mix of industrial heritage properties, hilltop semis in Sedgley and Gornal, and tight terraced roads around Kate's Hill and Netherton require an experienced removals team with genuine local driving prowess. We deploy agile 3.5-tonne Luton vans capable of tackling steep gradients and tight turning circles, backed by hard-working porters who take the physical strain out of your move. With full Fully insured insurance and upfront fixed pricing, we ensure your home transition is completely organized.  Our dedicated team takes care of every detail, from protecting carpets and banisters to reassembling dining sets and beds, ensuring your moving day across the Black Country proceeds smoothly from start to finish. We bring specialised climbing equipment and heavy-duty ramps for properties with stepped or hillside approaches.",
   "localKnowledge": "Moving house in Dudley is characterised by its pronounced topography. Steep inclines such as those around Castle Hill, Queen's Cross, and Rowley Hills require drivers who understand vehicle weight distribution and parking chocking on slopes. When loading vans parked on significant gradients, our porters carefully sequence goods, anchoring heavy appliances low and forward against the bulkhead to ensure vehicle balance.\n\nIn older neighbourhoods near Dudley town centre and Netherton, on-street parking is often tight, with steep brick steps leading up to front doors. Our crew comes equipped with ramp extensions and piano dollies to bridge thresholds safely. For properties near the busy Castlegate roundabout or Merry Hill corridor, we plan arrival timings to circumvent congestion on the A461 and A4037.",
   "postcodes": [
     "DY1",
@@ -28,7 +28,7 @@
   "travelInfo": "Convenient links via the A461 Duncan Edwards Way, A459, and A4123 New Road connecting to the M5 at Junction 2.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Dudley does not operate a Clean Air Zone. No emission fees apply."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",

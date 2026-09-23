@@ -1,17 +1,16 @@
 ---
-import { siteConfig } from 'src/data/site';
 
 export interface Props {
   accreditations?: Array<{ name: string; logo?: string; url?: string }>;
 }
 
-const { accreditations = siteConfig.accreditations } = Astro.props;
+const { accreditations = [] } = Astro.props;
 ---
 
 {accreditations && accreditations.length > 0 && (
   <div class="py-6 border-y border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-8 flex-wrap">
-      {accreditations.map((acc) => (
+      {accreditations.map((acc: any) => (
         <div class="flex items-center gap-2 opacity-80 hover:opacity-100 transition">
           {acc.logo && <img src={acc.logo} alt={acc.name} class="h-8 w-auto object-contain" />}
           <span class="text-xs font-bold text-slate-700 dark:text-slate-300">{acc.name}</span>

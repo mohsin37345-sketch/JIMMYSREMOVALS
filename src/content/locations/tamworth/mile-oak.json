@@ -1,0 +1,72 @@
+{
+  "town": "Mile Oak",
+  "slug": "mile-oak",
+  "county": "Staffordshire",
+  "heroHeading": "Affordable House Removals in Mile Oak",
+  "metaTitle": "Mile Oak Removals | Tamworth Moving Company | Jimmys",
+  "metaDescription": "Affordable house removals in Mile Oak, Tamworth. Fully insured moving teams, protective furniture covers, and clear pricing. Get a quick online quote.",
+  "intro": "Looking for a dependable, affordable house removal service in Mile Oak? Jimmys Removals delivers comprehensive residential moving solutions across this pleasant community on the south-western outskirts of Tamworth. Situated along the A453 Sutton Road near Fazeley and the boundary with Staffordshire and West Midlands, Mile Oak features a welcoming mix of established 1930s semi-detached homes, spacious mid-century bungalows, and modern detached family houses on Plantation Lane and Bonehill Road. Our experienced porters take the stress out of your moving day, handling every household item with diligence, skill, and friendly customer care.\n\nFrom careful packing of delicate glassware and kitchenware to taking apart bulky wardrobes and beds, our moving technicians are equipped with all necessary tools and protective materials. We line our modern Luton removal vans with clean transit blankets and secure all furniture with heavy-duty webbing straps to guarantee zero shifting during the journey. With full Fully insured insurance up to Fully insured, Fully insured, and guaranteed fixed quotations with no hidden extras, we make moving home in Mile Oak straightforward and cost-effective.",
+  "localKnowledge": "Mile Oak's layout along the A453 Sutton Road makes it a prime commuter district for professionals travelling into Sutton Coldfield, Birmingham, and Lichfield. Residential streets such as George Avenue, French Avenue, and Manor Road feature wide frontages and private driveways that generally allow straightforward van parking. However, morning commuter traffic along the A453 and around the Bonehill Road junction requires strategic scheduling. Our teams plan departures to avoid peak traffic build-up toward Bassetts Pole and the A5 junction.\n\nMany properties in Mile Oak, particularly older detached bungalows and semi-detached homes along Plantation Lane, boast long private garden paths or multi-tiered front steps. Our porters use heavy-duty sack barrows and furniture dollies with non-marking rubber tyres to transport heavy white goods and furniture pieces safely from threshold to van without marking exterior surfaces or landscaping.",
+  "postcodes": [
+    "B78"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Hopwas",
+      "slug": "tamworth/hopwas"
+    },
+    {
+      "name": "Two Gates",
+      "slug": "tamworth/two-gates"
+    },
+    {
+      "name": "Coton Green",
+      "slug": "tamworth/coton-green"
+    }
+  ],
+  "travelInfo": "Superb commuter connectivity via the A453 Sutton Road linking directly to Sutton Coldfield, Bassetts Pole, and the A5.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you manage peak commuter traffic on the A453 in Mile Oak?",
+      "answer": "We coordinate start times to avoid the morning rush toward Bassetts Pole and Sutton Coldfield, positioning our vans early so loading proceeds smoothly without transit delays.",
+      "display": true
+    },
+    {
+      "question": "Can you assist with downsizing from a family house to a bungalow in Mile Oak?",
+      "answer": "Yes, we regularly assist seniors and downsizers in Mile Oak with partial clearance, packing assistance, and room-by-room furniture placement in your new home.",
+      "display": true
+    },
+    {
+      "question": "Do you move large garden ornaments and heavy planters in Mile Oak?",
+      "answer": "Yes, our moving crews carry heavy-duty sack trucks and protective blankets to safely transport heavy stone planters, garden furniture, and patio equipment.",
+      "display": true
+    },
+    {
+      "question": "What happens if our moving date changes in Mile Oak?",
+      "answer": "As long as you give us advance notice, we will happily reschedule your move to a convenient new date without charging unfair cancellation penalties.",
+      "display": true
+    }
+  ],
+  "lat": 52.613,
+  "lng": -1.725,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

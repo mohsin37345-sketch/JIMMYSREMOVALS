@@ -16,7 +16,9 @@ const breadcrumbs = [
 let testimonials: any[] = [];
 try {
   const tCollection = await getCollection('testimonials');
-  testimonials = tCollection.map((t) => t.data);
+  testimonials = tCollection
+    .map((t) => t.data)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 } catch (e) {
   testimonials = [];
 }

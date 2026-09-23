@@ -23,8 +23,18 @@ fs.readdirSync(servicesDir).filter(f => f.endsWith('.json')).forEach(f => {
 // 2. Check locations
 console.log('--- LOCATIONS ---');
 const locDir = path.resolve('src/content/locations');
-fs.readdirSync(locDir).filter(f => f.endsWith('.json')).forEach(f => {
-  const d = JSON.parse(fs.readFileSync(path.join(locDir, f), 'utf-8'));
+function getAllLocationFiles(dir: string): string[] {
+  let entries: string[] = [];
+  for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, item.name);
+    if (item.isDirectory()) entries.push(...getAllLocationFiles(full));
+    else if (item.name.endsWith('.json')) entries.push(full);
+  }
+  return entries;
+}
+getAllLocationFiles(locDir).forEach(filePath => {
+  const f = path.relative(locDir, filePath);
+  const d = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   const text = [
     d.town, d.intro, d.localKnowledge, d.travelInfo,
     d.cleanAirZone?.note,

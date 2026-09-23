@@ -1,0 +1,72 @@
+{
+  "town": "Hartshill",
+  "slug": "hartshill",
+  "county": "Warwickshire",
+  "heroHeading": "Expert House Removals in Hartshill",
+  "metaTitle": "Hartshill Removals | North Warks House Movers | Jimmys",
+  "metaDescription": "Expert house removals in Hartshill, Warwickshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Organising a house move in Hartshill? Jimmys Removals provides an experienced, fully insured moving service across this elevated village overlooking the Anker Valley. Featuring historic stone quarrymen's cottages, traditional Victorian terraced homes along Church Road, and modern family houses near Victoria Road, Hartshill combines village charm with country scenery. Our team uses clean Luton vans fitted with 500kg tail lifts and heavy blankets.\n\nOur staff are adept at managing difficult property layouts. We carry bulky armchairs through narrow cottage doors, dismantle modular beds, and pad delicate mirrors against transit shocks. Transparent fixed prices ensure that you know your total moving cost with zero hidden extras.",
+  "localKnowledge": "Hartshill is defined by its pronounced hillside topography climbing towards Hartshill Hayes Country Park. Roads such as Church Road, Castle Road, and Grange Road feature steep inclines and sharp bends where vehicle stability is essential during loading operations. Our drivers are trained in hill parking protocols, ensuring our vehicles remain securely chocked and balanced while heavy furniture is carried aboard.\n\nIn older parts of the village near the historic castle ruins and Holy Trinity Church, stone perimeter walls and roadside parking can narrow the running lane. Our agile 3.5-tonne Luton vans provide the optimum solution, maneuvering cleanly into tight private driveways without requiring bulky parking suspensions.\n\nPositioned along the B4111, Hartshill connects directly north to Atherstone and south to Nuneaton. We schedule journey times to avoid school traffic near Hartshill Academy, guaranteeing punctual arrivals and smooth unloading for your move.",
+  "postcodes": [
+    "CV10"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Camp Hill",
+      "slug": "nuneaton/camp-hill"
+    },
+    {
+      "name": "Galley Common",
+      "slug": "nuneaton/galley-common"
+    },
+    {
+      "name": "Tamworth",
+      "slug": "tamworth"
+    }
+  ],
+  "travelInfo": "Direct links via the B4111 Church Road, Castle Road, and rapid connections to Atherstone and the A5.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans manage steep roads around Hartshill Hayes?",
+      "answer": "Yes, our Luton vans are equipped with powerful modern engines and heavy-duty braking systems suited for the steep inclines of Hartshill.",
+      "display": true
+    },
+    {
+      "question": "Do you provide moving boxes and tape in Hartshill?",
+      "answer": "We supply heavy-duty double-walled boxes, packing tape, bubble wrap, and wardrobe cartons delivered directly to your home in Hartshill.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle and reassemble flat-pack furniture in Hartshill?",
+      "answer": "Yes, our team brings specialized hand tools to take apart bulky wardrobes, bed frames, and dining tables, rebuilding them securely in your new home.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Hartshill?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.548,
+  "lng": -1.517,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

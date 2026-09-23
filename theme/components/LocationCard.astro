@@ -10,6 +10,7 @@ export interface Props {
   cazEnabled?: boolean;
   cleanAirZone?: boolean;
   intro?: string;
+  subAreas?: Array<{ name: string; slug: string }>;
 }
 
 const {
@@ -20,7 +21,8 @@ const {
   postcodes = [],
   cazEnabled = false,
   cleanAirZone = false,
-  intro
+  intro,
+  subAreas = []
 } = Astro.props;
 
 const isCaz = cazEnabled || cleanAirZone;
@@ -47,18 +49,19 @@ const isCaz = cazEnabled || cleanAirZone;
       </a>
     </h3>
 
-    {intro && (
+    {subAreas && subAreas.length > 0 ? (
+      <div class="mt-2 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+        <span class="font-semibold text-slate-700 dark:text-slate-300">Covers: </span>
+        <span>{subAreas.slice(0, 3).map((s) => s.name).join(', ')}</span>
+        {subAreas.length > 3 && (
+          <span class="text-amber-600 dark:text-amber-400 font-semibold"> +{subAreas.length - 3} more</span>
+        )}
+      </div>
+    ) : intro ? (
       <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
         {intro}
       </p>
-    )}
-
-    {isCaz && (
-      <div class="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        <span>Clean Air Zone Compliant</span>
-      </div>
-    )}
+    ) : null}
   </div>
 
   <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">

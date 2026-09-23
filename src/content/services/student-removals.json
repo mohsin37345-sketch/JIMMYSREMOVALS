@@ -1,0 +1,97 @@
+{
+  "title": "Student Removals Birmingham & West Midlands",
+  "slug": "student-removals",
+  "shortTitle": "Student Removals",
+  "metaTitle": "Student Removals Birmingham | Campus & Hall Relocations",
+  "metaDescription": "Affordable student removals across Birmingham, Coventry, and the West Midlands. University halls, shared student houses, and term-time moves by DBS-checked movers.",
+  "heroHeading": "Dependable Student Removals Across Birmingham & West Midlands",
+  "heroSubheading": "Budget-conscious, flexible moves between university halls, shared student houses, and family homes across the UK.",
+  "icon": "academic",
+  "summary": "Moving to university halls or changing student accommodations? Jimmys Removals provides reliable student relocations across the West Midlands, serving students at University of Birmingham, Aston University, Birmingham City University, Coventry University, and University of Warwick. Our Luton vans transport desks, luggage, textbooks, computer setups, and bedroom furnishings with care.",
+  "benefits": [
+    "Competitive student rates with guaranteed fixed pricing",
+    "Serving Selly Oak, Edgbaston, City Centre, Leamington, and Coventry campuses",
+    "Door-to-door transport between halls, shared student houses, and family residences",
+    "Flexible collection times aligned with university term dates",
+    "Direct transport without depot delays or co-loading"
+  ],
+  "process": [
+    {
+      "step": 1,
+      "title": "Online or Phone Quote",
+      "description": "Tell us how many suitcases, boxes, and furniture items you need moved and your current address."
+    },
+    {
+      "step": 2,
+      "title": "Campus or Halls Collection",
+      "description": "Our friendly mover arrives at your student accommodation to load boxes, bedding, and equipment."
+    },
+    {
+      "step": 3,
+      "title": "Direct Journey",
+      "description": "We travel straight to your destination address with your belongings secured on board."
+    },
+    {
+      "step": 4,
+      "title": "Unloading into Your Room",
+      "description": "We carry your boxes and furnishings directly into your new room or flat."
+    }
+  ],
+  "whatsIncluded": [
+    "Equipped 3.5-tonne Luton van with friendly, DBS-checked mover",
+    "Loading assistance from campus halls or student house door",
+    "Protective blankets for computer monitors, audio gear, and desks",
+    "Direct delivery with no intermediate handling",
+    "Written fixed quotes with zero hidden mileage fees"
+  ],
+  "whatsNotIncluded": [
+    "End-of-tenancy deep cleaning services",
+    "Supply of packing cartons unless requested in advance",
+    "Removal of general municipal waste",
+    "Multiple drop-offs not agreed during quotation"
+  ],
+  "priceFrom": 0,
+  "priceUnit": "fixed quote",
+  "priceNotes": "Priced per job after a quick survey based on inventory size and transit distance.",
+  "faqs": [
+    {
+      "question": "Can two housemates share a van to reduce moving costs?",
+      "answer": "Yes. If you and a fellow student are moving from the same house or to nearby halls, sharing a van is a practical way to split costs while booking a single journey.",
+      "display": true
+    },
+    {
+      "question": "Do you move students outside Birmingham to other UK universities?",
+      "answer": "Yes. We arrange direct long-distance student moves from Birmingham and the West Midlands to any university campus or home address across mainland UK.",
+      "display": true
+    },
+    {
+      "question": "How should I prepare my belongings for student move day?",
+      "answer": "Pack smaller items and books into sturdy taped cartons, pack personal valuables in a separate day bag, and ensure computer monitors are disconnected and protected.",
+      "display": true
+    },
+    {
+      "question": "How much does a student move cost in Birmingham?",
+      "answer": "Student removals are priced per job after a quick survey. Factors include the number of boxes, furniture items, stair flights, and overall mileage, with an upfront fixed quote provided.",
+      "display": true
+    }
+  ],
+  "relatedServices": [
+    "man-and-van",
+    "storage",
+    "packing-services"
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Student removals van parked outside university accommodation in Birmingham"
+    },
+    "local": {
+      "src": "",
+      "alt": "Removals crew loading student boxes and luggage into Luton van"
+    },
+    "team": {
+      "src": "",
+      "alt": "Student removals mover unloading bedroom furniture"
+    }
+  }
+}

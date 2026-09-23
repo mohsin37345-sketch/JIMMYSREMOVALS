@@ -35,17 +35,17 @@ const hasSocials = Object.values(socialLinks).some((url) => typeof url === 'stri
         </a>
 
         <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
-          Professional, fully insured house removals, commercial moves, and same-day courier solutions across Birmingham, the Black Country, and the entire West Midlands. Operating 7 days a week with Clean Air Zone compliant vehicles.
+          Professional removals, commercial moves, and same-day courier solutions across Birmingham and the West Midlands. Open 24 hours a day, 7 days a week, including bank holidays.
         </p>
 
-        <!-- Insurance Statement Highlight -->
+        <!-- Trust Highlight -->
         <div class="p-3.5 bg-slate-900 rounded-xl border border-slate-800 text-xs space-y-1">
           <div class="flex items-center gap-2 font-bold text-slate-200">
             <Icon name="shield" class="w-4 h-4 text-amber-400" />
-            <span>Fully Insured Removals:</span>
+            <span>Fully insured</span>
           </div>
           <p class="text-slate-400">
-            Goods in Transit: <strong class="text-slate-200">{siteConfig.insurance.goodsInTransit}</strong> · Public Liability: <strong class="text-slate-200">{siteConfig.insurance.publicLiability}</strong>
+            Directly employed, DBS-checked moving specialists with 3.5-tonne Luton vans.
           </p>
         </div>
 
@@ -172,22 +172,24 @@ const hasSocials = Object.values(socialLinks).some((url) => typeof url === 'stri
     <div class="pt-8 pb-4 text-xs text-slate-500 space-y-4">
       <address class="not-italic grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-slate-400">
         <div>
-          <strong class="text-slate-200 block mb-1">Trading Entity:</strong>
-          {siteConfig.legalName}
+          <strong class="text-slate-200 block mb-1">Registered Company Name:</strong>
+          {siteConfig.legalName}<br />
+          <span class="text-slate-400">(trading as {siteConfig.tradingName})</span>
         </div>
         <div>
-          <strong class="text-slate-200 block mb-1">Registered Address:</strong>
-          {siteConfig.address.streetAddress}, {siteConfig.address.addressLocality}, {siteConfig.address.postalCode}
+          <strong class="text-slate-200 block mb-1">Registered Office:</strong>
+          {siteConfig.address.fullAddress}
         </div>
         <div>
           <strong class="text-slate-200 block mb-1">Direct Contact:</strong>
           Phone: <a href={`tel:${siteConfig.phoneE164}`} class="hover:underline text-slate-300">{siteConfig.phone}</a><br />
-          Email: <a href={`mailto:${siteConfig.email}`} class="hover:underline text-slate-300">{siteConfig.email}</a>
+          Email: <a href={`mailto:${siteConfig.email}`} class="hover:underline text-slate-300">{siteConfig.email}</a><br />
+          Hours: <span class="text-slate-300">{siteConfig.openingHoursDisplay}</span>
         </div>
         <div>
-          <strong class="text-slate-200 block mb-1">Company Details:</strong>
-          Registered in England & Wales<br />
-          Company No: {siteConfig.companyNumber} · VAT: {siteConfig.vatNumber}
+          <strong class="text-slate-200 block mb-1">Companies House:</strong>
+          Private Limited Company in England & Wales<br />
+          Company No: <a href={siteConfig.companiesHouseUrl} target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-semibold">{siteConfig.companyNumber}</a>
         </div>
       </address>
 

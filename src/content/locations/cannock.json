@@ -3,31 +3,73 @@
   "slug": "cannock",
   "county": "Staffordshire",
   "metaTitle": "Cannock Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Cannock. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "For trusted house removals, commercial deliveries, and clearance services in Cannock and Hednesford, Jimmys Removals delivers an efficient, reliable service. Situated on the edge of Cannock Chase Area of Outstanding Natural Beauty, Cannock combines mining heritage communities, modern family estates in Hawkesyard, and bustling shopping quarters. We ensure every move is handled safely, cleanly, and on schedule.  From small apartment transfers to complete family house moves near the Chase, our DBS-checked team provides a reliable, courteous, and fully insured service throughout Cannock. We take care of heavy lifting, furniture assembly, and packing so you can relax on moving day. Every relocation is backed by our full goods in transit protection.",
-  "localKnowledge": "Cannock's road network connects directly to the M6 Toll and M6 Junction 11. Roads climbing into Hednesford and towards the Chase feature varied gradients, where our drivers ensure safe vehicle positioning and careful loading of heavy household furniture.",
+  "metaDescription": "Professional house removals, man and van, and packing across Cannock and Cannock Chase. Tier 1 moving hub, DBS-checked movers, and transparent pricing.",
+  "intro": "For trusted house removals, commercial deliveries, and specialist storage across Cannock, Hednesford, Rugeley, and South Staffordshire, Jimmys Removals delivers an efficient, reliable service. Situated on the southern boundary of the Cannock Chase National Landscape, Cannock combines historic mining heritage communities, leafy residential avenues, and contemporary family developments in Hawks Green and Heath Hayes. We ensure every move is handled safely, cleanly, and strictly on schedule.\n\nFrom starter terraced homes in Bridgtown to substantial executive properties in Cannock Wood and countryside retreats along the Trent Valley, our directly employed, DBS-checked porters provide an attentive, courteous moving experience throughout the entire Cannock district. We carefully unbolt bulky wardrobes, protect hardwood flooring with non-slip runners, and transport upright pianos with specialist dollies. Every relocation is backed by our full Fully insured and upfront guaranteed pricing.",
+  "localKnowledge": "Cannock's strategic road network connects directly to the M6 Toll at Junctions T7 and T8, alongside M6 Junction 11 and 12. Roads climbing into Hednesford, Greenheath, and towards the high plateau of Cannock Chase feature noticeable gradients, where our drivers ensure safe vehicle positioning and careful loading of heavy household furniture. In established residential avenues, our modern 3.5-tonne Luton vans provide excellent access without blocking neighbour driveways.",
   "postcodes": [
     "WS11",
-    "WS12"
+    "WS12",
+    "WS15",
+    "WS6"
   ],
   "nearbyAreas": [
     {
-      "name": "Bloxwich",
-      "slug": "bloxwich"
+      "name": "Bridgtown",
+      "slug": "cannock/bridgtown"
     },
     {
-      "name": "Walsall",
-      "slug": "walsall"
+      "name": "Chadsmoor",
+      "slug": "cannock/chadsmoor"
     },
     {
-      "name": "Lichfield",
-      "slug": "lichfield"
+      "name": "Heath Hayes",
+      "slug": "cannock/heath-hayes"
+    },
+    {
+      "name": "Hednesford",
+      "slug": "cannock/hednesford"
+    },
+    {
+      "name": "Norton Canes",
+      "slug": "cannock/norton-canes"
+    },
+    {
+      "name": "Rugeley",
+      "slug": "cannock/rugeley"
+    },
+    {
+      "name": "Cheslyn Hay",
+      "slug": "cannock/cheslyn-hay"
+    },
+    {
+      "name": "Great Wyrley",
+      "slug": "cannock/great-wyrley"
+    },
+    {
+      "name": "Hawks Green",
+      "slug": "cannock/hawks-green"
+    },
+    {
+      "name": "Cannock Wood",
+      "slug": "cannock/cannock-wood"
+    },
+    {
+      "name": "Brereton",
+      "slug": "cannock/brereton"
+    },
+    {
+      "name": "Wimblebury",
+      "slug": "cannock/wimblebury"
+    },
+    {
+      "name": "Cannock Town",
+      "slug": "cannock/cannock-town"
     }
   ],
-  "travelInfo": "Direct links via the A5, A34, and M6 Toll Junctions T7/T8, and M6 Junctions 11/12.",
+  "travelInfo": "Direct links via the A5, A34, A460, and M6 Toll Junctions T7/T8, and M6 Junctions 11/12.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Cannock is outside any Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -40,28 +82,28 @@
   ],
   "localFaqs": [
     {
-      "question": "Do you cover Hednesford and Heath Hayes?",
-      "answer": "Yes, we cover all WS11 and WS12 postcodes across the Cannock district.",
+      "question": "Do you cover all towns and villages across the Cannock district?",
+      "answer": "Yes, we cover Cannock Town, Hednesford, Heath Hayes, Rugeley, Cheslyn Hay, Great Wyrley, and all WS11, WS12, WS15, and WS6 postcodes.",
       "display": true
     },
     {
       "question": "Can you assist with moves near Cannock Chase?",
-      "answer": "Yes, we regularly move properties bordering the rural Chase with great care.",
+      "answer": "Yes, we regularly move properties bordering the rural Chase with great care, laying heavy floor protection against mud and trail dirt.",
       "display": true
     },
     {
       "question": "Do you provide clearance services in Cannock?",
-      "answer": "Yes, we offer licensed house and garden clearance with ethical recycling.",
+      "answer": "Yes, we offer licensed house and garden clearance with ethical recycling and waste transfer notes.",
       "display": true
     },
     {
       "question": "Are your moving quotes guaranteed?",
-      "answer": "Yes, all our quotations are fixed and transparent with zero hidden fees.",
+      "answer": "Yes, all our quotations are fixed and transparent with zero hidden fees or completion delay charges.",
       "display": true
     }
   ],
   "lat": 52.689,
   "lng": -2.032,
-  "tier": 2,
+  "tier": 1,
   "heroImage": "/images/locations/cannock.webp"
 }

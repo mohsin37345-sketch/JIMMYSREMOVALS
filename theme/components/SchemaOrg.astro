@@ -78,8 +78,13 @@ const movingCompanyId = `${siteConfig.siteUrl}/#movingcompany`;
 const organizationId = `${siteConfig.siteUrl}/#organization`;
 const websiteId = `${siteConfig.siteUrl}/#website`;
 
-// Social URLs for sameAs
-const sameAs = Object.values(socialLinks).filter((url) => typeof url === 'string' && url.trim().length > 0);
+// Social and Profile URLs for sameAs (including Google Business Profile)
+const sameAs = [
+  ...Object.values(socialLinks).filter((url) => typeof url === 'string' && url.trim().length > 0),
+  ...(siteConfig.googleBusinessProfileUrl && siteConfig.googleBusinessProfileUrl.trim().length > 0
+    ? [siteConfig.googleBusinessProfileUrl]
+    : [])
+];
 
 // All 37 West Midlands coverage towns for schema areaServed
 const all37Towns = [
@@ -98,19 +103,20 @@ const organizationSchema: Record<string, any> = {
   name: siteConfig.legalName,
   legalName: siteConfig.legalName,
   url: siteConfig.siteUrl,
-  vatID: siteConfig.vatNumber,
+  ...(siteConfig.vatNumber ? { vatID: siteConfig.vatNumber } : {}),
   identifier: [
     {
       '@type': 'PropertyValue',
       name: 'Companies House Registration',
       value: siteConfig.companyNumber
     },
-    {
+    ...(siteConfig.wasteCarrierLicence ? [{
       '@type': 'PropertyValue',
       name: 'Environment Agency Waste Carrier Licence',
       value: siteConfig.wasteCarrierLicence
-    }
-  ]
+    }] : [])
+  ],
+  sameAs: sameAs.length > 0 ? sameAs : undefined
 };
 
 // 2. MovingCompany Schema (Specialized schema.org subtype)
@@ -130,13 +136,13 @@ const movingCompanySchema: Record<string, any> = {
     `${siteConfig.siteUrl}/images/moves/secure-appliance-transport.webp`,
     `${siteConfig.siteUrl}/images/moves/furniture-packing-blankets.webp`
   ],
-  description: 'Fixed-price house removals across Birmingham & the West Midlands. DBS-checked movers, £50k transit cover, CAZ-compliant vans. Free 60-second quote — 0121 517 1227.',
+  description: `Fixed-price house removals across Birmingham & the West Midlands. Directly employed, DBS-checked movers, fully insured. Guaranteed fixed quotes — ${siteConfig.phone}.`,
   telephone: siteConfig.phoneE164,
   email: siteConfig.email,
   priceRange: siteConfig.priceRange,
   paymentAccepted: 'Cash, Credit Card, Debit Card, Bank Transfer',
   currenciesAccepted: 'GBP',
-  hasMap: siteConfig.googleBusinessProfileUrl,
+  hasMap: siteConfig.googleBusinessProfileUrl || undefined,
   address: {
     '@type': 'PostalAddress',
     streetAddress: siteConfig.address.streetAddress,
@@ -160,16 +166,34 @@ const movingCompanySchema: Record<string, any> = {
     { '@type': 'AdministrativeArea', name: 'West Midlands' },
     ...all37Towns.map((town) => ({ '@type': 'City', name: town }))
   ],
-  sameAs: sameAs.length > 0 ? sameAs : undefined
+  sameAs: sameAs.length > 0 ? sameAs : undefined,
+  ...(siteConfig.aggregateRating ? {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: siteConfig.aggregateRating.ratingValue,
+      reviewCount: siteConfig.aggregateRating.reviewCount,
+      bestRating: '5',
+      worstRating: '1'
+    }
+  } : {}),
+  ...(_reviews && _reviews.length > 0 ? {
+    review: _reviews.map((rev) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: rev.name
+      },
+      datePublished: rev.date,
+      reviewBody: rev.body,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: rev.rating,
+        bestRating: '5',
+        worstRating: '1'
+      }
+    }))
+  } : {})
 };
-
-/**
- * SEO COMPLIANCE NOTICE:
- * AggregateRating and Review schemas are intentionally omitted from structured data
- * until genuine, verifiable reviews on the live Google Business Profile can be confirmed.
- * Outputting unverified review markup violates Google Search Central spam policies
- * and triggers manual action penalties.
- */
 
 // 3. WebSite Schema
 const websiteSchema: Record<string, any> = {

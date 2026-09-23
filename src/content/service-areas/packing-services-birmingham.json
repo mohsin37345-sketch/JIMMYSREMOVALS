@@ -1,0 +1,32 @@
+{
+  "service": "packing-services",
+  "location": "birmingham",
+  "uniqueIntro": "Packing an entire home or flat across Birmingham requires method, durable materials, and experienced hands. Jimmys Removals provides full and fragile-only packing services for properties in Edgbaston, Harborne, Moseley, Solihull borders, and central districts. Our uniformed teams bring heavy-duty double-walled corrugated cardboard cartons, acid-free tissue paper, bubble wrap, and wardrobe boxes with hanging bars. We pack china, glassware, books, and clothing systematically, labeling each box clearly by room so unpacking at your destination is straightforward and orderly.",
+  "localAngle": "Whether preparing a Victorian townhouse in Sutton Coldfield or a modern loft in the Jewellery Quarter, our packing crew wraps fragile heirlooms, chandeliers, and framed artwork with specialized corner protectors, ensuring complete safety before move morning.",
+  "faqs": [
+    {
+      "question": "Can I book packing service on the day before my Birmingham move?",
+      "answer": "Yes. We frequently arrange packing the day before moving day so all cartons are sealed, labelled, and staged ready for first-thing loading on completion day.",
+      "display": true
+    },
+    {
+      "question": "Do you provide wardrobe boxes for hanging clothes in Birmingham?",
+      "answer": "Yes. Our packing service includes sturdy wardrobe boxes fitted with metal hanging rails, allowing your suits, dresses, and coats to transfer directly on hangers without creasing.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Removals crew packing glassware with acid-free tissue in Birmingham"
+    },
+    "local": {
+      "src": "",
+      "alt": "Stacked double-walled removal boxes labeled by room in Birmingham house"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed packing specialist sealing removal cartons"
+    }
+  }
+}

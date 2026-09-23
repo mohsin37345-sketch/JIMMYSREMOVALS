@@ -1,0 +1,72 @@
+{
+  "town": "Two Gates",
+  "slug": "two-gates",
+  "county": "Staffordshire",
+  "heroHeading": "Trusted House Removals in Two Gates",
+  "metaTitle": "Two Gates Removals | Tamworth Moving Experts | Jimmys",
+  "metaDescription": "Trusted house removals in Two Gates, Tamworth. DBS-checked movers, furniture dismantling, and transparent quotes. Call 07404 353516 for full details.",
+  "intro": "Moving home in Two Gates? Jimmys Removals provides trusted, professional house and flat removal solutions throughout this historic south Tamworth neighbourhood. Positioned along the ancient Roman Watling Street (B5404) between Wilnecote and Fazeley, Two Gates features a characterful blend of traditional Victorian terraced homes, post-war semi-detached houses, and contemporary residential developments near Park Lane and Dosthill Road. Our experienced movers deliver a completely smooth relocation experience, bringing modern Luton vans, electric tail lifts, and all required protective packing supplies.\n\nFrom handling bulky three-piece suites and multi-door wardrobes to packing fragile kitchen ceramics and mirrors, our directly employed porters approach every item with care and respect. We protect your carpets with clean floor runners, wrap soft furnishings in padded blankets, and secure everything firmly to vehicle tie-rails to prevent movement on the road. With transparent upfront quotes, full insurance coverage, and flexible scheduling 24 hours, 7 days a week, we take the hassle out of moving in Two Gates.",
+  "localKnowledge": "Two Gates centres on the heavily trafficked B5404 Watling Street, which carries steady local and commuter traffic connecting Tamworth with Atherstone and north Warwickshire. The density of commercial and residential traffic along Watling Street requires careful coordination when loading domestic vehicles. Our drivers time van arrivals to avoid peak school-run and commuter queues, using off-street parking areas or placing hazard cones when kerbside loading is required.\n\nIn older terraced streets around Park Lane and Cross Street, properties often feature narrow hallways, high-stepped thresholds, and tight 90-degree turns leading up to first-floor bedrooms. Our moving porters are skilled in furniture dismantling and angled carries, disassembling bulky bed frames and corner desks to transport them through restricted doorways without scuffing walls or paintwork.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Wilnecote",
+      "slug": "tamworth/wilnecote"
+    },
+    {
+      "name": "Dosthill",
+      "slug": "tamworth/dosthill"
+    },
+    {
+      "name": "Kettlebrook",
+      "slug": "tamworth/kettlebrook"
+    }
+  ],
+  "travelInfo": "Direct road access along the B5404 Watling Street with rapid links to the A5 bypass and M42 Junction 10.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you manage loading on Watling Street in Two Gates?",
+      "answer": "We time loading to avoid morning rush hours and use high-visibility cones to position our 3.5-tonne Luton vans safely along property frontages or side avenues.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle large divan beds and wardrobes in Two Gates?",
+      "answer": "Yes, our team carries full toolkits to disassemble flat-pack or solid timber furniture, rebuilding everything neatly in your new home.",
+      "display": true
+    },
+    {
+      "question": "Can you move American-style fridge freezers and heavy washing machines?",
+      "answer": "Yes, our Luton vans are equipped with 500kg hydraulic tail lifts and appliance stair-climber barrows, ensuring heavy white goods are moved without injury or damage.",
+      "display": true
+    },
+    {
+      "question": "Are weekend removals more expensive in Two Gates?",
+      "answer": "No, we operate 24 hours, 7 days a week across Tamworth and offer transparent, consistent fixed pricing whether you move on a weekday or a weekend.",
+      "display": true
+    }
+  ],
+  "lat": 52.61,
+  "lng": -1.682,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

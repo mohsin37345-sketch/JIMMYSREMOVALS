@@ -11,7 +11,7 @@ Company Number: ${siteConfig.companyNumber}
 VAT Number: ${siteConfig.vatNumber}
 
 ## Business Overview
-Jimmys Removals and Logistics LTD is a fully insured, DBS-checked house removals, commercial relocation, and logistics company based in Birmingham, United Kingdom. We operate 7 days a week with a modern fleet compliant with the Birmingham Clean Air Zone (inside the A4540 Middleway ring road).
+Jimmys Removals and Logistics LTD is a fully insured, DBS-checked house removals, commercial relocation, and logistics company based in Birmingham, United Kingdom. We operate 24 hours, 7 days a week with a modern fleet compliant with the Birmingham Clean Air Zone (inside the A4540 Middleway ring road).
 
 ## Service Area
 - Primary Towns (Tier 1): Birmingham, Wolverhampton, Coventry, Solihull, Dudley, Walsall, West Bromwich, Sutton Coldfield, Stourbridge.
@@ -33,9 +33,8 @@ Jimmys Removals and Logistics LTD is a fully insured, DBS-checked house removals
 12. Long-Distance UK Relocations
 
 ## Insurance & Compliance
-- Goods in Transit Cover: ${siteConfig.insurance.goodsInTransit}
-- Public Liability Cover: ${siteConfig.insurance.publicLiability}
-- Clean Air Zone (CAZ): 100% compliant Euro 6 fleet (zero surcharge)
+- Insurance: ${siteConfig.insurance.badge}
+- Clean Air Zone (CAZ): Zero CAZ surcharges on Birmingham moves
 
 ## Contact Information
 - Phone: ${siteConfig.phone} (${siteConfig.phoneE164})

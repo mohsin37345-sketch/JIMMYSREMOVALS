@@ -3,8 +3,8 @@
   "slug": "leamington-spa",
   "county": "Warwickshire",
   "metaTitle": "Leamington Spa Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Leamington Spa. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals provides bespoke house removals, student relocations, and fine art transport across Royal Leamington Spa. Renowned for its stunning Regency architecture, wide boulevards, and popular student communities serving the University of Warwick, Leamington Spa requires high standards of care. Our experienced porters use floor runners, banister wraps, and padded covers to protect your property and ensure a flawless move.  From Regency townhouses to modern university accommodation, our professional team provides the care, floor protection, and expertise needed for a stress-free move across Royal Leamington Spa. We handle grand stairwells, historic plasterwork, and heavy furniture with supreme skill, wrapping all delicate items in quilted blankets.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Leamington Spa. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Jimmys Removals provides bespoke house removals, student relocations, and fine art transport across Royal Leamington Spa. Renowned for its stunning Regency architecture, wide boulevards, and popular student communities serving the University of Warwick, Leamington Spa requires high standards of care. Our experienced porters use floor runners, banister wraps, and padded covers to protect your property and ensure a flawless move.  From Regency townhouses to modern university accommodation, our professional team provides the care, floor protection, and expertise needed for a organized move across Royal Leamington Spa. We handle grand stairwells, historic plasterwork, and heavy furniture with supreme skill, wrapping all delicate items in quilted blankets.",
   "localKnowledge": "Leamington Spa's historic Regency terraces in the town centre and around Clarendon Square feature high ceilings, sweeping spiral staircases, and multi-storey layouts. Our crew is experienced in navigating oversized furniture down narrow internal stairs without scuffing ornate plaster cornices or delicate wall panelling.",
   "postcodes": [
     "CV31",
@@ -28,7 +28,7 @@
   "travelInfo": "Direct links via the A452, A46 bypass, and M40 Junctions 13 and 14.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Leamington Spa operates without a Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -57,7 +57,7 @@
     },
     {
       "question": "Can you provide a full packing service?",
-      "answer": "Yes, our team can carefully pack your entire home with premium double-walled cartons.",
+      "answer": "Yes, our team can carefully pack your entire home with professional double-walled cartons.",
       "display": true
     }
   ],

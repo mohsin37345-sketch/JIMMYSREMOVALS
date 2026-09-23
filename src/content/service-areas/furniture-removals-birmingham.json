@@ -1,0 +1,32 @@
+{
+  "service": "furniture-removals",
+  "location": "birmingham",
+  "uniqueIntro": "Transporting heavy sofas, solid oak wardrobes, dining suites, or vintage sideboards across Birmingham requires specialist vehicle equipment and experienced handlers. Jimmys Removals delivers dedicated furniture removals across all Birmingham districts, from Selly Oak and Edgbaston to Erdington and Solihull borders. Our 3.5-tonne Luton vans feature 500kg hydraulic tail lifts for ground-level loading, eliminating manual lifting strain on steep front steps. Every item is blanket-wrapped, securely lashed to internal load rails, and carried directly into your room of choice.",
+  "localAngle": "Navigating Birmingham's mix of narrow Victorian terraced avenues and gated modern estates requires precise van handling and protective measures. Our movers lay floor runners and protect banisters when moving bulky furniture through multi-level homes.",
+  "faqs": [
+    {
+      "question": "Can you move an American-style double fridge freezer in Birmingham?",
+      "answer": "Yes. Our 3.5-tonne Luton vans are equipped with 500kg electric tail lifts and heavy appliance dollies, allowing our two-person crews to transport heavy refrigeration units safely.",
+      "display": true
+    },
+    {
+      "question": "Do you move single furniture items purchased online or privately?",
+      "answer": "Yes. We arrange scheduled collections from private addresses, showrooms, or marketplace sellers across Birmingham with room-of-choice delivery.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Furniture removals tail lift loading sofa in Birmingham"
+    },
+    "local": {
+      "src": "",
+      "alt": "Blanket-wrapped dining table secured inside Luton van in Birmingham"
+    },
+    "team": {
+      "src": "",
+      "alt": "Movers carrying solid wood wardrobe into Birmingham home"
+    }
+  }
+}

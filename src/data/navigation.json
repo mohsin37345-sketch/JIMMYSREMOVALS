@@ -2,34 +2,34 @@
   "mainNav": [
     {
       "label": "Services",
-      "href": "/removals/",
+      "href": "/services/",
       "isMegaMenu": true,
       "groups": [
         {
           "title": "Home & Residential",
           "items": [
-            { "label": "House Removals", "href": "/removals/house-removals/", "description": "Full-service family home moves with Luton vans", "icon": "truck" },
-            { "label": "Flat & Apartment Removals", "href": "/removals/flat-removals/", "description": "Lift slots, parking permits and stair carry", "icon": "building" },
-            { "label": "Man and Van", "href": "/removals/man-and-van/", "description": "Flexible, hourly rate small removals & single items", "icon": "van" },
-            { "label": "Student Moves", "href": "/removals/student-moves/", "description": "Cost-effective term-time moves to halls and HMOs", "icon": "academic" }
+            { "label": "House Removals", "href": "/services/house-removals/", "description": "Full-service family home moves with Luton vans", "icon": "truck" },
+            { "label": "Flat & Apartment Removals", "href": "/services/flat-removals/", "description": "Lift slots, parking permits and stair carry", "icon": "building" },
+            { "label": "Man and Van", "href": "/services/man-and-van/", "description": "Flexible, hourly rate small removals & single items", "icon": "van" },
+            { "label": "Student Moves", "href": "/services/student-moves/", "description": "Cost-effective term-time moves to halls and HMOs", "icon": "academic" }
           ]
         },
         {
           "title": "Commercial & Specialist",
           "items": [
-            { "label": "Office Removals", "href": "/removals/office-removals/", "description": "Business relocation, IT equipment and desks", "icon": "briefcase" },
-            { "label": "Piano & Specialist Moves", "href": "/removals/piano-and-specialist-moves/", "description": "Uprights, baby grands, antiques and heavy safes", "icon": "shield" },
-            { "label": "Long-Distance Removals", "href": "/removals/long-distance-removals/", "description": "Direct point-to-point UK-wide relocations", "icon": "map" },
-            { "label": "House Clearance", "href": "/removals/house-clearance/", "description": "Licensed, respectful clearance and ethical disposal", "icon": "trash" }
+            { "label": "Office Removals", "href": "/services/office-removals/", "description": "Business relocation, IT equipment and desks", "icon": "briefcase" },
+            { "label": "Piano & Specialist Moves", "href": "/services/piano-and-specialist-moves/", "description": "Uprights, baby grands, antiques and heavy safes", "icon": "shield" },
+            { "label": "Long-Distance Removals", "href": "/services/long-distance-removals/", "description": "Direct point-to-point UK-wide relocations", "icon": "map" },
+            { "label": "House Clearance", "href": "/services/house-clearance/", "description": "Licensed, respectful clearance and ethical disposal", "icon": "trash" }
           ]
         },
         {
           "title": "Support & Logistics",
           "items": [
-            { "label": "Packing Services", "href": "/removals/packing-services/", "description": "Professional packing and double-walled materials", "icon": "box" },
-            { "label": "Furniture Dismantling", "href": "/removals/furniture-dismantling/", "description": "Wardrobes, beds and flat-pack reassembly", "icon": "wrench" },
-            { "label": "Storage Solutions", "href": "/removals/storage/", "description": "Secure, dry containerised storage in Birmingham", "icon": "archive" },
-            { "label": "Same-Day Delivery", "href": "/removals/same-day-delivery/", "description": "Urgent pallet and courier dispatch across UK", "icon": "clock" }
+            { "label": "Packing Services", "href": "/services/packing-services/", "description": "Professional packing and double-walled materials", "icon": "box" },
+            { "label": "Furniture Dismantling", "href": "/services/furniture-dismantling/", "description": "Wardrobes, beds and flat-pack reassembly", "icon": "wrench" },
+            { "label": "Storage Solutions", "href": "/services/storage/", "description": "Secure, dry containerised storage in Birmingham", "icon": "archive" },
+            { "label": "Same-Day Delivery", "href": "/services/same-day-delivery/", "description": "Urgent pallet and courier dispatch across UK", "icon": "clock" }
           ]
         }
       ]
@@ -65,7 +65,7 @@
       "items": [
         { "label": "About Us", "href": "/about-us/", "description": "Our family-run story, DBS crew & modern fleet", "icon": "shield" },
         { "label": "How It Works", "href": "/how-it-works/", "description": "4 simple steps from quote to moving day", "icon": "clock" },
-        { "label": "Clean Air Zone", "href": "/clean-air-zone/", "description": "Euro 6 vans & zero Birmingham CAZ charges", "icon": "truck" },
+        { "label": "Moving Advice", "href": "/blog/", "description": "Expert moving checklists, packing and area guides", "icon": "truck" },
         { "label": "Customer Reviews", "href": "/reviews/", "description": "Verified feedback from West Midlands moves", "icon": "star" },
         { "label": "FAQs", "href": "/faqs/", "description": "Everything you need to know before moving", "icon": "box" },
         { "label": "Blog & Guides", "href": "/blog/", "description": "Packing advice, checklists & cost guides", "icon": "map" }
@@ -78,14 +78,14 @@
   ],
   "footer": {
     "services": [
-      { "label": "House Removals", "href": "/removals/house-removals/" },
-      { "label": "Flat Removals", "href": "/removals/flat-removals/" },
-      { "label": "Man and Van", "href": "/removals/man-and-van/" },
-      { "label": "Office Removals", "href": "/removals/office-removals/" },
-      { "label": "Packing Services", "href": "/removals/packing-services/" },
-      { "label": "Storage Solutions", "href": "/removals/storage/" },
-      { "label": "Piano & Specialist", "href": "/removals/piano-and-specialist-moves/" },
-      { "label": "Long-Distance Removals", "href": "/removals/long-distance-removals/" }
+      { "label": "House Removals", "href": "/services/house-removals/" },
+      { "label": "Flat Removals", "href": "/services/flat-removals/" },
+      { "label": "Man and Van", "href": "/services/man-and-van/" },
+      { "label": "Office Removals", "href": "/services/office-removals/" },
+      { "label": "Packing Services", "href": "/services/packing-services/" },
+      { "label": "Storage Solutions", "href": "/services/storage/" },
+      { "label": "Piano & Specialist", "href": "/services/piano-and-specialist-moves/" },
+      { "label": "Long-Distance Removals", "href": "/services/long-distance-removals/" }
     ],
     "areas": [
       { "label": "Birmingham Removals", "href": "/areas/birmingham/" },
@@ -105,7 +105,7 @@
       { "label": "Moving Cost Calculator", "href": "/moving-cost-calculator/" },
       { "label": "Customer Reviews", "href": "/reviews/" },
       { "label": "Frequently Asked Questions", "href": "/faqs/" },
-      { "label": "Clean Air Zone Guide", "href": "/clean-air-zone/" },
+      { "label": "Moving Advice & Guides", "href": "/blog/" },
       { "label": "HTML Sitemap", "href": "/sitemap/" },
       { "label": "Contact Us", "href": "/contact-us/" }
     ],

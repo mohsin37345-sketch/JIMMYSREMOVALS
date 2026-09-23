@@ -1,0 +1,72 @@
+{
+  "town": "Wimblebury",
+  "slug": "wimblebury",
+  "county": "Staffordshire",
+  "heroHeading": "Affordable House Removals in Wimblebury",
+  "metaTitle": "Wimblebury Removals | Cannock House Movers | Jimmys",
+  "metaDescription": "Affordable house removals in Wimblebury, Cannock. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Looking for dependable, cost-effective house removals in Wimblebury? Jimmys Removals provides an insured, reliable moving service across this popular former mining village nestled between Heath Hayes and Hednesford. Featuring an attractive mix of traditional red-brick miners' homes along John Street, established mid-century semi-detached houses, and contemporary executive developments near the Bleak House nature reserve, Wimblebury offers fantastic family living. Our hardworking removal crews take pride in making your moving day smooth and well-managed.\n\nWe operate low-emission 3.5-tonne Luton vans equipped with hydraulic tail lifts, padded transit blankets, and heavy-duty furniture ties. Our trained porters take care of all demanding tasks, including sofa manoeuvring, wardrobe dismantling, and appliance reconnection. Supported by transparent fixed quotes and full transit insurance, we ensure your Wimblebury move is completed on schedule without unexpected fees.",
+  "localKnowledge": "Wimblebury is defined by its gently undulating topography and proximity to the former opencast mining areas now transformed into Bleak House nature park. Roads such as Wimblebury Road, John Street, and Railway Street feature a blend of on-street parking and private driveways, requiring attentive vehicle positioning. Our agile 3.5-tonne Luton vans can negotiate these residential roads easily without blocking access for neighbours or emergency services.\n\nPositioned just off the A5190 Lichfield Road and moments from Hednesford, Wimblebury enjoys straightforward transport connections. Our drivers plan journey routes avoiding the roundabout near the Five Ways junction during peak school hours, ensuring prompt arrivals and smooth unloading at your new property.",
+  "postcodes": [
+    "WS12"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Heath Hayes",
+      "slug": "cannock/heath-hayes"
+    },
+    {
+      "name": "Hednesford",
+      "slug": "cannock/hednesford"
+    },
+    {
+      "name": "Norton Canes",
+      "slug": "cannock/norton-canes"
+    }
+  ],
+  "travelInfo": "Convenient road access via Wimblebury Road, Hednesford Road, and fast links to the A5190 Lichfield Road.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans access older terraced avenues in Wimblebury?",
+      "answer": "Yes, our 3.5-tonne Luton vans are sized specifically to navigate narrow residential roads like John Street without obstructing local traffic.",
+      "display": true
+    },
+    {
+      "question": "Do you offer dismantling services for flat-pack wardrobes in Wimblebury?",
+      "answer": "Yes, our team brings dedicated tools to dismantle and reassemble bulky flat-pack wardrobes, bed frames, and dining tables.",
+      "display": true
+    },
+    {
+      "question": "How do you protect fragile items during transit in Wimblebury?",
+      "answer": "We wrap all fragile furniture in thick transit blankets, secure them with heavy-duty webbing, and use specialised mattress and sofa covers.",
+      "display": true
+    },
+    {
+      "question": "Are your moving quotes fixed in Wimblebury?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.704,
+  "lng": -1.993,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

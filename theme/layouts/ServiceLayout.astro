@@ -1,12 +1,11 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import Hero from 'theme/components/Hero.astro';
-import TrustStrip from 'theme/components/TrustStrip.astro';
 import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
-import FAQ from 'theme/components/FAQ.astro';
-import CTABand from 'theme/components/CTABand.astro';
-import RelatedLinks from 'theme/components/RelatedLinks.astro';
+import ContactForm from 'theme/components/ContactForm.astro';
+import ImageSlot from 'theme/components/ImageSlot.astro';
 import Icon from 'theme/components/Icon.astro';
+import { pricingData } from 'src/data/pricing';
+import { siteConfig } from 'src/data/site';
 import { getCollection } from 'astro:content';
 
 export interface Props {
@@ -24,11 +23,18 @@ export interface Props {
     process: Array<{ step: number; title: string; description: string }>;
     whatsIncluded: string[];
     whatsNotIncluded: string[];
-    priceFrom: number;
-    priceUnit: string;
-    priceNotes: string;
+    priceFrom?: number;
+    priceUnit?: string;
+    priceNotes?: string;
     faqs: Array<{ question: string; answer: string; display: boolean }>;
     relatedServices: string[];
+    heroImage?: string;
+    gallery?: string[];
+    images?: {
+      hero?: { src?: string; alt?: string };
+      local?: { src?: string; alt?: string };
+      team?: { src?: string; alt?: string };
+    };
   };
 }
 
@@ -36,8 +42,9 @@ const { service } = Astro.props;
 
 const allLocations = await getCollection('locations');
 const allServiceAreas = await getCollection('serviceAreas');
+const allServices = await getCollection('services');
 
-// Find which locations have dedicated service-area pages for this service
+// Check which locations have dedicated service-area pages for this service
 const dedicatedServiceLocations = allServiceAreas
   .filter((sa) => sa.data.service === service.slug)
   .map((sa) => {
@@ -46,293 +53,846 @@ const dedicatedServiceLocations = allServiceAreas
       town: loc?.data.town || sa.data.location,
       slug: sa.data.location,
       county: loc?.data.county || 'West Midlands',
-      uniqueIntro: sa.data.uniqueIntro,
-      href: `/removals/${service.slug}/${sa.data.location}/`
+      href: `/removals/${sa.data.location}/${service.slug}/`
     };
   });
 
-// Tier 1 major locations for broad coverage linking
-const tier1Locations = allLocations
-  .filter((loc) => loc.data.tier === 1)
+// Major regional towns for broad coverage grid
+const majorTowns = allLocations
+  .filter((loc) => !loc.data.region)
   .sort((a, b) => a.data.town.localeCompare(b.data.town));
 
-// Construct sidebar area links
-const sidebarAreaLinks = [
-  ...tier1Locations.map((loc) => {
-    const hasDedicated = dedicatedServiceLocations.some((dsl) => dsl.slug === loc.id);
-    return {
-      title: hasDedicated ? `${loc.data.town} ${service.shortTitle}` : `${loc.data.town} Removals`,
-      href: hasDedicated ? `/removals/${service.slug}/${loc.id}/` : `/areas/${loc.id}/`
-    };
-  }),
-  { title: 'All 37 Coverage Areas & Map', href: '/areas/' }
-];
+// Construct location links: use dedicated service × town page if available, else town hub
+const locationGridLinks = majorTowns.slice(0, 16).map((loc) => {
+  const hasDedicated = dedicatedServiceLocations.some((dsl) => dsl.slug === loc.id);
+  return {
+    town: loc.data.town,
+    href: hasDedicated ? `/removals/${loc.id}/${service.slug}/` : `/removals/${loc.id}/`,
+    isDedicated: hasDedicated
+  };
+});
+
+// Related services (find details for the 3 related services)
+const relatedServicesData = (service.relatedServices || [])
+  .map((relSlug) => allServices.find((s) => s.id === relSlug))
+  .filter(Boolean)
+  .slice(0, 3);
 
 const breadcrumbs = [
   { name: 'Home', item: '/' },
-  { name: 'Removals', item: '/removals/' },
-  { name: service.shortTitle, item: `/removals/${service.slug}/` }
+  { name: 'Services', item: '/services/' },
+  { name: service.shortTitle, item: `/services/${service.slug}/` }
 ];
 
-const serviceData = {
-  name: service.title,
-  description: service.summary,
-  priceFrom: service.priceFrom,
-  url: `/removals/${service.slug}/`
-};
+// Determine pricing block type based on service
+const isHouseRemovals = service.slug === 'house-removals';
+const isManAndVan = service.slug === 'man-and-van';
+const isStorage = service.slug === 'storage';
+
+// Ensure cost FAQ is present and accurate
+const costFaqAnswer = isHouseRemovals
+  ? 'House removals typically range from £220 to £400 for a 1-bedroom flat, £320 to £600 for a 2-bedroom property, £500 to £850 for a 3-bedroom house, and from £800 for 4 bedrooms or larger. Final pricing depends on property size, inventory volume, access, and transit mileage, with an upfront fixed quote provided before booking.'
+  : isManAndVan
+  ? 'Man and van services start from £55. Rates depend on vehicle requirements, crew size, hours required, and travel distance, with clear fixed rates agreed in advance.'
+  : isStorage
+  ? 'Containerised storage starts from £18 per week. Rates depend on storage volume and hire duration, with direct collection and redelivery available across the West Midlands.'
+  : `${service.title} is priced per job after a quick survey. Costs depend on specific inventory items, building access, and travel distances, with guaranteed fixed quotes provided before move day.`;
+
+const defaultFaqs = [
+  {
+    question: `How much does ${service.shortTitle.toLowerCase()} cost?`,
+    answer: costFaqAnswer
+  },
+  {
+    question: `What size vans do you use for ${service.shortTitle.toLowerCase()}?`,
+    answer: 'We operate 3.5-tonne Luton low-loader box vans equipped with 500kg hydraulic tail lifts, high-grade furniture blankets, and heavy-duty transit ties.'
+  },
+  {
+    question: 'Are your moving crews directly employed and DBS-checked?',
+    answer: 'Yes. All Jimmys Removals movers and drivers are directly employed, uniformed, and DBS-checked.'
+  },
+  {
+    question: 'Are your removal services fully insured?',
+    answer: 'Yes. Every booking is fully insured from the moment we begin handling your items through to safe room-of-choice placement.'
+  },
+  {
+    question: 'How quickly can you arrange this service?',
+    answer: 'We operate 24 hours, 7 days a week. We accommodate planned bookings weeks in advance as well as urgent or same-day relocations subject to van availability.'
+  }
+];
+
+const mergedFaqs = [
+  ...defaultFaqs,
+  ...(service.faqs || []).filter(f => f.display && !f.question.includes('{{'))
+].slice(0, 12);
+
+// Clean NAP data
+const fullBusinessName = siteConfig.legalName;
+const tradingName = siteConfig.tradingName;
+const companyNumber = siteConfig.companyNumber;
+const regOffice = siteConfig.address.fullAddress;
+const phone = siteConfig.phone;
+const phoneHref = siteConfig.phoneHref;
+const email = siteConfig.email;
 ---
 
 <BaseLayout
-  title={service.metaTitle}
-  description={service.metaDescription}
-  schemaType="Service"
+  title={service.metaTitle || `${service.title} | Jimmys Removals`}
+  description={service.metaDescription || `Professional ${service.shortTitle.toLowerCase()} across Birmingham and the West Midlands. Fully insured, DBS-checked movers, and guaranteed fixed quotes.`}
   breadcrumbs={breadcrumbs}
-  faqs={service.faqs}
-  serviceData={serviceData}
 >
-  <!-- Service Hero -->
-  <Hero
-    variant="service"
-    title={service.heroHeading}
-    subtitle={service.heroSubheading}
-    badge={`Jimmys ${service.shortTitle}`}
-    priceFrom={service.priceFrom}
-    priceUnit={service.priceUnit}
-  />
+  <!-- ========================================================================= -->
+  <!-- S1. HERO SECTION (Strictly no price figures)                              -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white pt-8 pb-16 lg:pb-24 border-b border-slate-800 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} class="mb-6 text-slate-400" />
 
-  <TrustStrip />
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Hero Content (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <Icon name={service.icon} class="w-3.5 h-3.5" />
+            <span>Birmingham & West Midlands Specialist</span>
+          </div>
 
-  <!-- Main Content Container -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
-    <Breadcrumbs items={breadcrumbs} />
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            {service.heroHeading || `${service.title} in Birmingham & the West Midlands`}
+          </h1>
 
-    <!-- Overview & Benefits Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-      <div class="lg:col-span-8 space-y-6">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-            Overview of Our {service.shortTitle} Service
-          </h2>
-          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
-            {service.summary}
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
+            {service.heroSubheading || `Professional, fully insured ${service.shortTitle.toLowerCase()} delivered by directly employed, DBS-checked movers in modern Luton vans.`}
           </p>
+
+          <!-- Same-Day Delivery Highlight (same as homepage) -->
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <a
+              href="/services/same-day-delivery/"
+              class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 backdrop-blur-md text-xs sm:text-sm text-amber-300 font-bold transition-all shadow-sm group"
+            >
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <Icon name="clock" class="w-4 h-4 text-amber-400" />
+              <span>Same-Day Delivery Available Across Birmingham & West Midlands</span>
+              <Icon name="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="#quote-form"
+              class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] flex items-center gap-2"
+            >
+              <span>Get a Fixed Quote</span>
+              <Icon name="arrow-right" class="w-4 h-4" />
+            </a>
+
+            <a
+              href={phoneHref}
+              class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition-all flex items-center gap-2"
+            >
+              <Icon name="phone" class="w-4 h-4 text-amber-400" />
+              <span>Call {phone}</span>
+            </a>
+
+            {siteConfig.whatsappEnabled && (
+              <a
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow transition-all flex items-center gap-2"
+              >
+                <Icon name="chat" class="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            )}
+          </div>
+
+          <!-- Trust Strip -->
+          <div class="pt-6 border-t border-slate-800/80">
+            <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300 font-medium">
+              <li class="flex items-center gap-1.5">
+                <Icon name="clock" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Open 24 hours, 7 days a week</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <Icon name="shield-check" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>DBS-checked crews</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <Icon name="badge-check" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Fixed quotes</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <Icon name="check-circle" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Fully insured</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Benefits List -->
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-4">
-            Key Advantages & Inclusions
-          </h3>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {service.benefits.map((benefit) => (
-              <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                <span class="text-amber-500 mt-0.5 shrink-0"><Icon name="check" class="w-4 h-4" /></span>
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
+        <!-- Hero Quote Form (5 cols) -->
+        <div id="quote-form" class="lg:col-span-5 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white">
+          <div class="mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Fixed & Guaranteed</span>
+            <h3 class="text-xl font-bold mt-1">Get a Fixed {service.shortTitle} Quote</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+              Transparent pricing with no hidden charges. Quick response 24 hours a day.
+            </p>
+          </div>
+          <ContactForm formType="quick-quote" prefilledService={service.title} />
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Sticky Sidebar with Fast CTA & Price Note -->
-      <aside class="lg:col-span-4 space-y-6">
-        <div class="p-6 bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/40 rounded-2xl space-y-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
-            Guaranteed Fixed Pricing
-          </span>
-          <div class="flex items-baseline gap-1">
-            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">£{service.priceFrom}</span>
-            <span class="text-xs text-slate-500 dark:text-slate-400">/{service.priceUnit}</span>
+  <!-- ========================================================================= -->
+  <!-- S2. INTRO SECTION & SERVICE SHOWCASE                                      -->
+  <!-- ========================================================================= -->
+  <section class="py-14 lg:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 relative overflow-hidden">
+    <!-- Subtle Background Glow Accents -->
+    <div class="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <!-- Left Column: Editorial Content (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20" data-nosimilarity="true">
+            <Icon name={service.icon} class="w-3.5 h-3.5" />
+            <span>Specialist Moving Service</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            {service.priceNotes}
-          </p>
-          <a
-            href="/get-a-quote/"
-            class="w-full py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow transition block text-center interactive-btn"
-          >
-            Get a Quote for {service.shortTitle}
-          </a>
+
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+            Professional {service.shortTitle} Tailored to Your Schedule
+          </h2>
+
+          <div class="prose prose-slate dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed space-y-4">
+            <p class="font-medium text-slate-900 dark:text-slate-100">
+              Professional {service.shortTitle.toLowerCase()} across Birmingham and the West Midlands provide dependable, careful transport tailored to your schedule.
+            </p>
+            <p class="text-slate-700 dark:text-slate-300">
+              {service.summary}
+            </p>
+            <p class="text-slate-700 dark:text-slate-300" data-nosimilarity="true">
+              Operated from our base in east Birmingham, our 3.5-tonne Luton vans feature hydraulic tail lifts, high-tensile lashing rails, and thick quilted furniture blankets. Our directly employed movers handle every item with precision, ensuring that from initial collection to final room placement, your belongings remain protected throughout transit.
+            </p>
+          </div>
+
+          <!-- Modern UX Feature Highlights (3 Interactive Micro-Cards) -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2" data-nosimilarity="true">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
+                  <Icon name="truck" class="w-3.5 h-3.5" />
+                </span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white">Luton Van Fleet</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                Equipped with tail-lifts & protective transit blankets
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">
+                  <Icon name="shield-check" class="w-3.5 h-3.5" />
+                </span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white">DBS Verified</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                Directly employed, experienced moving teams
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/15 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">
+                  <Icon name="badge-check" class="w-3.5 h-3.5" />
+                </span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white">Guaranteed</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                Clear fixed quote with no hidden extras
+              </p>
+            </div>
+          </div>
         </div>
 
-        <RelatedLinks currentHref={`/removals/${service.slug}/`} />
+        <!-- Right Column: Visual Showcase with ImageSlot 1 (5 cols) -->
+        <div class="lg:col-span-5 space-y-3">
+          <div class="relative group rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+            <ImageSlot
+              src={service.images?.hero?.src || service.heroImage}
+              alt={service.images?.hero?.alt || `Jimmys Removals team providing ${service.shortTitle.toLowerCase()} across Birmingham`}
+              aspect="4/3"
+              slotId="hero"
+              loading="eager"
+              fetchpriority="high"
+            />
 
-        <!-- Areas Covered for This Service -->
-        <RelatedLinks
-          title={`Areas Covered for ${service.shortTitle}`}
-          links={sidebarAreaLinks}
-          currentHref=""
-        />
-      </aside>
+            <!-- Glassmorphic floating card at the bottom of the photo -->
+            <div class="absolute bottom-3 left-3 right-3 p-3.5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/10 text-white flex items-center justify-between shadow-lg" data-nosimilarity="true">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                  <Icon name={service.icon} class="w-4 h-4" />
+                </div>
+                <div>
+                  <p class="text-xs font-bold leading-tight">{service.shortTitle}</p>
+                  <p class="text-[11px] text-slate-300">Birmingham & West Midlands</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow-sm">
+                Fully Insured
+              </span>
+            </div>
+          </div>
+
+          <!-- Micro caption below image -->
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1" data-nosimilarity="true">
+            <span class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>Available day & night across 37 towns</span>
+            </span>
+            <span>Open 24 hours, 7 days</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Step-by-Step Service Process -->
-    <div class="space-y-6">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-          The {service.shortTitle} Journey
+  <!-- ========================================================================= -->
+  <!-- S3. WHO THIS SERVICE IS FOR                                               -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Who Our {service.shortTitle} Service Is Designed For
         </h2>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Every stage planned and executed with disciplined care.
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Tailored moving solutions for diverse residential and commercial situations.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs">01</div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Homeowners Moving House</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Families relocating between terraced, semi-detached, or detached homes who require methodical packing, loading, and on-time key exchange.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs">02</div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Flats & Apartments</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Tenants and owners moving in or out of upper-floor apartments with stairwells, lifts, and dedicated loading bay reservations.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs">03</div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Businesses & Offices</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Companies relocating equipment, office desks, and archives during evenings or weekends with minimal operational downtime.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-xs">04</div>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white">Individual Furniture Relocation</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Customers needing heavy wardrobes, solid oak suites, or large kitchen appliances transported securely to a new home.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S4. WHAT'S INCLUDED & NOT INCLUDED                                        -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Clear Inclusions</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              What Is Included with {service.shortTitle}
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {service.whatsIncluded.map((item) => (
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-start gap-2.5">
+                <Icon name="check-circle" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                <span class="text-xs text-slate-700 dark:text-slate-300 font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Service Boundaries</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              What Is Not Included
+            </h2>
+          </div>
+
+          <div class="space-y-3">
+            {service.whatsNotIncluded.map((item) => (
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex items-start gap-2.5">
+                <Icon name="x-circle" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                <span class="text-xs text-slate-600 dark:text-slate-400">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S5. COMMON CHALLENGES WE HANDLE                                           -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Challenges We Handle During {service.shortTitle}
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Experienced movers equipped to handle unexpected logistical hurdles calmly and safely.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">1. Tight Angles & Stairwells</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Multi-floor townhouses and spiral staircases often challenge large furniture. We unbolt modular sections and wrap corners in thick protective padding.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">2. Fragile & High-Value Pieces</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Mirrors, glass cabinets, and artwork are wrapped in bubble blankets and cushioned securely against vehicle load bars.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">3. Access & Parking Constraints</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Narrow cul-de-sacs or busy high streets require strategic van parking. Our drivers arrive prepared with ramps and dollies for efficient transit.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">4. Complex Flat-Pack Furniture</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Multi-door wardrobes and ottoman bed frames can be difficult to dismantle. We carry cordless drivers and label hardware for exact reassembly.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">5. Heavy Kitchen Appliances</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Range cookers and washing machines require mechanical assistance. Our 500kg tail lifts eliminate manual lifting strain and floor scraping.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">6. Afternoon Key Delays</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Banking delays can push key release into late afternoon. Our crew remains patiently on standby until keys are formally collected.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S6. OUR PROCESS (Numbered steps)                                          -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Methodical Approach</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          Our Step-by-Step {service.shortTitle} Process
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {service.process.map((step) => (
-          <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
-            <div>
-              <span class="w-8 h-8 rounded-full bg-slate-900 dark:bg-amber-500 text-white dark:text-slate-950 font-extrabold text-xs flex items-center justify-center mb-3">
-                {step.step}
-              </span>
-              <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-1.5">
-                {step.title}
-              </h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                {step.description}
-              </p>
-            </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative shadow-sm">
+            <span class="text-2xl font-black text-amber-500/30 dark:text-amber-400/20 block mb-2">0{step.step}</span>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1.5">{step.title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{step.description}</p>
           </div>
         ))}
       </div>
     </div>
+  </section>
 
-    <!-- What's Included vs Not Included -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="p-6 rounded-2xl bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40">
-        <h3 class="text-base font-bold text-emerald-900 dark:text-emerald-300 flex items-center gap-2 mb-4">
-          <Icon name="check" class="w-5 h-5 text-emerald-600" />
-          What's Included as Standard
-        </h3>
-        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-          {service.whatsIncluded.map((item) => (
-            <li class="flex items-start gap-2">
-              <span class="text-emerald-500 mt-0.5">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
-        <h3 class="text-base font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2 mb-4">
-          <Icon name="close" class="w-4 h-4 text-slate-400" />
-          What's Not Included / Excluded
-        </h3>
-        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-          {service.whatsNotIncluded.map((item) => (
-            <li class="flex items-start gap-2">
-              <span class="text-slate-400 mt-0.5">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Areas Covered for This Service Section -->
-    <div class="space-y-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
-          <Icon name="map-pin" class="w-3.5 h-3.5" />
-          <span>Regional Operations</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-          Where We Provide {service.shortTitle} Across the West Midlands
+  <!-- ========================================================================= -->
+  <!-- S7. PRICING SECTION (Isolated pricing)                                    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Transparent Pricing</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          {service.shortTitle} Pricing Guide
         </h2>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-          Operating 7 days a week with low-emission Euro 6 vans, our uniformed movers deliver {service.shortTitle.toLowerCase()} across all 37 West Midlands towns and boroughs.
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+          {isHouseRemovals ? pricingData.houseRemovals.summary : 'All quotes are fixed upfront with clear written terms and no hidden extras.'}
         </p>
       </div>
 
-      <!-- Dedicated Service-Location Hubs (if any exist for this service) -->
-      {dedicatedServiceLocations.length > 0 && (
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-              <span>Dedicated {service.shortTitle} Town Hubs</span>
-            </h3>
-            <span class="text-xs text-slate-500 dark:text-slate-400">Custom routes & local guidance</span>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {dedicatedServiceLocations.map((dsl) => (
-              <a
-                href={dsl.href}
-                class="group p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-lg transition-all flex flex-col justify-between interactive-card"
-              >
-                <div>
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-full">
-                      Dedicated Service Page
-                    </span>
-                    <span class="text-xs text-slate-400">{dsl.county}</span>
-                  </div>
-                  <h4 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                    {dsl.town} {service.shortTitle}
-                  </h4>
-                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
-                    {dsl.uniqueIntro}
-                  </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
-                  <span>Explore {dsl.town} Details</span>
-                  <Icon name="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </a>
-            ))}
-          </div>
+      {isHouseRemovals ? (
+        <!-- House Removals Table -->
+        <div class="overflow-x-auto rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm mb-8">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-200 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-700/50 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider">
+                <th class="py-3.5 px-4 sm:px-6">Property Size</th>
+                <th class="py-3.5 px-4 sm:px-6">Guide Price Range</th>
+                <th class="py-3.5 px-4 sm:px-6">Scope & What It Covers</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-700/60 text-xs sm:text-sm">
+              {pricingData.houseRemovals.tiers.map((tier) => (
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+                  <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 dark:text-white">
+                    {tier.propertyType}
+                  </td>
+                  <td class="py-3.5 px-4 sm:px-6 font-extrabold text-amber-600 dark:text-amber-400">
+                    {tier.guideRange}
+                  </td>
+                  <td class="py-3.5 px-4 sm:px-6 text-slate-600 dark:text-slate-300">
+                    {tier.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : isManAndVan ? (
+        <!-- Man and Van Pricing Card -->
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center max-w-xl mx-auto mb-8 shadow-sm space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Starting Rate</span>
+          <div class="text-4xl font-extrabold text-amber-600 dark:text-amber-400">from £55</div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            {pricingData.manAndVan.summary} Hourly and fixed-job arrangements tailored to your moving requirements.
+          </p>
+        </div>
+      ) : isStorage ? (
+        <!-- Storage Pricing Card -->
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center max-w-xl mx-auto mb-8 shadow-sm space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Starting Rate</span>
+          <div class="text-4xl font-extrabold text-amber-600 dark:text-amber-400">from £18 per week</div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            {pricingData.storage.summary} Clean, dry, and secure storage units with collection and redelivery.
+          </p>
+        </div>
+      ) : (
+        <!-- Custom Quote Card (Packing, Office, Furniture, Dismantling, Student, Same Day) -->
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center max-w-xl mx-auto mb-8 shadow-sm space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Personalised Pricing</span>
+          <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Priced per job after a quick survey</div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            Every {service.shortTitle.toLowerCase()} job is calculated individually based on item dimensions, volume, floor access, and journey distance.
+          </p>
         </div>
       )}
 
-      <!-- Primary Coverage Hubs Grid -->
-      <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-5">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <h3 class="text-base font-bold text-slate-900 dark:text-white">
-              Primary Coverage Areas for {service.shortTitle}
-            </h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              Select any location to view local access notes, parking guidance, and road connectivity:
-            </p>
-          </div>
-          <a
-            href="/areas/"
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold text-amber-600 dark:text-amber-400 hover:border-amber-500 shadow-sm transition shrink-0"
-          >
-            <span>Interactive Map & All 37 Areas</span>
-            <Icon name="arrow-right" class="w-3.5 h-3.5" />
-          </a>
+      <!-- Price Factors & Fixed Price Promise -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3">What Affects Your Final Quote</h3>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            {pricingData.priceFactors.map((factor) => (
+              <li class="flex items-start gap-2">
+                <Icon name="check-circle" class="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
+                <span><strong class="text-slate-900 dark:text-white">{factor.title}:</strong> {factor.description}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-          {tier1Locations.map((loc) => {
-            const hasDedicated = dedicatedServiceLocations.some((dsl) => dsl.slug === loc.id);
-            const targetUrl = hasDedicated ? `/removals/${service.slug}/${loc.id}/` : `/areas/${loc.id}/`;
-            return (
-              <a
-                href={targetUrl}
-                class="p-3 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 hover:border-amber-500 dark:hover:border-amber-500 transition group flex items-center justify-between text-xs"
-              >
-                <div>
-                  <span class="font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors block truncate">
-                    {loc.data.town}
-                  </span>
-                  <span class="text-[10px] text-slate-400 block truncate">
-                    {hasDedicated ? 'Dedicated page' : loc.data.county}
-                  </span>
-                </div>
-                <Icon name="chevron-right" class="w-3 h-3 text-slate-400 group-hover:text-amber-500 group-hover:translate-x-0.5 transition shrink-0 ml-1" />
-              </a>
-            );
-          })}
+        <div class="flex flex-col justify-between border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-6 md:pt-0 md:pl-6">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
+              <Icon name="badge-check" class="w-4 h-4" />
+              <span>Guaranteed Fixed Quote</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {pricingData.fixedPricePromise}
+            </p>
+            <p class="text-[11px] text-slate-400 dark:text-slate-500 italic">
+              {pricingData.disclaimer}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row items-center gap-3">
+            <a
+              href="#quote-form"
+              class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow transition text-center"
+            >
+              Get Your Fixed Quote
+            </a>
+            <span class="text-xs text-slate-500">Open 24 hours, 7 days a week</span>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Service FAQs -->
-    <FAQ faqs={service.faqs} title={`${service.shortTitle} FAQs`} />
-  </div>
+  <!-- ========================================================================= -->
+  <!-- S8. WHERE WE OFFER THIS SERVICE                                           -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Regional Coverage</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              Where We Deliver {service.shortTitle}
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2">
+              Our 3.5-tonne Luton vans operate daily across Birmingham and all 37 West Midlands towns.
+            </p>
+          </div>
 
-  <CTABand />
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+            {locationGridLinks.map((item) => (
+              <a
+                href={item.href}
+                class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 text-xs font-semibold text-slate-800 dark:text-slate-200 text-center transition"
+              >
+                {item.town}
+              </a>
+            ))}
+          </div>
+
+          <div class="pt-2">
+            <a href="/areas/" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline">
+              <span>View all 37 coverage areas & map</span>
+              <Icon name="arrow-right" class="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Slot 2: Local (4/3) -->
+        <div class="lg:col-span-5">
+          <ImageSlot
+            src={service.images?.local?.src}
+            alt={service.images?.local?.alt || `Luton van operating across West Midlands roads for ${service.shortTitle.toLowerCase()}`}
+            aspect="4/3"
+            slotId="local"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S9. RELATED SERVICES (3 descriptive links)                                -->
+  <!-- ========================================================================= -->
+  {relatedServicesData.length > 0 && (
+    <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            Related Removals Services
+          </h2>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+            Complementary moving and packing solutions available on the same booking.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {relatedServicesData.map((rel: any) => (
+            <a
+              href={`/services/${rel.id}/`}
+              class="group p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 transition-all flex flex-col justify-between"
+            >
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                  <Icon name={rel.data.icon} class="w-5 h-5" />
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors">
+                  {rel.data.title}
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed line-clamp-3">
+                  {rel.data.summary}
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
+                <span>Explore Service</span>
+                <Icon name="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ========================================================================= -->
+  <!-- S10. WHY CHOOSE US (6 Pillars using Section 1 facts)                      -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- 6 Pillars (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Reliable Standards</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              Why Choose Jimmys Removals for {service.shortTitle}
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Directly Employed Movers</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">All porters are uniformed, directly employed, and DBS-checked.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Luton Vans with Tail Lifts</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Equipped with 500kg hydraulic tail lifts and heavy-duty strapping.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Fully Insured</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Complete insurance protection provided for every move we undertake.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Guaranteed Fixed Quotes</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">The quote you receive is clear and fixed before moving day begins.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Open 24 Hours, 7 Days</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Round-the-clock operations accommodate your exact moving schedule.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Fast West Midlands Access</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Based in Birmingham with fast access across the M6, M42, and M5.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Slot 3: Team (4/3) -->
+        <div class="lg:col-span-5">
+          <ImageSlot
+            src={service.images?.team?.src}
+            alt={service.images?.team?.alt || `Uniformed Jimmys Removals team providing ${service.shortTitle.toLowerCase()}`}
+            aspect="4/3"
+            slotId="team"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S11. REVIEWS (Conditioned on presence)                                    -->
+  <!-- ========================================================================= -->
+
+  <!-- ========================================================================= -->
+  <!-- S12. FAQS (10-12 service questions with matching Section 5 figures)       -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Common Questions</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          Frequently Asked Questions About {service.shortTitle}
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {mergedFaqs.map((faq, index) => (
+          <details class="group p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all [&_summary::-webkit-details-marker]:hidden" open={index === 0}>
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-slate-900 dark:text-white gap-4">
+              <span>{faq.question}</span>
+              <span class="text-amber-500 shrink-0 group-open:rotate-180 transition-transform">
+                <Icon name="chevron-down" class="w-5 h-5" />
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-3">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S13. FINAL CTA SECTION                                                    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center" data-nosimilarity="true">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+        Ready to Book Your {service.shortTitle}?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Get an upfront guaranteed fixed quote today. Our directly employed movers are available 24 hours, 7 days a week across Birmingham and the West Midlands.
+      </p>
+
+      <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
+        <a
+          href="#quote-form"
+          class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
+        >
+          Get a Fixed Quote
+        </a>
+        <a
+          href={phoneHref}
+          class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition"
+        >
+          Call {phone}
+        </a>
+      </div>
+
+      <p class="text-xs text-slate-400">
+        Open 24 hours, 7 days a week · Direct communication with our West Midlands operations base
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- S14. NAP BLOCK                                                            -->
+  <!-- ========================================================================= -->
+  <section class="py-12 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white">Business Verification & Registered Office</h3>
+        <p>
+          <strong class="text-slate-900 dark:text-white">{fullBusinessName}</strong> (trading as {tradingName}) is a private limited company registered in England & Wales under Companies House registration number <strong>{companyNumber}</strong>.
+        </p>
+        <p>
+          <strong>Registered Office:</strong> {regOffice} · <strong>Phone:</strong> <a href={phoneHref} class="text-amber-600 dark:text-amber-400 font-semibold hover:underline">{phone}</a> · <strong>Email:</strong> <a href={`mailto:${email}`} class="text-amber-600 dark:text-amber-400 font-semibold hover:underline">{email}</a>
+        </p>
+        <p>
+          <strong>Operating Hours:</strong> Open 24 hours, 7 days a week.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

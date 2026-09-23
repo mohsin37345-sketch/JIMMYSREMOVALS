@@ -3,8 +3,8 @@
   "slug": "tipton",
   "county": "West Midlands",
   "metaTitle": "Tipton Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Tipton. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Looking for trusted removals in Tipton? Jimmys Removals provides comprehensive house removals, furniture clearance, and student moves across DY4. From family homes near Victoria Park and canal-side cottages to modern housing developments in Great Bridge, Princes End, and Dudley Port, our friendly crew makes moving day straightforward and dependable. With transparent pricing, punctual arrivals, and £50,000 Goods in Transit insurance as standard, we treat every customer's belongings with the highest standard of Black Country care.  Our moving crew takes great pride in offering dependable, friendly, and hardworking removals across Tipton, ensuring that all large furniture, appliances, and delicate items arrive securely at your new home. We provide upfront fixed quotations with zero hidden fuel charges or surprise extras.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Tipton. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Looking for trusted removals in Tipton? Jimmys Removals provides comprehensive house removals, furniture clearance, and student moves across DY4. From family homes near Victoria Park and canal-side cottages to modern housing developments in Great Bridge, Princes End, and Dudley Port, our friendly crew makes moving day straightforward and dependable. With transparent pricing, punctual arrivals, and Fully insured as standard, we treat every customer's belongings with the highest standard of Black Country care.  Our moving crew takes great pride in offering dependable, friendly, and hardworking removals across Tipton, ensuring that all large furniture, appliances, and delicate items arrive securely at your new home. We provide upfront fixed quotations with zero hidden fuel charges or surprise extras.",
   "localKnowledge": "Tipton is intersected by historic canals and railway crossings that create distinct neighbourhood pockets. Our drivers know the low bridge restrictions and canal bridge weight limits around Factory Bridge and Bloomfield, ensuring your removal van follows safe, approved transit routes.",
   "postcodes": [
     "DY4"
@@ -26,7 +26,7 @@
   "travelInfo": "Connected via the A4123 Birmingham New Road and the A4037 Hurst Lane.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Tipton is outside any Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -50,12 +50,12 @@
     },
     {
       "question": "Can I book a weekend move in Tipton?",
-      "answer": "Yes, we operate 7 days a week with weekend slots available at standard transparent rates.",
+      "answer": "Yes, we operate 24 hours, 7 days a week with weekend slots available at standard transparent rates.",
       "display": true
     },
     {
-      "question": "How much Goods in Transit insurance is included?",
-      "answer": "All moves include up to £50,000 Goods in Transit cover as standard.",
+      "question": "How much Fully insured insurance is included?",
+      "answer": "All moves include Fully insured as standard.",
       "display": true
     }
   ],

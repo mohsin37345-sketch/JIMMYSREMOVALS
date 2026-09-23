@@ -3,8 +3,8 @@
   "slug": "bedworth",
   "county": "Warwickshire",
   "metaTitle": "Bedworth Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Bedworth. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Moving in Bedworth? Jimmys Removals offers an insured, affordable, and punctual removals service across CV12. From historic miners' cottages and peaceful avenues in Exhall and Bulkington to modern residential cul-de-sacs near the Miners Welfare Park, our DBS-checked team treats your furnishings with total dedication. We provide tail-lift Luton vans, protective blankets, and experienced porters for a seamless transition.  We supply all necessary packing materials, protective blankets, and experienced moving assistance to ensure that your home transition in Bedworth is smooth, swift, and completely hassle-free. Our friendly team handles heavy appliances and delicate items with equal professionalism. You receive a guaranteed fixed price with no hidden fees.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Bedworth. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Moving in Bedworth? Jimmys Removals offers an insured, affordable, and punctual removals service across CV12. From historic miners' cottages and peaceful avenues in Exhall and Bulkington to modern residential cul-de-sacs near the Miners Welfare Park, our DBS-checked team treats your furnishings with total dedication. We provide tail-lift Luton vans, protective blankets, and experienced porters for a smooth transition.  We supply all necessary packing materials, protective blankets, and experienced moving assistance to ensure that your home transition in Bedworth is smooth, swift, and completely straightforward. Our friendly team handles heavy appliances and delicate items with equal professionalism. You receive a guaranteed fixed price with no hidden fees.",
   "localKnowledge": "Bedworth sits directly beside M6 Junction 3. Our drivers use local knowledge to bypass peak roundabout queues connecting the A444 into Coventry, ensuring that moving vans maintain reliable, punctual schedules throughout your moving day.",
   "postcodes": [
     "CV12"
@@ -26,7 +26,7 @@
   "travelInfo": "Immediate access to the M6 at Junction 3 and the A444 bypass.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Bedworth has no Clean Air Zone charges."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -50,7 +50,7 @@
     },
     {
       "question": "Are your movers insured for breakages?",
-      "answer": "Yes, £50,000 Goods in Transit insurance protects your possessions.",
+      "answer": "Yes, Fully insured protects your possessions.",
       "display": true
     },
     {

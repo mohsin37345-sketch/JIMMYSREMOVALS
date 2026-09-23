@@ -5,7 +5,6 @@ import TrustStrip from 'theme/components/TrustStrip.astro';
 import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
 import AreaCoverageMap from 'theme/components/AreaCoverageMap.astro';
 import LocationCard from 'theme/components/LocationCard.astro';
-import CleanAirZoneNotice from 'theme/components/CleanAirZoneNotice.astro';
 import CTABand from 'theme/components/CTABand.astro';
 import Icon from 'theme/components/Icon.astro';
 import { getCollection } from 'astro:content';
@@ -18,23 +17,23 @@ const breadcrumbs = [
 const locations = await getCollection('locations');
 
 const tier1Locations = locations
-  .filter((loc) => loc.data.tier === 1)
+  .filter((loc) => loc.data.tier === 1 && !loc.data.region)
   .sort((a, b) => a.data.town.localeCompare(b.data.town));
 
 const tier2Locations = locations
-  .filter((loc) => loc.data.tier === 2)
+  .filter((loc) => loc.data.tier === 2 && !loc.data.region)
   .sort((a, b) => a.data.town.localeCompare(b.data.town));
 
 const mapLocations = locations.map((loc) => ({
   town: loc.data.town,
-  slug: loc.id,
+  slug: loc.data.region ? `${loc.data.region}/${loc.data.slug}` : loc.id,
   lat: loc.data.lat,
   lng: loc.data.lng,
   tier: loc.data.tier,
   postcodes: loc.data.postcodes
 }));
 
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const services = (await getCollection('services')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 ---
 
 <BaseLayout
@@ -46,8 +45,8 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
     variant="page"
     showQuoteForm={true}
     title="Areas Covered Across the West Midlands"
-    subtitle="From inner-city Birmingham apartments to country homes in Warwickshire and Staffordshire, explore our local coverage network of 37 towns and boroughs."
-    badge="37 West Midlands Locations"
+    subtitle={`From inner-city Birmingham apartments to country homes in Warwickshire and Staffordshire, explore our local coverage network of ${locations.length} towns and local districts.`}
+    badge={`${locations.length} West Midlands Locations`}
   />
 
   <TrustStrip />
@@ -85,21 +84,25 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {tier1Locations.map((loc) => (
-          <LocationCard
-            town={loc.data.town}
-            slug={loc.id}
-            county={loc.data.county}
-            postcodes={loc.data.postcodes}
-            intro={loc.data.intro}
-            tier={loc.data.tier}
-            cleanAirZone={loc.data.cleanAirZone.enabled}
-          />
-        ))}
+        {tier1Locations.map((loc) => {
+          const subAreasForLoc = locations
+            .filter((l) => l.data.region === loc.id)
+            .map((l) => ({ name: l.data.town, slug: `${l.data.region}/${l.data.slug}` }));
+          return (
+            <LocationCard
+              town={loc.data.town}
+              slug={loc.id}
+              county={loc.data.county}
+              postcodes={loc.data.postcodes}
+              intro={loc.data.intro}
+              tier={loc.data.tier || 1}
+              cleanAirZone={loc.data.cleanAirZone?.enabled || false}
+              subAreas={subAreasForLoc}
+            />
+          );
+        })}
       </div>
     </section>
-
-    <CleanAirZoneNotice variant="compact" />
 
     <!-- Tier 2 Extended Coverage Towns -->
     <section class="p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
@@ -147,7 +150,7 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
             Removal Services Available Across All 37 Areas
           </h2>
           <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">
-            Every move is delivered by directly employed, DBS-checked porters with £50,000 Goods in Transit cover.
+            Every move is delivered by directly employed, DBS-checked porters with Fully insured.
           </p>
         </div>
         <a
@@ -177,7 +180,7 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
               </p>
             </div>
             <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
-              <span class="font-bold text-slate-900 dark:text-white">From £{svc.data.priceFrom} <span class="text-slate-400 font-normal">/{svc.data.priceUnit}</span></span>
+              <span class="font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Fixed Quote</span>
               <span class="text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
                 <span>View Service</span>
                 <Icon name="arrow-right" class="w-3.5 h-3.5" />

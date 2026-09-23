@@ -281,7 +281,7 @@ const entries: ServiceAreaEntry[] = [
       },
       {
         question: "How do I book man and van in Coventry?",
-        answer: "You can book instantly online or call our operations desk on 0121 285 4122.",
+        answer: "You can book instantly online or call our operations desk on 07404 353516.",
         display: true
       }
     ]

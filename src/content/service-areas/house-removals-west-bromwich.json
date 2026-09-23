@@ -1,0 +1,32 @@
+{
+  "service": "house-removals",
+  "location": "west-bromwich",
+  "uniqueIntro": "Planning a home move in West Bromwich? Jimmys Removals delivers dependable, fully insured house removals across Sandwell and the Black Country. From established family avenues in Charlemont Farm and Churchfield to contemporary developments around New Square and Sandwell Valley, our directly employed movers provide punctual, courteous, and careful moving assistance. Operating modern 3.5-tonne Luton vans with hydraulic tail lifts, we protect every item with quilted transit blankets, non-slip carpet runners, and heavy-duty ties, delivering upfront guaranteed fixed quotes on every move.",
+  "localAngle": "West Bromwich features direct connections to the M5 Junction 1 and the A41 expressway. Our logistics planners coordinate moves to navigate local traffic around Carters Green and Dartmouth Park, ensuring punctual arrival and efficient loading throughout moving day.",
+  "faqs": [
+    {
+      "question": "How do you handle moves on busy West Bromwich roads?",
+      "answer": "Our drivers arrive promptly to secure legal and safe parking outside your property, deploying loading cones and ramps to ensure quick, safe transfer of your household items.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle beds and wardrobes for my West Bromwich house move?",
+      "answer": "Yes. Our crew carries full tool kits to take apart wardrobes, bed frames, and dining tables, reassembling them securely at your new West Bromwich property.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "House removals van parked outside West Bromwich residential home"
+    },
+    "local": {
+      "src": "",
+      "alt": "Removals crew loading household furniture in West Bromwich"
+    },
+    "team": {
+      "src": "",
+      "alt": "Movers unloading boxes into new West Bromwich house"
+    }
+  }
+}

@@ -3,8 +3,8 @@
   "slug": "bilston",
   "county": "West Midlands",
   "metaTitle": "Bilston Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Bilston. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals provides experienced house removals, student transfers, and packing services across Bilston, Bradley, and Ettingshall. Famous for its historic open market and vibrant community spirit, Bilston offers great housing value. Our team delivers stress-free moves with clean Luton vans, protective furniture blankets, heavy-duty straps, and friendly, capable porters who treat your property as if it were their own throughout the moving process.  Whether you need a full house removal, assistance moving heavy kitchen white goods, or student transport, our professional team delivers a punctual and insured service designed to make your Bilston move simple. We wrap all furniture in thick transit blankets and secure items with heavy webbing straps.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Bilston. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Jimmys Removals provides experienced house removals, student transfers, and packing services across Bilston, Bradley, and Ettingshall. Famous for its historic open market and vibrant community spirit, Bilston offers great housing value. Our team delivers organized moves with clean Luton vans, protective furniture blankets, heavy-duty straps, and friendly, capable porters who treat your property as if it were their own throughout the moving process.  Whether you need a full house removal, assistance moving heavy kitchen white goods, or student transport, our professional team delivers a punctual and insured service designed to make your Bilston move simple. We wrap all furniture in thick transit blankets and secure items with heavy webbing straps.",
   "localKnowledge": "Bilston's road network connects directly onto the Black Country Route (A463), allowing quick transfers between Wolverhampton and the M6. In older streets near Mount Pleasant and Loxdale, on-street parking requires strategic morning van staging to keep the highway clear.",
   "postcodes": [
     "WV14"
@@ -26,7 +26,7 @@
   "travelInfo": "Direct links via the Black Country Route (A463) and the A41 Oxford Street.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Bilston does not operate a Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",

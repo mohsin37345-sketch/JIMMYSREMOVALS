@@ -7,9 +7,9 @@
   "heroHeading": "Specialist Flat & High-Rise Removals in Birmingham & Beyond",
   "heroSubheading": "Experienced with Jewellery Quarter, Digbeth, and city-centre apartment complexes. We manage lift slot schedules, parking bays, and multi-storey logistics.",
   "icon": "building",
-  "summary": "Relocating between apartments or high-rise flats requires experienced local movers who understand lift bookings, tight corridors, and parking restrictions. Our Birmingham removal company protects communal hallways and stairs with floor runners while carefully manoeuvring bulky sofas, mattresses, and appliances. Whether you are moving house into a city-centre development inside Birmingham's Clean Air Zone or a suburban walk-up in Solihull, we provide prompt, fully insured flat removals with guaranteed fixed pricing from day one.",
+  "summary": "Relocating between apartments or high-rise flats requires experienced local movers who understand lift bookings, tight corridors, and parking restrictions. Our professional removal company protects communal hallways and stairs with floor runners while carefully manoeuvring bulky sofas, mattresses, and appliances. Whether you are moving house into a city-centre development or a suburban walk-up in Solihull, we provide prompt, fully insured flat removals with guaranteed fixed pricing from day one.",
   "benefits": [
-    "Expert navigation of Birmingham city-centre loading restrictions and CAZ",
+    "Expert navigation of tight residential loading bays and restricted parking",
     "Coordination with building concierges and building management lift slots",
     "Specialist narrow-access equipment and furniture protection",
     "Rapid loading and unloading to respect timed building access windows",
@@ -38,11 +38,11 @@
     }
   ],
   "whatsIncluded": [
-    "Clean Air Zone compliant Luton removal van",
+    "Dedicated 3.5-tonne Luton removal van with tail lift",
     "Two professional removal porters",
     "Specialist padded furniture covers and mattress bags",
     "Stair and elevator carry with communal corridor floor protection",
-    "Goods in transit and public liability insurance"
+    "Fully insured transit protection"
   ],
   "whatsNotIncluded": [
     "Apartment management move-in deposits or building fees",
@@ -65,8 +65,8 @@
       "display": true
     },
     {
-      "question": "Are you allowed in the Birmingham Clean Air Zone?",
-      "answer": "Yes, our entire fleet meets Euro 6 standards, meaning we operate freely within the Birmingham Middleway ring road without paying charges.",
+      "question": "Do I need to arrange parking permits outside my flat?",
+      "answer": "If your apartment building has a designated loading bay, please inform concierge in advance. For street parking with permit restrictions, reserving space or notifying neighbours ensures safe van positioning.",
       "display": true
     },
     {

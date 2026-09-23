@@ -3,7 +3,7 @@
   "slug": "smethwick",
   "county": "West Midlands",
   "metaTitle": "Smethwick Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Smethwick. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Smethwick. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
   "intro": "Jimmys Removals delivers affordable, high-quality house and flat removals across Smethwick and Bearwood. From traditional Victorian terraces in Cape Hill and Victoria Park to modern family developments near the Midland Metropolitan University Hospital, our team provides careful lifting, professional packing, and agile van transport designed to handle busy urban streets without stress. We know how to manage narrow staircases, multi-floor carry, and curbside loading, ensuring that your furniture, white goods, and fragile items arrive safely at your new address.  From small man and van flat moves to complete family house relocations, we provide all the protective blankets, mattress covers, and strapping required to safeguard your belongings throughout transit. We know how to manage narrow stairwells, curbside parking, and tight Victorian accessways safely and efficiently.",
   "localKnowledge": "Smethwick features dense terraced housing with narrow carriageways, especially around Bearwood Road, Waterloo Road, and Cape Hill. Our 3.5-tonne Luton vans are ideally proportioned to navigate parked cars and tight corners where larger 7.5-tonne lorries would struggle or block traffic.",
   "postcodes": [
@@ -27,7 +27,7 @@
   "travelInfo": "Close to the A457 Tollhouse Way and A4092 Cape Hill corridors into Birmingham.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Smethwick is outside the Birmingham CAZ, though our vans are fully compliant if crossing the boundary."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -45,11 +45,6 @@
       "display": true
     },
     {
-      "question": "Are your vans compliant if moving from Smethwick into central Birmingham?",
-      "answer": "Yes, our fleet is Euro 6 compliant and exempt from all Birmingham Clean Air Zone charges.",
-      "display": true
-    },
-    {
       "question": "Do you offer man and van services in Smethwick?",
       "answer": "Yes, our man and van service is ideal for small flat moves, student relocations, and single bulky items.",
       "display": true
@@ -57,6 +52,11 @@
     {
       "question": "Can you move heavy washing machines and appliances?",
       "answer": "Yes, our team uses appliance barrows and protective covers to safely transport white goods.",
+      "display": true
+    },
+    {
+      "question": "What areas of Smethwick do you cover?",
+      "answer": "We cover all of B66 and B67 including Cape Hill, Bearwood, French Walls, and Londonderry.",
       "display": true
     }
   ],

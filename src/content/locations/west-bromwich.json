@@ -3,9 +3,9 @@
   "slug": "west-bromwich",
   "county": "West Midlands",
   "metaTitle": "West Bromwich Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in West Bromwich. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals is your premier partner for home and commercial relocations in West Bromwich. As a vital hub of Sandwell and the Black Country, West Bromwich combines energetic shopping quarters, traditional residential avenues around Charlemont, Greets Green, and Stone Cross, and contemporary developments near New Square and Sandwell Valley. Our removals personnel bring an unbeatable combination of punctual professionalism, courteous service, and competitive pricing, ensuring that your home move, office relocation, or storage transit is executed with minimal disruption. Every customer benefits from our clean Luton vans, protective floor runners, and £50,000 Goods in Transit cover.  We offer bespoke domestic moving packages, packing supplies, and expert furniture dismantling to ensure your West Bromwich house move is executed safely, on schedule, and within your agreed moving budget. Our team is fully insured with up to £50,000 Goods in Transit cover on every journey.",
-  "localKnowledge": "West Bromwich's key road intersection is the bustling M5 Junction 1 roundabout, connecting the A41 expressway into Birmingham. Our operations team plans travel routes to avoid peak congestion around Carters Green and Dartmouth Golf Course. In areas like Charlemont Farm and Churchfield, mixed housing stock from council-built semi-detached houses to modern townhouses provides straightforward front access, though care is taken around school zones along All Saints Way.\n\nFor commercial relocations around the industrial estates of Kelvin Way and Brandon Way, we provide weekend office moves that relocate IT equipment, desks, and storage racks with zero Monday downtime. Every item moved across West Bromwich is safeguarded by £50,000 Goods in Transit cover and blanket-wrapped inside our carpeted van interiors.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in West Bromwich. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Jimmys Removals is your premier partner for home and commercial relocations in West Bromwich. As a vital hub of Sandwell and the Black Country, West Bromwich combines energetic shopping quarters, traditional residential avenues around Charlemont, Greets Green, and Stone Cross, and contemporary developments near New Square and Sandwell Valley. Our removals personnel bring an unbeatable combination of punctual professionalism, courteous service, and competitive pricing, ensuring that your home move, office relocation, or storage transit is executed with minimal disruption. Every customer benefits from our clean Luton vans, protective floor runners, and Fully insured.  We offer bespoke domestic moving packages, packing supplies, and expert furniture dismantling to ensure your West Bromwich house move is executed safely, on schedule, and within your agreed moving budget. Our team is fully insured with Fully insured on every journey.",
+  "localKnowledge": "West Bromwich's key road intersection is the bustling M5 Junction 1 roundabout, connecting the A41 expressway into Birmingham. Our operations team plans travel routes to avoid peak congestion around Carters Green and Dartmouth Golf Course. In areas like Charlemont Farm and Churchfield, mixed housing stock from council-built semi-detached houses to modern townhouses provides straightforward front access, though care is taken around school zones along All Saints Way.\n\nFor commercial relocations around the industrial estates of Kelvin Way and Brandon Way, we provide weekend office moves that relocate IT equipment, desks, and storage racks with zero Monday downtime. Every item moved across West Bromwich is safeguarded by Fully insured and blanket-wrapped inside our carpeted van interiors.",
   "postcodes": [
     "B70",
     "B71"
@@ -27,7 +27,7 @@
   "travelInfo": "Direct motorway access via the M5 Junction 1, A41 Black Country New Road, and A4031 All Saints Way.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "West Bromwich is outside the Birmingham CAZ. No clean air fees apply locally."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -39,11 +39,6 @@
     "Furniture Dismantling"
   ],
   "localFaqs": [
-    {
-      "question": "Are moves in West Bromwich exempt from the Birmingham Clean Air Zone?",
-      "answer": "Yes, West Bromwich is in Sandwell and outside the Birmingham CAZ. If your move takes you into Birmingham city centre, our vans are 100% compliant anyway.",
-      "display": true
-    },
     {
       "question": "How do you handle moves near M5 Junction 1 during rush hour?",
       "answer": "We schedule departures to bypass peak motorway interchange queues, taking alternative Black Country routes when appropriate.",
@@ -57,6 +52,11 @@
     {
       "question": "Can you provide storage for West Bromwich homeowners between completions?",
       "answer": "Yes, we offer secure containerised storage facilities in Birmingham with collection and redelivery service whenever your new home is ready.",
+      "display": true
+    },
+    {
+      "question": "What postcodes do you cover in West Bromwich?",
+      "answer": "We cover all B70 and B71 postcodes including Charlemont, Greets Green, Stone Cross, and Sandwell Valley.",
       "display": true
     }
   ],

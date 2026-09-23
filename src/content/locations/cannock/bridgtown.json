@@ -1,0 +1,72 @@
+{
+  "town": "Bridgtown",
+  "slug": "bridgtown",
+  "county": "Staffordshire",
+  "heroHeading": "Professional House Removals in Bridgtown",
+  "metaTitle": "Bridgtown Removals | Cannock House Movers | Jimmys",
+  "metaDescription": "Professional house removals in Bridgtown, Cannock. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Relocating home or business premises in Bridgtown? Jimmys Removals delivers an organised, fully insured removals service across this historic industrial and residential quarter of Cannock. From characterful Victorian terraced homes along Walsall Road and North Street to modern family developments near Longford Island and the Orbital Retail Park, our dedicated moving crews manage your relocation with expert precision. We supply low-emission 3.5-tonne Luton vans equipped with 500kg hydraulic tail lifts, thick quilted transit blankets, and heavy-duty tie-rails to protect your furniture.\n\nOur experienced, uniformed removal porters take the strain out of moving day by offering complete furniture dismantling, floor protection runners for your carpets and vinyls, and safe handling of heavy domestic white goods. Whether you are transitioning from a compact starter terrace on Union Street or moving into an executive property bordering Great Wyrley, our upfront fixed quotations ensure complete pricing transparency with zero unexpected completion delay fees.",
+  "localKnowledge": "Bridgtown's location south of Cannock town centre means rapid connectivity onto the A5 Watling Street and Churchbridge interchange. However, older residential turnings such as Park Street, Cross Street, and garden avenues feature high rates of roadside parking and restricted carriageway widths where oversized HGVs struggle to turn. Our 3.5-tonne Luton vans provide the optimum solution, offering superior manoeuvrability into tight driveways without blocking neighbour access.\n\nDuring peak shopping and commuter hours around the Orbital retail complex and the A34 corridor, roundabout junctions can experience brief congestion. Our drivers plan strategic access routes via Walkmill Lane to avoid delays, guaranteeing punctual arrival at your Bridgtown doorstep.",
+  "postcodes": [
+    "WS11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Chadsmoor",
+      "slug": "cannock/chadsmoor"
+    },
+    {
+      "name": "Great Wyrley",
+      "slug": "cannock/great-wyrley"
+    },
+    {
+      "name": "Cheslyn Hay",
+      "slug": "cannock/cheslyn-hay"
+    }
+  ],
+  "travelInfo": "Direct road access onto the A5 Watling Street, A34 Walsall Road, and M6 Toll Junction T7 at Churchbridge.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your removal vans park on narrow residential streets in Bridgtown?",
+      "answer": "Yes, our Luton box vans are selected specifically to manoeuvre comfortably along narrow Victorian streets like Union Street and North Street without obstructing local traffic.",
+      "display": true
+    },
+    {
+      "question": "Do you assist commercial relocations around Bridgtown business parks?",
+      "answer": "Yes, we handle office moves, retail deliveries, and trade stock transfers across Bridgtown industrial estates and business parks with dedicated weekend options.",
+      "display": true
+    },
+    {
+      "question": "Can you provide packing boxes in advance of moving day in Bridgtown?",
+      "answer": "We deliver double-walled cardboard packing cartons, heavy-duty tape, and bubble wrap directly to your Bridgtown address ahead of your moving date.",
+      "display": true
+    },
+    {
+      "question": "Are your removals fully insured in Bridgtown?",
+      "answer": "All domestic and business removals in Bridgtown include comprehensive Fully insured and Fully insured protection.",
+      "display": true
+    }
+  ],
+  "lat": 52.678,
+  "lng": -2.025,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

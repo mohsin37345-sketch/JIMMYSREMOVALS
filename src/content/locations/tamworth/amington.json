@@ -1,0 +1,72 @@
+{
+  "town": "Amington",
+  "slug": "amington",
+  "county": "Staffordshire",
+  "heroHeading": "Professional House Removals in Amington",
+  "metaTitle": "Amington Removals | Tamworth House Movers | Jimmys",
+  "metaDescription": "Professional house removals in Amington, Tamworth. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Planning a residential move in Amington? Jimmys Removals delivers an organised, fully insured moving service tailored to this popular eastern suburb of Tamworth. From executive four-bedroom detached family homes within the modern Amington Fairway and Amington Garden Village developments to traditional properties along Amington Road and charming canal-side cottages near the Coventry Canal, our experienced removal crews take complete ownership of your moving day. We supply low-emission 3.5-tonne Luton vans fitted with hydraulic tail lifts, ultra-thick padded transit blankets, and heavy-duty furniture ties to ensure your possessions are safely secured during transit.\n\nOur directly employed, uniformed porters understand that moving home involves far more than simply transporting boxes. We provide dedicated protection for your hardwood flooring and carpets, disassemble cumbersome divan beds and triple wardrobes, and carefully manoeuvre large sofas through narrow entryways. Whether you are upsizing to a spacious new-build or downsizing to a quiet cul-de-sac near Woodland Road, our upfront fixed quotations guarantee total financial clarity with zero hidden completion delay charges.",
+  "localKnowledge": "Amington is characterised by a contrast between established older avenues and fast-expanding modern residential estates. Navigating the modern housing developments around Mercian Way and Eagle Drive requires careful vehicle positioning, as contemporary estate layouts feature tight turning heads, shared driveways, and frequent on-street parking that can restrict access for larger vehicles. Our agile 3.5-tonne Luton vans are ideally suited for these compact residential lanes where 7.5-tonne lorries frequently struggle.\n\nWhen carrying out removals near the historic Coventry Canal corridor and Amington Green, our drivers take particular care with narrow humpback canal bridges that have strict weight and axle limits. We plan arrival routes via the B5000 Glascote Road to bypass morning school-run queues near local primary schools, guaranteeing punctual arrival and efficient unloading.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Bolehall",
+      "slug": "tamworth/bolehall"
+    },
+    {
+      "name": "Glascote",
+      "slug": "tamworth/glascote"
+    },
+    {
+      "name": "Stonydelph",
+      "slug": "tamworth/stonydelph"
+    }
+  ],
+  "travelInfo": "Convenient road access via the B5000 Glascote Road, Mercian Way, and rapid links to the A5 bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your removal vans access new-build estates in Amington Garden Village?",
+      "answer": "Yes, our 3.5-tonne Luton box vans are selected specifically to navigate narrow turning circles, compact cul-de-sacs, and shared private driveways in Amington developments with complete ease.",
+      "display": true
+    },
+    {
+      "question": "How do you handle bridge weight limits near the Coventry Canal in Amington?",
+      "answer": "Our drivers are fully trained on local axle limits and bridge clearances along Amington Road, ensuring our vehicles strictly use pre-surveyed arterial approaches without risking access delays.",
+      "display": true
+    },
+    {
+      "question": "Do you offer professional packing materials before moving day in Amington?",
+      "answer": "Yes, we deliver heavy-duty double-walled cardboard boxes, bubble wrap, packing paper, and wardrobe cartons directly to your Amington address ahead of your scheduled move.",
+      "display": true
+    },
+    {
+      "question": "Are your removal teams available at weekends in Amington?",
+      "answer": "We operate 24 hours, 7 days a week across Amington and Tamworth, allowing you to schedule your home relocation on Saturday or Sunday without paying inflated weekend premiums.",
+      "display": true
+    }
+  ],
+  "lat": 52.632,
+  "lng": -1.662,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

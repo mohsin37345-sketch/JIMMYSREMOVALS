@@ -1,0 +1,72 @@
+{
+  "town": "Cheslyn Hay",
+  "slug": "cheslyn-hay",
+  "county": "Staffordshire",
+  "heroHeading": "Affordable House Removals in Cheslyn Hay",
+  "metaTitle": "Cheslyn Hay Removals | South Staffs Movers | Jimmys",
+  "metaDescription": "Affordable house removals in Cheslyn Hay, Staffordshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Looking for dependable, cost-effective house removals in Cheslyn Hay? Jimmys Removals provides a dedicated, insured moving service throughout this close-knit South Staffordshire village. Whether you are moving from a quaint period cottage on High Street, a spacious 1970s family semi-detached along Station Street, or a modern detached residence off Rosemary Road, our professional removal porters make moving day organized. We supply modern 3.5-tonne Luton vans fitted with hydraulic tail lifts, thick transit blankets, and robust securing straps.\n\nOur village removal team provides a hands-on, friendly approach to moving day. We wrap mahogany tables in protective padding, hoist washing machines and dryers onto hydraulic tail lifts, and carefully reassemble bed frames upon arrival. Every relocation is backed by full Fully insured, giving you total peace of mind.",
+  "localKnowledge": "Cheslyn Hay retains an authentic village street network, with roads such as Station Street, Mount Pleasant, and Low Street characterized by narrow carriageways, parked vehicles, and sharp corner junctions. Larger multi-axle lorries frequently cause bottlenecks in the village core; our agile 3.5-tonne Luton box vans navigate these village roads cleanly and can reverse neatly into compact domestic driveways.\n\nPositioned right beside the A34 and Landywood railway station, Cheslyn Hay provides fast connectivity to Cannock and Walsall. We schedule moves around school start and end times near Cheslyn Hay Academy on Saredon Road, avoiding local congestion and keeping your moving schedule running smoothly.",
+  "postcodes": [
+    "WS6"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Great Wyrley",
+      "slug": "cannock/great-wyrley"
+    },
+    {
+      "name": "Bridgtown",
+      "slug": "cannock/bridgtown"
+    },
+    {
+      "name": "Cannock Town",
+      "slug": "cannock/cannock-town"
+    }
+  ],
+  "travelInfo": "Swift road links via the A34, Station Street, and immediate access to Landywood rail station and the M6 Toll.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans negotiate narrow streets like High Street in Cheslyn Hay?",
+      "answer": "Yes, our 3.5-tonne Luton vans are sized specifically to manoeuvre safely along narrow village lanes in Cheslyn Hay without blocking local traffic.",
+      "display": true
+    },
+    {
+      "question": "Do you offer dismantling for flat-pack bedroom furniture in Cheslyn Hay?",
+      "answer": "Yes, our crew brings full toolsets to dismantle multi-door wardrobes, bunk beds, and dining tables, reassembling them securely at your new home.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed for moves within Cheslyn Hay?",
+      "answer": "Yes, all quotes for Cheslyn Hay moves are 100% fixed and inclusive of fuel, loading, unloading, and transit insurance.",
+      "display": true
+    },
+    {
+      "question": "Can you provide packing boxes ahead of moving day in Cheslyn Hay?",
+      "answer": "We deliver sturdy double-walled cardboard boxes, packing tape, and bubble wrap directly to your door in Cheslyn Hay well before moving day.",
+      "display": true
+    }
+  ],
+  "lat": 52.664,
+  "lng": -2.041,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

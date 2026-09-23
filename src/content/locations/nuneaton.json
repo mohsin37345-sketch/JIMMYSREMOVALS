@@ -3,31 +3,69 @@
   "slug": "nuneaton",
   "county": "Warwickshire",
   "metaTitle": "Nuneaton Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Nuneaton. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals provides professional house removals, flat moves, and student relocations throughout Nuneaton. As northern Warwickshire's largest town, Nuneaton offers diverse housing from Victorian terraces in Abbey Green to modern family developments in Weddington, St Nicolas Park, and Whitestone. Our experienced porters ensure your possessions arrive safely, backed by full insurance and transparent fixed pricing.  Our transparent pricing, modern fleet, and experienced removal porters ensure that your house or flat move in Nuneaton is completed safely, on budget, and with zero unnecessary stress. We supply double-walled boxes, wardrobe cartons, and quilted covers for complete peace of mind. We work seven days a week to accommodate your completion schedule.",
-  "localKnowledge": "Nuneaton is linked to Coventry by the A444 corridor. In established residential avenues around Weddington and Horeston Grange, private driveways provide straightforward van access, while our crew is adept at managing tighter road widths near the town centre.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing across Nuneaton & Bedworth. Tier 1 moving hub, DBS-checked movers, transparent pricing.",
+  "intro": "Jimmys Removals provides professional house removals, flat moves, and commercial relocations throughout Nuneaton and the wider borough of Nuneaton and Bedworth. As northern Warwickshire's largest urban centre, Nuneaton offers diverse housing from characterful Victorian terraces in Abbey Green to substantial detached family developments in Weddington, St Nicolas Park, and Whitestone. Our experienced porters ensure your possessions arrive safely, backed by Fully insured and transparent fixed pricing.\n\nFrom starter homes in Stockingford and Chilvers Coton to picturesque countryside residences in Galley Common, Hartshill, and Arley, our punctual moving crews deliver complete logistical support across all CV10, CV11, CV12, and CV7 postcodes. We supply double-walled corrugated boxes, wrap fragile crockery in acid-free tissue paper, and load heavy domestic appliances using 500kg hydraulic vehicle lifts. Our transparent quotations provide complete certainty from your survey through to key completion.",
+  "localKnowledge": "Nuneaton is linked to Coventry by the A444 corridor and connects smoothly to the M6, M69, and A5. In established residential avenues around Weddington and Whitestone, private driveways provide straightforward van access, while our crew is adept at managing tighter road widths and parking near the town centre. Our modern 3.5-tonne Luton vans provide excellent agility without blocking neighbour driveways.",
   "postcodes": [
     "CV10",
-    "CV11"
+    "CV11",
+    "CV12",
+    "CV7"
   ],
   "nearbyAreas": [
     {
-      "name": "Coventry",
-      "slug": "coventry"
+      "name": "Attleborough",
+      "slug": "nuneaton/attleborough"
+    },
+    {
+      "name": "Chilvers Coton",
+      "slug": "nuneaton/chilvers-coton"
+    },
+    {
+      "name": "Stockingford",
+      "slug": "nuneaton/stockingford"
+    },
+    {
+      "name": "Weddington",
+      "slug": "nuneaton/weddington"
+    },
+    {
+      "name": "Whitestone",
+      "slug": "nuneaton/whitestone"
+    },
+    {
+      "name": "Camp Hill",
+      "slug": "nuneaton/camp-hill"
+    },
+    {
+      "name": "Galley Common",
+      "slug": "nuneaton/galley-common"
+    },
+    {
+      "name": "Hartshill",
+      "slug": "nuneaton/hartshill"
+    },
+    {
+      "name": "Bulkington",
+      "slug": "nuneaton/bulkington"
     },
     {
       "name": "Bedworth",
       "slug": "bedworth"
     },
     {
-      "name": "Tamworth",
-      "slug": "tamworth"
+      "name": "Arley",
+      "slug": "nuneaton/arley"
+    },
+    {
+      "name": "Nuneaton Town",
+      "slug": "nuneaton/nuneaton-town"
     }
   ],
-  "travelInfo": "Connected via the A444, A47, and close to the M6 Junction 3.",
+  "travelInfo": "Connected via the A444, A47, A5, and close to the M6 Junction 3 and M69.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Nuneaton operates without a Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -40,28 +78,28 @@
   ],
   "localFaqs": [
     {
-      "question": "Do you cover Weddington and Whitestone in Nuneaton?",
-      "answer": "Yes, we cover all CV10 and CV11 addresses across Nuneaton.",
+      "question": "Do you cover all districts across Nuneaton & Bedworth borough?",
+      "answer": "Yes, we cover Weddington, Whitestone, Stockingford, Attleborough, Bulkington, Bedworth, and all CV10, CV11, CV12, and CV7 postcodes.",
       "display": true
     },
     {
       "question": "Can you help move from Nuneaton to London or Manchester?",
-      "answer": "Yes, our dedicated long-distance removal service delivers direct across the UK.",
+      "answer": "Yes, our dedicated long-distance removal service delivers direct across the UK with dedicated vans and fixed quotes.",
       "display": true
     },
     {
       "question": "Do you dismantle flat-pack beds and wardrobes?",
-      "answer": "Yes, our team carries full toolsets to dismantle and assemble furniture.",
+      "answer": "Yes, our team carries full toolsets to dismantle and assemble furniture safely at your new home.",
       "display": true
     },
     {
-      "question": "Are your packing boxes heavy duty?",
-      "answer": "Yes, we supply strong double-walled corrugated cardboard boxes for moves.",
+      "question": "Are your moving quotes guaranteed in Nuneaton?",
+      "answer": "Yes, all our quotations are fixed and transparent with zero hidden fees or completion delay charges.",
       "display": true
     }
   ],
   "lat": 52.523,
   "lng": -1.468,
-  "tier": 2,
+  "tier": 1,
   "heroImage": "/images/locations/nuneaton.webp"
 }

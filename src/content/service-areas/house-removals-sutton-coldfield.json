@@ -1,0 +1,32 @@
+{
+  "service": "house-removals",
+  "location": "sutton-coldfield",
+  "uniqueIntro": "Planning a residential move in the Royal Town of Sutton Coldfield? Jimmys Removals delivers professional, fully insured domestic removals across Four Oaks, Boldmere, Walmley, Wylde Green, and surrounding neighbourhoods. Renowned for substantial family residences, private leafy avenues, and period architectural homes bordering Sutton Park, Sutton Coldfield demands experienced movers with high standards of presentation and care. Our directly employed, DBS-checked movers arrive in modern 3.5-tonne Luton vans with tail lifts, protective floor runners, and thick quilted furniture blankets to ensure every item arrives securely.",
+  "localAngle": "Properties along private estates in Four Oaks and Little Aston often feature extensive gravel driveways and multi-level living. Our crews lay protective rubberised matting over flooring and handle antique furniture, pianos, and designer suites with dedicated lifting care.",
+  "faqs": [
+    {
+      "question": "How do you protect wood flooring and carpets in Sutton Coldfield homes?",
+      "answer": "We lay heavy-duty non-slip floor runners across main entrance hallways, landings, and stairs, and use padded door-jamb protectors to prevent transit scuffs.",
+      "display": true
+    },
+    {
+      "question": "Can you handle multi-van moves for large properties in Four Oaks?",
+      "answer": "Yes. For 4-bedroom and 5-bedroom residences, we deploy multiple Luton box vans and dedicated loading crews to ensure systematic loading and same-day delivery.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "House removals Luton van parked outside Sutton Coldfield residence"
+    },
+    "local": {
+      "src": "",
+      "alt": "Removals crew unloading furniture in tree-lined Sutton Coldfield avenue"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed porters positioning furniture in Sutton Coldfield home"
+    }
+  }
+}

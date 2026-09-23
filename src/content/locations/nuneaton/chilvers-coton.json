@@ -1,0 +1,73 @@
+{
+  "town": "Chilvers Coton",
+  "slug": "chilvers-coton",
+  "county": "Warwickshire",
+  "heroHeading": "Affordable House Removals in Chilvers Coton",
+  "metaTitle": "Chilvers Coton Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Affordable house removals in Chilvers Coton, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Planning a house move in Chilvers Coton? Jimmys Removals provides a dependable, budget-conscious moving service throughout this historic Nuneaton district. Known for its George Eliot heritage, the area offers charming Victorian terraces, interwar semis on Heath End Road, and quiet side streets off Coton Road. Our skilled porters handle every box and piece of furniture with diligence, using clean Luton vans fitted with tail lifts and furniture straps.\n\nWe manage all the demanding physical aspects of moving so you can focus on settling in. Our crew wraps delicate glassware, transports heavy appliances safely, and rebuilds multi-door wardrobes in your new bedrooms. Our straightforward fixed quotes keep your move completely transparent.",
+  "localKnowledge": "Chilvers Coton is situated around major local road arteries including the A444, Coton Road, and Heath End Road, creating brisk traffic flows throughout the working day. Many historic streets such as Edward Street, College Street, and Coventry Road feature on-street resident parking and narrow street widths that can complicate vehicle placement. Our 3.5-tonne Luton vans are ideally suited for these conditions, parking securely along kerbsides without obstructing oncoming traffic.\n\nOur drivers are experienced in planning arrival times around peak hospital traffic near the George Eliot Hospital complex. By utilizing local residential bypass routes, we guarantee prompt arrival times and efficient loading for your Chilvers Coton move.",
+  "postcodes": [
+    "CV10",
+    "CV11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Attleborough",
+      "slug": "nuneaton/attleborough"
+    },
+    {
+      "name": "Stockingford",
+      "slug": "nuneaton/stockingford"
+    },
+    {
+      "name": "Nuneaton Town",
+      "slug": "nuneaton/nuneaton-town"
+    }
+  ],
+  "travelInfo": "Direct road links via the A444, Coton Road, Heath End Road, and moments from George Eliot Hospital.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans park on narrow terraced streets in Chilvers Coton?",
+      "answer": "Yes, our 3.5-tonne Luton vans are sized to park neatly alongside the kerb on Edward Street and College Street without blocking local traffic.",
+      "display": true
+    },
+    {
+      "question": "Do you offer wardrobe and furniture dismantling in Chilvers Coton?",
+      "answer": "Yes, our team brings dedicated tools to dismantle and reassemble bulky flat-pack wardrobes, bed frames, and dining tables.",
+      "display": true
+    },
+    {
+      "question": "How do you protect fragile items during transit in Chilvers Coton?",
+      "answer": "We wrap all fragile furniture in thick transit blankets, secure them with heavy-duty webbing, and use specialised mattress and sofa covers.",
+      "display": true
+    },
+    {
+      "question": "Are your moving quotes fixed in Chilvers Coton?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.512,
+  "lng": -1.472,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

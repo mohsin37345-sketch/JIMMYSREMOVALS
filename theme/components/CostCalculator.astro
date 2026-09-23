@@ -105,7 +105,7 @@ const HeadingComponent = headingTag;
         </div>
       </div>
 
-      <!-- 4. Optional Add-ons & Clean Air Zone Flag -->
+      <!-- 4. Optional Add-ons & Fixed Protection Flag -->
       <div class="space-y-3">
         <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
           Specialist Items & Route Considerations
@@ -123,19 +123,20 @@ const HeadingComponent = headingTag;
           </label>
         </div>
 
-        <!-- Birmingham Clean Air Zone Flag -->
-        <label class="flex items-start gap-3 p-3.5 rounded-xl border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/50 dark:bg-emerald-950/20 cursor-pointer">
-          <input type="checkbox" id="calc-caz" class="mt-0.5 text-emerald-600 rounded" checked />
+        <!-- Guaranteed Fixed Quote Flag -->
+        <div class="flex items-start gap-3 p-3.5 rounded-xl border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/50 dark:bg-emerald-950/20">
+          <div class="mt-0.5 text-emerald-600 dark:text-emerald-400">
+            <Icon name="shield-check" class="w-4 h-4" />
+          </div>
           <div>
             <span class="text-xs font-bold text-emerald-900 dark:text-emerald-200 flex items-center gap-1.5">
-              <Icon name="shield-check" class="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>Birmingham Clean Air Zone (CAZ) Route</span>
+              <span>Guaranteed Fixed Quote Protection</span>
             </span>
             <p class="text-[11px] text-emerald-800 dark:text-emerald-300 mt-0.5">
-              Moves inside the A4540 Middleway ring road incur <strong>£0 Clean Air Zone fee</strong> with our 100% compliant Euro 6 fleet.
+              Your written quote includes all fuel, transit, and handling equipment with zero hidden surcharges on moving day.
             </p>
           </div>
-        </label>
+        </div>
       </div>
 
     </div>
@@ -155,7 +156,7 @@ const HeadingComponent = headingTag;
             </span>
           </div>
           <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-            Includes VAT, £50k Goods in Transit cover & zero Clean Air Zone fees.
+            Includes VAT, full insurance cover & guaranteed fixed quote.
           </p>
         </div>
 
@@ -197,7 +198,7 @@ const HeadingComponent = headingTag;
               Insurance Protection:
             </span>
             <span class="font-bold text-emerald-600 dark:text-emerald-400">
-              £50k Cover Included
+              Fully Insured
             </span>
           </div>
         </div>
@@ -278,7 +279,7 @@ const HeadingComponent = headingTag;
       }
     }
 
-    const inputs = document.querySelectorAll('.calc-input, #calc-distance, #calc-caz');
+    const inputs = document.querySelectorAll('.calc-input, #calc-distance');
     inputs.forEach(input => {
       input.addEventListener('input', calculate);
       input.addEventListener('change', calculate);

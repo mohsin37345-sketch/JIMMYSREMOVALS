@@ -1,0 +1,72 @@
+{
+  "town": "Weddington",
+  "slug": "weddington",
+  "county": "Warwickshire",
+  "heroHeading": "Trusted House Removals in Weddington",
+  "metaTitle": "Weddington Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Trusted house removals in Weddington, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Planning a relocation to Weddington? Jimmys Removals provides a professional, fully insured home moving service throughout this desirable northern enclave of Nuneaton. Flanked by the River Anker and Weddington Walk, the neighbourhood features impressive four- and five-bedroom executive homes around Lower Farm Way and Church Lane, alongside established character properties on Weddington Road. We deploy pristine 3.5-tonne Luton vans equipped with tail lifts, quilted sofa jackets, and load-securing straps.\n\nOur respectful movers treat your treasured possessions like their own. We lay adhesive floor films over wooden flooring, take down large dining tables and bed suites, and guide oversized sofas through entrance vestibules with precision. With our guaranteed fixed prices, there are never any unexpected delay fees.",
+  "localKnowledge": "Weddington is connected to central Nuneaton via Weddington Road and Old Hinckley Road. In older areas near St James' Church, narrow rural lane sections and older stone walls require careful vehicle positioning. In contrast, modern developments such as those around Lower Farm Way feature broad driveways and well-designed turning bays where our vehicles can park comfortably on private hardstanding.\n\nDuring peak commuter hours towards Hinckley on the A47 and the Nuneaton ring road, traffic can bunch near the railway bridge. Our drivers time their routes to avoid these delays, ensuring prompt arrival and quick turnaround on your move day.",
+  "postcodes": [
+    "CV10"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Whitestone",
+      "slug": "nuneaton/whitestone"
+    },
+    {
+      "name": "Camp Hill",
+      "slug": "nuneaton/camp-hill"
+    },
+    {
+      "name": "Nuneaton Town",
+      "slug": "nuneaton/nuneaton-town"
+    }
+  ],
+  "travelInfo": "Direct road links via the A444 Weddington Road, Old Hinckley Road, and rapid connections to the A5 and A47.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans park on private driveways in Weddington?",
+      "answer": "Yes, our 3.5-tonne Luton vans fit easily onto standard domestic driveways, keeping the carriageway completely clear for neighbours.",
+      "display": true
+    },
+    {
+      "question": "Do you provide full packing services for executive homes in Weddington?",
+      "answer": "Yes, we offer comprehensive packing services using double-walled boxes, acid-free tissue paper, and bubble wrap for all fragile china and glassware.",
+      "display": true
+    },
+    {
+      "question": "How do you protect modern carpets and wooden floors in Weddington homes?",
+      "answer": "We lay durable adhesive carpet film and heavy-duty floor runners across entrance hallways and stairs to keep your flooring immaculately clean.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Weddington?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your exact moving cost before moving day arrives.",
+      "display": true
+    }
+  ],
+  "lat": 52.535,
+  "lng": -1.468,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

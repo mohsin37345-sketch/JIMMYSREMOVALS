@@ -3,8 +3,8 @@
   "slug": "rowley-regis",
   "county": "West Midlands",
   "metaTitle": "Rowley Regis Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Rowley Regis. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Need experienced house removals in Rowley Regis? Jimmys Removals understands the steep hills and historic communities of Blackheath, Springfield, and Turners Hill. We provide insured moving solutions with modern low-loader Luton vans designed to handle high-elevation terrain, narrow side streets, and stepped accessways safely. Our friendly, hardworking porters take care of all heavy lifting, ensuring your possessions arrive in pristine condition.  With specialized hill-parking protocols, robust tail lifts, and experienced staff, we ensure that moves in Rowley Regis are carried out safely, without delay, and with total respect for your personal belongings. We provide £50,000 Goods in Transit cover and operate seven days a week.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Rowley Regis. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Need experienced house removals in Rowley Regis? Jimmys Removals understands the steep hills and historic communities of Blackheath, Springfield, and Turners Hill. We provide insured moving solutions with modern low-loader Luton vans designed to handle high-elevation terrain, narrow side streets, and stepped accessways safely. Our friendly, hardworking porters take care of all heavy lifting, ensuring your possessions arrive in pristine condition.  With specialized hill-parking protocols, robust tail lifts, and experienced staff, we ensure that moves in Rowley Regis are carried out safely, without delay, and with total respect for your personal belongings. We provide Fully insured and operate 24 hours, 7 days a week.",
   "localKnowledge": "Sitting atop the Rowley Hills, Rowley Regis features some of the highest elevations in the West Midlands. Roads around Highfield and St Giles Church feature steep gradients requiring our drivers to use heavy wheel chocks and position vehicles carefully for safe tail-lift operation.",
   "postcodes": [
     "B65"
@@ -26,7 +26,7 @@
   "travelInfo": "High-level ridge connectivity via the A459 and A4100 towards M5 Junction 2.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Rowley Regis is outside any Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -50,7 +50,7 @@
     },
     {
       "question": "Are your removals insured against accidental damage?",
-      "answer": "Yes, £50,000 Goods in Transit and £2,000,000 Public Liability insurance are included.",
+      "answer": "Yes, Fully insured are included.",
       "display": true
     },
     {

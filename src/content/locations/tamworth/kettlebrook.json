@@ -1,0 +1,72 @@
+{
+  "town": "Kettlebrook",
+  "slug": "kettlebrook",
+  "county": "Staffordshire",
+  "heroHeading": "Professional House Removals in Kettlebrook",
+  "metaTitle": "Kettlebrook Removals | Tamworth Home Movers | Jimmys",
+  "metaDescription": "Professional house removals in Kettlebrook, Tamworth. modern Luton vans with tail lifts, DBS porters, and fixed upfront quotes. Contact us 24 hours, 7 days a week.",
+  "intro": "Planning a home or flat relocation in Kettlebrook? Jimmys Removals provides an experienced, customer-focused domestic removal service across this centrally positioned Tamworth district. Situated between the town centre, Two Gates, and Belgrave, Kettlebrook comprises a rich assortment of traditional Victorian and Edwardian brick terraces along Kettlebrook Road and Cross Street, inter-war semi-detached houses, and newer residential cul-de-sacs near Park Farm. Our professional, DBS-checked movers take the physical strain out of your move, operating immaculate Luton removal vehicles fitted with hydraulic tail lifts and all essential protective gear.\n\nWhether you need a compact man-and-van service for an apartment move or multiple vans to relocate a substantial family household, our team delivers punctual, courteous service from start to finish. We supply quilted furniture blankets, heavy-duty transit webbing, and mattress covers to protect your valuable items throughout transit. With transparent, upfront fixed quotations and full Fully insured insurance up to Fully insured, we ensure that your moving day in Kettlebrook is completely effortless and reliable.",
+  "localKnowledge": "Operating in Kettlebrook demands a strong working knowledge of local road geography and vehicle clearance points. The district features railway viaducts and older bridge arches that carry the Birmingham-to-Derby railway line, making overhead clearance awareness essential for commercial vans. Our drivers strictly utilise routes that avoid low-clearance arches, ensuring your move proceeds without detour delays.\n\nIn the densely clustered residential avenues surrounding Cross Street and Hedging Lane, on-street parking often creates narrow carriageways with parked cars lining both kerbs. Our experienced drivers excel at positioning 3.5-tonne Luton vans tightly to the roadside, allowing free passage for local traffic while ensuring the carrying distance from your front door to the tail lift is kept as short as possible. We also schedule moves to circumvent peak retail congestion near the nearby Ventura Park retail corridor.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Belgrave",
+      "slug": "tamworth/belgrave"
+    },
+    {
+      "name": "Two Gates",
+      "slug": "tamworth/two-gates"
+    },
+    {
+      "name": "Bolehall",
+      "slug": "tamworth/bolehall"
+    }
+  ],
+  "travelInfo": "Convenient access to the A51, Kettlebrook Road, and direct connections to the A5 bypass at Ventura Park.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans clear the railway bridges around Kettlebrook?",
+      "answer": "Yes, our drivers strictly follow pre-cleared transport corridors around Kettlebrook and Two Gates, avoiding any low railway bridges that could impede access.",
+      "display": true
+    },
+    {
+      "question": "How do you handle removals on narrow terraced streets in Kettlebrook?",
+      "answer": "We position our nimble 3.5-tonne Luton vans close to property entrances and use tail lifts and dollies to load quickly, keeping streets clear for neighbours and traffic.",
+      "display": true
+    },
+    {
+      "question": "Do you provide moving boxes and tape in Kettlebrook?",
+      "answer": "Yes, we deliver robust double-walled packing boxes, bubble wrap, packing paper, and adhesive tape directly to your door in Kettlebrook prior to moving day.",
+      "display": true
+    },
+    {
+      "question": "Can I book a removal at short notice in Kettlebrook?",
+      "answer": "Yes, we operate 24 hours, 7 days a week with multiple vans across Tamworth, allowing us to accommodate short-notice and emergency moves whenever van slots are available.",
+      "display": true
+    }
+  ],
+  "lat": 52.622,
+  "lng": -1.688,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

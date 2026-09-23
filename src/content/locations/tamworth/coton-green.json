@@ -1,0 +1,72 @@
+{
+  "town": "Coton Green",
+  "slug": "coton-green",
+  "county": "Staffordshire",
+  "heroHeading": "Affordable House Removals in Coton Green",
+  "metaTitle": "Coton Green Removals | Tamworth Home Movers | Jimmys",
+  "metaDescription": "Affordable house removals in Coton Green, Tamworth. Uniformed movers, tailored packing packages, and no deposit. Get your transparent quote online.",
+  "intro": "Planning a residential move in leafy Coton Green? Jimmys Removals delivers an affordable, dependable moving service across this sought-after northern suburb of Tamworth. Situated between the River Tame and open Staffordshire countryside, Coton Green is renowned for its excellent schools, peaceful cul-de-sacs, and attractive mix of detached executive properties, generous 1970s family homes on Fontenaye Road and Coton Lane, and well-maintained modern closes. Our dedicated moving professionals ensure that your home transition proceeds smoothly from initial quotation to final box placement.\n\nWe provide 3.5-tonne Luton removal vehicles outfitted with electric hydraulic tail lifts, high-tensile transit strapping, and dozens of quilted furniture blankets. Our courteous, DBS-checked porters take careful precautions to safeguard your property, laying down floor runners across hall carpets and protecting door jambs. Backed by comprehensive Fully insured insurance up to Fully insured, Fully insured, and transparent fixed-price quotes with no hidden cancellation fees, we guarantee a dependable moving service for your Coton Green home.",
+  "localKnowledge": "Coton Green is defined by quiet residential avenues branching off Coton Lane and Fontenaye Road, offering convenient proximity to The Rawlett School and local primary schools. During morning and afternoon school run times, Coton Lane experiences brief periods of concentrated traffic and kerbside parking. Our drivers plan arrival times carefully to steer clear of the school peak, ensuring that our removal vehicles are parked safely on driveways or along wide road verges before peak hours begin.\n\nMany properties throughout Coton Green feature mature, leafy gardens, paved driveways, and double garages. Our crews use wide-track rubber dollies to transfer heavy appliances, large American fridge freezers, and workshop equipment effortlessly into the van. For homes situated in deeper cul-de-sacs, our 3.5-tonne Luton vehicles navigate turnaround circles without encroaching on manicured lawns or bordering verges.",
+  "postcodes": [
+    "B79"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Hopwas",
+      "slug": "tamworth/hopwas"
+    },
+    {
+      "name": "Tamworth Town",
+      "slug": "tamworth/tamworth-town"
+    },
+    {
+      "name": "Mile Oak",
+      "slug": "tamworth/mile-oak"
+    }
+  ],
+  "travelInfo": "Direct road access via Coton Lane, the A513 towards Elford, and quick links to the A51 Lichfield Road.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you avoid school-run traffic on Coton Lane in Coton Green?",
+      "answer": "We typically arrive by 08:00 to park and set up before school drop-off traffic begins, or schedule mid-morning arrivals after 09:15 for completely clear road access.",
+      "display": true
+    },
+    {
+      "question": "Can you move American-style side-by-side fridge freezers in Coton Green?",
+      "answer": "Yes, our moving crews carry specialist appliance stair-climber trolleys and protective quilted wraps to move large American fridge freezers safely.",
+      "display": true
+    },
+    {
+      "question": "Do you provide full packing services for detached houses in Coton Green?",
+      "answer": "Yes, we can provide a complete pre-move packing service where our trained packers pack all household contents the day before your scheduled removal.",
+      "display": true
+    },
+    {
+      "question": "Do you charge extra if my move in Coton Green takes place on a Saturday?",
+      "answer": "No, our transparent fixed-price quotes apply across all seven days of the week, with zero weekend surcharges.",
+      "display": true
+    }
+  ],
+  "lat": 52.646,
+  "lng": -1.705,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

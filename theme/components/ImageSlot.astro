@@ -1,0 +1,67 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+  src?: string;
+  alt: string;
+  aspect?: '16/9' | '4/3' | '1/1';
+  caption?: string;
+  slotId: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'auto';
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  aspect = '16/9',
+  caption,
+  slotId,
+  loading = slotId === 'hero' ? 'eager' : 'lazy',
+  fetchpriority = slotId === 'hero' ? 'high' : 'auto',
+  class: className = ''
+} = Astro.props;
+
+// Default high quality photography for moves
+const defaultImages: Record<string, string> = {
+  hero: '/images/moves/luton-van-tail-lift.webp',
+  local: '/images/moves/furniture-packing-blankets.webp',
+  team: '/images/moves/secure-appliance-transport.webp'
+};
+
+const finalSrc = (src && src.trim().length > 0) ? src : (defaultImages[slotId] || '/images/moves/luton-van-tail-lift.webp');
+
+// Map aspect string to Tailwind aspect ratios and explicit pixel dimensions
+let aspectClass = 'aspect-video';
+let width = 800;
+let height = 450;
+
+if (aspect === '4/3') {
+  aspectClass = 'aspect-[4/3]';
+  width = 800;
+  height = 600;
+} else if (aspect === '1/1') {
+  aspectClass = 'aspect-square';
+  width = 600;
+  height = 600;
+}
+---
+
+<figure class={`relative w-full overflow-hidden rounded-2xl ${className}`} data-image-slot={slotId}>
+  <img
+    src={finalSrc}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+    class={`w-full h-full object-cover rounded-2xl ${aspectClass} shadow-md`}
+  />
+  {caption && (
+    <figcaption class="mt-2 text-xs text-slate-500 dark:text-slate-400 text-center">
+      {caption}
+    </figcaption>
+  )}
+</figure>

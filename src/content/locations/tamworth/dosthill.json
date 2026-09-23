@@ -1,0 +1,72 @@
+{
+  "town": "Dosthill",
+  "slug": "dosthill",
+  "county": "Staffordshire",
+  "heroHeading": "Expert House Removals in Dosthill",
+  "metaTitle": "Dosthill Removals | Tamworth Moving Company | Jimmys",
+  "metaDescription": "Expert house removals in Dosthill, Tamworth. Full packing services, careful furniture transport, and Fully insured. Book your local mover now.",
+  "intro": "Relocating within or moving to Dosthill? Jimmys Removals delivers an expert, meticulous removals service across this elevated southern village district of Tamworth. Famous for its historic church, scenic nature reserves, and the renowned Dosthill Quarry diving lake, Dosthill presents an attractive variety of residential architecture, ranging from period stone cottages on High Street and Church Road to generous 1980s family detached homes and contemporary developments near Cottage Farm Road. Our trained removal porters take the hard work out of your move, using specialist lifting equipment and purpose-built Luton box vans.\n\nWe provide complete door-to-door relocation assistance, from optional full packing packages using double-walled boxes to careful protective wrapping of dining tables, upholstered furniture, and fragile china. Our crews use floor runners to protect light carpets and banister covers to prevent scuffs in multi-storey family homes. With guaranteed fixed pricing, clear communication, and full Fully insured insurance, we make settling into your new Dosthill home an organised, pleasant experience.",
+  "localKnowledge": "Dosthill's elevated topography and hillside streets present specific logistical considerations that our drivers navigate daily. Inclines along Church Road, Wigford Road, and approaches toward the former quarry require careful van chocking and methodical weight distribution during loading to ensure complete vehicle stability on slopes. When loading properties on gradients, our movers anchor heavier appliances like washing machines and fridge-freezers low and forward against the van's front bulkhead.\n\nFurthermore, the primary thoroughfare through the village—the A51 Kingsbury Road—experiences substantial commuter traffic connecting Tamworth with north Warwickshire and the M42 corridor. Our teams carefully schedule morning departure and arrival times to steer clear of bottlenecks near the Dosthill primary school crossing and local traffic lights, ensuring that your moving timetable runs like clockwork.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Two Gates",
+      "slug": "tamworth/two-gates"
+    },
+    {
+      "name": "Wilnecote",
+      "slug": "tamworth/wilnecote"
+    },
+    {
+      "name": "Kettlebrook",
+      "slug": "tamworth/kettlebrook"
+    }
+  ],
+  "travelInfo": "Conveniently situated along the A51 Kingsbury Road with rapid links to M42 Junction 9 and the A5 bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you manage removals on steep driveways in Dosthill?",
+      "answer": "Our Luton vehicles carry heavy-duty wheel chocks and rubber ramps, while our porters use two-person carrying techniques and furniture dollies to navigate sloping drives safely.",
+      "display": true
+    },
+    {
+      "question": "Can you time van arrivals to avoid peak A51 commuter traffic in Dosthill?",
+      "answer": "Yes, we plan our transit schedules around local school hours and A51 morning peak flows, typically arriving either before 08:00 or after 09:15 to maintain punctual moving schedules.",
+      "display": true
+    },
+    {
+      "question": "Do you move properties situated down private lanes near Dosthill Quarry?",
+      "answer": "Yes, our compact 3.5-tonne Luton vans are ideally proportioned to access narrow private tracks, gravel accessways, and country lanes around the quarry area without obstruction.",
+      "display": true
+    },
+    {
+      "question": "Can you provide packing boxes and wardrobe cartons before moving day?",
+      "answer": "Yes, we can deliver a full moving kit containing double-walled cartons, bubble wrap, packing paper, and hanging wardrobe boxes directly to your home in Dosthill.",
+      "display": true
+    }
+  ],
+  "lat": 52.597,
+  "lng": -1.686,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

@@ -1,0 +1,32 @@
+{
+  "service": "student-removals",
+  "location": "birmingham",
+  "uniqueIntro": "Relocating between student halls, shared student houses, or returning home for the summer? Jimmys Removals delivers cost-effective, dependable student removals across Birmingham, serving University of Birmingham, Aston University, Birmingham City University (BCU), and Newman University. We transport boxed textbooks, suitcases, computers, audio equipment, desks, and bedroom furnishings directly from door to door. With our agile 3.5-tonne Luton vans, we handle moves across Selly Oak, Edgbaston, City South campus, and central student accommodation towers with prompt timing and guaranteed fixed quotes.",
+  "localAngle": "Selly Oak student streets like Dawlish Road, Heeley Road, and Tiverton Road experience intense turnover during June and September changeovers. Our drivers know local parking constraints, loading quickly to keep move day on schedule.",
+  "faqs": [
+    {
+      "question": "Can housemates in Birmingham share a van to reduce moving costs?",
+      "answer": "Yes. If you and a fellow student are relocating from the same address or heading to neighbouring student halls, sharing a van is an ideal way to divide moving costs.",
+      "display": true
+    },
+    {
+      "question": "Do you deliver to student rooms in university halls?",
+      "answer": "Yes. Our mover assists in carrying your boxes and personal luggage directly into your ground-floor or lift-accessible student room.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Student removals van parked outside Birmingham student accommodation"
+    },
+    "local": {
+      "src": "",
+      "alt": "Student boxes and luggage loaded into Luton van in Selly Oak"
+    },
+    "team": {
+      "src": "",
+      "alt": "Mover carrying boxes into student halls in Birmingham"
+    }
+  }
+}

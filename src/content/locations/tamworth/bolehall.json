@@ -1,0 +1,72 @@
+{
+  "town": "Bolehall",
+  "slug": "bolehall",
+  "county": "Staffordshire",
+  "heroHeading": "Affordable House Removals in Bolehall",
+  "metaTitle": "Bolehall Removals | Tamworth House Moving | Jimmys",
+  "metaDescription": "Affordable house removals in Bolehall, Tamworth. Reliable DBS-checked crews, Luton vans with tail-lifts, and fixed rates. Request a fast free quote today.",
+  "intro": "Looking for dependable, budget-friendly house removals in Bolehall? Jimmys Removals provides a friendly, comprehensive moving service designed for homeowners, tenants, and families across this established Tamworth district. Set between the River Anker and the railway corridor, Bolehall features a mixture of sturdy post-war semi-detached houses, mid-century terraces, and quiet residential cul-de-sacs along Rene Road, Moor Lane, and Amington Road. Our experienced movers ensure your household transitions smoothly without the customary stress, deploying agile tail-lift Luton vehicles that handle domestic furniture with utmost care.\n\nEvery move we execute includes Fully insured protection up to Fully insured and Fully insured as standard. Our porters supply thick padded mattress covers, quilted transit blankets, and heavy-duty ties to secure electrical appliances and sentimental heirlooms. From disassembling flat-pack furniture to navigating tight domestic stairways, we treat your possessions as if they were our own, offering transparent fixed-price quotes that eliminate financial surprises on completion day.",
+  "localKnowledge": "Bolehall's proximity to central Tamworth and the River Anker creates distinctive street patterns that require seasoned driving expertise. Residential avenues such as Moor Lane, Summerfield Road, and Rene Road frequently experience heavy kerbside parking, leaving narrow passing gaps between parked cars. Our drivers arrive early on moving day to secure optimal loading positions directly outside your property, ensuring carrying distances are kept short while maintaining clear access for local buses and emergency services.\n\nFurthermore, when servicing properties close to the Anker river plain or under low railway archways near the town centre boundary, our drivers verify overhead clearances in advance. We time moves to avoid morning and late-afternoon traffic snarls around Bolebridge Islands, delivering efficient, punctual removals throughout the district.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Amington",
+      "slug": "tamworth/amington"
+    },
+    {
+      "name": "Glascote",
+      "slug": "tamworth/glascote"
+    },
+    {
+      "name": "Kettlebrook",
+      "slug": "tamworth/kettlebrook"
+    }
+  ],
+  "travelInfo": "Direct road links into Tamworth town centre via Bolebridge Street and Moor Lane, with swift access to the A5.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do your vans manage parking on narrow streets in Bolehall?",
+      "answer": "We coordinate with customers to reserve curbside space outside the house ahead of arrival, positioning our compact 3.5-tonne Luton vans tightly to keep roadway traffic flowing freely.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle and reassemble large sofas and wardrobes in Bolehall?",
+      "answer": "Yes, our moving crews carry comprehensive toolkits to take apart bulky corner sofas, wardrobes, and bed frames, reassembling them neatly in your designated rooms.",
+      "display": true
+    },
+    {
+      "question": "Do you provide removals for riverside properties near the River Anker?",
+      "answer": "Yes, we regularly service properties along the River Anker in Bolehall, using heavy-duty sack trucks and weather-resistant protective wraps for outdoor approach paths.",
+      "display": true
+    },
+    {
+      "question": "What insurance coverage applies to domestic moves in Bolehall?",
+      "answer": "All domestic moves in Bolehall are covered by Fully insured at no additional charge.",
+      "display": true
+    }
+  ],
+  "lat": 52.628,
+  "lng": -1.681,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

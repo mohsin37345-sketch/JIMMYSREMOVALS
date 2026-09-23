@@ -1,0 +1,32 @@
+{
+  "service": "furniture-dismantling",
+  "location": "birmingham",
+  "uniqueIntro": "Large multi-door wardrobes, ottoman beds, corner desks, and sturdy dining tables often cannot pass through domestic doorways or narrow Victorian stairwells intact. Jimmys Removals provides professional furniture dismantling and reassembly services across Birmingham. Our movers arrive equipped with complete cordless tool kits, hex keys, and labelled hardware bags. We carefully take apart complex flat-pack and solid furniture, transport each component securely wrapped in quilted blankets, and reassemble everything solidly in your designated rooms at your new address.",
+  "localAngle": "Period properties across Birmingham neighbourhoods such as Harborne, Moseley, Balsall Heath, and Sparkhill frequently present tight staircase turns. Dismantling large bedroom furniture beforehand ensures smooth relocation without structural damage to furniture joints or interior plasterwork.",
+  "faqs": [
+    {
+      "question": "Can you dismantle and rebuild large multi-door wardrobes?",
+      "answer": "Yes. Our crew handles 2, 3, and 4-door wardrobes, sliding-door systems, and modular units, carefully keeping fittings labelled for accurate reassembly.",
+      "display": true
+    },
+    {
+      "question": "Do I need to supply tools for furniture dismantling in Birmingham?",
+      "answer": "No. Our moving technicians carry all necessary power drivers, hand tools, wrenches, and spare fixings required to take apart and rebuild domestic furniture.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Removals technician disassembling wardrobe in Birmingham bedroom"
+    },
+    "local": {
+      "src": "",
+      "alt": "Carefully wrapped wardrobe panels staged for loading in Birmingham"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed mover reassembling bed frame at new Birmingham address"
+    }
+  }
+}

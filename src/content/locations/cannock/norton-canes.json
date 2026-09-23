@@ -1,0 +1,72 @@
+{
+  "town": "Norton Canes",
+  "slug": "norton-canes",
+  "county": "Staffordshire",
+  "heroHeading": "Reliable House Removals in Norton Canes",
+  "metaTitle": "Norton Canes Removals | Cannock House Movers | Jimmys",
+  "metaDescription": "Reliable house removals in Norton Canes, Cannock. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Moving to or from Norton Canes? Jimmys Removals offers a dedicated, dependable house moving service across this expanding semi-rural parish close to Chasewater and the M6 Toll. Whether you are transitioning into an executive four-bedroom detached property within the newer developments off Brownhills Road, an established semi along Chapel Green, or a quiet village home near Church Road, our experienced removal porters handle your furniture with exceptional skill. We utilize modern 3.5-tonne Luton vans equipped with tail lifts, quilted blankets, and secure load ties.\n\nOur respectful, directly employed removal crew handles every task with professionalism, from disassembling flat-pack beds to safeguarding delicate electrical items and glassware. We protect your interior hall walls and carpets with specialized heavy-duty runners. Backed by transparent fixed pricing, you can plan your Norton Canes home move without worrying about hidden surcharges or completion delay rates.",
+  "localKnowledge": "Norton Canes benefits from immediate access to the M6 Toll at Junction T6, making regional motorway transport swift. However, the village's historic layout includes several narrow bridges crossing the Wyrley and Essington Canal and railway corridors that have weight and clearance restrictions. Our drivers plan routes avoiding low stone bridges, sticking to main distributors like Burntwood Road and Brownhills Road.\n\nIn newer housing developments such as those near Chasewater Innovation Centre, cul-de-sacs often feature tight turning circles and on-street visitor parking. Our agile 3.5-tonne Luton vans are ideally suited for these layouts, maneuvering cleanly into private driveways without blocking access for neighbours.",
+  "postcodes": [
+    "WS11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Heath Hayes",
+      "slug": "cannock/heath-hayes"
+    },
+    {
+      "name": "Wimblebury",
+      "slug": "cannock/wimblebury"
+    },
+    {
+      "name": "Walsall",
+      "slug": "walsall"
+    }
+  ],
+  "travelInfo": "Convenient access to the M6 Toll via Junction T6, A5 Watling Street, and direct roads into Burntwood and Brownhills.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans cross the canal bridges around Norton Canes?",
+      "answer": "Yes, our routes are pre-planned to avoid weight-restricted canal bridges along the Wyrley and Essington Canal, ensuring safe and lawful transit.",
+      "display": true
+    },
+    {
+      "question": "Do you cover new housing estates near Chasewater in Norton Canes?",
+      "answer": "We frequently move homeowners into new developments near Chasewater, easily navigating private shared drives and modern cul-de-sacs.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle garden sheds or outdoor furniture in Norton Canes?",
+      "answer": "We can disassemble outdoor play frames, garden tables, and prefabricated metal or wooden storage units as part of our dismantling service.",
+      "display": true
+    },
+    {
+      "question": "What insurance covers my belongings during a Norton Canes move?",
+      "answer": "Every relocation in Norton Canes is covered by our comprehensive Fully insured and full Fully insured indemnity.",
+      "display": true
+    }
+  ],
+  "lat": 52.684,
+  "lng": -1.974,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

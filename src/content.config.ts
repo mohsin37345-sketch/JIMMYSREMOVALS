@@ -34,10 +34,15 @@ const services = defineCollection({
       })
     ),
     relatedServices: z.array(z.string()),
-    heroImage: z.string(),
-    gallery: z.array(z.string()),
-    order: z.number(),
-    featured: z.boolean()
+    heroImage: z.string().optional(),
+    gallery: z.array(z.string()).optional(),
+    order: z.number().optional(),
+    featured: z.boolean().optional(),
+    images: z.object({
+      hero: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional(),
+      local: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional(),
+      team: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional()
+    }).optional()
   })
 });
 
@@ -46,9 +51,11 @@ const locations = defineCollection({
   schema: z.object({
     town: z.string(),
     slug: z.string(),
+    region: z.string().optional(),
     county: z.string(),
     metaTitle: z.string(),
     metaDescription: z.string(),
+    heroHeading: z.string().optional(),
     intro: z.string(),
     localKnowledge: z.string(),
     postcodes: z.array(z.string()),
@@ -58,19 +65,19 @@ const locations = defineCollection({
         slug: z.string()
       })
     ),
-    travelInfo: z.string(),
+    travelInfo: z.string().optional(),
     cleanAirZone: z.object({
       enabled: z.boolean(),
-      note: z.string()
-    }),
-    servicesOffered: z.array(z.string()),
+      note: z.string().optional()
+    }).optional(),
+    servicesOffered: z.array(z.string()).optional(),
     localFaqs: z.array(
       z.object({
         question: z.string(),
         answer: z.string(),
         display: z.boolean()
       })
-    ),
+    ).optional(),
     testimonial: z
       .object({
         name: z.string(),
@@ -79,10 +86,15 @@ const locations = defineCollection({
         date: z.string()
       })
       .optional(),
-    lat: z.number(),
-    lng: z.number(),
-    tier: z.union([z.literal(1), z.literal(2)]),
-    heroImage: z.string()
+    lat: z.number().optional(),
+    lng: z.number().optional(),
+    tier: z.union([z.literal(1), z.literal(2)]).optional(),
+    heroImage: z.string().optional(),
+    images: z.object({
+      hero: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional(),
+      local: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional(),
+      team: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional()
+    }).optional()
   })
 });
 
@@ -92,21 +104,26 @@ const serviceAreas = defineCollection({
     service: z.string(),
     location: z.string(),
     uniqueIntro: z.string(),
-    localAngle: z.string(),
+    localAngle: z.string().optional(),
     faqs: z.array(
       z.object({
         question: z.string(),
         answer: z.string(),
         display: z.boolean()
       })
-    ),
+    ).optional(),
     caseStudy: z
       .object({
         title: z.string(),
         scenario: z.string(),
         outcome: z.string()
       })
-      .optional()
+      .optional(),
+    images: z.object({
+      hero: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional(),
+      local: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional(),
+      team: z.object({ src: z.string().optional(), alt: z.string().optional() }).optional()
+    }).optional()
   })
 });
 
@@ -120,7 +137,16 @@ const testimonials = defineCollection({
     date: z.string(),
     body: z.string(),
     source: z.string(),
-    verified: z.boolean()
+    verified: z.boolean(),
+    reviewCount: z.string().optional(),
+    relativeTime: z.string().optional(),
+    isNew: z.boolean().optional(),
+    authorUrl: z.string().optional(),
+    pricePaid: z.string().optional(),
+    ownerResponse: z.object({
+      date: z.string().optional(),
+      body: z.string()
+    }).optional()
   })
 });
 

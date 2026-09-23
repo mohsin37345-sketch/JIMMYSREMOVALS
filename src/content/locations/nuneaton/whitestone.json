@@ -1,0 +1,72 @@
+{
+  "town": "Whitestone",
+  "slug": "whitestone",
+  "county": "Warwickshire",
+  "heroHeading": "Reliable House Removals in Whitestone",
+  "metaTitle": "Whitestone Removals | Nuneaton House Movers | Jimmys",
+  "metaDescription": "Reliable house removals in Whitestone, Nuneaton. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Moving to or from Whitestone? Jimmys Removals offers a professional, dependable house moving service across this sought-after suburb south-east of Nuneaton. Renowned for its handsome detached family residences, manicured gardens, and peaceful cul-de-sacs along Lutterworth Road, Gypsy Lane, and Crowhill Road, Whitestone represents executive living at its best. We provide pristine 3.5-tonne Luton vans equipped with tail lifts, thick quilted wraps, and ratchet straps.\n\nOur uniformed movers take great pride in delivering a flawless service. We wrap antique sideboards, pack delicate chinaware in specialist cartons, and lay floor runners across hardwood and carpeted hallways. Fixed-price estimates ensure total financial peace of mind from your initial survey through to final delivery.",
+  "localKnowledge": "Whitestone is characterized by wide residential avenues, deep front driveways, and expansive turning heads around roads such as Magyar Crescent, Bulkington Lane, and Thornhill Drive. These generous layouts make vehicle positioning and access exceptionally straightforward, allowing our Luton vans to load safely entirely on private hardstanding without inconveniencing passing traffic.\n\nPositioned along the B4112 Lutterworth Road, Whitestone offers swift access to the A444 and M69 motorway corridor. Our drivers plan morning departures to avoid congestion around the Crowhill roundabout, ensuring your possessions are transported swiftly and securely to your new destination.",
+  "postcodes": [
+    "CV11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Attleborough",
+      "slug": "nuneaton/attleborough"
+    },
+    {
+      "name": "Weddington",
+      "slug": "nuneaton/weddington"
+    },
+    {
+      "name": "Bulkington",
+      "slug": "nuneaton/bulkington"
+    }
+  ],
+  "travelInfo": "Direct road links via the B4112 Lutterworth Road, Gypsy Lane, and rapid connections to the A5 and M69.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans park on private driveways in Whitestone?",
+      "answer": "Yes, our 3.5-tonne Luton vans fit easily onto standard domestic driveways, keeping the carriageway completely clear for neighbours.",
+      "display": true
+    },
+    {
+      "question": "Do you provide wardrobe cartons for hanging clothes in Whitestone?",
+      "answer": "Yes, we supply tall wardrobe boxes with integrated hanging rails so your clothing transfers straight from your wardrobe crease-free.",
+      "display": true
+    },
+    {
+      "question": "Do you move large garden planters and outdoor furniture in Whitestone?",
+      "answer": "Yes, our hydraulic tail lifts make loading heavy concrete pots, teak garden tables, and barbecue sets safe and straightforward.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes guaranteed in Whitestone?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.508,
+  "lng": -1.442,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

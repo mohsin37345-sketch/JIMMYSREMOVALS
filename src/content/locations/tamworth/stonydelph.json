@@ -1,0 +1,72 @@
+{
+  "town": "Stonydelph",
+  "slug": "stonydelph",
+  "county": "Staffordshire",
+  "heroHeading": "Expert House Removals in Stonydelph",
+  "metaTitle": "Stonydelph Removals | Tamworth House Movers | Jimmys",
+  "metaDescription": "Expert house removals in Stonydelph, Tamworth. Modern Luton vans, insured DBS crews, and comprehensive packing options. Book your free survey today.",
+  "intro": "Organising a domestic relocation in Stonydelph? Jimmys Removals provides an expert, efficient removal service across this substantial eastern district of Tamworth. Developed largely during the late 1970s and 1980s as part of Tamworth's planned expansion, Stonydelph features an extensive network of family residential closes, link-detached houses, townhouses, and maisonettes centered around Pennine Way, Crowden Road, and Ellerbeck. Our dedicated moving porters possess the local experience and equipment necessary to handle the distinctive pedestrianised walkways and courtyard parking arrangements found throughout the estate.\n\nWe provide 3.5-tonne Luton box vans equipped with electric tail lifts, allowing us to load heavy appliances, suites, and wardrobes securely from ground height. Every move includes comprehensive Fully insured at no extra cost. We supply thick quilted transit blankets, waterproof mattress covers, and carpet protectors, delivering an immaculate door-to-door service with transparent fixed pricing and zero completion delay fees.",
+  "localKnowledge": "Stonydelph's Radburn-style estate design presents specific logistical characteristics that set it apart from traditional street patterns. Many homes along closes such as Ellerbeck, Wainsbeck, and Deepdale are arranged facing landscaped pedestrian footpaths, with vehicular access and resident parking situated in communal courtyard bays some distance from property front doors. For these properties, direct vehicular parking right outside the front threshold is often impossible.\n\nOur removal teams come prepared with pneumatic-tyred platform dollies and heavy-duty four-wheel sack barrows that allow smooth, rapid transport of boxes and furnishings across footpaths and pedestrian bridges without causing strain or delay. We also carefully plan van positioning in designated communal bays to prevent obstructing fellow residents, coordinating with you beforehand to reserve ideal loading spaces.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Amington",
+      "slug": "tamworth/amington"
+    },
+    {
+      "name": "Glascote",
+      "slug": "tamworth/glascote"
+    },
+    {
+      "name": "Wilnecote",
+      "slug": "tamworth/wilnecote"
+    }
+  ],
+  "travelInfo": "Direct road access via Pennine Way, Marlborough Way, and quick dual-carriageway access to the A5 bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you handle homes located along pedestrian paths in Stonydelph?",
+      "answer": "We bring heavy-duty platform dollies and sack barrows with pneumatic rubber wheels to transport goods smoothly and quietly from parking courtyards to your front door.",
+      "display": true
+    },
+    {
+      "question": "Can you park your Luton vans in Stonydelph communal residential bays?",
+      "answer": "Yes, our 3.5-tonne Luton vans fit into standard parking bays and turning heads without impeding neighbours or blocking garage access.",
+      "display": true
+    },
+    {
+      "question": "Can you dismantle large wardrobes and dining sets in Stonydelph?",
+      "answer": "Yes, our moving crews carry electric screwdrivers and assembly tools to dismantle and reassemble all styles of flat-pack and solid timber furniture efficiently.",
+      "display": true
+    },
+    {
+      "question": "Do you provide Fully insured insurance for Stonydelph moves?",
+      "answer": "Yes, every relocation in Stonydelph is automatically backed by Fully insured.",
+      "display": true
+    }
+  ],
+  "lat": 52.616,
+  "lng": -1.652,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

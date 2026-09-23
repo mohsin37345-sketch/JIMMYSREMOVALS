@@ -1,0 +1,19 @@
+{
+  "name": "Karen Archer",
+  "town": "Birmingham",
+  "service": "Full House Move",
+  "rating": 5,
+  "date": "2026-08-30",
+  "relativeTime": "3 weeks ago",
+  "isNew": true,
+  "reviewCount": "2 reviews",
+  "authorUrl": "https://www.google.com/maps/contrib/115244889550369575552/reviews?hl=en-GB",
+  "pricePaid": "Reasonable price | £400–600",
+  "body": "Really great service for my full house move with a lot of stuff! I had some tricky bits of furniture but they handled with such care and professionalism. Some of my furniture is now more sturdy following the move after some unexpected but helpful adjustments.",
+  "ownerResponse": {
+    "date": "3 weeks ago",
+    "body": "Thank you so much for your appericiation."
+  },
+  "source": "Google Customer Review",
+  "verified": true
+}

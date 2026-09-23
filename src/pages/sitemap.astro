@@ -21,8 +21,9 @@ try {
   blogPosts = [];
 }
 
-const tier1Locations = locations.filter((loc) => loc.data.tier === 1);
-const tier2Locations = locations.filter((loc) => loc.data.tier === 2);
+const tier1Locations = locations.filter((loc) => loc.data.tier === 1 && !loc.data.region);
+const tier2Locations = locations.filter((loc) => loc.data.tier === 2 && !loc.data.region);
+const subAreaLocations = locations.filter((loc) => Boolean(loc.data.region));
 
 const corePages = [
   { title: 'Home', href: '/' },
@@ -34,7 +35,7 @@ const corePages = [
   { title: 'Customer Reviews & Feedback', href: '/reviews/' },
   { title: 'Frequently Asked Questions', href: '/faqs/' },
   { title: 'Instant Moving Cost Calculator', href: '/moving-cost-calculator/' },
-  { title: 'Birmingham Clean Air Zone (CAZ) Compliance', href: '/clean-air-zone/' },
+  { title: 'Birmingham Removals Guide', href: '/removals/birmingham/' },
   { title: 'Contact Our Birmingham Office', href: '/contact-us/' },
   { title: 'Get a Free Fixed-Price Quote', href: '/get-a-quote/' }
 ];
@@ -146,6 +147,27 @@ const legalPages = [
           ))}
         </div>
       </div>
+
+      <!-- Sub-Area & Local District Pages -->
+      {subAreaLocations.length > 0 && (
+        <div class="md:col-span-2 lg:col-span-3 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+            <Icon name="compass" class="w-5 h-5 text-amber-500" />
+            <span>Sub-Area & District Pages ({subAreaLocations.length})</span>
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-sm">
+            {subAreaLocations.map((loc) => (
+              <a
+                href={`/areas/${loc.data.region}/${loc.data.slug}/`}
+                class="p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors flex items-center gap-2"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span>{loc.data.town} Removals</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       <!-- Service-Area Routes -->
       <div class="md:col-span-2 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">

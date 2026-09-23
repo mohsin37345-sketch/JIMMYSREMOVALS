@@ -1,7 +1,7 @@
 {
   "service": "house-removals",
   "location": "coventry",
-  "uniqueIntro": "For smooth, stress-free house removals across Coventry, trust Jimmys Removals. Whether relocating between 1930s semi-detached homes in Cheylesmore and Styvechale or moving into modern family estates in Bannerbrook and Walsgrave, our dedicated teams take care of all packing, loading, and transit with utmost care.",
+  "uniqueIntro": "For smooth, organized house removals across Coventry, trust Jimmys Removals. Whether relocating between 1930s semi-detached homes in Cheylesmore and Styvechale or moving into modern family estates in Bannerbrook and Walsgrave, our dedicated teams take care of all packing, loading, and transit with utmost care.",
   "localAngle": "Coventry's iconic ring road (A4053) requires defensive, expert driving when operating loaded 3.5-tonne Luton vans. Our drivers know every entry and exit slip road to avoid unnecessary loop delays.",
   "faqs": [
     {
@@ -10,8 +10,8 @@
       "display": true
     },
     {
-      "question": "Are your removal vans exempt from Coventry clean air charges?",
-      "answer": "Yes, Coventry does not levy clean air charges on private removals vans.",
+      "question": "How do you manage parking outside terraced streets in Coventry?",
+      "answer": "Our drivers position our 3.5-tonne Luton vans carefully to maintain through-access while keeping loading distances as short as possible.",
       "display": true
     },
     {

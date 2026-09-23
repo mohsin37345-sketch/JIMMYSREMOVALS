@@ -3,8 +3,8 @@
   "slug": "shirley",
   "county": "West Midlands",
   "metaTitle": "Shirley Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Shirley. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
-  "intro": "Jimmys Removals provides premium house removals and packing across Shirley and Monkspath. As a highly desirable part of the Solihull borough, Shirley combines excellent shopping along Parkgate, modern family estates in Cheswick Green and Dickens Heath, and classic 1930s avenues where our polite removals team delivers first-class care. We ensure your furniture is blanket-wrapped and transported securely with full insurance coverage.  From luxury apartments to detached family residences, our removals crew provides a seamless, polite, and fully insured moving service that takes the strain off moving day throughout Shirley. We provide clear, itemised quotations and ensure every room is set up exactly to your liking.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Shirley. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
+  "intro": "Jimmys Removals provides professional house removals and packing across Shirley and Monkspath. As a highly desirable part of the Solihull borough, Shirley combines excellent shopping along Parkgate, modern family estates in Cheswick Green and Dickens Heath, and classic 1930s avenues where our polite removals team delivers first-class care. We ensure your furniture is blanket-wrapped and transported securely with full insurance coverage.  From luxury apartments to detached family residences, our removals crew provides a smooth, polite, and fully insured moving service that takes the strain off moving day throughout Shirley. We provide clear, itemised quotations and ensure every room is set up exactly to your liking.",
   "localKnowledge": "Shirley is centred on the busy A34 Stratford Road. Our drivers know how to bypass commuter queues during peak shopping hours, navigating residential estates in Monkspath and Dickens Heath with precision to ensure timely move execution.",
   "postcodes": [
     "B90"
@@ -26,7 +26,7 @@
   "travelInfo": "Direct links via the A34 Stratford Road to M42 Junction 4.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Shirley has no Clean Air Zone charges."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -55,7 +55,7 @@
     },
     {
       "question": "Do you offer white-glove packing in Shirley?",
-      "answer": "Yes, we provide full professional packing using premium double-walled cartons.",
+      "answer": "Yes, we provide full professional packing using professional double-walled cartons.",
       "display": true
     }
   ],

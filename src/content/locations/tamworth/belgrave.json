@@ -1,0 +1,72 @@
+{
+  "town": "Belgrave",
+  "slug": "belgrave",
+  "county": "Staffordshire",
+  "heroHeading": "Professional House Removals in Belgrave",
+  "metaTitle": "Belgrave Removals | Tamworth Moving Company | Jimmys",
+  "metaDescription": "Professional house removals in Belgrave, Tamworth. Experienced local movers, protective blanket wrapping, and fixed rates. Call 07404 353516 today.",
+  "intro": "Looking for a punctual, professional removals company in Belgrave? Jimmys Removals provides comprehensive residential and apartment moving services across this popular residential district of south Tamworth. Built predominantly during the 1960s and 1970s, Belgrave comprises an established network of family-friendly cul-de-sacs, three- and four-bedroom semi-detached homes, and practical bungalows surrounding Birds Bush Road, Exley, and Wilnecote Lane. Our directly employed moving specialists take the physical exhaustion out of moving home, delivering dependable Luton van transport and expert porter assistance.\n\nFrom handling bulky corner sofas, double wardrobes, and heavy washing machines to packing delicate fine porcelain, our team treats your household goods with the greatest care. We supply quilted furniture covers, heavy-duty transit ties, and carpet protectors, preventing scuffs to woodwork and flooring on both ends of the journey. With guaranteed fixed pricing, clear communication, and full Fully insured insurance up to Fully insured, we make moving home in Belgrave completely organized.",
+  "localKnowledge": "Belgrave benefits from a well-planned suburban street layout with generous road widths and ample private driveways along streets like Birds Bush Road, Collett, and Valley Drive. This enables our 3.5-tonne Luton vehicles to pull safely onto private forecourts or park directly against property kerbs without disrupting local traffic. However, during morning and afternoon school drop-off periods around local primary schools, residential side roads can experience temporary congestion.\n\nOur drivers plan arrival windows to bypass school-run traffic, ensuring loading starts promptly on moving morning. For properties with steep stepped garden paths or elevated doorways, our porters utilize heavy-duty sack barrows and ramps to transport items safely, ensuring that appliances and heavy furniture are shifted with zero risk of damage to property or goods.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Kettlebrook",
+      "slug": "tamworth/kettlebrook"
+    },
+    {
+      "name": "Wilnecote",
+      "slug": "tamworth/wilnecote"
+    },
+    {
+      "name": "Two Gates",
+      "slug": "tamworth/two-gates"
+    }
+  ],
+  "travelInfo": "Convenient road access via Birds Bush Road, Marlborough Way, and direct links to the A5 bypass.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your removal vans park on private driveways in Belgrave?",
+      "answer": "Yes, our modern 3.5-tonne Luton vans are light enough to park safely on domestic paved driveways without damaging block paving, tarmac, or concrete.",
+      "display": true
+    },
+    {
+      "question": "How do you protect light-coloured carpets during moves in Belgrave?",
+      "answer": "Our moving porters lay down heavy-duty self-adhesive floor protection film and neoprene carpet runners throughout all hallways, stairs, and landings.",
+      "display": true
+    },
+    {
+      "question": "Can you move garden furniture and shed contents in Belgrave?",
+      "answer": "Yes, we regularly transport lawnmowers, power tools, garden furniture sets, and outdoor planters, ensuring garden items are securely lashed inside the van.",
+      "display": true
+    },
+    {
+      "question": "How far in advance should I book my move in Belgrave?",
+      "answer": "We recommend confirming your booking 7 to 14 days ahead once completion dates are agreed, but our 7-day schedule allows us to handle short-notice moves whenever possible.",
+      "display": true
+    }
+  ],
+  "lat": 52.618,
+  "lng": -1.674,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

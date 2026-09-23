@@ -1,12 +1,12 @@
 {
   "service": "house-removals",
   "location": "birmingham",
-  "uniqueIntro": "Looking for dedicated house removals in Birmingham? Jimmys Removals provides comprehensive domestic moving solutions across the Birmingham metropolitan area. Operating a 100% Clean Air Zone compliant fleet, our DBS-checked removal teams move everything from historic Victorian properties in Edgbaston, Harborne, and Moseley to new developments in Digbeth and Perry Barr with complete peace of mind.",
-  "localAngle": "Moves within Birmingham frequently encounter the Clean Air Zone boundary along the A4540 Middleway. With our Euro 6 compliant fleet, you never incur unexpected clean air daily van surcharges. We also liaise with local building concierges across city-centre apartment complexes to reserve loading bays and lift slots.",
+  "uniqueIntro": "Looking for dedicated house removals in Birmingham? Jimmys Removals provides comprehensive domestic moving solutions across the Birmingham metropolitan area. With zero CAZ surcharges on Birmingham moves, our DBS-checked removal teams move everything from historic Victorian properties in Edgbaston, Harborne, and Moseley to new developments in Digbeth and Perry Barr with complete peace of mind.",
+  "localAngle": "Moves within Birmingham frequently encounter the Clean Air Zone boundary along the A4540 Middleway. With Jimmys Removals, you receive zero CAZ surcharges on your move, with no Clean Air Zone charges added to your quote. We also liaise with local building concierges across city-centre apartment complexes to reserve loading bays and lift slots.",
   "faqs": [
     {
       "question": "Do you charge extra for Birmingham Clean Air Zone entry on house moves?",
-      "answer": "No. Our entire vehicle fleet meets Euro 6 low-emission regulations, meaning zero CAZ fees for our clients inside the A4540 Middleway.",
+      "answer": "No Clean Air Zone charges are added to your quote. We operate inside the A4540 Middleway ring road with zero CAZ surcharges.",
       "display": true
     },
     {
@@ -21,7 +21,7 @@
     },
     {
       "question": "What insurance is included with a Birmingham house removal?",
-      "answer": "Every domestic move includes up to £50,000 Goods in Transit cover and £2,000,000 Public Liability insurance as standard.",
+      "answer": "Every domestic move includes Fully insured and Fully insured as standard.",
       "display": true
     }
   ],

@@ -2,11 +2,11 @@
   "service": "man-and-van",
   "location": "birmingham",
   "uniqueIntro": "Need an affordable, agile man and van service in Birmingham? Jimmys Removals provides flexible hourly or fixed-rate man and van bookings across the city. Whether you are moving a studio flat in Digbeth, buying furniture on Facebook Marketplace, or relocating a student room in Selly Oak, we provide the muscle and modern transport.",
-  "localAngle": "Our man and van fleet is 100% Clean Air Zone compliant, allowing free transit across the A4540 Middleway without daily emissions penalties. We offer 1, 2, or 3 working movers depending on your requirements.",
+  "localAngle": "Our man and van fleet operates across the A4540 Middleway with zero CAZ surcharges added to your quote. We offer 1, 2, or 3 working movers depending on your requirements.",
   "faqs": [
     {
-      "question": "Is your Birmingham man and van service compliant with the Clean Air Zone?",
-      "answer": "Yes, all our vans meet Euro 6 standards, so you will never pay CAZ surcharges in central Birmingham.",
+      "question": "Are there Clean Air Zone charges for Birmingham man and van moves?",
+      "answer": "No. Zero CAZ surcharges are added to your quote when moving across central Birmingham.",
       "display": true
     },
     {

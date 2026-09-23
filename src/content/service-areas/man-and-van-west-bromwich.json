@@ -1,0 +1,32 @@
+{
+  "service": "man-and-van",
+  "location": "west-bromwich",
+  "uniqueIntro": "Looking for a punctual, professional man and van service in West Bromwich? Jimmys Removals provides flexible transport solutions for flat moves, furniture deliveries, student relocations, and office transfers across B70 and B71. Operating clean 3.5-tonne Luton vans fitted with hydraulic tail lifts, our directly employed porters assist with all heavy lifting, blanket wrapping, and van securing. Whether moving a single sofa from Greets Green or clearing an apartment near Sandwell & Dudley station, we provide transparent fixed quotes with zero hidden mileage fees.",
+  "localAngle": "With rapid access from our operations base via the M5 and expressway corridors, we provide prompt man and van dispatch across West Bromwich and neighbouring Black Country districts.",
+  "faqs": [
+    {
+      "question": "Can I book an evening or weekend man and van move in West Bromwich?",
+      "answer": "Yes. We operate 24 hours, 7 days a week, offering convenient evening and weekend slots to accommodate your working hours.",
+      "display": true
+    },
+    {
+      "question": "Does your man and van service help carry furniture up stairs?",
+      "answer": "Yes. Our DBS-checked mover carries items directly into your chosen rooms, navigating staircases and doorways with padded protective covers.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Man and van Luton vehicle in West Bromwich"
+    },
+    "local": {
+      "src": "",
+      "alt": "Porter loading domestic furniture in West Bromwich street"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed mover lifting boxed goods with tail lift in West Bromwich"
+    }
+  }
+}

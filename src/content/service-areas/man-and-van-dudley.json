@@ -1,0 +1,32 @@
+{
+  "service": "man-and-van",
+  "location": "dudley",
+  "uniqueIntro": "Looking for an experienced man and van in Dudley? Jimmys Removals delivers flexible, dependable transport for small house moves, apartment transitions, student relocations, and bulky furniture transport across DY1, DY2, and DY3. Dudley's distinctive hilly terrain, steep terraced streets, and historic avenues require drivers who know how to handle vehicles on gradients safely. Our modern 3.5-tonne Luton vans feature 500kg electric tail lifts and heavy-duty chocks, ensuring safe curbside loading and careful room-of-choice placement.",
+  "localAngle": "Navigating hills around Kate's Hill, Gornal, and Sedgley demands careful vehicle positioning. Our DBS-checked movers arrive equipped with ramps, dollies, and floor runners to protect your home throughout move day.",
+  "faqs": [
+    {
+      "question": "Can your man and van handle steep driveway access in Dudley?",
+      "answer": "Yes. Our drivers are trained in gradient parking and load securing, deploying wheel chocks and tail lifts to ensure stable loading on hillside properties.",
+      "display": true
+    },
+    {
+      "question": "Do you move large sofas and appliances in Dudley?",
+      "answer": "Yes. Our 3.5-tonne Luton vans accommodate large corner suites, range cookers, and double beds, with our mover assisting with all physical lifting.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Man and van Luton vehicle in Dudley street"
+    },
+    "local": {
+      "src": "",
+      "alt": "Porter loading furniture on hill in Dudley"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed mover securing furniture inside Luton van in Dudley"
+    }
+  }
+}

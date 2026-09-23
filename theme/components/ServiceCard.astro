@@ -6,12 +6,13 @@ export interface Props {
   slug: string;
   icon: string;
   summary: string;
-  priceFrom?: number;
-  priceUnit?: string;
   featured?: boolean;
+  town?: string;
+  targetHref?: string;
 }
 
-const { title, slug, icon, summary, priceFrom, priceUnit = 'fixed quote', featured = false } = Astro.props;
+const { title, slug, icon, summary, featured = false, town, targetHref } = Astro.props;
+const serviceUrl = targetHref || (town ? `/removals/${town}/${slug}/` : `/services/${slug}/`);
 ---
 
 <article class={`group relative p-6 rounded-2xl bg-white dark:bg-slate-900 border ${featured ? 'border-amber-500/50 shadow-amber-500/5' : 'border-slate-200 dark:border-slate-800'} shadow-md hover:shadow-xl transition-all duration-200 flex flex-col justify-between interactive-card`}>
@@ -21,7 +22,7 @@ const { title, slug, icon, summary, priceFrom, priceUnit = 'fixed quote', featur
     </div>
 
     <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-      <a href={`/removals/${slug}/`} class="after:absolute after:inset-0">
+      <a href={serviceUrl} class="hover:underline">
         {title}
       </a>
     </h3>
@@ -31,20 +32,20 @@ const { title, slug, icon, summary, priceFrom, priceUnit = 'fixed quote', featur
     </p>
   </div>
 
-  <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-    {priceFrom ? (
-      <div>
-        <span class="text-slate-400 block text-[11px]">From</span>
-        <span class="font-extrabold text-slate-900 dark:text-white text-sm">£{priceFrom}</span>
-        <span class="text-slate-400 text-[10px]"> ({priceUnit})</span>
-      </div>
-    ) : (
-      <span class="text-slate-400 text-[11px]">Fixed Price Quote</span>
-    )}
+  <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3 text-xs">
+    <a
+      href="/get-a-quote/"
+      class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-bold transition shadow-sm"
+    >
+      <span>Get a Fixed Quote</span>
+    </a>
 
-    <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-      <span>Explore {title}</span>
+    <a
+      href={serviceUrl}
+      class="font-semibold text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 flex items-center gap-1 transition"
+    >
+      <span>Learn more</span>
       <Icon name="chevron-right" class="w-3.5 h-3.5" />
-    </span>
+    </a>
   </div>
 </article>

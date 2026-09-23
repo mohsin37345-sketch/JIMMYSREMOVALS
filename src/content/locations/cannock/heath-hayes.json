@@ -1,0 +1,73 @@
+{
+  "town": "Heath Hayes",
+  "slug": "heath-hayes",
+  "county": "Staffordshire",
+  "heroHeading": "Expert House Removals in Heath Hayes",
+  "metaTitle": "Heath Hayes Removals | Cannock House Movers | Jimmys",
+  "metaDescription": "Expert house removals in Heath Hayes, Cannock. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Organising a home relocation in Heath Hayes? Jimmys Removals delivers an experienced, fully insured removals service across this vibrant community situated between Cannock and Norton Canes. From established family homes near the Five Ways island and Hednesford Road to modern detached properties within the John Hayward and Hawks Green borders, our professional moving crews treat your furnishings with utmost diligence. We supply clean 3.5-tonne Luton vans equipped with tail lifts, quilted sofa covers, and mattress bags to keep your goods safe.\n\nOur respectful, uniformed staff take care of the entire relocation process, from initial box packing to furniture assembly at your destination. Whether you are moving between local streets or undertaking a long-distance relocation across the West Midlands, our fixed-price quotations ensure that you know your exact removal costs upfront without unexpected completion delay fees.",
+  "localKnowledge": "Heath Hayes is centred around the busy Five Ways roundabout, where Hednesford Road, Cannock Road, and Brownhills Road converge. Managing logistics around this junction requires sound local timing, especially during school rush hours near local academies. Our drivers use alternate routes via Gorsemoor Road and Wimblebury Road to bypass slow queues.\n\nResidential neighbourhoods in Heath Hayes feature a combination of broad estate avenues with private driveways and tighter modern cul-de-sacs with shared parking courts. Our versatile Luton vans are sized to park securely close to front entrance porches, minimizing carrying distances and keeping pavements clear for pedestrian neighbours.",
+  "postcodes": [
+    "WS11",
+    "WS12"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Hednesford",
+      "slug": "cannock/hednesford"
+    },
+    {
+      "name": "Norton Canes",
+      "slug": "cannock/norton-canes"
+    },
+    {
+      "name": "Wimblebury",
+      "slug": "cannock/wimblebury"
+    }
+  ],
+  "travelInfo": "Direct road links via the A5190 Lichfield Road, Hednesford Road, and swift access to the M6 Toll at Norton Canes.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can you navigate busy junctions around Five Ways in Heath Hayes?",
+      "answer": "Yes, our drivers have detailed local knowledge of Heath Hayes traffic flows and schedule arrival times to avoid peak congestion around the Five Ways island.",
+      "display": true
+    },
+    {
+      "question": "Do you provide full packing services for detached homes in Heath Hayes?",
+      "answer": "Yes, we offer comprehensive packing services where our experienced team boxes up your entire household contents using professional packing supplies.",
+      "display": true
+    },
+    {
+      "question": "Are your removal vans equipped with hydraulic tail lifts?",
+      "answer": "All our 3.5-tonne Luton vans feature 500kg hydraulic tail lifts to ensure safe, smooth loading of upright pianos, sideboards, and heavy appliances.",
+      "display": true
+    },
+    {
+      "question": "How far in advance should I book my Heath Hayes move?",
+      "answer": "We recommend booking 1 to 2 weeks ahead once your exchange date is confirmed, although we always try to accommodate short-notice requests.",
+      "display": true
+    }
+  ],
+  "lat": 52.696,
+  "lng": -1.996,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

@@ -1,0 +1,1027 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
+import ContactForm from 'theme/components/ContactForm.astro';
+import ImageSlot from 'theme/components/ImageSlot.astro';
+import Icon from 'theme/components/Icon.astro';
+import { pricingData } from 'src/data/pricing';
+import { siteConfig } from 'src/data/site';
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  location: {
+    town: string;
+    slug: string;
+    county: string;
+    metaTitle: string;
+    metaDescription: string;
+    heroHeading?: string;
+    intro: string;
+    localKnowledge: string;
+    postcodes: string[];
+    nearbyAreas: Array<{ name: string; slug: string }>;
+    travelInfo?: string;
+    cleanAirZone?: {
+      enabled: boolean;
+      note?: string;
+    };
+    servicesOffered?: string[];
+    localFaqs?: Array<{ question: string; answer: string; display: boolean }>;
+    testimonial?: {
+      name: string;
+      text: string;
+      service: string;
+      date: string;
+    };
+    lat?: number;
+    lng?: number;
+    tier?: 1 | 2;
+    heroImage?: string;
+    images?: {
+      hero?: { src?: string; alt?: string };
+      local?: { src?: string; alt?: string };
+      team?: { src?: string; alt?: string };
+    };
+  };
+}
+
+const { location } = Astro.props;
+
+const isBirmingham = location.slug.toLowerCase() === 'birmingham';
+
+// Fetch all service areas to check which dedicated /removals/{town}/{service}/ pages exist
+const allServiceAreas = await getCollection('serviceAreas');
+
+// 10 Core Services list
+const coreServices = [
+  { id: 'house-removals', title: 'House Removals', icon: 'home', desc: `Full home removals across ${location.town} in equipped 3.5-tonne Luton vans.` },
+  { id: 'flat-removals', title: 'Flat Removals', icon: 'building', desc: `Apartment and upper-floor flat moves with lift coordination and careful handling.` },
+  { id: 'man-and-van', title: 'Man and Van', icon: 'truck', desc: `Flexible transport with a 3.5-tonne Luton van and an experienced mover.` },
+  { id: 'packing-services', title: 'Packing Services', icon: 'box', desc: `Full or fragile packing using double-walled boxes, tissue paper, and bubble wrap.` },
+  { id: 'storage', title: 'Storage Solutions', icon: 'archive', desc: `Secure containerised storage with direct collection and redelivery.` },
+  { id: 'furniture-removals', title: 'Furniture Removals', icon: 'couch', desc: `Single items, heavy suites, and room-of-choice delivery with hydraulic tail lifts.` },
+  { id: 'furniture-dismantling', title: 'Furniture Dismantling', icon: 'wrench', desc: `Careful disassembly and reassembly of wardrobes, bed frames, and flat-pack units.` },
+  { id: 'office-removals', title: 'Office Removals', icon: 'briefcase', desc: `Commercial office relocations planned around your working hours.` },
+  { id: 'student-removals', title: 'Student Removals', icon: 'academic', desc: `Term-time relocations between halls, shared student houses, and home.` },
+  { id: 'same-day-delivery', title: 'Same Day Delivery', icon: 'clock', desc: `Urgent point-to-point dispatch across the West Midlands, subject to vehicle availability.` }
+];
+
+const serviceCards = coreServices.map((svc) => {
+  const hasDedicatedPage = allServiceAreas.some(
+    (sa) => sa.data.service === svc.id && sa.data.location === location.slug
+  );
+  return {
+    ...svc,
+    href: hasDedicatedPage ? `/removals/${location.slug}/${svc.id}/` : `/services/${svc.id}/`,
+    isDedicated: hasDedicatedPage
+  };
+});
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Areas Covered', item: '/areas/' },
+  { name: `${location.town} Removals`, item: `/removals/${location.slug}/` }
+];
+
+// Ensure FAQs include cost FAQ and town-specific questions
+const defaultFaqs = [
+  {
+    question: `How much do house removals cost in ${location.town}?`,
+    answer: `House removals in ${location.town} typically range from £220 to £400 for a 1-bedroom flat, £320 to £600 for a 2-bedroom property, £500 to £850 for a 3-bedroom house, and from £800 for 4 bedrooms or larger. Final pricing depends on property size, volume, access, and travel distance, with a guaranteed fixed quote provided before booking.`
+  },
+  {
+    question: `What size vans do you use for moves in ${location.town}?`,
+    answer: `We operate 3.5-tonne Luton low-loader box vans equipped with 500kg hydraulic tail lifts, high-grade furniture blankets, and heavy-duty transit ties. These vans offer ample capacity while maintaining the maneuverability needed for residential roads.`
+  },
+  {
+    question: `Are your removal teams directly employed and DBS-checked?`,
+    answer: `Yes. All Jimmys Removals porters and drivers are directly employed, uniformed, and DBS-checked. We never subcontract your move to unverified third-party transport workers.`
+  },
+  {
+    question: `What happens if there is a delay in key handover on completion day?`,
+    answer: `We understand that solicitor and banking delays can happen on completion day. Our operations team maintains close communication with you throughout the day to ensure a smooth transition with zero hidden fees.`
+  },
+  {
+    question: `How far in advance should I book my move in ${location.town}?`,
+    answer: `We recommend booking 1 to 3 weeks in advance to secure your preferred date, especially for Fridays and month-end dates. However, we operate 24 hours, 7 days a week, and accommodate short-notice or same-day moves whenever vehicle scheduling allows.`
+  },
+  {
+    question: `Do you provide packing materials and wardrobe boxes?`,
+    answer: `Yes. We supply double-walled corrugated cardboard cartons, wardrobe boxes with hanging rails, bubble wrap, packing paper, and tape. We also offer full and fragile-only packing services.`
+  },
+  {
+    question: `Can you dismantle and reassemble large furniture?`,
+    answer: `Yes. Our movers carry comprehensive tool kits to disassemble and reassemble wardrobes, divan and framed beds, dining tables, and flat-pack units.`
+  },
+  {
+    question: `How do you protect carpets and door frames during the move?`,
+    answer: `Our crew lays down heavy-duty non-slip floor runners across main entrance hallways, stairs, and landings, and uses padded covers for door frames and banisters.`
+  }
+];
+
+if (isBirmingham) {
+  defaultFaqs.unshift({
+    question: 'Are there Clean Air Zone charges for removals in Birmingham?',
+    answer: 'No Clean Air Zone charges are added to your quote. We operate inside the A4540 Middleway ring road with zero CAZ surcharges for our customers.'
+  });
+}
+
+const mergedFaqs = [
+  ...(location.localFaqs || []).filter(f => f.display && !f.question.includes('{{')),
+  ...defaultFaqs
+].slice(0, 12);
+
+// Check if testimonial is valid and doesn't contain placeholders
+const hasValidReview = location.testimonial &&
+  location.testimonial.text &&
+  !location.testimonial.text.includes('{{') &&
+  !location.testimonial.name.includes('{{');
+
+// Clean NAP data
+const fullBusinessName = siteConfig.legalName;
+const tradingName = siteConfig.tradingName;
+const companyNumber = siteConfig.companyNumber;
+const regOffice = siteConfig.address.fullAddress;
+// Town-tailored challenges, scenarios, and property types
+const nearbyList = location.nearbyAreas && location.nearbyAreas.length > 0
+  ? location.nearbyAreas.map((a) => a.name).join(', ')
+  : 'the wider West Midlands';
+const postcodeSummary = location.postcodes && location.postcodes.length > 0
+  ? location.postcodes.slice(0, 3).join(', ')
+  : location.town;
+
+const localChallenges = [
+  {
+    num: 1,
+    title: `Kerbside Parking & Access in ${location.town}`,
+    desc: `Residential turnings across ${location.town} (${postcodeSummary}) frequently feature parked vehicles on both kerbsides. Our drivers position 3.5-tonne Luton vans safely without blocking through-traffic or neighbours' driveways.`
+  },
+  {
+    num: 2,
+    title: `Apartment Lifts & Concierge Protocols`,
+    desc: `Multi-storey flat moves require coordinated lift allocation. For properties in ${location.town}, we liaise directly with building concierges to reserve service lift windows and stage packed boxes for rapid loading.`
+  },
+  {
+    num: 3,
+    title: `Regional Route Planning for ${location.town}`,
+    desc: location.travelInfo 
+      ? `Our logistics team schedules departure times around key arterial corridors: ${location.travelInfo} to steer clear of peak morning congestion.`
+      : `We monitor live traffic on regional trunk roads and motorway junctions serving ${location.town} to maintain punctual arrival schedules.`
+  },
+  {
+    num: 4,
+    title: `Narrow Stairwells & Heritage Doorways`,
+    desc: `Older residences across ${location.town} often present steep stairs and tight vestibule angles. Our porters apply protective neoprene wraps to banisters and door frames, dismantling modular furniture as needed.`
+  },
+  {
+    num: 5,
+    title: `Heavy Kitchen Appliances & Range Cookers`,
+    desc: `American fridge-freezers, range ovens, and washing machines in ${location.town} homes are manoeuvred safely with heavy-duty dollies and lifted smoothly via 500kg electric vehicle tail lifts.`
+  },
+  {
+    num: 6,
+    title: `Completion Day Handover Flexibility`,
+    desc: `If bank funds or estate agent key releases face afternoon delays in ${location.town}, our crew remains dedicated to your booking, waiting on site so you are safely unpacked before nightfall.`
+  }
+];
+
+const localScenarios = [
+  {
+    title: `1. Full House Relocations in ${location.town}`,
+    desc: `From semi-detached family homes to detached residences across ${location.town} (${postcodeSummary}), our teams coordinate systematic room-by-room loading, furniture wrapping, and wardrobe dismantling.`
+  },
+  {
+    title: `2. Flats & Apartment Moves`,
+    desc: `Relocating to or from apartments in ${location.town}. We coordinate with building management, manage lift time slots, and protect communal corridors with heavy-duty carpet runners.`
+  },
+  {
+    title: `3. Student & Room Relocations`,
+    desc: `Budget-conscious room moves connecting students and young professionals in ${location.town} with universities across the region, transporting study desks, trunks, and boxed possessions.`
+  },
+  {
+    title: `4. Commercial & Office Moves in ${location.town}`,
+    desc: `Relocating local offices, commercial premises, or retail shops in ${location.town}. We move workstations, file cabinets, and IT equipment during evenings or weekends to maintain business continuity.`
+  },
+  {
+    title: `5. Urgent Same-Day Removals`,
+    desc: `Facing an unexpected move deadline or rapid exchange in ${location.town}? Operating 24 hours, 7 days a week with West Midlands depots, we accommodate emergency moves subject to fleet availability.`
+  },
+  {
+    title: `6. Single Item & Heavy Furniture Transport`,
+    desc: `Need an individual sofa suite, solid oak table, or piano moved between ${location.town} and ${nearbyList}? We provide tailored transport with tail-lift loading.`
+  }
+];
+
+const localPropertyTypes = [
+  {
+    title: `Period Terraces & Cottages in ${location.town}`,
+    desc: `Character homes with narrow hallways and stepped entrances across ${location.town}. Our porters use neoprene floor runners and padded banister sleeves to protect heritage woodwork.`
+  },
+  {
+    title: `Semi-Detached Houses across ${location.town}`,
+    desc: `Traditional family homes with shared driveways and gardens. We load systematically so high-priority rooms (kitchens, master bedrooms) are unloaded first at your new address.`
+  },
+  {
+    title: `Modern Detached Homes in ${location.town}`,
+    desc: `Executive detached properties in residential developments. We supply dedicated multi-van Luton capacity to complete whole-home relocations in a single smooth operation.`
+  },
+  {
+    title: `Apartments & Conversions in ${location.town}`,
+    desc: `Contemporary residential apartments and loft apartments. We handle access codes, concierge protocols, and lift protection across ${location.town}.`
+  }
+];
+
+const phone = siteConfig.phone;
+const phoneHref = siteConfig.phoneHref;
+const email = siteConfig.email;
+---
+
+<BaseLayout
+  title={location.metaTitle || `Removals in ${location.town} | Jimmys Removals`}
+  description={location.metaDescription || `Professional house removals, flat moves, and packing services across ${location.town}. DBS-checked movers, Luton vans, and guaranteed fixed quotes.`}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- ========================================================================= -->
+  <!-- A1. HERO SECTION                                                          -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white pt-8 pb-16 lg:pb-24 border-b border-slate-800 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbs} class="mb-6 text-slate-400" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Hero Content (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <Icon name="map-pin" class="w-3.5 h-3.5" />
+            <span>{location.town}, {location.county}</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            {location.heroHeading || `House Removals & Moving Services in ${location.town}`}
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed" data-nosimilarity="true">
+            Reliable, fully insured removals across {location.town} and the West Midlands. Directly employed, DBS-checked movers operating modern 3.5-tonne Luton vans with guaranteed fixed quotes.
+          </p>
+
+          <!-- Same-Day Delivery Highlight (same as homepage) -->
+          <div class="flex flex-wrap items-center gap-3 pt-1" data-nosimilarity="true">
+            <a
+              href="/services/same-day-delivery/"
+              class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 backdrop-blur-md text-xs sm:text-sm text-amber-300 font-bold transition-all shadow-sm group"
+            >
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              <Icon name="clock" class="w-4 h-4 text-amber-400" />
+              <span>Same-Day Delivery Available Across Birmingham & West Midlands</span>
+              <Icon name="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a
+              href="#quote-form"
+              class="px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] flex items-center gap-2"
+            >
+              <span>Get a Fixed Quote</span>
+              <Icon name="arrow-right" class="w-4 h-4" />
+            </a>
+
+            <a
+              href={phoneHref}
+              class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition-all flex items-center gap-2"
+            >
+              <Icon name="phone" class="w-4 h-4 text-amber-400" />
+              <span>Call {phone}</span>
+            </a>
+
+            {siteConfig.whatsappEnabled && (
+              <a
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow transition-all flex items-center gap-2"
+              >
+                <Icon name="chat" class="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            )}
+          </div>
+
+          <!-- Trust Strip -->
+          <div class="pt-6 border-t border-slate-800/80" data-nosimilarity="true">
+            <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300 font-medium">
+              <li class="flex items-center gap-1.5">
+                <Icon name="clock" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Open 24 hours, 7 days a week</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <Icon name="shield-check" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>DBS-checked crews</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <Icon name="badge-check" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Fixed quotes</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <Icon name="check-circle" class="w-4 h-4 text-amber-400 shrink-0" />
+                <span>Fully insured</span>
+              </li>
+              {isBirmingham && (
+                <li class="flex items-center gap-1.5 text-amber-400">
+                  <Icon name="check-circle" class="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Zero CAZ surcharges</span>
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Hero Quote Form (5 cols) -->
+        <div id="quote-form" data-nosimilarity="true" class="lg:col-span-5 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white">
+          <div class="mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Fast & Transparent</span>
+            <h3 class="text-xl font-bold mt-1">Get Your Guaranteed Move Quote</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+              Fixed pricing with no hidden charges. We respond promptly day and night.
+            </p>
+          </div>
+          <ContactForm formType="quick-quote" prefilledLocation={location.town} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A2. INTRO SECTION & FLEET SHOWCASE                                        -->
+  <!-- ========================================================================= -->
+  <section class="py-14 lg:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 relative overflow-hidden">
+    <!-- Subtle Background Glow Accents -->
+    <div class="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <!-- Left Column: Editorial Content (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20" data-nosimilarity="true">
+            <Icon name="truck" class="w-3.5 h-3.5" />
+            <span>Dedicated Local Moving Fleet</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+            Professional Moving & Logistics Across {location.town}
+          </h2>
+
+          <div class="prose prose-slate dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed space-y-4">
+            <p class="font-medium text-slate-900 dark:text-slate-100" data-nosimilarity="true">
+              Removals in {location.town} require careful planning, punctual scheduling, and movers who understand the unique layout of local streets, housing estates, and transport corridors.
+            </p>
+            <p class="text-slate-700 dark:text-slate-300">
+              {location.intro}
+            </p>
+            {location.localKnowledge && (
+              <p class="text-slate-700 dark:text-slate-300">
+                {location.localKnowledge}
+              </p>
+            )}
+          </div>
+
+          <!-- Modern UX Feature Highlights (3 Interactive Micro-Cards) -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2" data-nosimilarity="true">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
+                  <Icon name="truck" class="w-3.5 h-3.5" />
+                </span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white">3.5T Luton Vans</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                Hydraulic tail-lifts & padded cargo tie rails
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-7 h-7 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">
+                  <Icon name="shield-check" class="w-3.5 h-3.5" />
+                </span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white">DBS Movers</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                Directly employed, uniformed staff
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="w-7 h-7 rounded-lg bg-blue-500/15 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs">
+                  <Icon name="badge-check" class="w-3.5 h-3.5" />
+                </span>
+                <span class="text-xs font-bold text-slate-900 dark:text-white">Fixed Price</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
+                Guaranteed quote with zero hidden extras
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Showcase with ImageSlot 1 (5 cols) -->
+        <div class="lg:col-span-5 space-y-3">
+          <div class="relative group rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+            <ImageSlot
+              src={location.images?.hero?.src || location.heroImage}
+              alt={location.images?.hero?.alt || `Jimmys Removals Luton van ready for a house move in ${location.town}`}
+              aspect="4/3"
+              slotId="hero"
+              loading="eager"
+              fetchpriority="high"
+            />
+
+            <!-- Glassmorphic floating card at the bottom of the photo -->
+            <div class="absolute bottom-3 left-3 right-3 p-3.5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-white/10 text-white flex items-center justify-between shadow-lg" data-nosimilarity="true">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                  <Icon name="shield" class="w-4 h-4" />
+                </div>
+                <div>
+                  <p class="text-xs font-bold leading-tight">Jimmys Removals & Logistics</p>
+                  <p class="text-[11px] text-slate-300">{location.town} & West Midlands</p>
+                </div>
+              </div>
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-slate-950 shadow-sm">
+                Fully Insured
+              </span>
+            </div>
+          </div>
+
+          <!-- Micro caption below image -->
+          <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1" data-nosimilarity="true">
+            <span class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>Clean, equipped Luton low-loaders</span>
+            </span>
+            <span>Open 24 hours, 7 days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A3. LOCAL CHALLENGES, LOCAL FIXES                                         -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Local Moving Challenges in {location.town} & How We Solve Them
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          From street parking limits to apartment lift bookings, our experienced teams prepare for every local detail.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {localChallenges.map((c) => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold">{c.num}</div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">{c.title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {c.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A4. SERVICES IN {TOWN}                                                    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Removals Services We Provide in {location.town}
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Choose a dedicated service for your upcoming move or request an all-inclusive quote.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {serviceCards.map((svc) => (
+          <a
+            href={svc.href}
+            class="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 transition-all flex flex-col justify-between"
+          >
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                <Icon name={svc.icon} class="w-5 h-5" />
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors">
+                {svc.title}
+              </h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                {svc.desc}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between text-xs font-semibold text-amber-600 dark:text-amber-400">
+              <span>{svc.isDedicated ? `${location.town} Details` : 'View Service'}</span>
+              <Icon name="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A5. WHAT'S INCLUDED                                                       -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          What Is Included with Every {location.town} Move
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Everything required to safeguard your household possessions from collection to delivery.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { title: 'Modern Luton Fleet', desc: '3.5-tonne box vans fitted with 500kg electric tail lifts for ground-level loading.' },
+          { title: 'Quilted Transit Blankets', desc: 'Thick protective furniture blankets wrapped around every polished or upholstered piece.' },
+          { title: 'Heavy-Duty Floor Runners', desc: 'Non-slip protective runners laid across entryways, hallways, and stairs.' },
+          { title: 'Waterproof Mattress Covers', desc: 'Clean polythene covers shielding mattresses against dirt and weather during transit.' },
+          { title: 'Directly Employed Crew', desc: 'Uniformed, DBS-checked movers dedicated entirely to your booking.' },
+          { title: 'Internal Lashing Rails', desc: 'Van bodies fitted with load rails and industrial ratchet webbing to prevent shifting.' },
+          { title: 'Room-of-Choice Placement', desc: 'Every carton and furniture piece carried into your specified room at your new home.' },
+          { title: 'Guaranteed Fixed Quotes', desc: 'Clear written pricing upfront so you never face unexpected completion fees.' }
+        ].map((item) => (
+          <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1.5">
+            <div class="flex items-center gap-2 text-amber-500 font-bold text-sm">
+              <Icon name="check-circle" class="w-4 h-4 shrink-0" />
+              <span>{item.title}</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A6. MOVE SCENARIOS                                                        -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Moving Scenarios We Handle Across {location.town}
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Tailored moving arrangements to suit every property size and timeline.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {localScenarios.map((scen) => (
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-2">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">{scen.title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {scen.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A7. PRICING SECTION (Isolated pricing)                                    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Transparent Cost Guide</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          House Removals Pricing Guide for {location.town}
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+          {pricingData.houseRemovals.summary}
+        </p>
+      </div>
+
+      <!-- Pricing Table -->
+      <div class="overflow-x-auto rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm mb-8">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200 dark:border-slate-700 bg-slate-100/60 dark:bg-slate-700/50 text-slate-900 dark:text-white text-xs font-bold uppercase tracking-wider">
+              <th class="py-3.5 px-4 sm:px-6">Property Size</th>
+              <th class="py-3.5 px-4 sm:px-6">Guide Price Range</th>
+              <th class="py-3.5 px-4 sm:px-6">Scope & What It Covers</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-700/60 text-xs sm:text-sm">
+            {pricingData.houseRemovals.tiers.map((tier) => (
+              <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+                <td class="py-3.5 px-4 sm:px-6 font-bold text-slate-900 dark:text-white">
+                  {tier.propertyType}
+                </td>
+                <td class="py-3.5 px-4 sm:px-6 font-extrabold text-amber-600 dark:text-amber-400">
+                  {tier.guideRange}
+                </td>
+                <td class="py-3.5 px-4 sm:px-6 text-slate-600 dark:text-slate-300">
+                  {tier.description}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Price Factors & Fixed Price Promise -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700">
+        <div>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-3">What Affects Your Final Quote</h3>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            {pricingData.priceFactors.map((factor) => (
+              <li class="flex items-start gap-2">
+                <Icon name="check-circle" class="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5" />
+                <span><strong class="text-slate-900 dark:text-white">{factor.title}:</strong> {factor.description}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="flex flex-col justify-between border-t md:border-t-0 md:border-l border-slate-100 dark:border-slate-700 pt-6 md:pt-0 md:pl-6">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
+              <Icon name="badge-check" class="w-4 h-4" />
+              <span>Guaranteed Fixed Quote</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {pricingData.fixedPricePromise}
+            </p>
+            <p class="text-[11px] text-slate-400 dark:text-slate-500 italic">
+              {pricingData.disclaimer}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row items-center gap-3">
+            <a
+              href="#quote-form"
+              class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow transition text-center"
+            >
+              Get Your Fixed Quote
+            </a>
+            <span class="text-xs text-slate-500">Open 24 hours, 7 days a week</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A8. MOVING IN {TOWN}: WHAT YOU NEED TO KNOW                               -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Local Area Logistics</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+            Moving in {location.town}: Road Links & Parking
+          </h2>
+
+          <div class="prose prose-slate dark:prose-invert max-w-none text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed">
+            {location.travelInfo ? (
+              <p>{location.travelInfo}</p>
+            ) : (
+              <p>
+                {location.town} connects directly to the wider West Midlands road network, offering rapid transport links to surrounding towns and motorways.
+              </p>
+            )}
+
+            <p data-nosimilarity="true">
+              When planning a move in {location.town}, consider kerbside parking availability outside both addresses. If your property is within a controlled parking zone or has parking restrictions, reserving spaces or notifying neighbours in advance ensures straightforward van positioning on move morning.
+            </p>
+
+            {isBirmingham && (
+              <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-slate-800 dark:text-slate-200">
+                <strong class="font-bold text-slate-900 dark:text-white block mb-1">Clean Air Zone Information</strong>
+                <span>
+                  The Birmingham Clean Air Zone covers roads inside the A4540 Middleway ring road. We provide zero CAZ surcharges on your move, with no Clean Air Zone charges added to your quote.
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Image Slot 2: Local (4/3) -->
+        <div class="lg:col-span-6">
+          <ImageSlot
+            src={location.images?.local?.src}
+            alt={location.images?.local?.alt || `Removals van operating on residential roads in ${location.town}`}
+            aspect="4/3"
+            slotId="local"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A9. PROPERTY TYPES WE MOVE IN {TOWN}                                      -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Property Types We Move in {location.town}
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Experience handling diverse architecture and housing stock across the district.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {localPropertyTypes.map((prop) => (
+          <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2">
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white">{prop.title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {prop.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A10. AREAS AND POSTCODES COVERED                                          -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+          Postcodes & Districts We Cover in {location.town}
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
+          Our Luton vans operate throughout every neighbourhood across {location.town}.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-center">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">Covered Postcodes</h3>
+        <div class="flex flex-wrap justify-center gap-2">
+          {location.postcodes.map((pc) => (
+            <span class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-xs font-bold text-slate-800 dark:text-slate-200">
+              {pc}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A11. HOW IT WORKS (4 Numbered Steps)                                      -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Step by Step</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          How Your {location.town} Move Works
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { step: '01', title: 'Request a Quote', desc: 'Tell us about your property, inventory, and move dates by phone, form, or WhatsApp.' },
+          { step: '02', title: 'Fixed Price Quote', desc: 'We assess your requirements and provide an upfront written quote with zero hidden extras.' },
+          { step: '03', title: 'Careful Loading', desc: 'Our uniformed crew arrives punctually, lays floor protection, blanket-wraps furniture, and loads.' },
+          { step: '04', title: 'Unload & Placement', desc: 'We drive directly to your new address and place all items into your designated rooms.' }
+        ].map((item) => (
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 relative shadow-sm">
+            <span class="text-2xl font-black text-amber-500/30 dark:text-amber-400/20 block mb-2">{item.step}</span>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white mb-1.5">{item.title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A12. WHY CHOOSE US (6 Pillars using Section 1 facts)                       -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- 6 Pillars (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Dependable Standards</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              Why Choose Jimmys Removals in {location.town}
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Directly Employed Movers</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">All porters are uniformed, directly employed, and DBS-checked.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Luton Vans with Tail Lifts</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Equipped with 500kg hydraulic tail lifts and heavy-duty strapping.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Fully Insured</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Complete insurance protection provided for every move we undertake.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Guaranteed Fixed Quotes</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">The quote you receive is clear and fixed before moving day begins.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Open 24 Hours, 7 Days</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Round-the-clock operations accommodate your exact moving schedule.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-1">
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Fast West Midlands Access</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Based in Birmingham with fast access across the M6, M42, and M5.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Slot 3: Team (4/3) -->
+        <div class="lg:col-span-5">
+          <ImageSlot
+            src={location.images?.team?.src}
+            alt={location.images?.team?.alt || `Uniformed Jimmys Removals movers loading household furniture in ${location.town}`}
+            aspect="4/3"
+            slotId="team"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A13. REVIEWS (Conditioned on presence; no unrendered {{...}})             -->
+  <!-- ========================================================================= -->
+  {hasValidReview && location.testimonial && (
+    <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Customer Feedback</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1 mb-8">
+          What Customers Say About Our Moves in {location.town}
+        </h2>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm text-left space-y-4">
+          <p class="text-sm sm:text-base text-slate-700 dark:text-slate-200 italic leading-relaxed">
+            "{location.testimonial.text}"
+          </p>
+          <div class="flex items-center justify-between text-xs pt-4 border-t border-slate-100 dark:border-slate-700">
+            <div>
+              <strong class="font-bold text-slate-900 dark:text-white block">{location.testimonial.name}</strong>
+              <span class="text-slate-500">{location.testimonial.service} · {location.town}</span>
+            </div>
+            {location.testimonial.date && (
+              <span class="text-slate-400">{location.testimonial.date}</span>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ========================================================================= -->
+  <!-- A14. FAQS (10-12 questions with matching Section 5 figures)               -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Got Questions?</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          Frequently Asked Questions About Removals in {location.town}
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {mergedFaqs.map((faq, index) => (
+          <details class="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all [&_summary::-webkit-details-marker]:hidden" open={index === 0}>
+            <summary class="flex items-center justify-between cursor-pointer font-bold text-sm sm:text-base text-slate-900 dark:text-white gap-4">
+              <span>{faq.question}</span>
+              <span class="text-amber-500 shrink-0 group-open:rotate-180 transition-transform">
+                <Icon name="chevron-down" class="w-5 h-5" />
+              </span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200/60 dark:border-slate-700/60 pt-3">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A15. NEARBY AREAS (Links to 4-6 neighbouring town pages)                 -->
+  <!-- ========================================================================= -->
+  {location.nearbyAreas && location.nearbyAreas.length > 0 && (
+    <section class="py-12 lg:py-16 bg-slate-50 dark:bg-slate-950/50 border-b border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+            Areas Near {location.town} Also Covered
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+            Our removal fleet covers neighbouring communities across the West Midlands.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3">
+          {location.nearbyAreas.map((area) => (
+            <a
+              href={area.slug.includes('/') ? `/areas/${area.slug}/` : `/removals/${area.slug}/`}
+              class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm transition"
+            >
+              {area.name} Removals
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ========================================================================= -->
+  <!-- A16. FINAL CTA SECTION                                                    -->
+  <!-- ========================================================================= -->
+  <section class="py-12 lg:py-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white text-center" data-nosimilarity="true">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+        Ready to Book Your {location.town} Move?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Contact our team today for a guaranteed fixed removal quote. Our directly employed movers are available 24 hours, 7 days a week.
+      </p>
+
+      <div class="flex flex-wrap justify-center items-center gap-4 pt-2">
+        <a
+          href="#quote-form"
+          class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02]"
+        >
+          Get a Fixed Quote
+        </a>
+        <a
+          href={phoneHref}
+          class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition"
+        >
+          Call {phone}
+        </a>
+      </div>
+
+      <p class="text-xs text-slate-400">
+        Open 24 hours, 7 days a week · Direct communication with our West Midlands base
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- A17. MAP & EXACT NAP BLOCK                                                -->
+  <!-- ========================================================================= -->
+  <section class="py-12 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800" data-nosimilarity="true">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white">Business Verification & Registered Office</h3>
+        <p>
+          <strong class="text-slate-900 dark:text-white">{fullBusinessName}</strong> (trading as {tradingName}) is a private limited company registered in England & Wales under Companies House registration number <strong>{companyNumber}</strong>.
+        </p>
+        <p>
+          <strong>Registered Office:</strong> {regOffice} · <strong>Phone:</strong> <a href={phoneHref} class="text-amber-600 dark:text-amber-400 font-semibold hover:underline">{phone}</a> · <strong>Email:</strong> <a href={`mailto:${email}`} class="text-amber-600 dark:text-amber-400 font-semibold hover:underline">{email}</a>
+        </p>
+        <p>
+          <strong>Operating Hours:</strong> Open 24 hours, 7 days a week.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

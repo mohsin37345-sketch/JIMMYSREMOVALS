@@ -17,20 +17,22 @@ export interface Props {
     county: string;
     metaTitle: string;
     metaDescription: string;
+    heroHeading?: string;
     intro: string;
     localKnowledge: string;
     postcodes: string[];
     nearbyAreas: Array<{ name: string; slug: string }>;
-    travelInfo: string;
-    cleanAirZone: {
+    travelInfo?: string;
+    cleanAirZone?: {
       enabled: boolean;
-      note: string;
+      note?: string;
     };
-    servicesOffered: string[];
-    localFaqs: Array<{ question: string; answer: string; display: boolean }>;
-    lat: number;
-    lng: number;
-    tier: 1 | 2;
+    servicesOffered?: string[];
+    localFaqs?: Array<{ question: string; answer: string; display: boolean }>;
+    lat?: number;
+    lng?: number;
+    tier?: 1 | 2;
+    heroImage?: string;
   };
 }
 
@@ -52,14 +54,14 @@ const mappedServices = (location.servicesOffered || []).map((srvName) => {
   });
 
   const svcId = matched?.id || srvName.toLowerCase().replace(/\s+/g, '-');
-  // Check if dedicated service-location page exists (e.g. /removals/house-removals/coventry/)
+  // Check if dedicated service-location page exists (e.g. /removals/coventry/house-removals/)
   const hasDedicatedPage = allServiceAreas.some(
     (sa) => sa.data.service === svcId && sa.data.location === location.slug
   );
 
   const targetHref = hasDedicatedPage
-    ? `/removals/${svcId}/${location.slug}/`
-    : (matched ? `/removals/${matched.id}/` : `/removals/`);
+    ? `/removals/${location.slug}/${svcId}/`
+    : (matched ? `/services/${matched.id}/` : `/services/`);
 
   return {
     name: srvName,
@@ -79,27 +81,47 @@ const serviceLinksForSidebar = mappedServices.map((ms) => ({
   href: ms.targetHref
 }));
 
-const breadcrumbs = [
-  { name: 'Home', item: '/' },
-  { name: 'Areas Covered', item: '/areas/' },
-  { name: `${location.town} Removals`, item: `/areas/${location.slug}/` }
-];
+const isSubArea = location.slug.includes('/');
+const regionSlug = isSubArea ? location.slug.split('/')[0] : '';
+const regionName = isSubArea
+  ? regionSlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  : '';
+
+const breadcrumbs = isSubArea
+  ? [
+      { name: 'Home', item: '/' },
+      { name: 'Areas Covered', item: '/areas/' },
+      { name: `${regionName} Removals`, item: `/areas/${regionSlug}/` },
+      { name: `${location.town} Removals`, item: `/areas/${location.slug}/` }
+    ]
+  : [
+      { name: 'Home', item: '/' },
+      { name: 'Areas Covered', item: '/areas/' },
+      { name: `${location.town} Removals`, item: `/areas/${location.slug}/` }
+    ];
 
 const locationData = {
   town: location.town,
   county: location.county,
   postcodes: location.postcodes,
-  lat: location.lat,
-  lng: location.lng,
+  lat: location.lat || 52.4862,
+  lng: location.lng || -1.8904,
   url: `/areas/${location.slug}/`
 };
+
+const subAreaLinks = (location.nearbyAreas || [])
+  .filter((a) => a.slug.includes('/'))
+  .map((a) => ({
+    name: a.name,
+    href: `/areas/${a.slug}/`
+  }));
 
 const nearbyLinks = [
   ...location.nearbyAreas.map((a) => ({
     title: `${a.name} Removals`,
     href: `/areas/${a.slug}/`
   })),
-  { title: 'All 37 Coverage Areas', href: '/areas/' }
+  { title: 'All Coverage Areas', href: '/areas/' }
 ];
 ---
 
@@ -114,22 +136,26 @@ const nearbyLinks = [
   <!-- Location Hero -->
   <Hero
     variant="location"
-    title={`${location.town} House Removals & Logistics`}
+    title={location.heroHeading || `${location.town} House Removals & Logistics`}
     subtitle={`Professional domestic and commercial removals across ${location.town}, ${location.county}. Operating 7 days a week with fully insured crews.`}
     town={location.town}
     county={location.county}
     postcodes={location.postcodes}
-    cazEnabled={location.cleanAirZone.enabled}
-    cazNote={location.cleanAirZone.note}
+    cazEnabled={location.cleanAirZone?.enabled || false}
+    cazNote={location.cleanAirZone?.note || ''}
   />
 
   <TrustStrip />
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14 space-y-16">
-    <Breadcrumbs items={breadcrumbs} />
+  <!-- Main Content Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <!-- Breadcrumbs Navigation -->
+    <div class="mb-6 sm:mb-8">
+      <Breadcrumbs items={breadcrumbs} />
+    </div>
 
     <!-- Intro & Local Knowledge Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
       <div class="lg:col-span-8 space-y-8">
         
         <!-- Unique Town Intro -->
@@ -142,10 +168,9 @@ const nearbyLinks = [
           </p>
         </div>
 
-        <!-- Clean Air Zone Notice if enabled -->
         <CleanAirZoneNotice
-          enabled={location.cleanAirZone.enabled}
-          note={location.cleanAirZone.note}
+          enabled={location.cleanAirZone?.enabled || false}
+          note={location.cleanAirZone?.note || ''}
           town={location.town}
         />
 
@@ -176,7 +201,7 @@ const nearbyLinks = [
       </div>
 
       <!-- Sidebar -->
-      <aside class="lg:col-span-4 space-y-6">
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
         <!-- Fast Quote CTA -->
         <div class="p-6 bg-slate-900 text-white rounded-2xl border border-slate-800 space-y-4 shadow-xl">
           <span class="text-xs font-bold uppercase tracking-wider text-amber-400">
@@ -216,7 +241,42 @@ const nearbyLinks = [
       </aside>
     </div>
 
-    <!-- Services Offered in This Town with Internal Links -->
+    <!-- Additional Full-Width Sections -->
+    <div class="mt-12 lg:mt-16 space-y-12 lg:space-y-16">
+      {subAreaLinks.length > 0 && (
+        <section class="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
+                <Icon name="map-pin" class="w-3.5 h-3.5" />
+                <span>Coverage Network ({subAreaLinks.length} Localities)</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                Local Areas & Districts in {location.town}
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+                Select your neighbourhood for local road access guidance, parking regulations, and dedicated house removals teams.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+            {subAreaLinks.map((sub) => (
+              <a
+                href={sub.href}
+                class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 hover:border-amber-500 dark:hover:border-amber-500 transition-all hover:shadow-sm group flex items-center justify-between"
+              >
+                <div class="font-bold text-slate-900 dark:text-white text-sm group-hover:text-amber-500 transition-colors">
+                  {sub.name} Removals
+                </div>
+                <Icon name="arrow-right" class="w-4 h-4 text-slate-400 group-hover:text-amber-500 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Services Offered in This Town with Internal Links -->
     <div class="space-y-6">
       <div class="text-center max-w-2xl mx-auto">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
@@ -257,15 +317,10 @@ const nearbyLinks = [
             </div>
 
             <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-              {item.priceFrom ? (
-                <div>
-                  <span class="text-slate-400 text-[10px] block">From</span>
-                  <span class="font-extrabold text-slate-900 dark:text-white text-xs">£{item.priceFrom}</span>
-                  <span class="text-slate-400 text-[10px]"> /{item.priceUnit}</span>
-                </div>
-              ) : (
-                <span class="text-slate-400 text-[11px]">Fixed Quote</span>
-              )}
+              <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 text-[11px] font-semibold">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span>Get a Fixed Quote</span>
+              </div>
               <span class="font-bold text-amber-600 dark:text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform text-xs">
                 <span>Explore</span>
                 <Icon name="arrow-right" class="w-3.5 h-3.5" />
@@ -293,8 +348,9 @@ const nearbyLinks = [
       </div>
     </div>
 
-    <!-- Local Town FAQs -->
-    <FAQ faqs={location.localFaqs} title={`${location.town} Moving FAQs`} />
+      <!-- Local Town FAQs -->
+      <FAQ faqs={location.localFaqs} title={`${location.town} Moving FAQs`} />
+    </div>
   </div>
 
   <CTABand heading={`Book Your ${location.town} Removal Today`} />

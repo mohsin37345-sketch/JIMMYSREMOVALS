@@ -1,0 +1,72 @@
+{
+  "town": "Hopwas",
+  "slug": "hopwas",
+  "county": "Staffordshire",
+  "heroHeading": "Reliable House Removals in Hopwas",
+  "metaTitle": "Hopwas Removals | Rural Tamworth Movers | Jimmys",
+  "metaDescription": "Reliable house removals in picturesque Hopwas, Tamworth. Expert moving for country cottages, barn conversions, and family homes. Get a fixed quote.",
+  "intro": "Looking for a punctual, careful removal team to handle a house move in picturesque Hopwas? Jimmys Removals provides professional, insured removals across this delightful village on the western fringe of Tamworth. Nestled between the River Tame, the Coventry Canal, and ancient woodland at Hopwas Hays, this tranquil settlement features a charming architectural collection of timber-framed period cottages, Georgian brick homes along Lichfield Road, sensitive barn conversions, and substantial detached residences with generous grounds. Our experienced moving specialists take the stress out of village relocations, delivering bespoke care for antique furnishings, fine art, and modern family possessions alike.\n\nEvery relocation we undertake is executed with modern, low-loader Luton vehicles that provide ground-level tail-lift loading, reducing handling strain and keeping your valuables safe from transit damage. We bring heavy-duty floor protectors to shield flagstone, oak, and wool carpets, while our porters take meticulous care when disassembling timber beds, large wardrobes, and delicate glass cabinets. Backed by Fully insured and clear, transparent pricing, our Hopwas removal service guarantees complete satisfaction.",
+  "localKnowledge": "Hopwas's semi-rural village setting along the A51 Lichfield Road presents distinct logistical considerations. Properties along Hints Road, School Lane, and canal approaches often feature narrow lanes, gravel driveways, and low-hanging tree branches from the surrounding ancient woodlands. Our drivers are trained to handle country lanes with precision, selecting approach speeds and turning positions that safeguard manicured verges and boundary stone walls.\n\nWhen loading homes near the historic River Tame stone bridge or along narrow residential tracks, we position our 3.5-tonne Luton vehicles to avoid impeding through traffic along the busy A51 corridor towards Lichfield. Furthermore, for properties set back along unpaved private access tracks, our crews carry heavy-duty pneumatic-tyred sack barrows and furniture dollies to transport items smoothly across gravel and turf surfaces without marking grounds.",
+  "postcodes": [
+    "B78"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Coton Green",
+      "slug": "tamworth/coton-green"
+    },
+    {
+      "name": "Mile Oak",
+      "slug": "tamworth/mile-oak"
+    },
+    {
+      "name": "Tamworth Town",
+      "slug": "tamworth/tamworth-town"
+    }
+  ],
+  "travelInfo": "Direct road access along the A51 Lichfield Road linking Tamworth with Lichfield and the A5/A38 corridors.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your removal vans navigate narrow lanes and overhanging trees in Hopwas?",
+      "answer": "Yes, our low-profile 3.5-tonne Luton vans are specifically proportioned to clear low tree canopies and narrow country lanes in Hopwas where full-sized HGVs cannot travel.",
+      "display": true
+    },
+    {
+      "question": "How do you protect gravel driveways and period stone floors in Hopwas homes?",
+      "answer": "We lay down heavy-duty neoprene floor runners across internal flagstone and timber floors, and utilize wide-tyred pneumatic dollies to prevent rutting gravel driveways.",
+      "display": true
+    },
+    {
+      "question": "Do you move upright pianos and valuable antiques in Hopwas?",
+      "answer": "Yes, our moving technicians carry specialised piano trolleys, quilted transit jackets, and securing straps to transport pianos and heirloom antiques safely.",
+      "display": true
+    },
+    {
+      "question": "How far in advance should I book a village removal in Hopwas?",
+      "answer": "We recommend booking 1 to 2 weeks prior to moving day once exchange of contracts has taken place, although our 7-day schedule allows us to accommodate short-notice moves when vans are available.",
+      "display": true
+    }
+  ],
+  "lat": 52.646,
+  "lng": -1.722,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

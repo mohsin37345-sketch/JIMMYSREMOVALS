@@ -1,0 +1,72 @@
+{
+  "town": "Rugeley",
+  "slug": "rugeley",
+  "county": "Staffordshire",
+  "heroHeading": "Professional House Removals in Rugeley",
+  "metaTitle": "Rugeley Removals | Trent Valley House Movers | Jimmys",
+  "metaDescription": "Professional house removals in Rugeley, Staffordshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Planning a residential move in Rugeley? Jimmys Removals delivers an organised, fully insured moving service throughout this historic market town set within the picturesque Trent Valley on the north-eastern edge of Cannock Chase. From characterful period cottages along Market Street and Horse Fair to substantial 1930s family homes on Western Springs Road and modern developments across the former power station regeneration site, our expert removal porters manage every move with precision. We operate low-emission 3.5-tonne Luton vans equipped with hydraulic tail lifts, padded transit blankets, and heavy-duty furniture ties.\n\nOur respectful, directly employed removal crew handles every task with skill, from taking apart complex multi-door wardrobes to safely transporting delicate porcelain, flat-screen televisions, and family heirlooms. We protect your interior hall walls and carpets with specialized heavy-duty runners. Backed by guaranteed fixed quotations and Fully insured, you enjoy total confidence on moving day.",
+  "localKnowledge": "Rugeley's geography combines the flat basin of the River Trent and Trent & Mersey Canal with steep roads ascending towards the woodlands of Cannock Chase. Narrow roadways in central Rugeley, such as Sheep Fair and Bow Street, require tactical vehicle positioning to avoid impeding local bus services. Our 3.5-tonne Luton vans provide the optimum solution, maneuvering cleanly into tight private driveways without requiring bulky parking suspensions.\n\nWhen carrying out removals around Brereton Hill or across the A51 bypass towards Wolseley Bridge, our drivers plan arrival times outside peak commuting hours. We also accommodate the height clearances and speed restrictions on local canal bridges, ensuring punctual and reliable arrivals on moving day.",
+  "postcodes": [
+    "WS15"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Brereton",
+      "slug": "cannock/brereton"
+    },
+    {
+      "name": "Cannock Wood",
+      "slug": "cannock/cannock-wood"
+    },
+    {
+      "name": "Hednesford",
+      "slug": "cannock/hednesford"
+    }
+  ],
+  "travelInfo": "Direct road access via the A51, A460 to Cannock, and two rail stations (Rugeley Trent Valley and Rugeley Town).",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can you access historic terraced properties in central Rugeley?",
+      "answer": "Yes, our 3.5-tonne Luton vans are sized to park close to front doors on narrow streets like Bow Street and Sheep Fair without causing traffic jams.",
+      "display": true
+    },
+    {
+      "question": "Do you move properties in new developments near the former Rugeley Power Station?",
+      "answer": "We frequently move families into contemporary developments along the Trent Valley, expertly managing new-build private drives and shared turnings.",
+      "display": true
+    },
+    {
+      "question": "Do you offer full packing services for large homes in Rugeley?",
+      "answer": "Yes, our team provides full packing services using double-walled boxes, acid-free tissue paper, and bubble wrap for all fragile china and glassware.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed for moves between Rugeley and Birmingham?",
+      "answer": "All quotes are fixed upfront with no hidden mileage or completion delay fees, regardless of traffic delays on the A51 or A38.",
+      "display": true
+    }
+  ],
+  "lat": 52.76,
+  "lng": -1.936,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

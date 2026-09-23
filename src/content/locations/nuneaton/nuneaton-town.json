@@ -1,0 +1,72 @@
+{
+  "town": "Nuneaton Town",
+  "slug": "nuneaton-town",
+  "county": "Warwickshire",
+  "heroHeading": "Affordable House Removals in Nuneaton Town",
+  "metaTitle": "Nuneaton Town Removals | Town Centre Movers | Jimmys",
+  "metaDescription": "Affordable house removals in Nuneaton Town Centre. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Moving apartment or townhouse in central Nuneaton? Jimmys Removals delivers an agile, insured moving service across Nuneaton Town Centre and surrounding residential avenues. From stately Victorian and Edwardian villas along Queens Road to contemporary apartment complexes on Vicarage Street, our staff handle inner-town moves with speed and finesse. We deploy 3.5-tonne Luton vans that navigate town streets and loading bays with ease.\n\nOur team is skilled at tackling apartment logistics. We navigate tight internal stairwells, protect communal carpets, and unbolt bulky corner sofas to fit through narrow doorways. Every quotation is fixed upfront, providing clarity and confidence on moving day.",
+  "localKnowledge": "Nuneaton Town Centre is encircled by the busy A444 ringway and Roanne Ringway. Several core retail streets and residential avenues around Abbey Street, Church Street, and Bridge Street have restricted loading hours or pedestrian zones that necessitate precise logistical coordination. Our drivers possess intimate knowledge of legal loading bays and private rear service accesses across the centre.\n\nFor apartment buildings with security gates, communal corridors, or no lift access, our porters take special measures to protect communal walls and stair railings. We also coordinate with local traffic management to ensure our vans park without impeding bus services along Corporation Street.",
+  "postcodes": [
+    "CV11"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Attleborough",
+      "slug": "nuneaton/attleborough"
+    },
+    {
+      "name": "Chilvers Coton",
+      "slug": "nuneaton/chilvers-coton"
+    },
+    {
+      "name": "Weddington",
+      "slug": "nuneaton/weddington"
+    }
+  ],
+  "travelInfo": "Central road access via Roanne Ringway, Queens Road, and direct connections to Nuneaton railway station.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can you handle town centre flat removals without lifts in Nuneaton?",
+      "answer": "Yes, our experienced porters are trained in safely carrying heavy furniture and appliances up and down multiple flights of stairs with full care.",
+      "display": true
+    },
+    {
+      "question": "How do you navigate pedestrian zones around Nuneaton Town Centre?",
+      "answer": "We coordinate delivery schedules during permitted access hours and utilize dedicated loading areas around Roanne Ringway.",
+      "display": true
+    },
+    {
+      "question": "Do you provide packing boxes in Nuneaton Town?",
+      "answer": "We supply professional heavy-duty boxes, packing tape, bubble wrap, and wardrobe cartons delivered directly to your door in Nuneaton.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Nuneaton Town?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your total moving cost with zero surprise charges on completion day.",
+      "display": true
+    }
+  ],
+  "lat": 52.523,
+  "lng": -1.468,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

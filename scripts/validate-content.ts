@@ -41,7 +41,21 @@ if (!fs.existsSync(locationsDir)) {
   process.exit(1);
 }
 
-const files = fs.readdirSync(locationsDir).filter((f) => f.endsWith('.json'));
+function getAllJsonFiles(dir: string): string[] {
+  let entries: string[] = [];
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of items) {
+    const fullPath = path.join(dir, item.name);
+    if (item.isDirectory()) {
+      entries = entries.concat(getAllJsonFiles(fullPath));
+    } else if (item.isFile() && item.name.endsWith('.json')) {
+      entries.push(fullPath);
+    }
+  }
+  return entries;
+}
+
+const files = getAllJsonFiles(locationsDir);
 
 if (files.length === 0) {
   console.error('Validation Error: No location files found in src/content/locations.');
@@ -53,8 +67,8 @@ console.log(`Checking ${files.length} location entries in ${locationsDir}...`);
 const locations: LocationData[] = [];
 let hasErrors = false;
 
-for (const file of files) {
-  const filePath = path.join(locationsDir, file);
+for (const filePath of files) {
+  const file = path.relative(locationsDir, filePath);
   try {
     const raw = fs.readFileSync(filePath, 'utf-8');
     const data = JSON.parse(raw) as LocationData;

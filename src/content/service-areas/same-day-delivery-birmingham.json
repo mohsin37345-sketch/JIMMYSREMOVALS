@@ -1,0 +1,32 @@
+{
+  "service": "same-day-delivery",
+  "location": "birmingham",
+  "uniqueIntro": "Facing an unexpected moving deadline, last-minute completion notice, or urgent transport requirement across Birmingham? Jimmys Removals provides dedicated same-day delivery and emergency man-and-van service across Birmingham and the West Midlands, subject to vehicle availability. Operating our fleet of 3.5-tonne Luton vans with hydraulic tail lifts from our central Birmingham operations base, our drivers can dispatch quickly with direct access to the A38(M), M6, M42, and M5. We collect and deliver point-to-point with zero depot transfers or co-loading delays.",
+  "localAngle": "Whether responding to an urgent tenancy move in Moseley, an emergency office server transport into Snow Hill, or a same-day furniture purchase across Erdington, our round-the-clock operations team coordinates immediate routing with guaranteed fixed pricing.",
+  "faqs": [
+    {
+      "question": "How quickly can you dispatch a van for same day delivery in Birmingham?",
+      "answer": "Our operations base in east Birmingham allows fast deployment across the city, often reaching collection addresses within 60 to 90 minutes, subject to vehicle scheduling.",
+      "display": true
+    },
+    {
+      "question": "Are same day moves in Birmingham subject to Clean Air Zone surcharges?",
+      "answer": "No. All Birmingham moves are carried out with zero CAZ surcharges added to your quote.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Same day delivery Luton van dispatched across Birmingham"
+    },
+    "local": {
+      "src": "",
+      "alt": "Urgent removal consignment loaded with tail lift in central Birmingham"
+    },
+    "team": {
+      "src": "",
+      "alt": "Driver securing urgent delivery cargo with heavy webbing straps"
+    }
+  }
+}

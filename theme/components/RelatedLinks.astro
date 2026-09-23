@@ -25,12 +25,12 @@ let filteredLinks = links.filter((link) => link.href !== currentHref && link.hre
 // Fallback to core services if empty
 if (filteredLinks.length === 0) {
   filteredLinks = [
-    { title: 'House Removals', href: '/removals/house-removals/' },
-    { title: 'Flat & Apartment Removals', href: '/removals/flat-removals/' },
-    { title: 'Man and Van', href: '/removals/man-and-van/' },
-    { title: 'Packing Services', href: '/removals/packing-services/' },
-    { title: 'Office Removals', href: '/removals/office-removals/' },
-    { title: 'Storage Solutions', href: '/removals/storage/' }
+    { title: 'House Removals', href: '/services/house-removals/' },
+    { title: 'Flat & Apartment Removals', href: '/services/flat-removals/' },
+    { title: 'Man and Van', href: '/services/man-and-van/' },
+    { title: 'Packing Services', href: '/services/packing-services/' },
+    { title: 'Office Removals', href: '/services/office-removals/' },
+    { title: 'Storage Solutions', href: '/services/storage/' }
   ].filter((link) => link.href !== currentHref);
 }
 ---

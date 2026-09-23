@@ -8,7 +8,6 @@ import ServiceGrid from 'theme/components/ServiceGrid.astro';
 import HowItWorks from 'theme/components/HowItWorks.astro';
 import FleetShowcase from 'theme/components/FleetShowcase.astro';
 import AreaCoverageMap from 'theme/components/AreaCoverageMap.astro';
-import PricingTable from 'theme/components/PricingTable.astro';
 import ComparisonTable from 'theme/components/ComparisonTable.astro';
 import Testimonials from 'theme/components/Testimonials.astro';
 import AboutEeatBlock from 'theme/components/AboutEeatBlock.astro';
@@ -30,7 +29,10 @@ try {
 let testimonials: any[] = [];
 try {
   const tCollection = await getCollection('testimonials');
-  testimonials = tCollection.map((t) => t.data).filter((t) => t.verified);
+  testimonials = tCollection
+    .map((t) => t.data)
+    .filter((t) => t.verified)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 } catch (e) {
   testimonials = [];
 }
@@ -38,7 +40,7 @@ try {
 
 <BaseLayout
   title="House Removals Birmingham | Jimmys Removals & Logistics"
-  description="Fixed-price house removals across Birmingham & the West Midlands. DBS-checked movers, £50k transit cover, CAZ-compliant vans. Free 60-second quote — 0121 517 1227."
+  description="Looking for a trusted house removals company in Birmingham? DBS-checked movers handle removals across Birmingham and the West Midlands with Fully insured."
   schemaType="Home"
   faqs={faqsData}
   reviews={testimonials}
@@ -80,7 +82,7 @@ try {
   <!-- 5. HOW OUR REMOVAL PROCESS WORKS — H2 + 4 Step H3s + Moving on Completion Day H3 -->
   <HowItWorks />
 
-  <!-- 6. INSIDE OUR CLEAN AIR ZONE COMPLIANT LUTON FLEET — H2 + 3 Photo blocks H3 + Van size comparison H3 + Protection materials H3 -->
+  <!-- 6. INSIDE OUR MODERN 3.5T LUTON FLEET — H2 + 3 Photo blocks H3 + Van size comparison H3 + Protection materials H3 -->
   <FleetShowcase />
 
   <!-- 7. AREAS WE COVER ACROSS BIRMINGHAM & THE WEST MIDLANDS — H2 + 4 Regional H3s + 37 Town Links + Interactive Corridors Map -->
@@ -102,8 +104,6 @@ try {
     </div>
   </section>
 
-  <!-- 8. TRANSPARENT REMOVALS PRICING — H2 + 4 Tiers H3s with Qualifying Conditions -->
-  <PricingTable title="Transparent Removals Pricing" />
 
   <!-- 9. JIMMYS REMOVALS VS CASUAL MOVERS VS DIY VAN HIRE — H2 + Crawlable Comparison Table -->
   <ComparisonTable title="Jimmys Removals vs Casual Movers vs DIY Van Hire" />

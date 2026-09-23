@@ -1,0 +1,33 @@
+---
+import ServiceAreaLayout from 'theme/layouts/ServiceAreaLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const serviceAreas = await getCollection('serviceAreas');
+  const services = await getCollection('services');
+  const locations = await getCollection('locations');
+
+  return serviceAreas
+    .map((sa) => {
+      const service = services.find((s) => s.id === sa.data.service);
+      const location = locations.find((l) => l.id === sa.data.location);
+      if (!service || !location) return null;
+      return {
+        params: {
+          town: sa.data.location,
+          service: sa.data.service
+        },
+        props: {
+          serviceArea: sa.data,
+          service: { ...service.data, slug: service.id },
+          location: { ...location.data, slug: location.id }
+        }
+      };
+    })
+    .filter(Boolean);
+}
+
+const { serviceArea, service, location } = Astro.props;
+---
+
+<ServiceAreaLayout serviceArea={serviceArea} service={service} location={location} />

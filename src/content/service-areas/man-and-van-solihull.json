@@ -1,0 +1,32 @@
+{
+  "service": "man-and-van",
+  "location": "solihull",
+  "uniqueIntro": "Looking for a reliable man and van service in Solihull? Jimmys Removals provides flexible, insured transport for smaller house moves, flat relocations, furniture collections, and student transfers across the Borough of Solihull. Operating modern 3.5-tonne Luton vans equipped with 500kg hydraulic tail lifts, our directly employed movers handle loading and driving with care. From elegant apartments in Touchwood and Shirley to family residences in Olton, Dorridge, and Knowle, our service provides punctual timing, careful furniture wrapping, and guaranteed fixed pricing.",
+  "localAngle": "Solihull features quiet residential cul-de-sacs and private driveways alongside bustling town-centre apartment developments. Our drivers position vans safely, lay down floor runners on entrance carpeting, and secure furnishings with industrial transit straps.",
+  "faqs": [
+    {
+      "question": "Can your man and van help with furniture loading in Solihull?",
+      "answer": "Yes. Our service includes a professional, DBS-checked mover who assists with loading, securing items inside the van, and unloading into your designated rooms.",
+      "display": true
+    },
+    {
+      "question": "What size vehicle do you send for a Solihull man and van booking?",
+      "answer": "We provide a 3.5-tonne Luton low-loader van with an electric tail lift, offering significantly more volume and protection than a standard panel van.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Man and van Luton vehicle outside Solihull residential home"
+    },
+    "local": {
+      "src": "",
+      "alt": "Removals porter loading furniture in quiet Solihull avenue"
+    },
+    "team": {
+      "src": "",
+      "alt": "Uniformed mover securing items inside Luton van in Solihull"
+    }
+  }
+}

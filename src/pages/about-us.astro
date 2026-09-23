@@ -3,7 +3,6 @@ import BaseLayout from 'theme/layouts/BaseLayout.astro';
 import Hero from 'theme/components/Hero.astro';
 import TrustStrip from 'theme/components/TrustStrip.astro';
 import Breadcrumbs from 'theme/components/Breadcrumbs.astro';
-import CleanAirZoneNotice from 'theme/components/CleanAirZoneNotice.astro';
 import CTABand from 'theme/components/CTABand.astro';
 import Icon from 'theme/components/Icon.astro';
 import { siteConfig } from 'src/data/site';
@@ -23,7 +22,7 @@ const breadcrumbs = [
   <Hero
     variant="page"
     title="About Jimmys Removals & Logistics"
-    subtitle="Founded in Birmingham to provide honest, transparent, and stress-free house removals and transport solutions across the West Midlands."
+    subtitle="Founded in Birmingham to provide honest, transparent, and organized house removals and transport solutions across the West Midlands."
     badge="Our Heritage & Standards"
   />
 
@@ -46,7 +45,7 @@ const breadcrumbs = [
           {siteConfig.legalName} was founded with a straightforward objective: to eliminate the anxiety, hidden costs, and unreliability that have historically troubled the UK removals industry. Moving home is universally acknowledged as a major life transition, yet all too often clients are confronted with ambiguous hourly meters, untrained agency day-labour, unconfirmed arrival times, and surprise surcharges on moving day.
         </p>
         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-          Headquartered at Unit 4, Phoenix Business Park on Avenue Road in Birmingham, our central location provides immediate access to the A38(M) Aston Expressway, M6 Junction 6 (Spaghetti Junction), and the M5 corridor. This geographical advantage enables our operations desk to coordinate punctual arrival times and responsive same-day support across Birmingham, the Black Country, Solihull, Coventry, and surrounding districts.
+          Based in east Birmingham at 66 Beaufort Avenue, our 3.5-tonne Luton fleet can reach all 37 West Midlands towns quickly, with fast access to the M6, M42, M5 and A38(M). This strategic position enables our operations desk to coordinate punctual arrival times and responsive same-day removals and deliveries across Birmingham and the wider region.
         </p>
         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
           From the outset, we committed to permanent, full-time removals specialists. Every member of our moving crew undergoes thorough Disclosure and Barring Service (DBS) vetting, manual handling certification, and in-house training in protective export-wrapping techniques. We never rely on temporary agency workers who lack familiarity with our equipment or standards.
@@ -64,7 +63,7 @@ const breadcrumbs = [
           <div class="flex items-start gap-3.5 pb-3 border-b border-slate-200/60 dark:border-slate-800">
             <span class="text-amber-500 mt-1 shrink-0"><Icon name="shield" class="w-5 h-5" /></span>
             <div>
-              <strong class="text-slate-900 dark:text-white block font-bold">£50,000 Goods in Transit Cover</strong>
+              <strong class="text-slate-900 dark:text-white block font-bold">Fully insured</strong>
               <span class="text-slate-600 dark:text-slate-400 text-xs">Underwritten cover protecting your furniture and valuables during transit.</span>
             </div>
           </div>
@@ -72,7 +71,7 @@ const breadcrumbs = [
           <div class="flex items-start gap-3.5 pb-3 border-b border-slate-200/60 dark:border-slate-800">
             <span class="text-amber-500 mt-1 shrink-0"><Icon name="shield-check" class="w-5 h-5" /></span>
             <div>
-              <strong class="text-slate-900 dark:text-white block font-bold">£2,000,000 Public Liability Cover</strong>
+              <strong class="text-slate-900 dark:text-white block font-bold">Fully insured</strong>
               <span class="text-slate-600 dark:text-slate-400 text-xs">Protection against accidental structural or third-party property damage.</span>
             </div>
           </div>
@@ -80,24 +79,26 @@ const breadcrumbs = [
           <div class="flex items-start gap-3.5 pb-3 border-b border-slate-200/60 dark:border-slate-800">
             <span class="text-amber-500 mt-1 shrink-0"><Icon name="truck" class="w-5 h-5" /></span>
             <div>
-              <strong class="text-slate-900 dark:text-white block font-bold">Euro 6 Clean Air Zone Compliant Fleet</strong>
-              <span class="text-slate-600 dark:text-slate-400 text-xs">Zero emissions penalty fees inside Birmingham's A4540 Middleway ring road.</span>
+              <strong class="text-slate-900 dark:text-white block font-bold">Modern Luton Van Fleet</strong>
+              <span class="text-slate-600 dark:text-slate-400 text-xs">Modern 3.5-tonne Luton vans with 500kg electric hydraulic tail lifts.</span>
             </div>
           </div>
 
           <div class="flex items-start gap-3.5 pb-3 border-b border-slate-200/60 dark:border-slate-800">
             <span class="text-amber-500 mt-1 shrink-0"><Icon name="check" class="w-5 h-5" /></span>
             <div>
-              <strong class="text-slate-900 dark:text-white block font-bold">Registered UK Limited Company</strong>
-              <span class="text-slate-600 dark:text-slate-400 text-xs">Companies House No: {siteConfig.companyNumber} · VAT Reg: {siteConfig.vatNumber}</span>
+              <strong class="text-slate-900 dark:text-white block font-bold">Companies House Registration</strong>
+              <span class="text-slate-600 dark:text-slate-400 text-xs">
+                Private Limited Company in England & Wales · <a href={siteConfig.companiesHouseUrl} target="_blank" rel="noopener noreferrer" class="text-amber-600 dark:text-amber-400 underline font-semibold">No. {siteConfig.companyNumber} (Verify on official register)</a>
+              </span>
             </div>
           </div>
 
           <div class="flex items-start gap-3.5">
             <span class="text-amber-500 mt-1 shrink-0"><Icon name="clock" class="w-5 h-5" /></span>
             <div>
-              <strong class="text-slate-900 dark:text-white block font-bold">Operating 7 Days a Week</strong>
-              <span class="text-slate-600 dark:text-slate-400 text-xs">Monday to Sunday, 07:00 to 20:00 for flexible weekend completion days.</span>
+              <strong class="text-slate-900 dark:text-white block font-bold">Open 24 Hours, 24 hours, 7 days a week</strong>
+              <span class="text-slate-600 dark:text-slate-400 text-xs">Removals and deliveries arranged day or night across the West Midlands, with urgent same day delivery available.</span>
             </div>
           </div>
         </div>
@@ -151,9 +152,6 @@ const breadcrumbs = [
       </div>
     </div>
 
-    <!-- Section 3: Clean Air Zone Exemption Notice -->
-    <CleanAirZoneNotice variant="full" />
-
     <!-- Section 4: Our 4 Operating Principles -->
     <div class="space-y-8">
       <div class="text-center max-w-2xl mx-auto">
@@ -168,7 +166,7 @@ const breadcrumbs = [
           <div class="text-amber-500 font-extrabold text-lg">01</div>
           <h4 class="text-base font-bold text-slate-900 dark:text-white">Guaranteed Fixed Pricing</h4>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-            Once we survey your inventory and access, our written price is fixed. We do not add unexpected fuel levies, stair charges, or Clean Air Zone surcharges.
+            Once we survey your inventory and access, our written price is fixed. We do not add unexpected fuel levies, stair charges, or hidden surcharges.
           </p>
         </div>
 

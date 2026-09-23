@@ -1,30 +1,62 @@
 ---
 import Icon from './Icon.astro';
+import ImageSlot from './ImageSlot.astro';
+
+export interface Props {
+  isBirmingham?: boolean;
+  town?: string;
+  imageSlotSrc?: string;
+  imageSlotAlt?: string;
+}
+
+const {
+  isBirmingham = false,
+  town = 'Birmingham',
+  imageSlotSrc,
+  imageSlotAlt = 'Jimmys Removals movers wrapping furniture for transport'
+} = Astro.props;
 
 const pillars = [
   {
-    title: 'Fully Insured Fleet — £50,000 Goods in Transit, £2m Public Liability',
-    desc: 'Every booking with our Birmingham moving company includes comprehensive £50,000 Goods in Transit insurance and £2,000,000 Public Liability cover. From solid wood dining tables to fragile electronics, your household items are legally protected throughout loading, transit, and unloading.',
-    icon: 'shield-check',
-    highlight: 'Comprehensive Protection'
+    title: 'Fully Insured Removals',
+    desc: 'Every relocation is carried out by trained movers with full insurance protection throughout loading, transport, and unloading.',
+    icon: 'shield',
+    highlight: 'Fully Insured'
   },
   {
-    title: 'DBS-Checked, Uniformed Crews (not subcontracted brokers)',
-    desc: 'Unlike national booking portals who auction your house move to random white-van drivers, every mover on your team is directly employed, DBS background-checked, and in company uniform. You know exactly who is inside your home handling your furniture.',
+    title: 'Directly Employed, DBS-Checked Crews',
+    desc: 'Every mover on your team is directly employed by us, background-checked, and in uniform. You know who is handling your furniture.',
     icon: 'check',
     highlight: 'Directly Employed'
   },
   {
-    title: 'Clean Air Zone Compliant Euro 6 Vans — Zero CAZ Surcharge',
-    desc: 'Our entire fleet of 3.5T Luton box vans meets Euro 6 low-emission regulations. Moving inside the Birmingham A4540 Middleway ring road incurs zero daily CAZ surcharges. The price on your removal quote is the exact price you pay.',
+    title: '3.5-Tonne Luton Vans with Tail Lifts',
+    desc: 'We operate purpose-built 3.5-tonne Luton box vans fitted with hydraulic column tail lifts, protective blankets, and load-lock ties.',
     icon: 'truck',
-    highlight: '100% Euro 6 Fleet'
+    highlight: 'Tail Lift Fleet'
   },
   {
-    title: 'Fixed Quotes After a Free Video or In-Person Survey',
-    desc: 'We calculate precise cubic footage before move day via a quick 15-minute video survey or detailed online inventory. You receive a transparent, guaranteed fixed quote that protects you against traffic hold-ups or completion key delays.',
-    icon: 'briefcase',
-    highlight: 'Guaranteed Pricing'
+    title: 'Free, Fixed-Price Quotes',
+    desc: 'You receive a transparent, fixed-price removal quote with no obligation. The price we quote is the price you pay.',
+    icon: 'calculator',
+    highlight: 'Fixed Quotes'
+  },
+  {
+    title: 'Open 24 Hours, 7 Days a Week',
+    desc: 'Removals and deliveries arranged at any hour, day or night, seven days a week, including bank holidays.',
+    icon: 'clock',
+    highlight: 'Open 24/7'
+  },
+  isBirmingham ? {
+    title: 'Zero CAZ Surcharges',
+    desc: 'No Clean Air Zone charges added to your quote when moving inside the Birmingham A4540 Middleway ring road.',
+    icon: 'truck',
+    highlight: 'Zero CAZ Surcharges'
+  } : {
+    title: 'Local Route Knowledge',
+    desc: `Our drivers know the local streets, parking layouts, and motorway connections across ${town} and the wider region.`,
+    icon: 'map-pin',
+    highlight: 'Local Knowledge'
   }
 ];
 ---
@@ -32,24 +64,24 @@ const pillars = [
 <section id="why-choose-us" class="py-16 sm:py-20 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
     
-    <!-- Section Header & H2 -->
+    <!-- Section Header -->
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 mb-2">
         <Icon name="map-pin" class="w-4 h-4" />
-        <span>Phoenix Business Park, Birmingham</span>
+        <span>East Birmingham Operations Base</span>
       </div>
       <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-        Why Birmingham Movers Choose Jimmys Removals
+        Why Movers Choose Jimmys Removals
       </h2>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
-        When you are moving house, you need a local removal company you can trust. Based in Birmingham, we provide reliable, punctual house moves across all 37 West Midlands towns and dedicated nationwide transit across mainland Britain.
+        Based in Birmingham, we provide reliable, punctual house moves across the West Midlands and dedicated transit across mainland Britain.
       </p>
     </div>
 
-    <!-- 4 Trust Pillars with H3s & Featured Van Image -->
+    <!-- 6 Pillars & Image Slot -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       
-      <!-- 4 Pillars Grid (7 cols) -->
+      <!-- Pillars Grid (7 cols) -->
       <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {pillars.map((pillar) => (
           <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition space-y-2.5 flex flex-col justify-between">
@@ -73,53 +105,14 @@ const pillars = [
         ))}
       </div>
 
-      <!-- Real Fleet Photo Card (5 cols) -->
+      <!-- Image Slot 3 (team, 4/3) -->
       <div class="lg:col-span-5">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 group bg-slate-900">
-          <picture>
-            <source srcset="/images/moves/luton-van-tail-lift.webp" type="image/webp" />
-            <img
-              src="/images/moves/luton-van-tail-lift.jpg"
-              alt="Jimmys Removals 3.5T Luton box van with hydraulic tail-lift lowered on street in Birmingham"
-              width="800"
-              height="1066"
-              class="w-full h-[400px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
-
-          <div class="absolute top-4 left-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-slate-950 shadow-md">
-              <span class="w-2 h-2 rounded-full bg-slate-950 animate-pulse"></span>
-              Real Birmingham Mover
-            </span>
-          </div>
-
-          <div class="absolute bottom-5 left-5 right-5 text-white space-y-2">
-            <div class="flex items-center gap-2 text-xs font-semibold text-amber-300">
-              <Icon name="truck" class="w-4 h-4" />
-              <span>3.5T Luton Box Van • 500kg Tail-Lift</span>
-            </div>
-            <div class="text-base sm:text-lg font-bold text-white leading-snug">
-              Ground-Level Roll-On Loading for Heavy Furniture
-            </div>
-            <p class="text-xs text-slate-300 leading-snug">
-              Electric hydraulic tail-lift eliminates manual strain when loading American fridge-freezers, solid oak wardrobes, and pianos.
-            </p>
-            <div class="pt-1 flex items-center justify-between">
-              <a
-                href="#fleet-showcase"
-                class="inline-flex items-center gap-1 text-xs font-bold text-amber-400 hover:text-amber-300 transition"
-              >
-                <span>Inspect Fleet Gallery</span>
-                <Icon name="chevron-right" class="w-3.5 h-3.5" />
-              </a>
-              <span class="text-[11px] text-slate-400">All 37 Towns Covered</span>
-            </div>
-          </div>
-        </div>
+        <ImageSlot
+          src={imageSlotSrc}
+          alt={imageSlotAlt}
+          aspect="4/3"
+          slotId="team"
+        />
       </div>
 
     </div>

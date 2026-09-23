@@ -1,0 +1,72 @@
+{
+  "town": "Bulkington",
+  "slug": "bulkington",
+  "county": "Warwickshire",
+  "heroHeading": "Trusted House Removals in Bulkington",
+  "metaTitle": "Bulkington Removals | Warwickshire House Movers | Jimmys",
+  "metaDescription": "Trusted house removals in Bulkington, Warwickshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Preparing for a house move in Bulkington? Jimmys Removals delivers an organised, comprehensive removal service across this attractive Warwickshire village. Featuring spacious detached family properties along Rugby Road and Leicester Street, quiet post-war bungalows, and modern cul-de-sacs near Chequer Street, Bulkington offers a tranquil village atmosphere. Our team handles every move with genuine care, using clean 3.5-tonne Luton vans outfitted with tail lifts and protective blankets.\n\nWe take the hassle out of moving day by loading your furniture securely and unburdening you of heavy lifting. Our porters handle everything from American-style fridge-freezers to fragile porcelain dinnerware, placing each piece into the correct room at your destination. Upfront fixed quotes give you total peace of mind.",
+  "localKnowledge": "Bulkington is laid out around several village thoroughfares including the B4109 Rugby Road, Leicester Street, and Bedworth Road. While primary routes are open and easy to navigate, older village lanes such as School Road and Church Street feature parked vehicles and tight curb bends. Our 3.5-tonne Luton vans offer ideal agility, allowing our drivers to park close to entrance doors without obstructing pedestrian walkways or through traffic.\n\nPositioned with convenient access to the A444, M6 Junction 3, and M69, Bulkington enjoys exceptional regional connectivity. We coordinate our schedules to avoid school commuting peaks near St James Academy, ensuring timely arrival and quick unloading at your new property.",
+  "postcodes": [
+    "CV12"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Nuneaton Hub",
+      "slug": "nuneaton"
+    },
+    {
+      "name": "Bedworth",
+      "slug": "bedworth"
+    },
+    {
+      "name": "Whitestone",
+      "slug": "nuneaton/whitestone"
+    },
+    {
+      "name": "Coventry",
+      "slug": "coventry"
+    }
+  ],
+  "travelInfo": "Direct road links via the B4109, B4112, with rapid access to the A444 and M6 Junction 3.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your removal vans park on residential streets in Bulkington?",
+      "answer": "Yes, our 3.5-tonne Luton vans easily park on driveways and residential roads in Bulkington without causing traffic obstructions.",
+      "display": true
+    },
+    {
+      "question": "Do you provide full packing services for detached houses in Bulkington?",
+      "answer": "Yes, we provide full professional packing services using heavy-duty cartons, bubble wrap, and tissue paper for all your delicate belongings.",
+      "display": true
+    },
+    {
+      "question": "How do you protect modern carpets and wooden floors in Bulkington homes?",
+      "answer": "We lay durable adhesive carpet film and heavy-duty floor runners across entrance hallways and stairs to keep your flooring immaculately clean.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Bulkington?",
+      "answer": "All quotations are fixed and comprehensive, ensuring you know your exact moving cost before moving day arrives.",
+      "display": true
+    }
+  ],
+  "lat": 52.484,
+  "lng": -1.433,
+  "tier": 2,
+  "heroImage": "/images/locations/nuneaton.webp",
+  "region": "nuneaton"
+}

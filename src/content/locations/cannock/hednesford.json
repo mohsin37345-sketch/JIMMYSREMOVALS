@@ -1,0 +1,72 @@
+{
+  "town": "Hednesford",
+  "slug": "hednesford",
+  "county": "Staffordshire",
+  "heroHeading": "Trusted House Removals in Hednesford",
+  "metaTitle": "Hednesford Removals | Cannock Chase Movers | Jimmys",
+  "metaDescription": "Trusted house removals in Hednesford, Cannock Chase. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Preparing for a house move in Hednesford? Jimmys Removals provides a reliable, comprehensive removals service across this historic market town nestled on the northern slopes of Cannock Chase. From characterful Victorian villas along Market Street and Anglesey Street to modern family developments around Pye Green and Greenheath, our skilled moving teams handle your possessions with the utmost care. We operate low-emission 3.5-tonne Luton vans equipped with hydraulic tail lifts, high-density blankets, and secure strapping rails.\n\nOur respectful, DBS-checked porters ensure every phase of your move runs without complications. We protect your interior doorways and floor coverings, dismantle large flat-pack wardrobes, and manoeuvre bulky American-style fridge-freezers through tight hallways. Backed by our guaranteed fixed quotations and Fully insured, you enjoy total confidence on moving day.",
+  "localKnowledge": "Hednesford is famous for its hilly topography rising steeply towards Cannock Chase and the Hednesford Hills. Streets such as Greenheath Road, Hill Street, and Pye Green Road feature noticeable gradients, making vehicle stability and safe handbrake application paramount during loading operations. Our drivers are trained in slope parking protocols, ensuring vans remain perfectly secure while loading heavy household goods.\n\nDuring busy trading hours around Hednesford railway station and the Victoria Shopping Park, town centre access requires careful navigation. We plan residential transit via Uxbridge Street and Rugeley Road to bypass town centre pinch points, ensuring prompt arrival and quick turnaround on your move day.",
+  "postcodes": [
+    "WS12"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Chadsmoor",
+      "slug": "cannock/chadsmoor"
+    },
+    {
+      "name": "Heath Hayes",
+      "slug": "cannock/heath-hayes"
+    },
+    {
+      "name": "Cannock Wood",
+      "slug": "cannock/cannock-wood"
+    }
+  ],
+  "travelInfo": "Direct links via the A460 Rugeley Road, Greenheath Road, and Hednesford railway station for fast West Midlands connections.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your moving vans manage steep hills in Hednesford and Pye Green?",
+      "answer": "Yes, our vehicles are fitted with powerful modern engines and heavy-duty braking systems designed to handle steep climbs around the Hednesford Hills safely.",
+      "display": true
+    },
+    {
+      "question": "Do you move properties bordering the Cannock Chase rural parkland in Hednesford?",
+      "answer": "We regularly carry out house moves along properties bordering the Chase, ensuring clean floor protection against mud and trail dirt.",
+      "display": true
+    },
+    {
+      "question": "Do you provide wardrobe cartons for hanging clothes in Hednesford?",
+      "answer": "Yes, we supply tall wardrobe boxes with integrated hanging rails so your clothing transfers straight from your wardrobe crease-free.",
+      "display": true
+    },
+    {
+      "question": "Are your movers DBS checked for house moves in Hednesford?",
+      "answer": "Every member of our moving crew undergoes strict DBS background checks and professional training for your total safety and peace of mind.",
+      "display": true
+    }
+  ],
+  "lat": 52.713,
+  "lng": -2.002,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

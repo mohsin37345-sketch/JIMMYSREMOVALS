@@ -1,0 +1,72 @@
+{
+  "town": "Great Wyrley",
+  "slug": "great-wyrley",
+  "county": "Staffordshire",
+  "heroHeading": "Expert House Removals in Great Wyrley",
+  "metaTitle": "Great Wyrley Removals | South Staffs Movers | Jimmys",
+  "metaDescription": "Expert house removals in Great Wyrley, Staffordshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Organising a house move in Great Wyrley? Jimmys Removals provides an experienced, fully insured home removals service across this expansive residential community on the South Staffordshire and Cannock border. From generous 1960s and 1970s detached family homes along Landywood Lane and Wardles Lane to traditional properties on Walsall Road and modern cul-de-sacs near Bentons Green, our professional moving crews treat your belongings with genuine care. We supply low-emission 3.5-tonne Luton vans equipped with tail lifts, quilted blankets, and secure furniture straps.\n\nOur punctual porters make moving straightforward and calm. We safely transport American fridge-freezers, hoist heavy patio sets, and protect dining tables with thick quilted jackets. Every relocation is covered by Fully insured transit insurance, and our transparent pricing means zero unexpected fees on moving day.",
+  "localKnowledge": "Great Wyrley forms a continuous residential conurbation with Cheslyn Hay along the A34 Walsall Road. Residential avenues such as Jacob's Hall Lane, Norton Lane, and Gorsey Lane feature wide verges and ample private driveways, providing excellent access for our vehicles. However, during morning peak traffic towards the M6 Junction 11 and Churchbridge, the A34 can experience steady queuing.\n\nOur drivers use local link roads via Quinton Court and Holly Lane to maintain efficient access. We also coordinate closely with clients regarding parking clearances near local schools such as Landywood Primary, ensuring our removal vans can position smoothly without disrupting neighbourhood traffic.",
+  "postcodes": [
+    "WS6"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Cheslyn Hay",
+      "slug": "cannock/cheslyn-hay"
+    },
+    {
+      "name": "Bridgtown",
+      "slug": "cannock/bridgtown"
+    },
+    {
+      "name": "Bloxwich",
+      "slug": "bloxwich"
+    }
+  ],
+  "travelInfo": "Direct road links via the A34 Walsall Road, Landywood railway station, and rapid connections to M6 Junction 11 and M6 Toll.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans park easily on residential avenues in Great Wyrley?",
+      "answer": "Yes, most Great Wyrley properties have private driveways which our 3.5-tonne Luton vans can reverse onto comfortably without blocking pavements.",
+      "display": true
+    },
+    {
+      "question": "Do you provide moving boxes and tape in Great Wyrley?",
+      "answer": "We supply professional-grade double-walled cardboard boxes, packaging tape, bubble wrap, and wardrobe cartons delivered directly to your home.",
+      "display": true
+    },
+    {
+      "question": "Can you move heavy garden equipment and outdoor furniture in Great Wyrley?",
+      "answer": "Yes, our hydraulic tail lifts make loading heavy lawnmowers, stone planters, patio dining sets, and workshop equipment safe and straightforward.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed for Great Wyrley house moves?",
+      "answer": "All quotations are fixed and all-inclusive, ensuring you know your total removal cost before moving day arrives.",
+      "display": true
+    }
+  ],
+  "lat": 52.657,
+  "lng": -2.015,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

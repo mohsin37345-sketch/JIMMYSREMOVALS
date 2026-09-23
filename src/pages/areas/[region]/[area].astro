@@ -1,0 +1,27 @@
+---
+import LocationLayout from 'theme/layouts/LocationLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  const subAreas = locations.filter((loc) => Boolean(loc.data.region));
+
+  return subAreas.map((loc) => {
+    const region = loc.data.region!;
+    const area = loc.data.slug;
+    return {
+      params: { region, area },
+      props: {
+        location: {
+          ...loc.data,
+          slug: `${region}/${area}`
+        }
+      }
+    };
+  });
+}
+
+const { location } = Astro.props;
+---
+
+<LocationLayout location={location} />

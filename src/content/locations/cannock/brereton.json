@@ -1,0 +1,72 @@
+{
+  "town": "Brereton",
+  "slug": "brereton",
+  "county": "Staffordshire",
+  "heroHeading": "Professional House Removals in Brereton",
+  "metaTitle": "Brereton Removals | Rugeley House Movers | Jimmys",
+  "metaDescription": "Professional house removals in Brereton, Staffordshire. Insured Luton vans, DBS-checked movers, and fixed pricing. Call 07404 353516 for your free quote.",
+  "intro": "Relocating home in Brereton? Jimmys Removals delivers an organised, fully insured moving service throughout this historic village community bordering Rugeley and the southern approaches to Cannock Chase. From traditional red-brick miners' cottages along Main Road and Armitage Road to spacious 1950s semi-detached homes near Coalpit Lane and contemporary estates off Redbrook Lane, our experienced removal crews manage your move with expert care. We operate clean 3.5-tonne Luton vans equipped with hydraulic tail lifts, high-density transit blankets, and heavy-duty load straps.\n\nOur porters are skilled at handling awkward village access. We carefully unbolt divans, wrap wooden sideboards against scratches, and navigate steep cottage stairs with precision. With our upfront fixed estimates, you can relax knowing your moving costs are fully locked in.",
+  "localKnowledge": "Brereton stretches along the historic A51 corridor south of Rugeley towards Armitage with Handsacre. The village features an eclectic road layout, with narrow streets climbing steeply towards Brereton Hayes on the fringe of Cannock Chase, alongside flat residential lanes near the Trent and Mersey Canal. Our drivers are accustomed to managing tight turning angles on Talbot Road and St Michael's Road where street parking can limit roadway width.\n\nWhen loading near the busy Main Road commercial area, we position our vans safely without disrupting public bus routes. We also plan journey departures to avoid rush-hour queues along the A51 bypass, ensuring rapid transit to your new property.",
+  "postcodes": [
+    "WS15"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Cannock Hub",
+      "slug": "cannock"
+    },
+    {
+      "name": "Rugeley",
+      "slug": "cannock/rugeley"
+    },
+    {
+      "name": "Cannock Wood",
+      "slug": "cannock/cannock-wood"
+    },
+    {
+      "name": "Lichfield",
+      "slug": "lichfield"
+    }
+  ],
+  "travelInfo": "Convenient road access via the A51, Main Road, and quick links to Rugeley Town rail station and Lichfield.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "Can your vans manage narrow residential avenues in Brereton?",
+      "answer": "Yes, our 3.5-tonne Luton vans are ideally sized to navigate narrow residential lanes and tight driveways in Brereton without creating road blockages.",
+      "display": true
+    },
+    {
+      "question": "Do you offer packing services in Brereton?",
+      "answer": "Yes, our team provides full and partial packing services using double-walled boxes, bubble wrap, and tissue paper for all your delicate household items.",
+      "display": true
+    },
+    {
+      "question": "How do you protect furniture during moves in Brereton?",
+      "answer": "All furniture is wrapped in thick transit blankets, secured with heavy-duty webbing straps, and protected with mattress bags and sofa covers during transit.",
+      "display": true
+    },
+    {
+      "question": "Are your removal quotes fixed in Brereton?",
+      "answer": "All our quotes are fixed and transparent with zero hidden fees for stairs, heavy items, or waiting times during key collection.",
+      "display": true
+    }
+  ],
+  "lat": 52.751,
+  "lng": -1.928,
+  "tier": 2,
+  "heroImage": "/images/locations/cannock.webp",
+  "region": "cannock"
+}

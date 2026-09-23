@@ -3,7 +3,7 @@
   "slug": "moseley",
   "county": "West Midlands",
   "metaTitle": "Moseley Removals & Storage | Jimmys Removals",
-  "metaDescription": "Professional, insured house removals, man and van, and packing in Moseley. Clean Air Zone compliant vans, DBS-checked movers, and transparent pricing.",
+  "metaDescription": "Professional, insured house removals, man and van, and packing in Moseley. Modern Luton vans, DBS-checked movers, and transparent fixed pricing.",
   "intro": "Jimmys Removals provides bespoke domestic removals and packing services across the bohemian village of Moseley. Famous for Victorian and Edwardian architecture, private parks, and substantial detached villas along Salisbury Road and Wake Green, Moseley demands a removals service with high standards of customer care and craftsmanship. We protect period wood floors, stained glass, and delicate heirlooms with tailored blankets and careful portering.  We take special pride in protecting period woodwork, delicate decorations, and personal keepsakes, ensuring your Moseley home move is completed with dignity, precision, and complete peace of mind. Our DBS-checked staff treat your historic property with the care and attention it deserves.",
   "localKnowledge": "Period homes in Moseley frequently feature grand staircases, stained glass vestibules, and high ceilings. Our crew uses specialized door frame pads and neoprene floor runners to safeguard historic architectural features while manoeuvring heavy furniture.",
   "postcodes": [
@@ -26,7 +26,7 @@
   "travelInfo": "Main route via the A435 Alcester Road and Salisbury Road.",
   "cleanAirZone": {
     "enabled": false,
-    "note": "Moseley is outside the Clean Air Zone."
+    "note": ""
   },
   "servicesOffered": [
     "House Removals",
@@ -55,7 +55,7 @@
     },
     {
       "question": "What insurance do you carry for Moseley moves?",
-      "answer": "We provide £50,000 Goods in Transit and £2,000,000 Public Liability insurance.",
+      "answer": "We provide Fully insured.",
       "display": true
     }
   ],

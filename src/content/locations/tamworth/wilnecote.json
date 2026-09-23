@@ -1,0 +1,72 @@
+{
+  "town": "Wilnecote",
+  "slug": "wilnecote",
+  "county": "Staffordshire",
+  "heroHeading": "Reliable House Removals in Wilnecote",
+  "metaTitle": "Wilnecote Removals | Tamworth House Movers | Jimmys",
+  "metaDescription": "Reliable house removals in Wilnecote, Tamworth. Tail-lift vans, Fully insured insurance cover, and experienced moving porters. Request your fixed quote now.",
+  "intro": "Planning a residential move in Wilnecote? Jimmys Removals delivers an efficient, reliable removals service across this historic, well-connected southern borough of Tamworth. Home to Wilnecote railway station and adjacent to Junction 10 of the M42, Wilnecote features a broad property spectrum, encompassing Victorian terraced cottages along Watling Street, mature post-war semi-detached houses on Hockley Road, and modern executive detached developments around Overwoods Road and Pennymoor Drive. Our dedicated moving teams take complete responsibility for your transition, providing careful packing, heavy lifting, and secure vehicular transit.\n\nEvery move is executed with modern, low-emission Luton box vans equipped with electric tail lifts, allowing heavy furniture and appliances to be safely lifted from road level without manual strain. We wrap all upholstered items in thick transit blankets, supply waterproof mattress bags, and lay down heavy-duty protective floor runners. Backed by Fully insured and fixed, all-inclusive quotations, we guarantee a punctual, organized moving day for your Wilnecote home.",
+  "localKnowledge": "Wilnecote sits at the strategic crossroads of the B5404 Watling Street and the M42 Junction 10 corridor, making regional road connectivity exceptional. However, local traffic around Wilnecote railway station level crossing and Overwoods Road can become congested during peak morning commuting hours. Our removal drivers monitor live traffic feeds and plan arrival times to avoid level crossing delays, ensuring your moving day timetable stays strictly on schedule.\n\nIn older parts of the village near the parish church and Quarry Hill, narrow side lanes and high stone retaining walls require attentive vehicle placement. Our 3.5-tonne Luton vehicles are designed to turn easily in restricted residential cul-de-sacs where larger 7.5-tonne trucks cannot enter. When delivering to newer estates near Overwoods, we liaise with homeowners to coordinate parking near front thresholds, minimising carry distances and expediting unloading.",
+  "postcodes": [
+    "B77"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Two Gates",
+      "slug": "tamworth/two-gates"
+    },
+    {
+      "name": "Stonydelph",
+      "slug": "tamworth/stonydelph"
+    },
+    {
+      "name": "Dosthill",
+      "slug": "tamworth/dosthill"
+    }
+  ],
+  "travelInfo": "Superb motorway connectivity via M42 Junction 10, the A5 dual carriageway, and B5404 Watling Street.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you handle level crossing traffic near Wilnecote railway station?",
+      "answer": "Our removal drivers plan transport routes using the A5 bypass and Overwoods Road when necessary, avoiding level crossing delays to keep your moving timetable on track.",
+      "display": true
+    },
+    {
+      "question": "Can you access modern executive estates off Overwoods Road?",
+      "answer": "Yes, our 3.5-tonne Luton vans are ideal for navigating tight cul-de-sacs, turning circles, and private driveways throughout modern Wilnecote housing developments.",
+      "display": true
+    },
+    {
+      "question": "Do you disassemble and reassemble wardrobes in Wilnecote?",
+      "answer": "Yes, our team brings electric tools to dismantle flat-pack and custom wardrobes before transit, reassembling them securely in your new rooms.",
+      "display": true
+    },
+    {
+      "question": "Are your vans insured against accidental transit damage in Wilnecote?",
+      "answer": "Yes, every customer move includes up to Fully insured as standard.",
+      "display": true
+    }
+  ],
+  "lat": 52.607,
+  "lng": -1.666,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

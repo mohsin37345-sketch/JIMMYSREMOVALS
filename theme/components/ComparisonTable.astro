@@ -8,45 +8,45 @@ export interface Props {
 
 const {
   title = 'Why Choose Jimmys Removals?',
-  subtitle = 'Compare our insured, professional removals against unlicensed casual operators and DIY van hire.'
+  subtitle = 'Compare our professional removals against unvetted casual operators and DIY van hire.'
 } = Astro.props;
 
 const comparisonPoints = [
   {
-    feature: 'Goods in Transit Insurance',
-    jimmys: '£50,000 Included',
+    feature: 'Insurance Status',
+    jimmys: 'Fully insured',
     unlicensed: 'Rarely / None',
-    diy: 'Extra excess charge (£1,000+)'
+    diy: 'Extra excess charge'
   },
   {
-    feature: 'Public Liability Cover',
-    jimmys: '£2,000,000 Included',
-    unlicensed: 'None',
-    diy: 'None for household goods'
-  },
-  {
-    feature: 'Clean Air Zone Compliance',
-    jimmys: '100% Euro 6 (Zero charge)',
-    unlicensed: 'Often non-compliant (fees passed on)',
-    diy: 'Dependent on hire fleet age'
-  },
-  {
-    feature: 'Vetted, DBS-Checked Porters',
-    jimmys: 'Yes (Uniformed & DBS-checked)',
+    feature: 'Vetted, DBS-Checked Crews',
+    jimmys: 'Uniformed, directly employed',
     unlicensed: 'Unknown casual labour',
-    diy: 'You and your friends'
+    diy: 'Manual heavy lifting yourself'
   },
   {
-    feature: 'Tail-Lift Luton Box Vans',
-    jimmys: 'Yes (With tie-rails & ramps)',
+    feature: '3.5-Tonne Luton Vans with Tail Lifts',
+    jimmys: 'Yes (With tie-rails and tail lift)',
     unlicensed: 'Often standard panel vans',
     diy: 'Standard manual loading van'
   },
   {
-    feature: 'Guaranteed Booking Date',
+    feature: 'Guaranteed Fixed Quotes',
+    jimmys: 'Confirmed fixed price',
+    unlicensed: 'Hourly meters and surprise add-ons',
+    diy: 'Fuel, deposits, and mileage charges'
+  },
+  {
+    feature: 'Operating Hours',
+    jimmys: 'Open 24 hours, 7 days a week',
+    unlicensed: 'Limited or unreliable scheduling',
+    diy: 'Strict rental depot return windows'
+  },
+  {
+    feature: 'Confirmed Booking Date',
     jimmys: 'Confirmed in writing',
-    unlicensed: 'High cancellation / no-show risk',
-    diy: 'Subject to rental depot availability'
+    unlicensed: 'High cancellation risk',
+    diy: 'Subject to vehicle availability'
   }
 ];
 ---
@@ -63,33 +63,25 @@ const comparisonPoints = [
     </div>
 
     <div class="overflow-x-auto">
-      <table class="w-full text-left border-collapse bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-800">
+      <table class="w-full max-w-4xl mx-auto text-left border-collapse bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden text-xs sm:text-sm">
         <thead>
-          <tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-800/70">
-            <th class="p-4 sm:p-5 text-sm font-bold text-slate-900 dark:text-white">Key Protection Feature</th>
-            <th class="p-4 sm:p-5 text-sm font-bold text-amber-600 dark:text-amber-400 bg-amber-50/50 dark:bg-amber-950/20 border-x border-amber-500/20">
-              Jimmys Removals
-            </th>
-            <th class="p-4 sm:p-5 text-sm font-semibold text-slate-600 dark:text-slate-400">Casual / Unlicensed Mover</th>
-            <th class="p-4 sm:p-5 text-sm font-semibold text-slate-600 dark:text-slate-400">DIY Van Hire</th>
+          <tr class="border-b border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-800/60 text-slate-900 dark:text-white">
+            <th class="p-4 font-bold">Standard Features</th>
+            <th class="p-4 font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10">Jimmys Removals</th>
+            <th class="p-4 font-bold text-slate-500">Unvetted Operators</th>
+            <th class="p-4 font-bold text-slate-500">DIY Van Hire</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-xs sm:text-sm">
+        <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
           {comparisonPoints.map((row) => (
-            <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
-              <td class="p-4 sm:p-5 font-semibold text-slate-800 dark:text-slate-200">
-                {row.feature}
-              </td>
-              <td class="p-4 sm:p-5 font-bold text-emerald-600 dark:text-emerald-400 bg-amber-50/30 dark:bg-amber-950/10 border-x border-amber-500/20 flex items-center gap-1.5">
-                <Icon name="check" class="w-4 h-4 text-emerald-600 shrink-0" />
+            <tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
+              <td class="p-4 font-medium text-slate-900 dark:text-slate-100">{row.feature}</td>
+              <td class="p-4 font-semibold text-slate-900 dark:text-white bg-amber-500/5 flex items-center gap-2">
+                <Icon name="check" class="w-4 h-4 text-emerald-500 shrink-0" />
                 <span>{row.jimmys}</span>
               </td>
-              <td class="p-4 sm:p-5 text-slate-500 dark:text-slate-400">
-                {row.unlicensed}
-              </td>
-              <td class="p-4 sm:p-5 text-slate-500 dark:text-slate-400">
-                {row.diy}
-              </td>
+              <td class="p-4 text-slate-500">{row.unlicensed}</td>
+              <td class="p-4 text-slate-500">{row.diy}</td>
             </tr>
           ))}
         </tbody>

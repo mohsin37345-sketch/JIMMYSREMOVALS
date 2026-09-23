@@ -1,0 +1,32 @@
+{
+  "service": "storage",
+  "location": "birmingham",
+  "uniqueIntro": "Need safe storage in Birmingham between house sales, during home renovation, or while transitioning to a new tenancy? Jimmys Removals provides secure containerised storage with door-to-door collection and delivery across Birmingham and the West Midlands. Our directly employed movers load your furniture and boxed belongings straight into clean Luton vans, blanket-wrap sensitive timber items, and transfer them directly into alarmed, moisture-controlled storage facilities. When you are ready for delivery, we return your goods and place them into your designated rooms.",
+  "localAngle": "For Birmingham residents facing property chain gaps or downsizing in areas like Bournville, Kings Heath, or Sutton Coldfield, our storage arrangements eliminate the need to hire self-storage vans or perform manual heavy lifting yourself.",
+  "faqs": [
+    {
+      "question": "Do you collect and redeliver storage items across Birmingham?",
+      "answer": "Yes. Our full-service storage solution includes collection from your Birmingham home by our uniformed movers and direct delivery to your new address when you are ready.",
+      "display": true
+    },
+    {
+      "question": "Can I store large sofas, appliances, and wardrobes?",
+      "answer": "Yes. Our storage facilities accommodate full domestic household suites, white goods, mattresses, and garden furniture, all blanket-wrapped and secured.",
+      "display": true
+    }
+  ],
+  "images": {
+    "hero": {
+      "src": "",
+      "alt": "Secure storage containers and removal van in Birmingham facility"
+    },
+    "local": {
+      "src": "",
+      "alt": "Blanket-wrapped furniture stored in secure Birmingham warehouse"
+    },
+    "team": {
+      "src": "",
+      "alt": "Movers unloading household storage items from Luton van"
+    }
+  }
+}

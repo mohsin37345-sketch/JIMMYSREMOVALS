@@ -1,0 +1,72 @@
+{
+  "town": "Tamworth Town",
+  "slug": "tamworth-town",
+  "county": "Staffordshire",
+  "heroHeading": "Expert House Removals in Tamworth Town",
+  "metaTitle": "Tamworth Town Removals | Central Movers | Jimmys",
+  "metaDescription": "Expert house and flat removals in central Tamworth Town. Navigating historic streets, castle quarter access, and town centre flats. Fixed quotes.",
+  "intro": "Relocating within or moving into central Tamworth Town? Jimmys Removals delivers an expert, attentive removal service tailored to the specific logistical challenges of urban and historic town centre moves. Surrounding the iconic Norman castle, St Editha's Church, and the vibrant market precinct, Tamworth Town centre encompasses a diverse mix of period Georgian and Victorian townhouses along Lichfield Street and Aldergate, converted heritage apartments on Church Street and Victoria Road, and modern riverside residential flats near the Snowdome. Our seasoned moving professionals navigate pedestrian zones, loading bays, and multi-storey apartment stairs with absolute composure.\n\nWe operate 3.5-tonne Luton removal vehicles with electric tail lifts, allowing fast, quiet loading from curbside bays. Our moving porters supply quilted sofa covers, double-walled wardrobe cartons, and heavy-duty floor runners to keep communal hallways and stairwells clean and unscuffed throughout moving day. With upfront fixed quotations, Fully insured, and comprehensive Fully insured protection, we make moving in central Tamworth straightforward and organized.",
+  "localKnowledge": "Executing removals in central Tamworth requires meticulous planning around local traffic regulations and pedestrianised zones. Roads such as George Street, Market Street, and Colehill have specific timed loading restrictions and bollards that govern vehicle access. Our logistics team coordinates with Tamworth Borough Council and on-site building management in advance to obtain necessary parking dispensations or schedule loading during approved delivery windows.\n\nFor apartment moves in converted historic buildings along Aldergate or Church Street, properties often feature narrow communal hallways, tight spiral stairs, and no lift access. Our porters use specialised modular carrying methods, two-person lifting techniques, and protective padded door covers to manoeuvre bulky beds, dining tables, and white goods safely without scratching historic plasterwork or timber architraves.",
+  "postcodes": [
+    "B79"
+  ],
+  "nearbyAreas": [
+    {
+      "name": "Tamworth Hub",
+      "slug": "tamworth"
+    },
+    {
+      "name": "Coton Green",
+      "slug": "tamworth/coton-green"
+    },
+    {
+      "name": "Hopwas",
+      "slug": "tamworth/hopwas"
+    },
+    {
+      "name": "Bolehall",
+      "slug": "tamworth/bolehall"
+    }
+  ],
+  "travelInfo": "Central transport hub with quick connections to the A51, A453, and the A5 bypass via Riverdrive.",
+  "cleanAirZone": {
+    "enabled": false,
+    "note": ""
+  },
+  "servicesOffered": [
+    "House Removals",
+    "Flat Removals",
+    "Man and Van",
+    "Packing Services",
+    "Office Removals",
+    "Storage Solutions",
+    "Furniture Dismantling"
+  ],
+  "localFaqs": [
+    {
+      "question": "How do you handle removals in pedestrianised streets in Tamworth Town centre?",
+      "answer": "We coordinate with local council parking teams to obtain morning loading dispensations or operate within authorized delivery windows, positioning our vans safely near property entrances.",
+      "display": true
+    },
+    {
+      "question": "Can you manage moves into upper-floor flats without lifts in Tamworth Town?",
+      "answer": "Yes, our moving crews are experienced in stair carry for multi-storey apartments, bringing stair-climber sack trucks and extra porters to handle heavy items safely.",
+      "display": true
+    },
+    {
+      "question": "Do you offer office and commercial removals in Tamworth Town centre?",
+      "answer": "Yes, we provide out-of-hours, evening, and weekend business relocations for offices, retail units, and professional practices across the town centre.",
+      "display": true
+    },
+    {
+      "question": "What insurance is included for town centre moves in Tamworth?",
+      "answer": "All moves include up to Fully insured as standard, protecting your belongings and building premises.",
+      "display": true
+    }
+  ],
+  "lat": 52.634,
+  "lng": -1.693,
+  "tier": 2,
+  "heroImage": "/images/locations/tamworth.webp",
+  "region": "tamworth"
+}

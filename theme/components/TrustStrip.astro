@@ -1,26 +1,35 @@
 ---
-import { siteConfig } from 'src/data/site';
 import Icon from './Icon.astro';
+
+export interface Props {
+  isBirmingham?: boolean;
+}
+
+const { isBirmingham = false } = Astro.props;
 
 const trustItems = [
   {
-    title: 'Fully Insured Fleet',
-    desc: `Goods in Transit ${siteConfig.insurance.goodsInTransit} & Public Liability ${siteConfig.insurance.publicLiability}`,
+    title: 'Fully Insured',
+    desc: 'Professional domestic and commercial removals with full insurance',
     icon: 'shield'
   },
   {
     title: 'DBS-Checked Crews',
-    desc: 'Uniformed, vetted and experienced professional porters',
+    desc: 'Uniformed, directly employed and vetted moving specialists',
     icon: 'check'
   },
-  {
-    title: 'Clean Air Zone Compliant',
-    desc: 'Euro 6 low-emission vans with zero CAZ surcharge pass-through',
+  isBirmingham ? {
+    title: 'Zero CAZ Surcharges',
+    desc: 'No Clean Air Zone charges added to your quote inside the A4540 Middleway',
+    icon: 'truck'
+  } : {
+    title: 'Luton Vans with Tail Lifts',
+    desc: '3.5-tonne Luton vans equipped for safe loading and furniture protection',
     icon: 'truck'
   },
   {
-    title: 'Transparent Pricing',
-    desc: 'Guaranteed fixed quotes with no hidden fuel or weekend fees',
+    title: 'Open 24/7',
+    desc: 'Available 24 hours a day, 7 days a week, including bank holidays',
     icon: 'clock'
   }
 ];
