@@ -12,8 +12,8 @@ export interface Props {
 const {
   isBirmingham = false,
   town = 'Birmingham',
-  imageSlotSrc,
-  imageSlotAlt = 'Jimmys Removals movers wrapping furniture for transport'
+  imageSlotSrc = '/images/moves/jimmys-removals-birmingham-house-removals-van.webp',
+  imageSlotAlt = 'Jimmys Removals modern Luton removals van with tail lift, packed furniture, and uniformed mover in Birmingham'
 } = Astro.props;
 
 const pillars = [
@@ -105,12 +105,12 @@ const pillars = [
         ))}
       </div>
 
-      <!-- Image Slot 3 (team, 4/3) -->
-      <div class="lg:col-span-5">
+      <!-- Image Slot 3 (team, 3/4) -->
+      <div class="lg:col-span-5 flex justify-center">
         <ImageSlot
           src={imageSlotSrc}
           alt={imageSlotAlt}
-          aspect="4/3"
+          aspect="3/4"
           slotId="team"
         />
       </div>

@@ -23,6 +23,10 @@ const images = [
   {
     src: 'C:/Users/Hp/.gemini/antigravity-ide/brain/a2362989-6ce5-437c-af3a-adac984912a9/.user_uploaded/media_1789137533155.png',
     baseName: 'furniture-packing-blankets'
+  },
+  {
+    src: 'C:/Users/Hp/.gemini/antigravity-ide/brain/5318530e-5ab1-4380-8c45-63a207683c1a/.user_uploaded/media_1790168314496.jpg',
+    baseName: 'jimmys-removals-birmingham-house-removals-van'
   }
 ];
 
