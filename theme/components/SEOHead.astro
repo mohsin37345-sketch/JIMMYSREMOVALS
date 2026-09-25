@@ -81,13 +81,12 @@ const yandexVerification = import.meta.env.PUBLIC_YANDEX_VERIFICATION || verific
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
 
-<!-- Inline Dark Mode Blocking Script (Zero Flash) -->
+<!-- Inline Dark Mode Blocking Script (Zero Flash - Light/White by Default) -->
 <script is:inline>
   (function() {
     try {
       const storedTheme = localStorage.getItem('jimmys_theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+      if (storedTheme === 'dark') {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
