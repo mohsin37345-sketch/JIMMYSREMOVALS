@@ -61,19 +61,32 @@ export default defineConfig({
     '/removals/same-day-delivery/birmingham/': '/removals/birmingham/same-day-delivery/',
     '/removals/storage/birmingham/': '/removals/birmingham/storage/',
     '/removals/student-removals/birmingham/': '/removals/birmingham/student-removals/',
-    '/removals/student-moves/birmingham/': '/removals/birmingham/student-removals/'
+    '/removals/student-moves/birmingham/': '/removals/birmingham/student-removals/',
+    // Direct canonical redirects
+    '/about/': '/about-us/',
+    '/contact/': '/contact-us/',
+    '/quote/': '/get-a-quote/',
+    '/terms/': '/terms-and-conditions/',
+    '/areas-we-cover/': '/areas/'
   },
   integrations: [
     mdx(),
     sitemap({
+      lastmod: new Date(),
       filter: (page) =>
         !page.includes('/404') &&
         !page.includes('/thank-you') &&
         !page.includes('/llms.txt') &&
         !page.includes('/robots.txt') &&
-        !page.includes('/services/student-removals'),
+        !page.includes('/services/student-removals') &&
+        !page.endsWith('/about/') &&
+        !page.endsWith('/contact/') &&
+        !page.endsWith('/quote/') &&
+        !page.endsWith('/terms/') &&
+        !page.endsWith('/areas-we-cover/'),
       serialize: (item) => {
         const url = item.url;
+        item.lastmod = new Date();
         // Priority & changefreq configuration
         if (
           url === 'https://www.jimmysremovalsltd.co.uk/' ||
